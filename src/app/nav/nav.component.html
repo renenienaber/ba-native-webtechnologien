@@ -5,7 +5,11 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="about">About</a>
+      <a mat-list-item routerLink="">Notification API</a>
+      <a mat-list-item routerLink="">Push API</a>
+      <a mat-list-item routerLink="">Geolocation API</a>
+      <a mat-list-item routerLink="vibration-api">Vibration API</a>
+      <a mat-list-item routerLink="about">About</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,6 +25,8 @@
       <span>Demonstrationsanwendung - Native Webtechnologien</span>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <ng-content class="content"></ng-content>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

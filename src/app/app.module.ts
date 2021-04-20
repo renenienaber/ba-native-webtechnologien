@@ -14,12 +14,17 @@ import { MatListModule } from '@angular/material/list';
 import { AboutComponent } from './technologies/about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { VibrationComponent } from './technologies/vibration/vibration.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    AboutComponent
+    AboutComponent,
+    VibrationComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import { environment } from '../environments/environment';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
