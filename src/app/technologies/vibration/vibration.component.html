@@ -1,13 +1,24 @@
-<mat-form-field>
-  <mat-label>Duration</mat-label>
-  <input matInput type="number" min="0" [(ngModel)]="duration">
-</mat-form-field>
-
-<button
-  type="button"
-  mat-raised-button
-  (click)="vibrate()"
->
-  <mat-icon>vibration</mat-icon>
-  Vibrate
-</button>
+<div>
+  <mat-form-field>
+    <mat-label>Duration</mat-label>
+    <input matInput type="number" min="0" [(ngModel)]="duration">
+  </mat-form-field>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="vibrate()"
+  >
+    <mat-icon>vibration</mat-icon>
+    Vibrate
+  </button>
+</div>
+<div>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="vibratePattern()"
+  >
+    <mat-icon>vibration</mat-icon>
+    Vibrate Pattern
+  </button>
+</div>

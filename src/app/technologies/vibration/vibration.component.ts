@@ -18,4 +18,9 @@ export class VibrationComponent {
     }
   }
 
+  vibratePattern(): void {
+    if (this.featureDetection()) {
+      navigator.vibrate([100, 200, 300, 200, 500]);
+    }
+  }
 }
