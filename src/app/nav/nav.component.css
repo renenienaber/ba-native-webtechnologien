@@ -17,5 +17,10 @@
 }
 
 .content {
-  margin: 20px;
+  margin: 10px;
+}
+
+.active {
+  font-weight: bold;
+  color: #673AB7;
 }

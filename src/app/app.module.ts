@@ -11,20 +11,25 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { AboutComponent } from './technologies/about/about.component';
+import { AboutComponent } from './about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { VibrationComponent } from './technologies/vibration/vibration.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
+import { DemoFrameComponent } from './demo-frame/demo-frame.component';
+import {MatCardModule} from '@angular/material/card';
+import { FeatureDetectorComponent } from './feature-detector/feature-detector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     AboutComponent,
-    VibrationComponent
+    VibrationComponent,
+    DemoFrameComponent,
+    FeatureDetectorComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import {FormsModule} from '@angular/forms';
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
