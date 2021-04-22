@@ -17,8 +17,9 @@
   <div *ngIf="currentPos">
     <p>{{currentPos.timestamp | date: 'medium'}}</p>
     <div *ngIf="currentPos.coords">
-      <p>Längengrad: {{currentPos.coords.longitude}}</p>
-      <p>Breitengrad: {{currentPos.coords.latitude}}</p>
+      <a href="https://www.google.com/maps/@?api=1&map_action=map&center={{currentPos.coords.latitude}},{{currentPos.coords.longitude}}" target="_blank">
+        Längengrad: {{currentPos.coords.longitude}}, Breitengrad: {{currentPos.coords.latitude}}
+      </a>
       <p>Höhenlage: {{currentPos.coords.altitude}}</p>
       <p></p>
       <p>Genauigkeit Breiten- & Längengrad (in m): {{currentPos.coords.accuracy}}</p>

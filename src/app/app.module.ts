@@ -20,7 +20,6 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { DemoFrameComponent } from './demo-frame/demo-frame.component';
 import {MatCardModule} from '@angular/material/card';
-import { FeatureDetectorComponent } from './feature-detector/feature-detector.component';
 import { GeolocationComponent } from './technologies/geolocation/geolocation.component';
 import { NotificationComponent } from './technologies/notification/notification.component';
 import { PushComponent } from './technologies/push/push.component';
@@ -34,7 +33,6 @@ import { ServiceWorkerComponent } from './technologies/service-worker/service-wo
     AboutComponent,
     VibrationComponent,
     DemoFrameComponent,
-    FeatureDetectorComponent,
     GeolocationComponent,
     NotificationComponent,
     PushComponent,

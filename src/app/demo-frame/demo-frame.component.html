@@ -6,7 +6,7 @@
   </mat-card-header>
 
   <mat-card-content>
-    <div>
+    <div *ngIf="technology.references.length > 0">
       <span class="mat-body-strong">Referenzen:</span>
       <mat-card-actions>
         <ng-container *ngFor="let ref of technology.references">
@@ -15,7 +15,7 @@
       </mat-card-actions>
     </div>
 
-    <div>
+    <div *ngIf="featureDetections.length > 0">
       <span class="mat-body-strong">Browser-Support:</span>
       <div *ngFor="let check of featureDetections" class="mat-elevation-z1 feature-detection {{check.detection ? 'support' : 'no-support'}}">
         <span>{{check.apiObject}}</span>
