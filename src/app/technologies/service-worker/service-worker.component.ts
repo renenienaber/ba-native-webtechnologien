@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import {Technology} from '../technology';
+import {FeatureDetection, Technology} from '../technology';
+import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-service-worker',
   templateUrl: './service-worker.component.html',
   styleUrls: ['./service-worker.component.css']
 })
-export class ServiceWorkerComponent {}
+export class ServiceWorkerComponent extends TechnologyComponent {
+  technology: Technology = SERVICE_WORKER;
+  featureDetections: FeatureDetection[] = [];
+}
 
 export const SERVICE_WORKER: Technology = {
   name: 'Service Worker',

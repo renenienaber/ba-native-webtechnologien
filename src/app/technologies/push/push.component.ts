@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import {Technology} from '../technology';
+import {FeatureDetection, Technology} from '../technology';
+import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-push',
   templateUrl: './push.component.html',
   styleUrls: ['./push.component.css']
 })
-export class PushComponent {}
+export class PushComponent extends TechnologyComponent {
+  technology: Technology = PUSH_API;
+  featureDetections: FeatureDetection[] = [];
+}
 
 export const PUSH_API: Technology = {
   name: 'Push API',

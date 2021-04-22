@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TechnologyComponent} from '../technology/technology.component';
+import {TechnologyComponent} from '../technology.component';
 import {FeatureDetection, Technology} from '../technology';
 
 @Component({

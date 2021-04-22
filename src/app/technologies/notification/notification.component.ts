@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import {Technology} from '../technology';
+import {FeatureDetection, Technology} from '../technology';
+import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent {}
+export class NotificationComponent extends TechnologyComponent {
+  technology: Technology = NOTIFICATION_API;
+  featureDetections: FeatureDetection[] = [];
+}
 
 export const NOTIFICATION_API: Technology = {
   name: 'Notification API',

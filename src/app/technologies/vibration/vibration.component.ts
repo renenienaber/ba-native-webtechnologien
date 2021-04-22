@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FeatureDetection, Technology} from '../technology';
-import {TechnologyComponent} from '../technology/technology.component';
+import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-vibration',
