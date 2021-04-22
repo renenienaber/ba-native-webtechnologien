@@ -1,0 +1,30 @@
+<app-demo-frame
+  [technology]="technology"
+  shortVersion="shortVersion"
+  [featureDetections]="featureDetections"
+>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-demo-frame>
+
+<ng-template #demo>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="getCurrentPos()"
+  >
+    getCurrentPosition
+  </button>
+  <div *ngIf="currentPos">
+    <p>{{currentPos.timestamp | date: 'medium'}}</p>
+    <div *ngIf="currentPos.coords">
+      <p>Längengrad: {{currentPos.coords.longitude}}</p>
+      <p>Breitengrad: {{currentPos.coords.latitude}}</p>
+      <p>Höhenlage: {{currentPos.coords.altitude}}</p>
+      <p></p>
+      <p>Genauigkeit Breiten- & Längengrad (in m): {{currentPos.coords.accuracy}}</p>
+      <p>Genauigkeit Höhenlage (in m): {{currentPos.coords.altitudeAccuracy}}</p>
+      <p>Richtung: {{currentPos.coords.heading}}</p>
+      <p>Geschwindigkeit (in m/s): {{currentPos.coords.speed}}</p>
+    </div>
+  </div>
+</ng-template>

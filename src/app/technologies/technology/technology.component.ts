@@ -7,11 +7,7 @@ import {FeatureDetection, Technology} from '../technology';
 })
 export abstract class TechnologyComponent {
   @Input()
-  shortVersion: boolean;
+  shortVersion!: boolean;
   abstract technology: Technology;
-  featureDetections: FeatureDetection[] = [];
-  constructor() {
-    this.setFeatureDetections();
-  }
-  abstract setFeatureDetections();
+  abstract featureDetections: FeatureDetection[];
 }

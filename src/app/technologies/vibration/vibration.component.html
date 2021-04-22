@@ -3,30 +3,28 @@
   shortVersion="shortVersion"
   [featureDetections]="featureDetections"
 >
-  <ng-container>
-    <div>
-      <mat-form-field>
-        <mat-label>Duration</mat-label>
-        <input matInput type="number" min="0" [(ngModel)]="duration">
-      </mat-form-field>
-      <button
-        type="button"
-        mat-raised-button
-        (click)="vibrate()"
-      >
-        <mat-icon>vibration</mat-icon>
-        Vibrate
-      </button>
-    </div>
-    <div>
-      <button
-        type="button"
-        mat-raised-button
-        (click)="vibratePattern()"
-      >
-        <mat-icon>vibration</mat-icon>
-        Vibrate Pattern
-      </button>
-    </div>
-  </ng-container>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-demo-frame>
+
+<ng-template #demo>
+  <div>
+    <mat-form-field>
+      <mat-label>Duration</mat-label>
+      <input matInput type="number" min="0" [(ngModel)]="duration">
+    </mat-form-field>
+    <button
+      type="button"
+      mat-raised-button
+      (click)="vibrate()"
+    >
+      Vibrate
+    </button>
+    <button
+      type="button"
+      mat-raised-button
+      (click)="vibratePattern()"
+    >
+      Vibrate 3 times
+    </button>
+  </div>
+</ng-template>

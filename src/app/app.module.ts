@@ -21,6 +21,11 @@ import {FormsModule} from '@angular/forms';
 import { DemoFrameComponent } from './demo-frame/demo-frame.component';
 import {MatCardModule} from '@angular/material/card';
 import { FeatureDetectorComponent } from './feature-detector/feature-detector.component';
+import { GeolocationComponent } from './technologies/geolocation/geolocation.component';
+import { NotificationComponent } from './technologies/notification/notification.component';
+import { PushComponent } from './technologies/push/push.component';
+import { WebAppManifestComponent } from './technologies/web-app-manifest/web-app-manifest.component';
+import { ServiceWorkerComponent } from './technologies/service-worker/service-worker.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { FeatureDetectorComponent } from './feature-detector/feature-detector.co
     VibrationComponent,
     DemoFrameComponent,
     FeatureDetectorComponent,
+    GeolocationComponent,
+    NotificationComponent,
+    PushComponent,
+    WebAppManifestComponent,
+    ServiceWorkerComponent,
   ],
   imports: [
     BrowserModule,

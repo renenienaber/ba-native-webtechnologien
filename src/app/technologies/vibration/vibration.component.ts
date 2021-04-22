@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {VIBRATION_API} from '../technology';
+import {FeatureDetection, Technology} from '../technology';
 import {TechnologyComponent} from '../technology/technology.component';
 
 @Component({
@@ -10,19 +10,12 @@ import {TechnologyComponent} from '../technology/technology.component';
 export class VibrationComponent extends TechnologyComponent {
   // sets base attributes
   technology = VIBRATION_API;
-  //
-  setFeatureDetections() {
-    this.featureDetections.push(
-      {
-        apiObject: 'navigator.vibrate',
-        detection: 'vibrate' in navigator
-      },
-      {
-        apiObject: 'navigator.abc',
-        detection: 'abc' in navigator
-      }
-    );
-  }
+  featureDetections: FeatureDetection[] = [
+    {
+      apiObject: 'navigator.vibrate',
+      detection: 'vibrate' in navigator
+    }
+  ];
 
   duration = 200;
   vibrate(): void {
@@ -33,7 +26,19 @@ export class VibrationComponent extends TechnologyComponent {
 
   vibratePattern(): void {
     if ('vibrate' in navigator) {
-      navigator.vibrate([100, 200, 300, 200, 500]);
+      navigator.vibrate([500, 200, 500, 200, 500]);
     }
   }
 }
+
+export const VIBRATION_API: Technology = {
+  name: 'Vibration API',
+  description: 'Erlaubt die Nutzung der im Endgerät verbauten Vibration, soweit vorhanden.',
+  references: [
+    { name: 'Spezifikation', link: 'https://w3c.github.io/vibration/' },
+    { name: 'CanIUse', link: 'https://caniuse.com/vibration' },
+    { name: 'Mozilla Developer Network', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API' },
+  ],
+  icon: 'vibration',
+  routerLink: 'vibration-api'
+};

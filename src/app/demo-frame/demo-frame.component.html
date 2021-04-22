@@ -10,15 +10,16 @@
       <span class="mat-body-strong">Referenzen:</span>
       <mat-card-actions>
         <ng-container *ngFor="let ref of technology.references">
-          <a mat-stroked-button href="{{ref.link}}">{{ref.name}}</a>
+          <a mat-stroked-button href="{{ref.link}}" target="_blank">{{ref.name}}</a>
         </ng-container>
       </mat-card-actions>
     </div>
 
     <div>
       <span class="mat-body-strong">Browser-Support:</span>
-      <div *ngFor="let check of featureDetections" class="mat-elevation-z1 support">
-        {{check.apiObject}} existiert{{check.detection ? '.' : ' nicht!'}}
+      <div *ngFor="let check of featureDetections" class="mat-elevation-z1 feature-detection {{check.detection ? 'support' : 'no-support'}}">
+        <span>{{check.apiObject}}</span>
+        <mat-icon>{{check.detection ? 'check_circle' : 'error'}}</mat-icon>
       </div>
     </div>
   </mat-card-content>
