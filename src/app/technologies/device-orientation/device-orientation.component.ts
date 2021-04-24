@@ -42,6 +42,11 @@ export class DeviceOrientationComponent extends TechnologyComponent {
     document.getElementById('beta').innerHTML = this.beta.toString();
     document.getElementById('gamma').innerHTML = this.gamma.toString();
     document.getElementById('absolute').innerHTML = this.absolute.toString();
+
+    document.getElementById('cube').style.transform =
+      'rotateX(' + this.beta + 'deg) ' +
+      'rotateY(' + this.gamma + 'deg) ' +
+      'rotateZ(' + this.alpha + 'deg)';
   }
 }
 
