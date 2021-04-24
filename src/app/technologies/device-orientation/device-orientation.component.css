@@ -1,0 +1,42 @@
+.cube {
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+}
+
+
+.face {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  font-size: 80px;
+  text-align: center;
+  line-height: 150px;
+  background-color: #999999;
+  box-shadow: inset 0 0 20px #333333;
+  opacity: 0.6;
+}
+
+.cube .one {
+  transform: translateZ(75px);
+}
+
+.cube .two {
+  transform: rotateY(90deg) translateZ(75px);
+}
+
+.cube .three {
+  transform: rotateY(180deg) translateZ(75px);
+}
+
+.cube .four {
+  transform: rotateY(-90deg) translateZ(75px);
+}
+
+.cube .five {
+  transform: rotateX(90deg) translateZ(75px);
+}
+
+.cube .six {
+  transform: rotateX(-90deg) translateZ(75px) rotate(0deg);
+}

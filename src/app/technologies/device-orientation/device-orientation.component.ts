@@ -18,7 +18,26 @@ export class DeviceOrientationComponent extends TechnologyComponent {
 
   private errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
+  alpha: number;
+  beta: number;
+  gamma: number;
+  absolute: boolean;
 
+  constructor() {
+    super();
+    if ('DeviceOrientationEvent' in window) {
+      window.addEventListener('deviceorientation', this.deviceOrientationEventHandler);
+    } else {
+      this.showError(this.errorNoDeviceOrientationEvent);
+    }
+  }
+
+  deviceOrientationEventHandler(eventData: any): void {
+    this.alpha = Math.round(eventData.alpha);
+    this.beta = Math.round(eventData.beta);
+    this.gamma = Math.round(eventData.gamma);
+    this.absolute = eventData.absolute;
+  }
 }
 
 export const DEVICE_ORIENTATION_API: Technology = {
