@@ -17,16 +17,22 @@ export class VibrationComponent extends TechnologyComponent {
     }
   ];
 
+  private errorNoVibrate = 'navigator.vibrate wird nicht unterstützt!';
+
   duration = 200;
   vibrate(): void {
     if ('vibrate' in navigator) {
       navigator.vibrate(this.duration);
+    } else {
+      this.showError(this.errorNoVibrate);
     }
   }
 
   vibratePattern(): void {
     if ('vibrate' in navigator) {
       navigator.vibrate([500, 200, 500, 200, 500]);
+    } else {
+      this.showError(this.errorNoVibrate);
     }
   }
 }

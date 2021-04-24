@@ -16,13 +16,17 @@ export class GeolocationComponent extends TechnologyComponent {
     }
   ];
 
+  private errorNoGeolocation = 'navigator.geolocation wird nicht unterstützt!';
+
   currentPos: Position;
   getCurrentPos(): void {
     if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(pos => {
+        this.currentPos = pos;
+      });
+    } else {
+      this.showError(this.errorNoGeolocation);
     }
-    navigator.geolocation.getCurrentPosition(pos => {
-      this.currentPos = pos;
-    });
   }
 }
 

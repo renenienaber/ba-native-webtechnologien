@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FeatureDetection, Technology} from '../technologies/technology';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-demo-frame',
@@ -13,4 +14,10 @@ export class DemoFrameComponent {
   featureDetections!: FeatureDetection[];
   @Input()
   shortVersion!: boolean;
+
+  constructor(private matSnackBar: MatSnackBar) {}
+
+  openErrorSnackBar(message: string) {
+    this.matSnackBar.open(message, 'Verstanden');
+  }
 }
