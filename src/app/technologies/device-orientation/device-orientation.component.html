@@ -3,16 +3,15 @@
   shortVersion="shortVersion"
   [featureDetections]="featureDetections"
 >
-  Coordinates: {{this.alpha}}, {{this.beta}}, {{this.gamma}}
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-demo-frame>
 
 <ng-template #demo>
   <div>
     <span class="mat-body-strong">Koordinaten:</span>
-    <p>Alpha (Richtung): {{alpha}}</p>
-    <p>Beta (Vorne/Hinten): {{beta}}</p>
-    <p>Gamma (Links/Rechts): {{gamma}}</p>
+    <p>Alpha (Richtung):<span id="alpha" [innerHTML]="alpha"></span></p>
+    <p>Beta (Vorne/Hinten): <span id="beta" [innerHTML]="beta"></span></p>
+    <p>Gamma (Links/Rechts): <span id="gamma" [innerHTML]="gamma"></span></p>
     <p>Absolut: {{absolute}}</p>
   </div>
   <button (click)="alertCoords()">getCoords</button>
