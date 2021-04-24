@@ -26,7 +26,7 @@ export class DeviceOrientationComponent extends TechnologyComponent {
   constructor() {
     super();
     if ('DeviceOrientationEvent' in window) {
-      window.addEventListener('deviceorientation', this.deviceOrientationEventHandler);
+      window.addEventListener('deviceorientation', this.deviceOrientationEventHandler, false);
     } else {
       this.showError(this.errorNoDeviceOrientationEvent);
     }
@@ -37,6 +37,7 @@ export class DeviceOrientationComponent extends TechnologyComponent {
     this.beta = Math.round(eventData.beta);
     this.gamma = Math.round(eventData.gamma);
     this.absolute = eventData.absolute;
+    alert(`${this.alpha}, ${this.beta}, ${this.gamma}`);
   }
 }
 
