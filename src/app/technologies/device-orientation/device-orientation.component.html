@@ -3,6 +3,7 @@
   shortVersion="shortVersion"
   [featureDetections]="featureDetections"
 >
+  Coordinates: {{this.alpha}}, {{this.beta}}, {{this.gamma}}
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-demo-frame>
 
@@ -13,8 +14,8 @@
     <p>Beta (Vorne/Hinten): {{beta}}</p>
     <p>Gamma (Links/Rechts): {{gamma}}</p>
     <p>Absolut: {{absolute}}</p>
-    <p>ALERT TEST</p>
   </div>
+  <button (click)="alertCoords()">getCoords</button>
   <div class="cube">
     <div class="face one">1</div>
     <div class="face two">2</div>
