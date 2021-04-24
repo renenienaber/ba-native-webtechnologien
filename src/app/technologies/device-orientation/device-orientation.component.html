@@ -9,13 +9,12 @@
 <ng-template #demo>
   <div>
     <span class="mat-body-strong">Koordinaten:</span>
-    <p>Alpha (Richtung):<span id="alpha" [innerHTML]="alpha"></span></p>
-    <p>Beta (Vorne/Hinten): <span id="beta" [innerHTML]="beta"></span></p>
-    <p>Gamma (Links/Rechts): <span id="gamma" [innerHTML]="gamma"></span></p>
-    <p>Absolut: {{absolute}}</p>
+    <p>Alpha (Richtung):<span id="alpha">null</span></p>
+    <p>Beta (Vorne/Hinten): <span id="beta">null</span></p>
+    <p>Gamma (Links/Rechts): <span id="gamma">null</span></p>
+    <p>Absolut: <span id="absolute">null</span></p>
   </div>
-  <button (click)="alertCoords()">getCoords</button>
-  <div class="cube">
+  <div class="cube" [style.transform]="'rotateX(' + beta + 'deg) ' +'rotateY(' + gamma + 'deg) ' +'rotateZ(' + alpha + 'deg)'">
     <div class="face one">1</div>
     <div class="face two">2</div>
     <div class="face three">3</div>

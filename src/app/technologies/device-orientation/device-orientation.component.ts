@@ -32,20 +32,16 @@ export class DeviceOrientationComponent extends TechnologyComponent {
     }
   }
 
-  alertCoords(): void {
-    alert(`${this.alpha}, ${this.beta}, ${this.gamma}`);
-  }
-
   deviceOrientationEventHandler(eventData: any): void {
     this.alpha = Math.round(eventData.alpha);
     this.beta = Math.round(eventData.beta);
     this.gamma = Math.round(eventData.gamma);
     this.absolute = eventData.absolute;
 
-    // document.getElementById('alpha').innerHTML = this.alpha.toString();
-    // document.getElementById('beta').innerHTML = this.beta.toString();
-    // document.getElementById('gamma').innerHTML = this.gamma.toString();
-    // document.getElementById('absolute').innerHTML = this.absolute.toString();
+    document.getElementById('alpha').innerHTML = this.alpha.toString();
+    document.getElementById('beta').innerHTML = this.beta.toString();
+    document.getElementById('gamma').innerHTML = this.gamma.toString();
+    document.getElementById('absolute').innerHTML = this.absolute.toString();
   }
 }
 
