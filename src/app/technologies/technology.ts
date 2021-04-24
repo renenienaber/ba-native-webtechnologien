@@ -1,9 +1,10 @@
-import {PUSH_API} from './push/push.component';
 import {VIBRATION_API} from './vibration/vibration.component';
 import {WEB_APP_MANIFEST} from './web-app-manifest/web-app-manifest.component';
 import {GEOLOCATION_API} from './geolocation/geolocation.component';
 import {NOTIFICATION_API} from './notification/notification.component';
 import {SERVICE_WORKER} from './service-worker/service-worker.component';
+import {DEVICE_ORIENTATION_API} from './device-orientation/device-orientation.component';
+import {ORIENTATION_SENSOR_API} from './orientation-sensor/orientation-sensor.component';
 
 export interface Technology {
   name: string;
@@ -24,10 +25,11 @@ export interface FeatureDetection {
 }
 
 export const TECHNOLOGIES: Technology[] = [
+  WEB_APP_MANIFEST,
+  SERVICE_WORKER,
+  NOTIFICATION_API,
   VIBRATION_API,
   GEOLOCATION_API,
-  NOTIFICATION_API,
-  PUSH_API,
-  WEB_APP_MANIFEST,
-  SERVICE_WORKER
+  DEVICE_ORIENTATION_API,
+  ORIENTATION_SENSOR_API
 ];

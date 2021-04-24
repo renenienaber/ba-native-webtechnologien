@@ -23,9 +23,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GeolocationComponent } from './technologies/geolocation/geolocation.component';
 import { NotificationComponent } from './technologies/notification/notification.component';
-import { PushComponent } from './technologies/push/push.component';
 import { WebAppManifestComponent } from './technologies/web-app-manifest/web-app-manifest.component';
 import { ServiceWorkerComponent } from './technologies/service-worker/service-worker.component';
+import { DeviceOrientationComponent } from './technologies/device-orientation/device-orientation.component';
+import { OrientationSensorComponent } from './technologies/orientation-sensor/orientation-sensor.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +37,10 @@ import { ServiceWorkerComponent } from './technologies/service-worker/service-wo
     DemoFrameComponent,
     GeolocationComponent,
     NotificationComponent,
-    PushComponent,
     WebAppManifestComponent,
     ServiceWorkerComponent,
+    DeviceOrientationComponent,
+    OrientationSensorComponent,
   ],
   imports: [
     BrowserModule,

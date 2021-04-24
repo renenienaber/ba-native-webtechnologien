@@ -4,9 +4,10 @@ import {AboutComponent} from './about/about.component';
 import {VibrationComponent} from './technologies/vibration/vibration.component';
 import {GeolocationComponent} from './technologies/geolocation/geolocation.component';
 import {NotificationComponent} from './technologies/notification/notification.component';
-import {PushComponent} from './technologies/push/push.component';
 import {WebAppManifestComponent} from './technologies/web-app-manifest/web-app-manifest.component';
 import {ServiceWorkerComponent} from './technologies/service-worker/service-worker.component';
+import {DeviceOrientationComponent} from './technologies/device-orientation/device-orientation.component';
+import {OrientationSensorComponent} from './technologies/orientation-sensor/orientation-sensor.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,14 @@ const routes: Routes = [
   {
     path: 'technology',
     children: [
+      {
+        path: 'web-app-manifest',
+        component: WebAppManifestComponent
+      },
+      {
+        path: 'service-worker',
+        component: ServiceWorkerComponent
+      },
       {
         path: 'vibration-api',
         component: VibrationComponent
@@ -30,16 +39,12 @@ const routes: Routes = [
         component: NotificationComponent
       },
       {
-        path: 'push-api',
-        component: PushComponent
+        path: 'device-orientation-api',
+        component: DeviceOrientationComponent
       },
       {
-        path: 'web-app-manifest',
-        component: WebAppManifestComponent
-      },
-      {
-        path: 'service-worker',
-        component: ServiceWorkerComponent
+        path: 'orientation-sensor-api',
+        component: OrientationSensorComponent
       },
       // fallback component - needs to be last one
       {

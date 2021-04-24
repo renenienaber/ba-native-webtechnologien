@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PushComponent } from './push.component';
+import { OrientationSensorComponent } from './orientation-sensor.component';
 
-describe('PushComponent', () => {
-  let component: PushComponent;
-  let fixture: ComponentFixture<PushComponent>;
+describe('OrientationSensorComponent', () => {
+  let component: OrientationSensorComponent;
+  let fixture: ComponentFixture<OrientationSensorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PushComponent ]
+      declarations: [ OrientationSensorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PushComponent);
+    fixture = TestBed.createComponent(OrientationSensorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

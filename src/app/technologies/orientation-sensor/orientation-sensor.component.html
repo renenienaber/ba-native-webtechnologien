@@ -1,0 +1,9 @@
+<app-demo-frame
+  [technology]="technology"
+  shortVersion="shortVersion"
+  [featureDetections]="featureDetections"
+>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-demo-frame>
+
+<ng-template #demo></ng-template>
