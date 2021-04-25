@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FeatureDetection, Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
@@ -7,7 +7,7 @@ import {TechnologyComponent} from '../technology.component';
   templateUrl: './device-orientation.component.html',
   styleUrls: ['./device-orientation.component.css']
 })
-export class DeviceOrientationComponent extends TechnologyComponent {
+export class DeviceOrientationComponent extends TechnologyComponent implements OnInit, OnDestroy {
   technology: Technology = DEVICE_ORIENTATION_API;
   featureDetections: FeatureDetection[] = [
     {
@@ -18,13 +18,7 @@ export class DeviceOrientationComponent extends TechnologyComponent {
 
   private errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
-  alpha: number;
-  beta: number;
-  gamma: number;
-  absolute: boolean;
-
-  constructor() {
-    super();
+  ngOnInit() {
     if ('DeviceOrientationEvent' in window) {
       window.addEventListener('deviceorientation', this.deviceOrientationEventHandler, false);
     } else {
@@ -32,21 +26,22 @@ export class DeviceOrientationComponent extends TechnologyComponent {
     }
   }
 
+  ngOnDestroy() {
+    window.removeEventListener('deviceorientation', this.deviceOrientationEventHandler, false);
+  }
+
   deviceOrientationEventHandler(eventData: any): void {
-    this.alpha = Math.round(eventData.alpha);
-    this.beta = Math.round(eventData.beta);
-    this.gamma = Math.round(eventData.gamma);
-    this.absolute = eventData.absolute;
+    const alpha = Math.round(eventData.alpha);
+    const beta = Math.round(eventData.beta);
+    const gamma = Math.round(eventData.gamma);
+    const absolute = eventData.absolute;
 
-    document.getElementById('alpha').innerHTML = this.alpha.toString();
-    document.getElementById('beta').innerHTML = this.beta.toString();
-    document.getElementById('gamma').innerHTML = this.gamma.toString();
-    document.getElementById('absolute').innerHTML = this.absolute.toString();
+    document.getElementById('alpha').innerHTML = alpha.toString();
+    document.getElementById('beta').innerHTML = beta.toString();
+    document.getElementById('gamma').innerHTML = gamma.toString();
+    document.getElementById('absolute').innerHTML = absolute.toString();
 
-    document.getElementById('cube').style.transform =
-      'rotateX(' + this.beta + 'deg) ' +
-      'rotateY(' + this.gamma + 'deg) ' +
-      'rotateZ(' + this.alpha + 'deg)';
+    document.getElementById('cube').style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(${alpha}deg)`;
   }
 }
 
@@ -56,7 +51,6 @@ export const DEVICE_ORIENTATION_API: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-event/' },
     { name: 'CanIUse', link: 'https://caniuse.com/deviceorientation' },
-    { name: 'Mozilla Developer Network', link: '' },
   ],
   icon: 'screen_rotation',
   routerLink: 'device-orientation-api'
