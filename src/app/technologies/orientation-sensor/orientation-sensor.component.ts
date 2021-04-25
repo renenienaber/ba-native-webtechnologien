@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FeatureDetection, Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
@@ -23,7 +23,22 @@ export class OrientationSensorComponent extends TechnologyComponent {
   private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
   private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
 
+  // @ts-ignore
+  sensor: any;
+  mat4: Float32Array;
 
+  constructor() {
+    super();
+    // @ts-ignore
+    this.sensor = new AbsoluteOrientationSensor({ frequency: 60 });
+    this.mat4 = new Float32Array(16);
+    this.sensor.start();
+    this.sensor.onerror = event => alert(`${event.error.name}: ${event.error.message}`);
+    this.sensor.onreading = () => {
+      this.sensor.populateMatrix(this.mat4);
+      alert(this.mat4);
+    };
+  }
 }
 
 export const ORIENTATION_SENSOR_API: Technology = {
