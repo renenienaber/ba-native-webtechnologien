@@ -7,21 +7,24 @@
 </app-demo-frame>
 
 <ng-template #demo>
-  <span class="mat-subheading-2">AbsoluteOrientationSensor:</span>
   <mat-tab-group>
-    <mat-tab label="Web API">
-      <ng-container *ngTemplateOutlet="webapi"></ng-container>
+    <mat-tab label="Absolute">
+      <span *ngIf="!featureDetections[0]?.detection; else absoluteCoordinates">
+        {{errorNoAbsoluteOrientationSensor}}
+      </span>
     </mat-tab>
-    <mat-tab label="Polyfill">
-      <ng-container *ngTemplateOutlet="polyfill"></ng-container>
+    <mat-tab label="Relative">
+      <span *ngIf="!featureDetections[1]?.detection; else relativeCoordinates">
+        {{errorNoRelativeOrientationSensor}}
+      </span>
     </mat-tab>
   </mat-tab-group>
 </ng-template>
 
-<ng-template #webapi>
-  <div id="matrix">{{errorNoSensorAvailable}}</div>
+<ng-template #absoluteCoordinates>
+  <span id="absoluteCoordinates">{{errorNoSensorAvailable}}</span>
 </ng-template>
 
-<ng-template #polyfill>
-  polyfill
+<ng-template #relativeCoordinates>
+  <span id="relativeCoordinates">{{errorNoSensorAvailable}}</span>
 </ng-template>

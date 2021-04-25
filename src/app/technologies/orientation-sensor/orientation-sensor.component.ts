@@ -7,7 +7,7 @@ import {TechnologyComponent} from '../technology.component';
   templateUrl: './orientation-sensor.component.html',
   styleUrls: ['./orientation-sensor.component.css']
 })
-export class OrientationSensorComponent extends TechnologyComponent implements OnInit, OnDestroy {
+export class OrientationSensorComponent extends TechnologyComponent implements OnInit {
   technology: Technology = ORIENTATION_SENSOR_API;
   featureDetections: FeatureDetection[] = [
     {
@@ -20,48 +20,44 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     }
   ];
 
-  private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
-  private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
+  errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
+  errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
   errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
 
   // @ts-ignore
   sensor: any;
   mat4: Float32Array;
 
-  ngOnInit() {
+  ngOnInit(): void {
     if ('AbsoluteOrientationSensor' in window) {
-      // @ts-ignore
-      this.sensor = new AbsoluteOrientationSensor({ frequency: 60 });
-      this.mat4 = new Float32Array(16);
-      this.sensor.start();
-      this.sensor.onerror = event => {
-        console.log(`${event.error.message}`);
-        this.sensor.stop();
-      };
-      this.sensor.onreading = () => {
-        this.sensor.populateMatrix(this.mat4);
-        document.getElementById('matrix').innerHTML = this.mat4.map(val => Math.round(val * 100) / 100).toString();
-      };
-    } else {
-      this.showError(this.errorNoAbsoluteOrientationSensor);
+      this.initAbsolute();
+    }
+    if ('RelativeOrientationSensor' in window) {
+      this.initRelative();
     }
   }
 
-  ngOnDestroy() {
-    //
+  private initAbsolute(): void {
+    // @ts-ignore
+    this.sensor = new AbsoluteOrientationSensor();
+    this.useSensor('absolute');
   }
 
-  draw(timestamp: any): void {
-    window.requestAnimationFrame(this.draw);
-    try {
+  private initRelative(): void {
+    // @ts-ignore
+    this.sensor = new RelativeOrientationSensor();
+    this.useSensor('relative');
+  }
+
+  private useSensor(htmlElement: 'absolute' | 'relative'): void {
+    this.mat4 = new Float32Array(16);
+    this.sensor.onreading = () => {
       this.sensor.populateMatrix(this.mat4);
-    } catch (e) {
-      // mat4 has not been updated.
-    }
-    // Drawing...
-    document.getElementById('matrix').innerHTML = this.mat4.toString();
+      document.getElementById(`${htmlElement}Coordinates`).innerHTML =
+        this.mat4.map(val => Math.round(val * 100) / 100).toString();
+    };
+    this.sensor.start();
   }
-
 }
 
 export const ORIENTATION_SENSOR_API: Technology = {
