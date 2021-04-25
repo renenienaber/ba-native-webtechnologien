@@ -29,6 +29,13 @@ export class NotificationComponent extends TechnologyComponent {
   notificationBody = 'Dies ist eine neue Nachricht.';
   notificationIcon = '/assets/icons/icon-128x128.png';
 
+  constructor() {
+    super();
+    if ('Notification' in window) {
+      this.permissionStatus = Notification.permission;
+    }
+  }
+
   requestPermission(): void {
     if ('Notification' in window) {
       Notification.requestPermission().then(result => this.permissionStatus = result);
@@ -36,6 +43,7 @@ export class NotificationComponent extends TechnologyComponent {
       this.showError(this.errorNoWindowNotification);
     }
   }
+
   createNewNotification(): void {
     if ('Notification' in window) {
       const notification = new Notification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon});
@@ -43,12 +51,12 @@ export class NotificationComponent extends TechnologyComponent {
       this.showError(this.errorNoWindowNotification);
     }
   }
+
   createNewServiceWorkerNotification(): void {
     if ('Notification' in window) {
-      if ('ServiceWorkerRegistration' in window){
-        navigator.serviceWorker.getRegistration().then(registration =>
-          registration.showNotification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon})
-        );
+      if ('ServiceWorkerRegistration' in window) {
+        navigator.serviceWorker.getRegistration().then((registration) =>
+          registration.showNotification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon}));
       } else {
         this.showError(this.errorNoServiceWorkerRegistration);
       }
