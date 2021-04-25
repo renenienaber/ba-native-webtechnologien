@@ -26,11 +26,13 @@ export class OrientationSensorComponent extends TechnologyComponent {
 
   private sensor: any;
   private mat4 = new Float32Array(16);
+  header: string;
 
   initAbsolute(): void {
     if ('AbsoluteOrientationSensor' in window) {
       // @ts-ignore
       this.sensor = new AbsoluteOrientationSensor({frequency: 60});
+      this.header = 'Absolute';
       this.useSensor();
     } else {
       this.showError(this.errorNoAbsoluteOrientationSensor);
@@ -39,7 +41,8 @@ export class OrientationSensorComponent extends TechnologyComponent {
   initRelative(): void {
     if ('RelativeOrientationSensor' in window) {
       // @ts-ignore
-      this.sensorRelative = new RelativeOrientationSensor({frequency: 60});
+      this.sensor = new RelativeOrientationSensor({frequency: 60});
+      this.header = 'Relative';
       this.useSensor();
     } else {
       this.showError(this.errorNoRelativeOrientationSensor);
