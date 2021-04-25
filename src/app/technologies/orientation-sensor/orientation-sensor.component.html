@@ -7,24 +7,7 @@
 </app-demo-frame>
 
 <ng-template #demo>
-  <mat-tab-group>
-    <mat-tab label="Absolute">
-      <span *ngIf="!featureDetections[0]?.detection; else absoluteCoordinates">
-        {{errorNoAbsoluteOrientationSensor}}
-      </span>
-    </mat-tab>
-    <mat-tab label="Relative">
-      <span *ngIf="!featureDetections[1]?.detection; else relativeCoordinates">
-        {{errorNoRelativeOrientationSensor}}
-      </span>
-    </mat-tab>
-  </mat-tab-group>
-</ng-template>
-
-<ng-template #absoluteCoordinates>
-  <span id="absoluteCoordinates">{{errorNoSensorAvailable}}</span>
-</ng-template>
-
-<ng-template #relativeCoordinates>
-  <span id="relativeCoordinates">{{errorNoSensorAvailable}}</span>
+  <button mat-raised-button (click)="initAbsolute()">Absolute</button>
+  <button mat-raised-button (click)="initRelative()">Relative</button>
+  <div id="response"></div>
 </ng-template>

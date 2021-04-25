@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FeatureDetection, Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
@@ -7,7 +7,7 @@ import {TechnologyComponent} from '../technology.component';
   templateUrl: './orientation-sensor.component.html',
   styleUrls: ['./orientation-sensor.component.css']
 })
-export class OrientationSensorComponent extends TechnologyComponent implements OnInit {
+export class OrientationSensorComponent extends TechnologyComponent {
   technology: Technology = ORIENTATION_SENSOR_API;
   featureDetections: FeatureDetection[] = [
     {
@@ -20,44 +20,43 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     }
   ];
 
-  errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
-  errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
-  errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
+  private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
+  private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
+  private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
 
-  sensorAbsolute: any;
-  sensorRelative: any;
-  mat4Absolute = new Float32Array(16);
-  mat4Relative = new Float32Array(16);
+  private sensor: any;
+  private mat4 = new Float32Array(16);
 
-  ngOnInit(): void {
+  initAbsolute(): void {
     if ('AbsoluteOrientationSensor' in window) {
-      this.initAbsolute();
+      // @ts-ignore
+      this.sensor = new AbsoluteOrientationSensor({frequency: 60});
+      this.useSensor();
+    } else {
+      this.showError(this.errorNoAbsoluteOrientationSensor);
     }
+  }
+  initRelative(): void {
     if ('RelativeOrientationSensor' in window) {
-      this.initRelative();
+      // @ts-ignore
+      this.sensorRelative = new RelativeOrientationSensor({frequency: 60});
+      this.useSensor();
+    } else {
+      this.showError(this.errorNoRelativeOrientationSensor);
     }
   }
 
-  private initAbsolute(): void {
-    // @ts-ignore
-    this.sensorAbsolute = new AbsoluteOrientationSensor({frequency: 60});
-    this.sensorAbsolute.onreading = () => {
-      this.sensorAbsolute.populateMatrix(this.mat4Absolute);
-      document.getElementById('absoluteCoordinates').innerHTML =
-      this.mat4Absolute.map(val => (Math.round(val * 100) / 100)).toString();
+  private useSensor(): void {
+    this.sensor.onreading = () => {
+      this.sensor.populateMatrix(this.mat4);
+      document.getElementById('response').innerHTML =
+        this.mat4.map(val => (Math.round(val * 100) / 100)).toString();
     };
-    this.sensorAbsolute.start();
-  }
-
-  private initRelative(): void {
-    // @ts-ignore
-    this.sensorRelative = new RelativeOrientationSensor({frequency: 60});
-    this.sensorRelative.onreading = () => {
-      this.sensorRelative.quaternion(this.mat4Relative);
-      document.getElementById('relativeCoordinates').innerHTML =
-        this.mat4Relative.map(val => (Math.round(val * 100) / 100)).toString();
+    this.sensor.onerror = (sensorErrorEvent) => {
+      document.getElementById('response').innerHTML =
+        sensorErrorEvent.error.name === 'NotReadableError' ? this.errorNoSensorAvailable : sensorErrorEvent.error.message;
     };
-    this.sensorRelative.start();
+    this.sensor.start();
   }
 }
 
