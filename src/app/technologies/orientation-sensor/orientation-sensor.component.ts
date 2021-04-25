@@ -44,7 +44,7 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     this.sensorAbsolute.onreading = () => {
       this.sensorAbsolute.populateMatrix(this.mat4Absolute);
       document.getElementById('absoluteCoordinates').innerHTML =
-      this.mat4Absolute.map(val => Math.round(val * 100) / 10).toString();
+      this.mat4Absolute.map(val => (Math.round(val * 100) / 100)).toString();
     };
     this.sensorAbsolute.start();
   }
@@ -55,7 +55,7 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     this.sensorRelative.onreading = () => {
       this.sensorRelative.quaternion(this.mat4Relative);
       document.getElementById('relativeCoordinates').innerHTML =
-        this.mat4Relative.toString();
+        this.mat4Relative.map(val => (Math.round(val * 100) / 100)).toString();
     };
     this.sensorRelative.start();
   }
