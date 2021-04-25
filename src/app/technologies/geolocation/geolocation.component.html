@@ -10,9 +10,25 @@
   <button
     type="button"
     mat-raised-button
-    (click)="getCurrentPos()"
+    (click)="getCurrentPosition()"
   >
     getCurrentPosition
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="watchPosition()"
+    [disabled]="!!watchId"
+  >
+    watchPosition
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="clearWatch()"
+    [disabled]="!watchId"
+  >
+    clearWatch
   </button>
   <div *ngIf="currentPos">
     <p>{{currentPos.timestamp | date: 'medium'}}</p>
