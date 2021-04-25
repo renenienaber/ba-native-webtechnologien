@@ -26,8 +26,8 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
 
   sensorAbsolute: any;
   sensorRelative: any;
-  mat4Absolute: any;
-  mat4Relative: any;
+  mat4Absolute = new Float32Array(16);
+  mat4Relative = new Float32Array(16);
 
   ngOnInit(): void {
     if ('AbsoluteOrientationSensor' in window) {
@@ -42,9 +42,9 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     // @ts-ignore
     this.sensorAbsolute = new AbsoluteOrientationSensor({frequency: 60});
     this.sensorAbsolute.onreading = () => {
-      this.sensorAbsolute.quaternion(this.mat4Absolute);
+      this.sensorAbsolute.populateMatrix(this.mat4Absolute);
       document.getElementById('absoluteCoordinates').innerHTML =
-        this.mat4Absolute.toString();
+      this.mat4Absolute.map(val => Math.round(val * 100) / 10).toString();
     };
     this.sensorAbsolute.start();
   }
@@ -53,9 +53,8 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     // @ts-ignore
     this.sensorRelative = new RelativeOrientationSensor({frequency: 60});
     this.sensorRelative.onreading = () => {
-      this.sensorRelative.populateMatrix(this.mat4Relative);
+      this.sensorRelative.quaternion(this.mat4Relative);
       document.getElementById('relativeCoordinates').innerHTML =
-        // this.mat4.map(val => Math.round(val * 100) / 100).toString();
         this.mat4Relative.toString();
     };
     this.sensorRelative.start();
