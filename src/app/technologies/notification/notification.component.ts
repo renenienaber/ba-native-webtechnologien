@@ -56,7 +56,9 @@ export class NotificationComponent extends TechnologyComponent {
     if ('Notification' in window) {
       if ('ServiceWorkerRegistration' in window) {
         navigator.serviceWorker.getRegistration().then((registration) =>
-          registration.showNotification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon}));
+          registration.showNotification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon})
+            .catch((err) => this.showError(err))
+        );
       } else {
         this.showError(this.errorNoServiceWorkerRegistration);
       }
