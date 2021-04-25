@@ -40,7 +40,7 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
       };
       this.sensor.onreading = () => {
         this.sensor.populateMatrix(this.mat4);
-        document.getElementById('matrix').innerHTML = this.mat4.toString();
+        document.getElementById('matrix').innerHTML = this.mat4.map(Math.round).toString();
       };
     } else {
       this.showError(this.errorNoAbsoluteOrientationSensor);
