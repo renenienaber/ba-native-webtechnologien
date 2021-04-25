@@ -7,22 +7,28 @@
 </app-demo-frame>
 
 <ng-template #demo>
-  <mat-form-field>
-    <mat-label>Duration</mat-label>
-    <input matInput type="number" min="0" [(ngModel)]="duration">
-  </mat-form-field>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="vibrate()"
-  >
-    Vibrate
-  </button>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="vibratePattern()"
-  >
-    Vibrate 3 times
-  </button>
+  <div>
+    <mat-form-field>
+      <mat-label>Vibrationsdauer</mat-label>
+      <input matInput type="number" min="0" [(ngModel)]="duration">
+    </mat-form-field>
+    <button
+      type="button"
+      mat-mini-fab
+      color="primary"
+      (click)="vibrate()"
+    >
+      <mat-icon>vibration</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <button
+      type="button"
+      mat-raised-button
+      (click)="vibratePattern()"
+    >
+      Vibriere 3 mal
+    </button>
+  </div>
 </ng-template>

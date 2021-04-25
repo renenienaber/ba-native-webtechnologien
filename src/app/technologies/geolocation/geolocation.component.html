@@ -20,12 +20,32 @@
       <a href="https://www.google.com/maps/@?api=1&map_action=map&center={{currentPos.coords.latitude}},{{currentPos.coords.longitude}}" target="_blank">
         Längengrad: {{currentPos.coords.longitude}}, Breitengrad: {{currentPos.coords.latitude}}
       </a>
-      <p>Höhenlage: {{currentPos.coords.altitude}}</p>
-      <p></p>
-      <p>Genauigkeit Breiten- & Längengrad (in m): {{currentPos.coords.accuracy}}</p>
-      <p>Genauigkeit Höhenlage (in m): {{currentPos.coords.altitudeAccuracy}}</p>
-      <p>Richtung: {{currentPos.coords.heading}}</p>
-      <p>Geschwindigkeit (in m/s): {{currentPos.coords.speed}}</p>
+      <table>
+        <tr>
+          <th>Attribut</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td>Höhenlage</td>
+          <td>{{currentPos.coords.altitude}}</td>
+        </tr>
+        <tr>
+          <td>Genauigkeit Breiten- & Längengrad (in m)</td>
+          <td>{{currentPos.coords.accuracy}}</td>
+        </tr>
+        <tr>
+          <td>Genauigkeit Höhenlage (in m)</td>
+          <td>{{currentPos.coords.altitudeAccuracy}}</td>
+        </tr>
+        <tr>
+          <td>Richtung</td>
+          <td>{{currentPos.coords.heading}}</td>
+        </tr>
+        <tr>
+          <td>Geschwindigkeit (in m/s)</td>
+          <td>{{currentPos.coords.speed}}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </ng-template>

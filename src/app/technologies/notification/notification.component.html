@@ -7,36 +7,36 @@
 </app-demo-frame>
 
 <ng-template #demo>
-  <span>Permission Status: {{ permissionStatus }}</span>
-  <div>
-    <button
-      mat-raised-button
-      (click)="requestPermission()"
-    >
-      Request Permission
+  <div class="permission">
+    <span>Erlaubnis Status: {{ permissionStatus }}</span>
+    <button mat-raised-button (click)="requestPermission()">
+      Erlaubnis anfordern
     </button>
   </div>
-  <div>
-    <mat-form-field>
+
+  <div class="notificationValues">
+    <mat-form-field appearance="fill">
       <mat-label>Titel</mat-label>
       <input matInput type="text" [(ngModel)]="notificationTitle">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="fill">
       <mat-label>Nachricht</mat-label>
       <textarea matInput [(ngModel)]="notificationBody"></textarea>
     </mat-form-field>
   </div>
 
-  <button
-    mat-raised-button
-    (click)="createNewNotification()"
-  >
-    window.Notification
-  </button>
-  <button
-    mat-raised-button
-    (click)="createNewNotification()"
-  >
-    window.ServiceWorkerRegistration
-  </button>
+  <div>
+    <button
+      mat-raised-button
+      (click)="createNewNotification()"
+    >
+      window.Notification
+    </button>
+    <button
+      mat-raised-button
+      (click)="createNewServiceWorkerNotification()"
+    >
+      window.ServiceWorkerRegistration
+    </button>
+  </div>
 </ng-template>
