@@ -7,13 +7,21 @@
 </app-demo-frame>
 
 <ng-template #demo>
+  <span class="mat-subheading-2">AbsoluteOrientationSensor:</span>
+  <mat-tab-group>
+    <mat-tab label="Web API">
+      <ng-container *ngTemplateOutlet="webapi"></ng-container>
+    </mat-tab>
+    <mat-tab label="Polyfill">
+      <ng-container *ngTemplateOutlet="polyfill"></ng-container>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>
+
+<ng-template #webapi>
   <div id="matrix"></div>
-  <div id="cube" class="cube">
-    <div class="face one">1</div>
-    <div class="face two">2</div>
-    <div class="face three">3</div>
-    <div class="face four">4</div>
-    <div class="face five">5</div>
-    <div class="face six">6</div>
-  </div>
+</ng-template>
+
+<ng-template #polyfill>
+  polyfill
 </ng-template>

@@ -27,6 +27,7 @@ import { WebAppManifestComponent } from './technologies/web-app-manifest/web-app
 import { ServiceWorkerComponent } from './technologies/service-worker/service-worker.component';
 import { DeviceOrientationComponent } from './technologies/device-orientation/device-orientation.component';
 import { OrientationSensorComponent } from './technologies/orientation-sensor/orientation-sensor.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { OrientationSensorComponent } from './technologies/orientation-sensor/or
     MatInputModule,
     FormsModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
