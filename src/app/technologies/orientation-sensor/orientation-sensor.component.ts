@@ -42,9 +42,8 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     // @ts-ignore
     this.sensorAbsolute = new AbsoluteOrientationSensor({frequency: 60});
     this.sensorAbsolute.onreading = () => {
-      this.sensorAbsolute.populateMatrix(this.mat4Absolute);
+      this.sensorAbsolute.quaternion(this.mat4Absolute);
       document.getElementById('absoluteCoordinates').innerHTML =
-        // this.mat4.map(val => Math.round(val * 100) / 100).toString();
         this.mat4Absolute.toString();
     };
     this.sensorAbsolute.start();
