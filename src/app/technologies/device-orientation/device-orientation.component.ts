@@ -16,13 +16,11 @@ export class DeviceOrientationComponent extends TechnologyComponent implements O
     }
   ];
 
-  private errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
+  errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
   ngOnInit() {
     if ('DeviceOrientationEvent' in window) {
       window.addEventListener('deviceorientation', this.deviceOrientationEventHandler, false);
-    } else {
-      this.showError(this.errorNoDeviceOrientationEvent);
     }
   }
 

@@ -7,36 +7,42 @@
 </app-demo-frame>
 
 <ng-template #demo>
-  <div>
-    <table>
-      <tr>
-        <th>Attribut</th>
-        <th>Wert</th>
-      </tr>
-      <tr>
-        <td>Alpha (Richtung)</td>
-        <td id="alpha">?</td>
-      </tr>
-      <tr>
-        <td>Beta (Vorne/Hinten)</td>
-        <td id="beta">?</td>
-      </tr>
-      <tr>
-        <td>Gamma (Links/Rechts)</td>
-        <td id="gamma">?</td>
-      </tr>
-      <tr>
-        <td>Absolut</td>
-        <td id="absolute">?</td>
-      </tr>
-    </table>
-  </div>
-  <div id="cube" class="cube">
-    <div class="face one">1</div>
-    <div class="face two">2</div>
-    <div class="face three">3</div>
-    <div class="face four">4</div>
-    <div class="face five">5</div>
-    <div class="face six">6</div>
-  </div>
+  <ng-container *ngIf="featureDetections[0]?.detection else noSupport">
+    <div>
+      <table>
+        <tr>
+          <th>Attribut</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td>Alpha (Richtung)</td>
+          <td id="alpha">?</td>
+        </tr>
+        <tr>
+          <td>Beta (Vorne/Hinten)</td>
+          <td id="beta">?</td>
+        </tr>
+        <tr>
+          <td>Gamma (Links/Rechts)</td>
+          <td id="gamma">?</td>
+        </tr>
+        <tr>
+          <td>Absolut</td>
+          <td id="absolute">?</td>
+        </tr>
+      </table>
+    </div>
+    <div id="cube" class="cube">
+      <div class="face one">1</div>
+      <div class="face two">2</div>
+      <div class="face three">3</div>
+      <div class="face four">4</div>
+      <div class="face five">5</div>
+      <div class="face six">6</div>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #noSupport>
+  <span>{{errorNoDeviceOrientationEvent}}</span>
 </ng-template>
