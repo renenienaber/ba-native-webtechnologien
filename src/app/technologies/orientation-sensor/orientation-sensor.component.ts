@@ -22,7 +22,7 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
 
   private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
   private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
-  private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.'
+  private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
 
   // @ts-ignore
   sensor: any;
@@ -40,7 +40,7 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
       };
       this.sensor.onreading = () => {
         this.sensor.populateMatrix(this.mat4);
-        document.getElementById('matrix').innerHTML = this.mat4.map(Math.round).toString();
+        document.getElementById('matrix').innerHTML = this.mat4.map(val => Math.round(val * 100) / 100).toString();
       };
     } else {
       this.showError(this.errorNoAbsoluteOrientationSensor);
