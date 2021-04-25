@@ -28,17 +28,22 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
   mat4: Float32Array;
 
   ngOnInit() {
-    // @ts-ignore
-    this.sensor = new AbsoluteOrientationSensor({ frequency: 60 });
-    this.mat4 = new Float32Array(16);
-    this.sensor.start();
-    this.sensor.onerror = event => {
-      console.log(`${event.error.message}`);
-      this.sensor.stop();
-    };
-    this.sensor.onreading = () => {
-      this.sensor.populateMatrix(this.mat4);
-    };
+    if ('AbsoluteOrientationSensor' in window) {
+      // @ts-ignore
+      this.sensor = new AbsoluteOrientationSensor({ frequency: 60 });
+      this.mat4 = new Float32Array(16);
+      this.sensor.start();
+      this.sensor.onerror = event => {
+        console.log(`${event.error.message}`);
+        this.sensor.stop();
+      };
+      this.sensor.onreading = () => {
+        // this.sensor.populateMatrix(this.mat4);
+        window.requestAnimationFrame(this.draw);
+      };
+    } else {
+      this.showError(this.errorNoAbsoluteOrientationSensor);
+    }
   }
 
   ngOnDestroy() {
@@ -54,6 +59,7 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
     }
     // Drawing...
     document.getElementById('matrix').innerHTML = this.mat4.toString();
+    console.log("TRIGGERED");
     // document.getElementById('cube').style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(${alpha}deg)`;
   }
 
