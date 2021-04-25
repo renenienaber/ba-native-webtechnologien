@@ -24,9 +24,10 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
   errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
   errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
 
-  // @ts-ignore
-  sensor: any;
-  mat4: Float32Array;
+  sensorAbsolute: any;
+  sensorRelative: any;
+  mat4Absolute: any;
+  mat4Relative: any;
 
   ngOnInit(): void {
     if ('AbsoluteOrientationSensor' in window) {
@@ -39,24 +40,26 @@ export class OrientationSensorComponent extends TechnologyComponent implements O
 
   private initAbsolute(): void {
     // @ts-ignore
-    this.sensor = new AbsoluteOrientationSensor();
-    this.useSensor('absolute');
+    this.sensorAbsolute = new AbsoluteOrientationSensor({frequency: 60});
+    this.sensorAbsolute.onreading = () => {
+      this.sensorAbsolute.populateMatrix(this.mat4Absolute);
+      document.getElementById('absoluteCoordinates').innerHTML =
+        // this.mat4.map(val => Math.round(val * 100) / 100).toString();
+        this.mat4Absolute.toString();
+    };
+    this.sensorAbsolute.start();
   }
 
   private initRelative(): void {
     // @ts-ignore
-    this.sensor = new RelativeOrientationSensor();
-    this.useSensor('relative');
-  }
-
-  private useSensor(htmlElement: 'absolute' | 'relative'): void {
-    this.mat4 = new Float32Array(16);
-    this.sensor.onreading = () => {
-      this.sensor.populateMatrix(this.mat4);
-      document.getElementById(`${htmlElement}Coordinates`).innerHTML =
-        this.mat4.map(val => Math.round(val * 100) / 100).toString();
+    this.sensorRelative = new RelativeOrientationSensor({frequency: 60});
+    this.sensorRelative.onreading = () => {
+      this.sensorRelative.populateMatrix(this.mat4Relative);
+      document.getElementById('relativeCoordinates').innerHTML =
+        // this.mat4.map(val => Math.round(val * 100) / 100).toString();
+        this.mat4Relative.toString();
     };
-    this.sensor.start();
+    this.sensorRelative.start();
   }
 }
 
