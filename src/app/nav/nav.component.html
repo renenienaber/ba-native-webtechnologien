@@ -3,10 +3,10 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Menü</mat-toolbar>
     <mat-nav-list>
       <mat-divider></mat-divider>
-      <a mat-list-item routerLink="about" routerLinkActive="active">About</a>
+      <a mat-list-item routerLink="about" routerLinkActive="active">Informationen</a>
       <mat-divider></mat-divider>
       <ng-container *ngFor="let technology of TECHNOLOGIES">
         <a mat-list-item routerLink="technology/{{technology.routerLink}}" routerLinkActive="active">
