@@ -1,11 +1,23 @@
 {
-  "name": "demo-app",
-  "short_name": "demo-app",
-  "theme_color": "#1976d2",
+  "name": "Demonstrationsanwendung",
+  "short_name": "Demo App",
+  "theme_color": "#673ab7",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "shortcuts": [
+    {
+      "name": "Zu den Informationen",
+      "short_name": "Informationen",
+      "url": "/about"
+    },
+    {
+      "name": "Zur Vibration API",
+      "short_name": "Vibration API",
+      "url": "/technology/vibration-api"
+    }
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
