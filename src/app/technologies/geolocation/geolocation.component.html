@@ -43,23 +43,23 @@
         </tr>
         <tr>
           <td>Höhenlage</td>
-          <td>{{currentPos.coords.altitude}}</td>
+          <td>{{currentPos.coords.altitude | number: '1.0-3'}}</td>
         </tr>
         <tr>
           <td>Genauigkeit Breiten- & Längengrad (in m)</td>
-          <td>{{currentPos.coords.accuracy}}</td>
+          <td>{{currentPos.coords.accuracy | number: '1.0-3'}}</td>
         </tr>
         <tr>
           <td>Genauigkeit Höhenlage (in m)</td>
-          <td>{{currentPos.coords.altitudeAccuracy}}</td>
+          <td>{{currentPos.coords.altitudeAccuracy | number: '1.0-3'}}</td>
         </tr>
         <tr>
           <td>Richtung</td>
-          <td>{{currentPos.coords.heading}}</td>
+          <td>{{currentPos.coords.heading | number: '1.0-3'}}</td>
         </tr>
         <tr>
           <td>Geschwindigkeit (in m/s)</td>
-          <td>{{currentPos.coords.speed}}</td>
+          <td>{{currentPos.coords.speed | number: '1.0-3'}}</td>
         </tr>
       </table>
     </div>
