@@ -6,7 +6,9 @@
     <mat-toolbar>Menü</mat-toolbar>
     <mat-nav-list>
       <mat-divider></mat-divider>
-      <a mat-list-item routerLink="about" routerLinkActive="active">Informationen</a>
+      <a mat-list-item routerLink="about" routerLinkActive="active">
+        <mat-icon>help</mat-icon>Informationen
+      </a>
       <mat-divider></mat-divider>
       <ng-container *ngFor="let technology of TECHNOLOGIES">
         <a mat-list-item routerLink="technology/{{technology.routerLink}}" routerLinkActive="active">
