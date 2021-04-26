@@ -27,7 +27,7 @@ export class NotificationComponent extends TechnologyComponent {
   permissionStatus: string;
   notificationTitle = 'Hallo';
   notificationBody = 'Dies ist eine neue Nachricht.';
-  notificationIcon = '/assets/icons/icon-128x128.png';
+  notificationIcon = './assets/icons/icon-128x128.png';
 
   constructor() {
     super();
