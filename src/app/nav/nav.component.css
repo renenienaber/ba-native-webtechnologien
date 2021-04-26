@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 250px;
 }
 
 .sidenav .mat-toolbar {
@@ -20,7 +20,12 @@
   margin: 10px;
 }
 
+mat-icon {
+  margin-right: 5px;
+}
+
 .active {
   font-weight: bold;
   color: #673AB7;
 }
+
