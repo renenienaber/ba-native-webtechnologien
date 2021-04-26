@@ -10,12 +10,12 @@
     {
       "name": "Zu den Informationen",
       "short_name": "Informationen",
-      "url": "/about"
+      "url": "./about"
     },
     {
       "name": "Zur Vibration API",
       "short_name": "Vibration API",
-      "url": "/technology/vibration-api"
+      "url": "./technology/vibration-api"
     }
   ],
   "icons": [
