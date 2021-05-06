@@ -4,8 +4,7 @@ import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-orientation-sensor',
-  templateUrl: './orientation-sensor.component.html',
-  styleUrls: ['./orientation-sensor.component.css']
+  templateUrl: './orientation-sensor.component.html'
 })
 export class OrientationSensorComponent extends TechnologyComponent {
   technology: Technology = ORIENTATION_SENSOR_API;

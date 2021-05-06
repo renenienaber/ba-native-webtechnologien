@@ -4,8 +4,7 @@ import {FeatureDetection, Technology} from '../technology';
 
 @Component({
   selector: 'app-geolocation',
-  templateUrl: './geolocation.component.html',
-  styleUrls: ['./geolocation.component.css']
+  templateUrl: './geolocation.component.html'
 })
 export class GeolocationComponent extends TechnologyComponent {
   technology: Technology = GEOLOCATION_API;

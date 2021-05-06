@@ -4,8 +4,7 @@ import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-vibration',
-  templateUrl: './vibration.component.html',
-  styleUrls: ['./vibration.component.css']
+  templateUrl: './vibration.component.html'
 })
 export class VibrationComponent extends TechnologyComponent {
   // sets base attributes

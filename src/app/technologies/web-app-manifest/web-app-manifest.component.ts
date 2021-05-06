@@ -4,8 +4,7 @@ import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-web-app-manifest',
-  templateUrl: './web-app-manifest.component.html',
-  styleUrls: ['./web-app-manifest.component.css']
+  templateUrl: './web-app-manifest.component.html'
 })
 export class WebAppManifestComponent extends TechnologyComponent {
   technology: Technology = WEB_APP_MANIFEST;

@@ -4,8 +4,7 @@ import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-service-worker',
-  templateUrl: './service-worker.component.html',
-  styleUrls: ['./service-worker.component.css']
+  templateUrl: './service-worker.component.html'
 })
 export class ServiceWorkerComponent extends TechnologyComponent {
   technology: Technology = SERVICE_WORKER;
