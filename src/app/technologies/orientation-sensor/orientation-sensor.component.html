@@ -7,8 +7,23 @@
 </app-demo-frame>
 
 <ng-template #demo>
+  <mat-tab-group>
+    <mat-tab label="Web API">
+      <ng-container *ngTemplateOutlet="webapi"></ng-container>
+    </mat-tab>
+    <mat-tab label="Polyfill">
+      <ng-container *ngTemplateOutlet="polyfill"></ng-container>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>
+
+<ng-template #webapi>
   <button mat-raised-button (click)="initAbsolute()">Absolute</button>
   <button mat-raised-button (click)="initRelative()">Relative</button>
   <div><span class="mat-subheading-2">{{header}}</span></div>
   <div id="response"></div>
+</ng-template>
+
+<ng-template #polyfill>
+  <app-orientation-sensor-polyfill></app-orientation-sensor-polyfill>
 </ng-template>
