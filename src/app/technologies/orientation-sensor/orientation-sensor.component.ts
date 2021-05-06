@@ -70,6 +70,7 @@ export const ORIENTATION_SENSOR_API: Technology = {
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
     { name: 'CanIUse', link: 'https://caniuse.com/orientation-sensor' },
     { name: 'Mozilla Developer Network (Sensor APIs)', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs' },
+    { name: 'Polyfill', link: 'https://github.com/kenchris/sensor-polyfills' }
   ],
   icon: 'screen_rotation',
   routerLink: 'orientation-sensor-api'
