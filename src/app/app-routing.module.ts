@@ -8,7 +8,6 @@ import {WebAppManifestComponent} from './technologies/web-app-manifest/web-app-m
 import {ServiceWorkerComponent} from './technologies/service-worker/service-worker.component';
 import {DeviceOrientationComponent} from './technologies/device-orientation/device-orientation.component';
 import {OrientationSensorComponent} from './technologies/orientation-sensor/orientation-sensor.component';
-import {OrientationSensorPolyfillComponent} from './technologies/orientation-sensor-polyfill/orientation-sensor-polyfill.component';
 
 
 const routes: Routes = [
@@ -46,10 +45,6 @@ const routes: Routes = [
       {
         path: 'orientation-sensor-api',
         component: OrientationSensorComponent
-      },
-      {
-        path: 'orientation-sensor-polyfill',
-        component: OrientationSensorPolyfillComponent
       },
       // fallback component - needs to be last one
       {

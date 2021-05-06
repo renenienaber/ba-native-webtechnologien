@@ -5,7 +5,6 @@ import {NOTIFICATION_API} from './notification/notification.component';
 import {SERVICE_WORKER} from './service-worker/service-worker.component';
 import {DEVICE_ORIENTATION_API} from './device-orientation/device-orientation.component';
 import {ORIENTATION_SENSOR_API} from './orientation-sensor/orientation-sensor.component';
-import {ORIENTATION_SENSOR_POLYFILL} from './orientation-sensor-polyfill/orientation-sensor-polyfill.component';
 
 export interface Technology {
   name: string;
@@ -32,6 +31,5 @@ export const TECHNOLOGIES: Technology[] = [
   VIBRATION_API,
   GEOLOCATION_API,
   DEVICE_ORIENTATION_API,
-  ORIENTATION_SENSOR_API,
-  ORIENTATION_SENSOR_POLYFILL
+  ORIENTATION_SENSOR_API
 ];
