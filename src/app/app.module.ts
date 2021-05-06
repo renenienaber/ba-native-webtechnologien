@@ -28,6 +28,7 @@ import { ServiceWorkerComponent } from './technologies/service-worker/service-wo
 import { DeviceOrientationComponent } from './technologies/device-orientation/device-orientation.component';
 import { OrientationSensorComponent } from './technologies/orientation-sensor/orientation-sensor.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { OrientationSensorPolyfillComponent } from './technologies/orientation-sensor-polyfill/orientation-sensor-polyfill.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     ServiceWorkerComponent,
     DeviceOrientationComponent,
     OrientationSensorComponent,
+    OrientationSensorPolyfillComponent,
   ],
   imports: [
     BrowserModule,
