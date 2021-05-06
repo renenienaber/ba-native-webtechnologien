@@ -12,8 +12,6 @@ export class DemoFrameComponent {
   technology!: Technology;
   @Input()
   featureDetections!: FeatureDetection[];
-  @Input()
-  shortVersion!: boolean;
 
   constructor(private matSnackBar: MatSnackBar) {}
 
