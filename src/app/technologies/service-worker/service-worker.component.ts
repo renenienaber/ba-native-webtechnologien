@@ -8,7 +8,12 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class ServiceWorkerComponent extends TechnologyComponent {
   technology: Technology = SERVICE_WORKER;
-  featureDetections: FeatureDetection[] = [];
+  featureDetections: FeatureDetection[] = [
+    {
+      apiObject: 'navigator.serviceWorker',
+      detection: 'serviceWorker' in navigator
+    }
+  ];
 }
 
 export const SERVICE_WORKER: Technology = {
