@@ -1,27 +1,18 @@
-# DemoApp
+# Demonstrationsanwendung für native Webtechnologien
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Diese Anwendung ist im Rahmen der Bachelor-Projektarbeit "Methodik zur Evaluation der Fähigkeit von Web-Technologien zur plattformübergreifenden Erhöhung der Nativität" von René Sahin Nienaber in Kooperation mit der adesso SE an der Fachhochschule Dortmund entstanden.
 
-## Development server
+## Beschreibung
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In dieser Anwendung werden die folgenden Webtechnologien demonstrativ implementiert:
+* [Web App Manifest](https://www.w3.org/TR/appmanifest/)
+* [Service Worker](https://www.w3.org/TR/service-workers/)
+* [Notification API](https://notifications.spec.whatwg.org/)
+* [Vibration API](https://www.w3.org/TR/vibration/)
+* [Geolocation API](https://www.w3.org/TR/geolocation-API/)
+* [DeviceOrientation Event API](https://www.w3.org/TR/orientation-event/)
+* [Orientation Sensor API](https://www.w3.org/TR/orientation-sensor/) und der entsprechende [Polyfill](https://github.com/kenchris/sensor-polyfills)
 
-## Code scaffolding
+## Ausführung der Anwendung
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Diese Anwendung kann durch GitHub Pages unter folgender URL aufgerufen werden: https://renenienaber.github.io/pa-demo-app/
