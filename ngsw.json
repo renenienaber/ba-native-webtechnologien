@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1620754465306,
+  "timestamp": 1620754722609,
   "index": "https://renenienaber.github.io/pa-demo-app/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://renenienaber.github.io/pa-demo-app/favicon.ico",
         "https://renenienaber.github.io/pa-demo-app/index.html",
-        "https://renenienaber.github.io/pa-demo-app/main-es2015.75057ae1b0e61d6eb1d4.js",
-        "https://renenienaber.github.io/pa-demo-app/main-es5.75057ae1b0e61d6eb1d4.js",
+        "https://renenienaber.github.io/pa-demo-app/main-es2015.3a55bb4d1813434ff76f.js",
+        "https://renenienaber.github.io/pa-demo-app/main-es5.3a55bb4d1813434ff76f.js",
         "https://renenienaber.github.io/pa-demo-app/manifest.webmanifest",
         "https://renenienaber.github.io/pa-demo-app/polyfills-es2015.f332a089ad1600448873.js",
         "https://renenienaber.github.io/pa-demo-app/polyfills-es5.177e85a9724683782539.js",
@@ -53,9 +53,9 @@
     "https://renenienaber.github.io/pa-demo-app/assets/icons/outline_help_black_48dp.png": "be46a87ecddfb691a64fcbe132018320cc1230b0",
     "https://renenienaber.github.io/pa-demo-app/assets/icons/outline_vibration_black_48dp.png": "194566911f2482001b66f5e147b4db83f014e642",
     "https://renenienaber.github.io/pa-demo-app/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://renenienaber.github.io/pa-demo-app/index.html": "5cf235ea3d3989e10b60ea82eb7aa02a951c36d3",
-    "https://renenienaber.github.io/pa-demo-app/main-es2015.75057ae1b0e61d6eb1d4.js": "516f3b9087f4e58a1353492a8595011fdc8eb760",
-    "https://renenienaber.github.io/pa-demo-app/main-es5.75057ae1b0e61d6eb1d4.js": "1c46df1cf0cabcde2644e76183ae0ed3e502c8fd",
+    "https://renenienaber.github.io/pa-demo-app/index.html": "0014545c10b24c42893de84dcd3c335a4cb9c244",
+    "https://renenienaber.github.io/pa-demo-app/main-es2015.3a55bb4d1813434ff76f.js": "1968de666e7bca5d8f2dea33e20170c094db55b4",
+    "https://renenienaber.github.io/pa-demo-app/main-es5.3a55bb4d1813434ff76f.js": "d0ca1c143f20fbf1d4584c05e73e73e18d2eb254",
     "https://renenienaber.github.io/pa-demo-app/manifest.webmanifest": "462df607363f1b83e988dfbb82d78df6e6d82e02",
     "https://renenienaber.github.io/pa-demo-app/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://renenienaber.github.io/pa-demo-app/polyfills-es5.177e85a9724683782539.js": "f32c7aaca8b60df7a9dfa6cb8f2b7751b5d0832c",
