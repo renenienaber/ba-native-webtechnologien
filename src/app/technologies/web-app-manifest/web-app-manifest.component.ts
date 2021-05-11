@@ -10,7 +10,7 @@ export class WebAppManifestComponent extends TechnologyComponent {
   technology: Technology = WEB_APP_MANIFEST;
   featureDetections: FeatureDetection[] = [
     {
-      apiObject: 'window.BeforeInstallPromptEvent (exakte Feature Detection nicht möglich)',
+      apiObject: 'window.BeforeInstallPromptEvent',
       detection: 'BeforeInstallPromptEvent' in window
     }
   ];
