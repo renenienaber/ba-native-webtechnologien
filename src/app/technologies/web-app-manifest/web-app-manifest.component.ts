@@ -8,7 +8,12 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class WebAppManifestComponent extends TechnologyComponent {
   technology: Technology = WEB_APP_MANIFEST;
-  featureDetections: FeatureDetection[] = [];
+  featureDetections: FeatureDetection[] = [
+    {
+      apiObject: 'window.BeforeInstallPromptEvent',
+      detection: 'BeforeInstallPromptEvent' in window
+    }
+  ];
 }
 
 export const WEB_APP_MANIFEST: Technology = {
