@@ -8,15 +8,8 @@ import {ORIENTATION_SENSOR_API} from './orientation-sensor/orientation-sensor.co
 
 export interface Technology {
   name: string;
-  description: string;
-  references: Reference[];
   icon: string;
   routerLink: string;
-}
-
-export interface Reference {
-  name: string;
-  link: string;
 }
 
 export interface FeatureDetection {
