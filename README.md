@@ -1,6 +1,6 @@
 # Demonstrationsanwendung für native Webtechnologien
 
-Diese Anwendung ist im Rahmen meiner Bachelor-Projektarbeit "Methodik zur Evaluation der Fähigkeit von Web-Technologien zur plattformübergreifenden Erhöhung der Nativität" entstanden.
+Diese Anwendung ist im Rahmen der Bachelor-Projektarbeit "Methodik zur Evaluation der Fähigkeit von Web-Technologien zur plattformübergreifenden Erhöhung der Nativität" von René Sahin Nienaber in Kooperation mit der adesso SE an der Fachhochschule Dortmund entstanden.
 
 ## Beschreibung
 
@@ -15,4 +15,4 @@ In dieser Anwendung werden die folgenden Webtechnologien demonstrativ implementi
 
 ## Ausführung der Anwendung
 
-Diese Anwendung kann durch das Hosting von GitHub Pages unter folgender URL aufgerufen werden: https://renenienaber.github.io/pa-demo-app/
+Diese Anwendung kann durch GitHub Pages unter folgender URL aufgerufen werden: https://renenienaber.github.io/pa-demo-app/
