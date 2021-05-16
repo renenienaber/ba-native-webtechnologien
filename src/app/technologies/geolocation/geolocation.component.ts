@@ -60,6 +60,12 @@ export class GeolocationComponent extends TechnologyComponent {
 
 export const GEOLOCATION_API: Technology = {
   name: 'Geolocation API',
+  description: 'Erlaubt authorisierten Webanwendungen den Zugriff auf Standortdaten des Gerätes durch GPS oder das Netzwerk.',
+  references: [
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation-API/' },
+    { name: 'CanIUse', link: 'https://caniuse.com/geolocation' },
+    { name: 'Mozilla Developer Network', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API' },
+  ],
   icon: 'place',
   routerLink: 'geolocation-api'
 };
