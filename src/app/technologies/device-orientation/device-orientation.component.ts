@@ -4,7 +4,8 @@ import {TechnologyComponent} from '../technology.component';
 
 @Component({
   selector: 'app-device-orientation',
-  templateUrl: './device-orientation.component.html'
+  templateUrl: './device-orientation.component.html',
+  styleUrls: ['./device-orientation.component.css']
 })
 export class DeviceOrientationComponent extends TechnologyComponent implements OnInit, OnDestroy {
   technology: Technology = DEVICE_ORIENTATION_API;
@@ -37,6 +38,8 @@ export class DeviceOrientationComponent extends TechnologyComponent implements O
     document.getElementById('beta').innerHTML = beta.toString();
     document.getElementById('gamma').innerHTML = gamma.toString();
     document.getElementById('absolute').innerHTML = absolute.toString();
+
+    document.getElementById('cube').style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(${alpha}deg)`;
   }
 }
 
