@@ -1,5 +1,5 @@
-import {Component, Input, ViewChild} from '@angular/core';
 import {FeatureDetection, Technology} from './technology';
+import {Component, ViewChild} from '@angular/core';
 import {DemoFrameComponent} from '../demo-frame/demo-frame.component';
 
 @Component({
@@ -9,9 +9,6 @@ import {DemoFrameComponent} from '../demo-frame/demo-frame.component';
 export abstract class TechnologyComponent {
   @ViewChild(DemoFrameComponent, { static: false })
   private demoFrameComponent: DemoFrameComponent;
-
-  @Input()
-  shortVersion!: boolean;
 
   abstract technology: Technology;
   abstract featureDetections: FeatureDetection[];
