@@ -1,12 +1,11 @@
 <app-demo-frame
   [technology]="technology"
-  [featureDetections]="featureDetections"
 >
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-demo-frame>
 
 <ng-template #demo>
-  <ng-container *ngIf="featureDetections[0]?.detection else noSupport">
+  <ng-container *ngIf="isSupported() else noSupport">
     <div>
       <table>
         <tr>

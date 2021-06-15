@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {TechnologyComponent} from '../technology.component';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 
 @Component({
   selector: 'app-geolocation',
@@ -8,12 +8,6 @@ import {FeatureDetection, Technology} from '../technology';
 })
 export class GeolocationComponent extends TechnologyComponent {
   technology: Technology = GEOLOCATION_API;
-  featureDetections: FeatureDetection[] = [
-    {
-      apiObject: 'navigator.geolocation',
-      detection: 'geolocation' in navigator
-    }
-  ];
 
   private errorNoGeolocation = 'navigator.geolocation wird nicht unterstützt!';
 
@@ -61,6 +55,12 @@ export class GeolocationComponent extends TechnologyComponent {
 export const GEOLOCATION_API: Technology = {
   name: 'Geolocation API',
   description: 'Erlaubt authorisierten Webanwendungen den Zugriff auf Standortdaten des Gerätes durch GPS oder das Netzwerk.',
+  featureDetections: [
+    {
+      apiObject: 'navigator.geolocation',
+      detection: 'geolocation' in navigator
+    },
+  ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation-API/' },
     { name: 'CanIUse', link: 'https://caniuse.com/geolocation' },

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
 @Component({
@@ -8,12 +8,6 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class DeviceOrientationComponent extends TechnologyComponent implements OnInit, OnDestroy {
   technology: Technology = DEVICE_ORIENTATION_API;
-  featureDetections: FeatureDetection[] = [
-    {
-      apiObject: 'window.DeviceOrientationEvent',
-      detection: 'DeviceOrientationEvent' in window
-    }
-  ];
 
   errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
@@ -25,6 +19,10 @@ export class DeviceOrientationComponent extends TechnologyComponent implements O
 
   ngOnDestroy() {
     window.removeEventListener('deviceorientation', this.deviceOrientationEventHandler, false);
+  }
+
+  isSupported(): boolean {
+    return 'DeviceOrientationEvent' in window;
   }
 
   deviceOrientationEventHandler(eventData: any): void {
@@ -43,6 +41,12 @@ export class DeviceOrientationComponent extends TechnologyComponent implements O
 export const DEVICE_ORIENTATION_API: Technology = {
   name: 'DeviceOrientation Event API',
   description: '',
+  featureDetections: [
+    {
+      apiObject: 'window.DeviceOrientationEvent',
+      detection: 'DeviceOrientationEvent' in window
+    },
+  ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-event/' },
     { name: 'CanIUse', link: 'https://caniuse.com/deviceorientation' },

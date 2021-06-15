@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
 @Component({
@@ -8,17 +8,17 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class ServiceWorkerComponent extends TechnologyComponent {
   technology: Technology = SERVICE_WORKER;
-  featureDetections: FeatureDetection[] = [
-    {
-      apiObject: 'navigator.serviceWorker',
-      detection: 'serviceWorker' in navigator
-    }
-  ];
 }
 
 export const SERVICE_WORKER: Technology = {
   name: 'Service Worker',
   description: 'Ermöglicht die Verwendung von Offlinefunktionalitäten.',
+  featureDetections: [
+    {
+      apiObject: 'navigator.serviceWorker',
+      detection: 'serviceWorker' in navigator
+    },
+  ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/service-workers/' },
     { name: 'CanIUse', link: 'https://caniuse.com/serviceworkers' },

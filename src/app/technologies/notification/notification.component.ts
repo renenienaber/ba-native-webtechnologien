@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
 @Component({
@@ -9,16 +9,6 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class NotificationComponent extends TechnologyComponent {
   technology: Technology = NOTIFICATION_API;
-  featureDetections: FeatureDetection[] = [
-    {
-      apiObject: 'window.Notification',
-      detection: 'Notification' in window
-    },
-    {
-      apiObject: 'window.ServiceWorkerRegistration',
-      detection: 'ServiceWorkerRegistration' in window
-    }
-  ];
 
   private errorNoWindowNotification = 'window.Notification wird nicht unterstützt!';
   private errorNoServiceWorkerRegistration = 'window.ServiceWorkerRegistration wird nicht unterstützt!';
@@ -71,6 +61,16 @@ export class NotificationComponent extends TechnologyComponent {
 export const NOTIFICATION_API: Technology = {
   name: 'Notification API',
   description: 'Erlaubt die Anzeige von Systembenachrichtigungen außerhalb des Browserkontextes.',
+  featureDetections: [
+    {
+      apiObject: 'window.Notification',
+      detection: 'Notification' in window
+    },
+    {
+      apiObject: 'window.ServiceWorkerRegistration',
+      detection: 'ServiceWorkerRegistration' in window
+    },
+  ],
   references: [
     { name: 'Spezifikation', link: 'https://notifications.spec.whatwg.org/' },
     { name: 'CanIUse', link: 'https://caniuse.com/notifications' },

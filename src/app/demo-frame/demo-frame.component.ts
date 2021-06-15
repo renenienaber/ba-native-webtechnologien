@@ -10,8 +10,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class DemoFrameComponent {
   @Input()
   technology!: Technology;
-  @Input()
-  featureDetections!: FeatureDetection[];
 
   constructor(private matSnackBar: MatSnackBar) {}
 

@@ -1,5 +1,5 @@
-import {FeatureDetection, Technology} from './technology';
 import {Component, ViewChild} from '@angular/core';
+import {Technology} from './technology';
 import {DemoFrameComponent} from '../demo-frame/demo-frame.component';
 
 @Component({
@@ -11,7 +11,6 @@ export abstract class TechnologyComponent {
   private demoFrameComponent: DemoFrameComponent;
 
   abstract technology: Technology;
-  abstract featureDetections: FeatureDetection[];
 
   showError(message: string): void {
     this.demoFrameComponent.openErrorSnackBar(message);

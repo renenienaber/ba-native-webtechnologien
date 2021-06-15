@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
 @Component({
@@ -9,12 +9,6 @@ import {TechnologyComponent} from '../technology.component';
 export class VibrationComponent extends TechnologyComponent {
   // sets base attributes
   technology = VIBRATION_API;
-  featureDetections: FeatureDetection[] = [
-    {
-      apiObject: 'navigator.vibrate',
-      detection: 'vibrate' in navigator
-    }
-  ];
 
   private errorNoVibrate = 'navigator.vibrate wird nicht unterstützt!';
 
@@ -39,6 +33,12 @@ export class VibrationComponent extends TechnologyComponent {
 export const VIBRATION_API: Technology = {
   name: 'Vibration API',
   description: 'Erlaubt die Nutzung der im Endgerät verbauten Vibration, soweit vorhanden.',
+  featureDetections: [
+    {
+      apiObject: 'navigator.vibrate',
+      detection: 'vibrate' in navigator
+    },
+  ],
   references: [
     { name: 'Spezifikation', link: 'https://w3c.github.io/vibration/' },
     { name: 'CanIUse', link: 'https://caniuse.com/vibration' },

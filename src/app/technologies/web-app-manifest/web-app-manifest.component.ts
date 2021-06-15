@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 
 @Component({
@@ -8,12 +8,12 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class WebAppManifestComponent extends TechnologyComponent {
   technology: Technology = WEB_APP_MANIFEST;
-  featureDetections: FeatureDetection[] = [];
 }
 
 export const WEB_APP_MANIFEST: Technology = {
   name: 'Web App Manifest',
   description: 'Erlaubt das Hinzufügen der Anwendung auf Betriebssystemebene und fügt weitere native Funktionen hinzu.',
+  featureDetections: [],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/appmanifest/' },
     { name: 'CanIUse', link: 'https://caniuse.com/web-app-manifest' },

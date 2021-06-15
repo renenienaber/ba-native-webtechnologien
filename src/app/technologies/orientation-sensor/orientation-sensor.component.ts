@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FeatureDetection, Technology} from '../technology';
+import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
 import {AbsoluteOrientationSensor, RelativeOrientationSensor} from '../../../polyfills/motion-sensors';
 
@@ -9,16 +9,6 @@ import {AbsoluteOrientationSensor, RelativeOrientationSensor} from '../../../pol
 })
 export class OrientationSensorComponent extends TechnologyComponent {
   technology: Technology = ORIENTATION_SENSOR_API;
-  featureDetections: FeatureDetection[] = [
-    {
-      apiObject: 'window.AbsoluteOrientationSensor',
-      detection: 'AbsoluteOrientationSensor' in window
-    },
-    {
-      apiObject: 'window.RelativeOrientationSensor',
-      detection: 'RelativeOrientationSensor' in window
-    }
-  ];
 
   private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
   private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
@@ -63,6 +53,16 @@ export class OrientationSensorComponent extends TechnologyComponent {
 export const ORIENTATION_SENSOR_API: Technology = {
   name: 'Orientation Sensor API',
   description: '',
+  featureDetections: [
+    {
+      apiObject: 'window.AbsoluteOrientationSensor',
+      detection: 'AbsoluteOrientationSensor' in window
+    },
+    {
+      apiObject: 'window.RelativeOrientationSensor',
+      detection: 'RelativeOrientationSensor' in window
+    },
+  ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-sensor/'},
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},

@@ -10,6 +10,7 @@ export interface Technology {
   name: string;
   description: string;
   references: Reference[];
+  featureDetections: FeatureDetection[];
   icon: string;
   routerLink: string;
 }
