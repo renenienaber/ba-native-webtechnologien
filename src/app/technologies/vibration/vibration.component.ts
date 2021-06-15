@@ -40,7 +40,7 @@ export const VIBRATION_API: Technology = {
     },
   ],
   references: [
-    { name: 'Spezifikation', link: 'https://w3c.github.io/vibration/' },
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/vibration/' },
     { name: 'CanIUse', link: 'https://caniuse.com/vibration' },
     { name: 'Mozilla Developer Network', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API' },
   ],
