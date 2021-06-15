@@ -1,7 +1,7 @@
 {
-  "name": "Demonstrationsanwendung",
-  "short_name": "Demo App",
-  "theme_color": "#673ab7",
+  "name": "Demonstration nativer Webtechnologien",
+  "short_name": "Native Webtechnologien",
+  "theme_color": "#3f51b5",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
