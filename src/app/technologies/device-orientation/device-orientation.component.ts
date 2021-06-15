@@ -42,6 +42,11 @@ export class DeviceOrientationComponent extends TechnologyComponent implements O
 
 export const DEVICE_ORIENTATION_API: Technology = {
   name: 'DeviceOrientation Event API',
+  description: '',
+  references: [
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-event/' },
+    { name: 'CanIUse', link: 'https://caniuse.com/deviceorientation' },
+  ],
   icon: 'screen_rotation',
   routerLink: 'device-orientation-api'
 };
