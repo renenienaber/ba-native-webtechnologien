@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {FeatureDetection, Technology} from '../technologies/technology';
+import {Technology} from '../technologies/technology';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({

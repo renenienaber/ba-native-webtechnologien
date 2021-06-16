@@ -8,12 +8,17 @@ import {WebAppManifestComponent} from './technologies/web-app-manifest/web-app-m
 import {ServiceWorkerComponent} from './technologies/service-worker/service-worker.component';
 import {DeviceOrientationComponent} from './technologies/device-orientation/device-orientation.component';
 import {OrientationSensorComponent} from './technologies/orientation-sensor/orientation-sensor.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path: 'technology',

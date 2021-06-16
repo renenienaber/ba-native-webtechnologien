@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-icon *ngIf="icon" mat-card-avatar>{{icon}}</mat-icon>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-accordion
+      togglePosition="before"
+    >
+      <mat-expansion-panel *ngFor="let technology of technologies">
+        <mat-expansion-panel-header>
+          <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon>{{technology.name}}</mat-panel-title>
+          <div class="compatibility-spinner">
+            <mat-progress-spinner
+              *ngIf="technology.featureDetections.length > 0"
+              diameter="35"
+              mode="determinate"
+              [value]="getCompatibleFeaturesPercentage(technology)"
+            ></mat-progress-spinner>
+<!--            <span>{{getCompatibleFeaturesCount(technology)}}/{{technology.featureDetections.length}}</span>-->
+            <mat-icon title="{{technology.featureDetections.length > 0 ? getCompatibleFeaturesCount(technology)+'/'+technology.featureDetections.length : 'Keine Feature Detection möglich'}}">{{getRightIcon(technology)}}</mat-icon>
+          </div>
+        </mat-expansion-panel-header>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+</mat-card>

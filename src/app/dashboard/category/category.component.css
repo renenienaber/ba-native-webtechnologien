@@ -1,0 +1,31 @@
+mat-panel-title mat-icon {
+  margin-right: 5px;
+}
+
+.compatibility-spinner {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.compatibility-spinner mat-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.feature-detection {
+  padding: 20px;
+  margin: 5px;
+}
+.feature-detection mat-icon {
+  float: right;
+}
+
+.feature-detection.support {
+  background-color: lightgreen;
+}
+
+.feature-detection.no-support {
+  background-color: rgba(255, 0, 0, 0.75);
+}

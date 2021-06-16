@@ -28,6 +28,10 @@ import { ServiceWorkerComponent } from './technologies/service-worker/service-wo
 import { DeviceOrientationComponent } from './technologies/device-orientation/device-orientation.component';
 import { OrientationSensorComponent } from './technologies/orientation-sensor/orientation-sensor.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CategoryComponent } from './dashboard/category/category.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     ServiceWorkerComponent,
     DeviceOrientationComponent,
     OrientationSensorComponent,
+    DashboardComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     FormsModule,
     MatCardModule,
     MatSnackBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
