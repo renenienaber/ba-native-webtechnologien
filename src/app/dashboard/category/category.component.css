@@ -2,6 +2,10 @@ mat-panel-title mat-icon {
   margin-right: 5px;
 }
 
+mat-accordion {
+  cursor: auto;
+}
+
 .compatibility-spinner {
   position: absolute;
   top: 8px;
@@ -14,6 +18,6 @@ mat-panel-title mat-icon {
   right: 5px;
 }
 
-.references {
+app-display-feature-detections + .references {
   margin-top: 20px;
 }

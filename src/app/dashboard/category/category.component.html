@@ -10,7 +10,7 @@
     >
       <mat-expansion-panel *ngFor="let technology of technologies">
         <mat-expansion-panel-header>
-          <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon>{{technology.name}}</mat-panel-title>
+          <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon><a routerLink="/technology/{{technology.routerLink}}">{{technology.name}}</a></mat-panel-title>
           <div class="compatibility-spinner">
             <mat-progress-spinner
               *ngIf="technology.featureDetections.length > 0"
@@ -22,7 +22,18 @@
             <mat-icon title="{{technology.featureDetections.length > 0 ? getCompatibleFeaturesCount(technology)+'/'+technology.featureDetections.length : 'Keine Feature Detection möglich'}}">{{getRightIcon(technology)}}</mat-icon>
           </div>
         </mat-expansion-panel-header>
-
+        <app-display-feature-detections
+          *ngIf="technology.featureDetections.length > 0"
+          [featureDetections]="technology.featureDetections"
+        ></app-display-feature-detections>
+        <div class="references" *ngIf="technology.references.length > 0">
+          <span class="mat-body-strong">Referenzen:</span>
+          <mat-card-actions>
+            <ng-container *ngFor="let ref of technology.references">
+              <a mat-stroked-button color="primary" href="{{ref.link}}" target="_blank">{{ref.name}}</a>
+            </ng-container>
+          </mat-card-actions>
+        </div>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-card-content>

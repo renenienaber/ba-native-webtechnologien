@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Technology} from '../../technologies/technology';
 
 @Component({
@@ -6,18 +6,13 @@ import {Technology} from '../../technologies/technology';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent {
   @Input()
   title!: string;
   @Input()
   icon: string;
   @Input()
   technologies!: Technology[];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   getCompatibleFeaturesCount(technology: Technology): number {
     return technology.featureDetections.filter(Boolean).length;
@@ -33,9 +28,9 @@ export class CategoryComponent implements OnInit {
 
   getRightIcon(technology: Technology): string {
     if (technology.featureDetections.length > 0) {
-      return this.getCompatibleFeaturesCount(technology) > 0 ? 'check_circle' : 'error';
+      return this.getCompatibleFeaturesCount(technology) > 0 ? 'check_circle_outline' : 'error_outline';
     }
-    return 'help';
+    return 'help_outline';
   }
 
 }
