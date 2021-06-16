@@ -16,6 +16,7 @@
     </div>
 
     <app-display-feature-detections
+      *ngIf="technology.featureDetections.length > 0"
       [featureDetections]="technology.featureDetections"
     ></app-display-feature-detections>
   </mat-card-content>
