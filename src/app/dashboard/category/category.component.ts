@@ -15,11 +15,11 @@ export class CategoryComponent {
   technologies!: Technology[];
 
   getCompatibleFeaturesCount(technology: Technology): number {
-    return technology.featureDetections.filter(Boolean).length;
+    return technology.featureDetections.map(det => det.detection).filter(Boolean).length;
   }
 
   getCompatibleFeaturesPercentage(technology: Technology): number {
-    const detections = technology.featureDetections;
+    const detections = technology.featureDetections.map(det => det.detection);
     if (detections.length > 0) {
       return (this.getCompatibleFeaturesCount(technology) / detections.length) * 100;
     }
