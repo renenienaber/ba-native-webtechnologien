@@ -15,13 +15,9 @@
       </mat-card-actions>
     </div>
 
-    <div *ngIf="technology.featureDetections.length > 0">
-      <span class="mat-body-strong">Browser-Support:</span>
-      <div *ngFor="let check of technology.featureDetections" class="mat-elevation-z1 feature-detection {{check.detection ? 'support' : 'no-support'}}">
-        <span>{{check.apiObject}}</span>
-        <mat-icon>{{check.detection ? 'check_circle' : 'error'}}</mat-icon>
-      </div>
-    </div>
+    <app-display-feature-detections
+      [featureDetections]="technology.featureDetections"
+    ></app-display-feature-detections>
   </mat-card-content>
 </mat-card>
 

@@ -32,6 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CategoryComponent } from './dashboard/category/category.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DisplayFeatureDetectionsComponent } from './display-feature-detections/display-feature-detections.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     OrientationSensorComponent,
     DashboardComponent,
     CategoryComponent,
+    DisplayFeatureDetectionsComponent,
   ],
   imports: [
     BrowserModule,
