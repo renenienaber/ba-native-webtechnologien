@@ -26,7 +26,7 @@
           *ngIf="technology.featureDetections.length > 0"
           [featureDetections]="technology.featureDetections"
         ></app-display-feature-detections>
-        <div class="references" *ngIf="technology.references.length > 0">
+        <div *ngIf="technology.references.length > 0" class="references">
           <span class="mat-body-strong">Referenzen:</span>
           <mat-card-actions>
             <ng-container *ngFor="let ref of technology.references">

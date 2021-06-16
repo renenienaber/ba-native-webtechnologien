@@ -1,3 +1,11 @@
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .category {
+  min-width: 300px;
   max-width: 500px;
+  margin-bottom: 15px;
 }

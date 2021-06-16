@@ -1,9 +1,9 @@
-<div class="category">
-  <app-category
-    title="Basic PWA"
-    icon="smartphone"
-    [technologies]="basicPWA"
-  >
-  </app-category>
+<div class="category-container">
+  <section *ngFor="let category of categories" class="category">
+    <app-category
+      title="{{category.title}}"
+      icon="{{category.icon}}"
+      [technologies]="category.technologies"
+    ></app-category>
+  </section>
 </div>
-
