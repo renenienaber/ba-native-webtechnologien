@@ -13,12 +13,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'technology',
@@ -54,14 +54,14 @@ const routes: Routes = [
       // fallback component - needs to be last one
       {
         path: '**',
-        redirectTo: '/about',
+        redirectTo: '/dashboard',
       },
     ]
   },
   // fallback component - needs to be last one
   {
     path: '**',
-    redirectTo: '/about',
+    redirectTo: '/dashboard',
   },
 ];
 
