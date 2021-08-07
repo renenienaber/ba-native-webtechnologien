@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1628360262699,
+  "timestamp": 1628365847263,
   "index": "/ba-native-webtechnologien/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/ba-native-webtechnologien/favicon.ico",
         "/ba-native-webtechnologien/index.html",
-        "/ba-native-webtechnologien/main-es2015.961fe45498029420399a.js",
-        "/ba-native-webtechnologien/main-es5.961fe45498029420399a.js",
+        "/ba-native-webtechnologien/main-es2015.89a34791ca81f2ccec91.js",
+        "/ba-native-webtechnologien/main-es5.89a34791ca81f2ccec91.js",
         "/ba-native-webtechnologien/manifest.webmanifest",
         "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js",
         "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js",
@@ -49,9 +49,9 @@
     "/ba-native-webtechnologien/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/ba-native-webtechnologien/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/ba-native-webtechnologien/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ba-native-webtechnologien/index.html": "56829fd0aa137285f1c02d98bdbcb9d1fc54fe39",
-    "/ba-native-webtechnologien/main-es2015.961fe45498029420399a.js": "d765658b3327828e73632dcbd6cce55ca928ff63",
-    "/ba-native-webtechnologien/main-es5.961fe45498029420399a.js": "8b45e647c56f8678e97b1b719609c824796b591e",
+    "/ba-native-webtechnologien/index.html": "418b28d3e9f02db176b81b11427cbd26ee790eba",
+    "/ba-native-webtechnologien/main-es2015.89a34791ca81f2ccec91.js": "da60186383e114f0f76fda8390d8543d73c5678a",
+    "/ba-native-webtechnologien/main-es5.89a34791ca81f2ccec91.js": "880a2da29517130fe4a4e64610e64d63ba1ca79b",
     "/ba-native-webtechnologien/manifest.webmanifest": "19b56e4d03be837ea3c13a2c141bac384bd38601",
     "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js": "f32c7aaca8b60df7a9dfa6cb8f2b7751b5d0832c",
