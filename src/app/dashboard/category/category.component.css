@@ -6,18 +6,6 @@ mat-accordion {
   cursor: auto;
 }
 
-.compatibility-spinner {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-}
-
-.compatibility-spinner mat-icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-
 app-display-feature-detections + .references {
   margin-top: 20px;
 }

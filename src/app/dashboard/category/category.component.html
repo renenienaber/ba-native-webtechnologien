@@ -11,16 +11,7 @@
       <mat-expansion-panel *ngFor="let technology of technologies">
         <mat-expansion-panel-header>
           <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon><a routerLink="/technology/{{technology.routerLink}}">{{technology.name}}</a></mat-panel-title>
-          <div class="compatibility-spinner">
-            <mat-progress-spinner
-              *ngIf="technology.featureDetections.length > 0"
-              diameter="35"
-              mode="determinate"
-              [value]="getCompatibleFeaturesPercentage(technology)"
-            ></mat-progress-spinner>
-<!--            <span>{{getCompatibleFeaturesCount(technology)}}/{{technology.featureDetections.length}}</span>-->
-            <mat-icon title="{{technology.featureDetections.length > 0 ? getCompatibleFeaturesCount(technology)+'/'+technology.featureDetections.length : 'Keine Feature Detection möglich'}}">{{getRightIcon(technology)}}</mat-icon>
-          </div>
+          <mat-icon title="{{technology.featureDetections.length > 0 ? getCompatibleFeaturesCount(technology)+'/'+technology.featureDetections.length : 'Keine Feature Detection möglich'}}">{{getRightIcon(technology)}}</mat-icon>
         </mat-expansion-panel-header>
         <app-display-feature-detections
           *ngIf="technology.featureDetections.length > 0"
