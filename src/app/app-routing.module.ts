@@ -11,12 +11,21 @@ import {
   DEVICEORIENTATION_EVENT,
   DeviceorientationEventComponent
 } from './technologies/sensors/deviceorientation-event/deviceorientation-event.component';
-import {GEOLOCATION_API, GeolocationComponent} from './technologies/sensors/geolocation/geolocation.component';
+import {GEOLOCATION, GeolocationComponent} from './technologies/sensors/geolocation/geolocation.component';
 import {GEOLOCATION_SENSOR, GeolocationSensorComponent} from './technologies/sensors/geolocation-sensor/geolocation-sensor.component';
 import {GYROSCOPE, GyroscopeComponent} from './technologies/sensors/gyroscope/gyroscope.component';
 import {MAGNETOMETER, MagnetometerComponent} from './technologies/sensors/magnetometer/magnetometer.component';
 import {ORIENTATION_SENSOR, OrientationSensorComponent} from './technologies/sensors/orientation-sensor/orientation-sensor.component';
 import {PROXIMITY_SENSOR, ProximitySensorComponent} from './technologies/sensors/proximity-sensor/proximity-sensor.component';
+import {BATTERY_STATUS, BatteryStatusComponent} from './technologies/device-infos/battery-status/battery-status.component';
+import {COMPUTE_PRESSURE, ComputePressureComponent} from './technologies/device-infos/compute-pressure/compute-pressure.component';
+import {DEVICE_MEMORY, DeviceMemoryComponent} from './technologies/device-infos/device-memory/device-memory.component';
+import {DEVICE_POSTURE, DevicePostureComponent} from './technologies/device-infos/device-posture/device-posture.component';
+import {MEDIA_CAPABILITIES, MediaCapabilitiesComponent} from './technologies/device-infos/media-capabilities/media-capabilities.component';
+import {
+  NETWORK_INFORMATION,
+  NetworkInformationComponent
+} from './technologies/device-infos/network-information/network-information.component';
 
 
 const routes: Routes = [
@@ -45,7 +54,7 @@ const routes: Routes = [
         component: DeviceorientationEventComponent
       },
       {
-        path: GEOLOCATION_API.routerLink,
+        path: GEOLOCATION.routerLink,
         component: GeolocationComponent
       },
       {
@@ -68,6 +77,39 @@ const routes: Routes = [
         path: PROXIMITY_SENSOR.routerLink,
         component: ProximitySensorComponent
       },
+      // DEVICE INFOS
+      {
+        path: BATTERY_STATUS.routerLink,
+        component: BatteryStatusComponent
+      },
+      {
+        path: COMPUTE_PRESSURE.routerLink,
+        component: ComputePressureComponent
+      },
+      {
+        path: DEVICE_MEMORY.routerLink,
+        component: DeviceMemoryComponent
+      },
+      {
+        path: DEVICE_POSTURE.routerLink,
+        component: DevicePostureComponent
+      },
+      {
+        path: MEDIA_CAPABILITIES.routerLink,
+        component: MediaCapabilitiesComponent
+      },
+      {
+        path: NETWORK_INFORMATION.routerLink,
+        component: NetworkInformationComponent
+      },
+      // SCREEN
+      // CAM MIC CAPTURE
+      // INPUT OUTPUT DEVICES
+      // INPUT PROCESSING
+      // FURTHER HARDWARE PERIPHERAL
+      // LOCAL RESOURCES
+      // PLATFORM UI
+      // FURTHER PLATFORM
       // fallback component - needs to be last one
       {
         path: '**',

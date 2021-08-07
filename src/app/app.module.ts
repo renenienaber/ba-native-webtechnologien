@@ -39,6 +39,12 @@ import { GeolocationSensorComponent } from './technologies/sensors/geolocation-s
 import { GyroscopeComponent } from './technologies/sensors/gyroscope/gyroscope.component';
 import { MagnetometerComponent } from './technologies/sensors/magnetometer/magnetometer.component';
 import { ProximitySensorComponent } from './technologies/sensors/proximity-sensor/proximity-sensor.component';
+import { BatteryStatusComponent } from './technologies/device-infos/battery-status/battery-status.component';
+import { ComputePressureComponent } from './technologies/device-infos/compute-pressure/compute-pressure.component';
+import { DeviceMemoryComponent } from './technologies/device-infos/device-memory/device-memory.component';
+import { DevicePostureComponent } from './technologies/device-infos/device-posture/device-posture.component';
+import { MediaCapabilitiesComponent } from './technologies/device-infos/media-capabilities/media-capabilities.component';
+import { NetworkInformationComponent } from './technologies/device-infos/network-information/network-information.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +56,7 @@ import { ProximitySensorComponent } from './technologies/sensors/proximity-senso
     CategoryComponent,
     DisplayFeatureDetectionsComponent,
     // TECHNOLOGIES
+    // SENSORS
     AccelerometerComponent,
     AmbientLightSensorComponent,
     DeviceorientationEventComponent,
@@ -59,6 +66,21 @@ import { ProximitySensorComponent } from './technologies/sensors/proximity-senso
     MagnetometerComponent,
     OrientationSensorComponent,
     ProximitySensorComponent,
+    // DEVICE INFOS
+    BatteryStatusComponent,
+    ComputePressureComponent,
+    DeviceMemoryComponent,
+    DevicePostureComponent,
+    MediaCapabilitiesComponent,
+    NetworkInformationComponent,
+    // SCREEN
+    // CAM MIC CAPTURE
+    // INPUT OUTPUT DEVICES
+    // INPUT PROCESSING
+    // FURTHER HARDWARE PERIPHERAL
+    // LOCAL RESOURCES
+    // PLATFORM UI
+    // FURTHER PLATFORM
     //
     NotificationComponent,
     ServiceWorkerComponent,

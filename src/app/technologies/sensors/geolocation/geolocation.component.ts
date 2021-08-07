@@ -7,7 +7,7 @@ import {Technology} from '../../technology';
   templateUrl: './geolocation.component.html'
 })
 export class GeolocationComponent extends TechnologyComponent {
-  technology: Technology = GEOLOCATION_API;
+  technology: Technology = GEOLOCATION;
 
   private errorNoGeolocation = 'navigator.geolocation wird nicht unterstützt!';
 
@@ -52,7 +52,7 @@ export class GeolocationComponent extends TechnologyComponent {
   }
 }
 
-export const GEOLOCATION_API: Technology = {
+export const GEOLOCATION: Technology = {
   name: 'Geolocation API',
   description: 'Ermöglicht den Zugriff auf geografische Standortinformationen des Endgerätes.',
   featureDetections: [

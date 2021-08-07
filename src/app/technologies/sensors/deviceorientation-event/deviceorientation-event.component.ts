@@ -47,7 +47,7 @@ export const DEVICEORIENTATION_EVENT: Technology = {
       detection: 'DeviceOrientationEvent' in window
     },
     {
-      apiObject: 'window.DeviceOrientationEvent',
+      apiObject: 'window.DeviceMotionEvent',
       detection: 'DeviceMotionEvent' in window
     },
   ],

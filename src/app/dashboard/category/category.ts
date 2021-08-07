@@ -2,12 +2,18 @@ import {Technology} from '../../technologies/technology';
 import {ACCELEROMETER} from '../../technologies/sensors/accelerometer/accelerometer.component';
 import {AMBIENT_LIGHT_SENSOR} from '../../technologies/sensors/ambient-light-sensor/ambient-light-sensor.component';
 import {DEVICEORIENTATION_EVENT} from '../../technologies/sensors/deviceorientation-event/deviceorientation-event.component';
-import {GEOLOCATION_API} from '../../technologies/sensors/geolocation/geolocation.component';
+import {GEOLOCATION} from '../../technologies/sensors/geolocation/geolocation.component';
 import {GEOLOCATION_SENSOR} from '../../technologies/sensors/geolocation-sensor/geolocation-sensor.component';
 import {GYROSCOPE} from '../../technologies/sensors/gyroscope/gyroscope.component';
 import {MAGNETOMETER} from '../../technologies/sensors/magnetometer/magnetometer.component';
 import {ORIENTATION_SENSOR} from '../../technologies/sensors/orientation-sensor/orientation-sensor.component';
 import {PROXIMITY_SENSOR} from '../../technologies/sensors/proximity-sensor/proximity-sensor.component';
+import {BATTERY_STATUS} from '../../technologies/device-infos/battery-status/battery-status.component';
+import {COMPUTE_PRESSURE} from '../../technologies/device-infos/compute-pressure/compute-pressure.component';
+import {DEVICE_MEMORY} from '../../technologies/device-infos/device-memory/device-memory.component';
+import {DEVICE_POSTURE} from '../../technologies/device-infos/device-posture/device-posture.component';
+import {MEDIA_CAPABILITIES} from '../../technologies/device-infos/media-capabilities/media-capabilities.component';
+import {NETWORK_INFORMATION} from '../../technologies/device-infos/network-information/network-information.component';
 
 export interface Category {
   title: string;
@@ -22,7 +28,7 @@ export const SENSORS: Category = {
     ACCELEROMETER,
     AMBIENT_LIGHT_SENSOR,
     DEVICEORIENTATION_EVENT,
-    GEOLOCATION_API,
+    GEOLOCATION,
     GEOLOCATION_SENSOR,
     GYROSCOPE,
     MAGNETOMETER,
@@ -34,7 +40,14 @@ export const SENSORS: Category = {
 export const DEVICE_INFOS: Category = {
   title: 'Geräteinformationen',
   icon: 'perm_device_information',
-  technologies: [],
+  technologies: [
+    BATTERY_STATUS,
+    COMPUTE_PRESSURE,
+    DEVICE_MEMORY,
+    DEVICE_POSTURE,
+    MEDIA_CAPABILITIES,
+    NETWORK_INFORMATION
+  ],
 };
 
 export const SCREEN: Category = {
