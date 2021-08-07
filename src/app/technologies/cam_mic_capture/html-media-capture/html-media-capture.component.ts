@@ -4,9 +4,7 @@ import {Technology} from '../../technology';
 
 @Component({
   selector: 'app-html-media-capture',
-  templateUrl: './html-media-capture.component.html',
-  styles: [
-  ]
+  templateUrl: './html-media-capture.component.html'
 })
 export class HtmlMediaCaptureComponent extends TechnologyComponent {
   technology: Technology = HTML_MEDIA_CAPTURE;
@@ -24,8 +22,8 @@ export const HTML_MEDIA_CAPTURE: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/html-media-capture/' },
   ],
-  icon: '',
-  routerLink: ''
+  icon: 'add_a_photo',
+  routerLink: 'html-media-capture'
 };
 
 function isCaptureInHtmlInputElement(): boolean {

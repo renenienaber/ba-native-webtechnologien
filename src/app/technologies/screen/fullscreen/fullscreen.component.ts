@@ -30,6 +30,6 @@ export const FULLSCREEN: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://fullscreen.spec.whatwg.org/' },
   ],
-  icon: 'fullscreen',
+  icon: 'settings_overscan',
   routerLink: 'fullscreen'
 };

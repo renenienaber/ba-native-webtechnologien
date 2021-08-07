@@ -51,6 +51,13 @@ import { PresentationComponent } from './technologies/screen/presentation/presen
 import { ScreenOrientationComponent } from './technologies/screen/screen-orientation/screen-orientation.component';
 import { ScreenWakeLockComponent } from './technologies/screen/screen-wake-lock/screen-wake-lock.component';
 import { HtmlMediaCaptureComponent } from './technologies/cam_mic_capture/html-media-capture/html-media-capture.component';
+import { MediaCaptureAndStreamsComponent } from './technologies/cam_mic_capture/media-capture-and-streams/media-capture-and-streams.component';
+import { MediaCaptureFromDomElementsComponent } from './technologies/cam_mic_capture/media-capture-from-dom-elements/media-capture-from-dom-elements.component';
+import { MediastreamImageCaptureComponent } from './technologies/cam_mic_capture/mediastream-image-capture/mediastream-image-capture.component';
+import { MediastreamRecordingComponent } from './technologies/cam_mic_capture/mediastream-recording/mediastream-recording.component';
+import { ScreenCaptureComponent } from './technologies/cam_mic_capture/screen-capture/screen-capture.component';
+import { ShapeDetectionComponent } from './technologies/cam_mic_capture/shape-detection/shape-detection.component';
+import { TextDetectionComponent } from './technologies/cam_mic_capture/text-detection/text-detection.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +94,13 @@ import { HtmlMediaCaptureComponent } from './technologies/cam_mic_capture/html-m
     ScreenWakeLockComponent,
     // CAM MIC CAPTURE
     HtmlMediaCaptureComponent,
+    MediaCaptureAndStreamsComponent,
+    MediaCaptureFromDomElementsComponent,
+    MediastreamImageCaptureComponent,
+    MediastreamRecordingComponent,
+    ScreenCaptureComponent,
+    ShapeDetectionComponent,
+    TextDetectionComponent,
     // INPUT OUTPUT DEVICES
     // INPUT PROCESSING
     // FURTHER HARDWARE PERIPHERAL

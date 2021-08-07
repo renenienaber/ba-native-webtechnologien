@@ -20,6 +20,13 @@ import {PRESENTATION} from '../../technologies/screen/presentation/presentation.
 import {SCREEN_ORIENTATION} from '../../technologies/screen/screen-orientation/screen-orientation.component';
 import {SCREEN_WAKE_LOCK} from '../../technologies/screen/screen-wake-lock/screen-wake-lock.component';
 import {HTML_MEDIA_CAPTURE} from '../../technologies/cam_mic_capture/html-media-capture/html-media-capture.component';
+import {MEDIA_CAPTURE_AND_STREAMS} from '../../technologies/cam_mic_capture/media-capture-and-streams/media-capture-and-streams.component';
+import {MEDIA_CAPTURE_FROM_DOM_ELEMENTS} from '../../technologies/cam_mic_capture/media-capture-from-dom-elements/media-capture-from-dom-elements.component';
+import {MEDIASTREAM_IMAGE_CAPTURE} from '../../technologies/cam_mic_capture/mediastream-image-capture/mediastream-image-capture.component';
+import {MEDIASTREAM_RECORDING} from '../../technologies/cam_mic_capture/mediastream-recording/mediastream-recording.component';
+import {SCREEN_CAPTURE} from '../../technologies/cam_mic_capture/screen-capture/screen-capture.component';
+import {SHAPE_DETECTION} from '../../technologies/cam_mic_capture/shape-detection/shape-detection.component';
+import {TEXT_DETECTION} from '../../technologies/cam_mic_capture/text-detection/text-detection.component';
 
 export interface Category {
   title: string;
@@ -73,6 +80,13 @@ export const CAM_MIC_CAPTURE: Category = {
   icon: 'perm_camera_mic',
   technologies: [
     HTML_MEDIA_CAPTURE,
+    MEDIA_CAPTURE_AND_STREAMS,
+    MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
+    MEDIASTREAM_IMAGE_CAPTURE,
+    MEDIASTREAM_RECORDING,
+    SCREEN_CAPTURE,
+    SHAPE_DETECTION,
+    TEXT_DETECTION
   ],
 };
 

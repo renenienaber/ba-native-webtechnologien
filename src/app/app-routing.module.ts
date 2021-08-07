@@ -38,6 +38,25 @@ import {
   HTML_MEDIA_CAPTURE,
   HtmlMediaCaptureComponent
 } from './technologies/cam_mic_capture/html-media-capture/html-media-capture.component';
+import {
+  MEDIA_CAPTURE_AND_STREAMS,
+  MediaCaptureAndStreamsComponent
+} from './technologies/cam_mic_capture/media-capture-and-streams/media-capture-and-streams.component';
+import {
+  MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
+  MediaCaptureFromDomElementsComponent
+} from './technologies/cam_mic_capture/media-capture-from-dom-elements/media-capture-from-dom-elements.component';
+import {
+  MEDIASTREAM_IMAGE_CAPTURE,
+  MediastreamImageCaptureComponent
+} from './technologies/cam_mic_capture/mediastream-image-capture/mediastream-image-capture.component';
+import {
+  MEDIASTREAM_RECORDING,
+  MediastreamRecordingComponent
+} from './technologies/cam_mic_capture/mediastream-recording/mediastream-recording.component';
+import {SCREEN_CAPTURE, ScreenCaptureComponent} from './technologies/cam_mic_capture/screen-capture/screen-capture.component';
+import {SHAPE_DETECTION, ShapeDetectionComponent} from './technologies/cam_mic_capture/shape-detection/shape-detection.component';
+import {TEXT_DETECTION, TextDetectionComponent} from './technologies/cam_mic_capture/text-detection/text-detection.component';
 
 
 const routes: Routes = [
@@ -139,6 +158,34 @@ const routes: Routes = [
       {
         path: HTML_MEDIA_CAPTURE.routerLink,
         component: HtmlMediaCaptureComponent
+      },
+      {
+        path: MEDIA_CAPTURE_AND_STREAMS.routerLink,
+        component: MediaCaptureAndStreamsComponent
+      },
+      {
+        path: MEDIA_CAPTURE_FROM_DOM_ELEMENTS.routerLink,
+        component: MediaCaptureFromDomElementsComponent
+      },
+      {
+        path: MEDIASTREAM_IMAGE_CAPTURE.routerLink,
+        component: MediastreamImageCaptureComponent
+      },
+      {
+        path: MEDIASTREAM_RECORDING.routerLink,
+        component: MediastreamRecordingComponent
+      },
+      {
+        path: SCREEN_CAPTURE.routerLink,
+        component: ScreenCaptureComponent
+      },
+      {
+        path: SHAPE_DETECTION.routerLink,
+        component: ShapeDetectionComponent
+      },
+      {
+        path: TEXT_DETECTION.routerLink,
+        component: TextDetectionComponent
       },
       // INPUT OUTPUT DEVICES
       // INPUT PROCESSING
