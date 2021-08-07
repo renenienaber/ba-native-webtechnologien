@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-import {Category, CATEGORY_BASIC_PWA, CATEGORY_REST} from './category/category';
+import {
+  CAM_MIC_CAPTURE,
+  Category,
+  DEVICE_INFOS,
+  FURTHER_HARDWARE_PERIPHERAL, FURTHER_PLATFORM,
+  INPUT_OUTPUT_DEVICES,
+  INPUT_PROCESSING, LOCAL_RESOURCES, PLATFORM_UI,
+  SCREEN,
+  SENSORS
+} from './category/category';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +17,15 @@ import {Category, CATEGORY_BASIC_PWA, CATEGORY_REST} from './category/category';
 })
 export class DashboardComponent {
   categories: Category[] = [
-    CATEGORY_BASIC_PWA,
-    CATEGORY_REST,
+    SENSORS,
+    DEVICE_INFOS,
+    SCREEN,
+    CAM_MIC_CAPTURE,
+    INPUT_OUTPUT_DEVICES,
+    INPUT_PROCESSING,
+    FURTHER_HARDWARE_PERIPHERAL,
+    LOCAL_RESOURCES,
+    PLATFORM_UI,
+    FURTHER_PLATFORM
   ];
 }

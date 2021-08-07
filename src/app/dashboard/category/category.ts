@@ -1,11 +1,4 @@
 import {Technology} from '../../technologies/technology';
-import {WEB_APP_MANIFEST} from '../../technologies/web-app-manifest/web-app-manifest.component';
-import {SERVICE_WORKER} from '../../technologies/service-worker/service-worker.component';
-import {NOTIFICATION_API} from '../../technologies/notification/notification.component';
-import {VIBRATION_API} from '../../technologies/vibration/vibration.component';
-import {GEOLOCATION_API} from '../../technologies/geolocation/geolocation.component';
-import {ORIENTATION_SENSOR_API} from '../../technologies/orientation-sensor/orientation-sensor.component';
-import {DEVICE_ORIENTATION_API} from '../../technologies/device-orientation/device-orientation.component';
 
 export interface Category {
   title: string;
@@ -13,14 +6,62 @@ export interface Category {
   technologies: Technology[];
 }
 
-export const CATEGORY_BASIC_PWA: Category = {
-  title: 'Basic PWA',
-  icon: 'smartphone',
-  technologies: [WEB_APP_MANIFEST, SERVICE_WORKER],
+export const SENSORS: Category = {
+  title: 'Sensoren',
+  icon: 'sensors',
+  technologies: [],
 };
 
-export const CATEGORY_REST: Category = {
-  title: 'Rest',
-  icon: '',
-  technologies: [NOTIFICATION_API, VIBRATION_API, GEOLOCATION_API, ORIENTATION_SENSOR_API, DEVICE_ORIENTATION_API],
+export const DEVICE_INFOS: Category = {
+  title: 'Geräteinformationen',
+  icon: 'perm_device_information',
+  technologies: [],
+};
+
+export const SCREEN: Category = {
+  title: 'Bildschirm',
+  icon: 'monitor',
+  technologies: [],
+};
+
+export const CAM_MIC_CAPTURE: Category = {
+  title: 'Kamera, Mikrofon und Aufnahme',
+  icon: 'perm_camera_mic',
+  technologies: [],
+};
+
+export const INPUT_OUTPUT_DEVICES: Category = {
+  title: 'Zugriff auf Eingabe- & Ausgabegeräte',
+  icon: 'cable',
+  technologies: [],
+};
+
+export const INPUT_PROCESSING: Category = {
+  title: 'Eingabeverarbeitung',
+  icon: 'spellcheck',
+  technologies: [],
+};
+
+export const FURTHER_HARDWARE_PERIPHERAL: Category = {
+  title: 'Weitere Hardware- und Peripheriefunktionalitäten',
+  icon: 'settings_input_component',
+  technologies: [],
+};
+
+export const LOCAL_RESOURCES: Category = {
+  title: 'Lokale Ressourcen',
+  icon: 'save',
+  technologies: [],
+};
+
+export const PLATFORM_UI: Category = {
+  title: 'Plattformfunktionalitäten mit eigener UI',
+  icon: 'dvr',
+  technologies: [],
+};
+
+export const FURTHER_PLATFORM: Category = {
+  title: 'Weitere Plattformfunktionalitäten',
+  icon: 'lightbulb',
+  technologies: [],
 };
