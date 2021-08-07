@@ -26,6 +26,14 @@ import {
   NETWORK_INFORMATION,
   NetworkInformationComponent
 } from './technologies/device-infos/network-information/network-information.component';
+import {FULLSCREEN, FullscreenComponent} from './technologies/screen/fullscreen/fullscreen.component';
+import {
+  MULTI_SCREEN_WINDOW_PLACEMENT,
+  MultiScreenWindowPlacementComponent
+} from './technologies/screen/multi-screen-window-placement/multi-screen-window-placement.component';
+import {PRESENTATION, PresentationComponent} from './technologies/screen/presentation/presentation.component';
+import {SCREEN_ORIENTATION, ScreenOrientationComponent} from './technologies/screen/screen-orientation/screen-orientation.component';
+import {SCREEN_WAKE_LOCK, ScreenWakeLockComponent} from './technologies/screen/screen-wake-lock/screen-wake-lock.component';
 
 
 const routes: Routes = [
@@ -103,6 +111,26 @@ const routes: Routes = [
         component: NetworkInformationComponent
       },
       // SCREEN
+      {
+        path: FULLSCREEN.routerLink,
+        component: FullscreenComponent
+      },
+      {
+        path: MULTI_SCREEN_WINDOW_PLACEMENT.routerLink,
+        component: MultiScreenWindowPlacementComponent
+      },
+      {
+        path: PRESENTATION.routerLink,
+        component: PresentationComponent
+      },
+      {
+        path: SCREEN_ORIENTATION.routerLink,
+        component: ScreenOrientationComponent
+      },
+      {
+        path: SCREEN_WAKE_LOCK.routerLink,
+        component: ScreenWakeLockComponent
+      },
       // CAM MIC CAPTURE
       // INPUT OUTPUT DEVICES
       // INPUT PROCESSING

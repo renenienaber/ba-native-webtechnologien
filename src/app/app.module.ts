@@ -45,6 +45,11 @@ import { DeviceMemoryComponent } from './technologies/device-infos/device-memory
 import { DevicePostureComponent } from './technologies/device-infos/device-posture/device-posture.component';
 import { MediaCapabilitiesComponent } from './technologies/device-infos/media-capabilities/media-capabilities.component';
 import { NetworkInformationComponent } from './technologies/device-infos/network-information/network-information.component';
+import { FullscreenComponent } from './technologies/screen/fullscreen/fullscreen.component';
+import { MultiScreenWindowPlacementComponent } from './technologies/screen/multi-screen-window-placement/multi-screen-window-placement.component';
+import { PresentationComponent } from './technologies/screen/presentation/presentation.component';
+import { ScreenOrientationComponent } from './technologies/screen/screen-orientation/screen-orientation.component';
+import { ScreenWakeLockComponent } from './technologies/screen/screen-wake-lock/screen-wake-lock.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +79,11 @@ import { NetworkInformationComponent } from './technologies/device-infos/network
     MediaCapabilitiesComponent,
     NetworkInformationComponent,
     // SCREEN
+    FullscreenComponent,
+    MultiScreenWindowPlacementComponent,
+    PresentationComponent,
+    ScreenOrientationComponent,
+    ScreenWakeLockComponent,
     // CAM MIC CAPTURE
     // INPUT OUTPUT DEVICES
     // INPUT PROCESSING

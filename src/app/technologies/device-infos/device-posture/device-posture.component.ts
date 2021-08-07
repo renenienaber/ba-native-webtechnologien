@@ -24,6 +24,6 @@ export const DEVICE_POSTURE: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/device-posture/' },
   ],
-  icon: 'laptop',
+  icon: 'splitscreen',
   routerLink: 'device-posture'
 };

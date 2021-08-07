@@ -14,6 +14,11 @@ import {DEVICE_MEMORY} from '../../technologies/device-infos/device-memory/devic
 import {DEVICE_POSTURE} from '../../technologies/device-infos/device-posture/device-posture.component';
 import {MEDIA_CAPABILITIES} from '../../technologies/device-infos/media-capabilities/media-capabilities.component';
 import {NETWORK_INFORMATION} from '../../technologies/device-infos/network-information/network-information.component';
+import {FULLSCREEN} from '../../technologies/screen/fullscreen/fullscreen.component';
+import {MULTI_SCREEN_WINDOW_PLACEMENT} from '../../technologies/screen/multi-screen-window-placement/multi-screen-window-placement.component';
+import {PRESENTATION} from '../../technologies/screen/presentation/presentation.component';
+import {SCREEN_ORIENTATION} from '../../technologies/screen/screen-orientation/screen-orientation.component';
+import {SCREEN_WAKE_LOCK} from '../../technologies/screen/screen-wake-lock/screen-wake-lock.component';
 
 export interface Category {
   title: string;
@@ -53,7 +58,13 @@ export const DEVICE_INFOS: Category = {
 export const SCREEN: Category = {
   title: 'Bildschirm',
   icon: 'monitor',
-  technologies: [],
+  technologies: [
+    FULLSCREEN,
+    MULTI_SCREEN_WINDOW_PLACEMENT,
+    PRESENTATION,
+    SCREEN_ORIENTATION,
+    SCREEN_WAKE_LOCK
+  ],
 };
 
 export const CAM_MIC_CAPTURE: Category = {
