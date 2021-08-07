@@ -21,35 +21,49 @@ import {FormsModule} from '@angular/forms';
 import { DemoFrameComponent } from './demo-frame/demo-frame.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { GeolocationComponent } from './technologies/geolocation/geolocation.component';
+import { GeolocationComponent } from './technologies/sensors/geolocation/geolocation.component';
 import { NotificationComponent } from './technologies/notification/notification.component';
 import { WebAppManifestComponent } from './technologies/web-app-manifest/web-app-manifest.component';
 import { ServiceWorkerComponent } from './technologies/service-worker/service-worker.component';
-import { DeviceOrientationComponent } from './technologies/device-orientation/device-orientation.component';
-import { OrientationSensorComponent } from './technologies/orientation-sensor/orientation-sensor.component';
+import { OrientationSensorComponent } from './technologies/sensors/orientation-sensor/orientation-sensor.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CategoryComponent } from './dashboard/category/category.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { DisplayFeatureDetectionsComponent } from './display-feature-detections/display-feature-detections.component';
+import {DeviceorientationEventComponent} from './technologies/sensors/deviceorientation-event/deviceorientation-event.component';
+import {AccelerometerComponent} from './technologies/sensors/accelerometer/accelerometer.component';
+import {AmbientLightSensorComponent} from './technologies/sensors/ambient-light-sensor/ambient-light-sensor.component';
+import { GeolocationSensorComponent } from './technologies/sensors/geolocation-sensor/geolocation-sensor.component';
+import { GyroscopeComponent } from './technologies/sensors/gyroscope/gyroscope.component';
+import { MagnetometerComponent } from './technologies/sensors/magnetometer/magnetometer.component';
+import { ProximitySensorComponent } from './technologies/sensors/proximity-sensor/proximity-sensor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     AboutComponent,
-    VibrationComponent,
     DemoFrameComponent,
-    GeolocationComponent,
-    NotificationComponent,
-    WebAppManifestComponent,
-    ServiceWorkerComponent,
-    DeviceOrientationComponent,
-    OrientationSensorComponent,
     DashboardComponent,
     CategoryComponent,
     DisplayFeatureDetectionsComponent,
+    // TECHNOLOGIES
+    AccelerometerComponent,
+    AmbientLightSensorComponent,
+    DeviceorientationEventComponent,
+    GeolocationComponent,
+    GeolocationSensorComponent,
+    GyroscopeComponent,
+    MagnetometerComponent,
+    OrientationSensorComponent,
+    ProximitySensorComponent,
+    //
+    NotificationComponent,
+    ServiceWorkerComponent,
+    VibrationComponent,
+    WebAppManifestComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {TechnologyComponent} from '../technology.component';
-import {Technology} from '../technology';
+import {TechnologyComponent} from '../../technology.component';
+import {Technology} from '../../technology';
 
 @Component({
   selector: 'app-geolocation',
@@ -54,7 +54,7 @@ export class GeolocationComponent extends TechnologyComponent {
 
 export const GEOLOCATION_API: Technology = {
   name: 'Geolocation API',
-  description: 'Erlaubt authorisierten Webanwendungen den Zugriff auf Standortdaten des Gerätes durch GPS oder das Netzwerk.',
+  description: 'Ermöglicht den Zugriff auf geografische Standortinformationen des Endgerätes.',
   featureDetections: [
     {
       apiObject: 'navigator.geolocation',
@@ -62,10 +62,8 @@ export const GEOLOCATION_API: Technology = {
     },
   ],
   references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation-API/' },
-    { name: 'CanIUse', link: 'https://caniuse.com/geolocation' },
-    { name: 'Mozilla Developer Network', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API' },
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation/' }
   ],
-  icon: 'place',
-  routerLink: 'geolocation-api'
+  icon: 'location_on',
+  routerLink: 'geolocation'
 };

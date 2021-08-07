@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AboutComponent} from './about/about.component';
-import {VibrationComponent} from './technologies/vibration/vibration.component';
-import {GeolocationComponent} from './technologies/geolocation/geolocation.component';
-import {NotificationComponent} from './technologies/notification/notification.component';
-import {WebAppManifestComponent} from './technologies/web-app-manifest/web-app-manifest.component';
-import {ServiceWorkerComponent} from './technologies/service-worker/service-worker.component';
-import {DeviceOrientationComponent} from './technologies/device-orientation/device-orientation.component';
-import {OrientationSensorComponent} from './technologies/orientation-sensor/orientation-sensor.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {ACCELEROMETER, AccelerometerComponent} from './technologies/sensors/accelerometer/accelerometer.component';
+import {
+  AMBIENT_LIGHT_SENSOR,
+  AmbientLightSensorComponent
+} from './technologies/sensors/ambient-light-sensor/ambient-light-sensor.component';
+import {
+  DEVICEORIENTATION_EVENT,
+  DeviceorientationEventComponent
+} from './technologies/sensors/deviceorientation-event/deviceorientation-event.component';
+import {GEOLOCATION_API, GeolocationComponent} from './technologies/sensors/geolocation/geolocation.component';
+import {GEOLOCATION_SENSOR, GeolocationSensorComponent} from './technologies/sensors/geolocation-sensor/geolocation-sensor.component';
+import {GYROSCOPE, GyroscopeComponent} from './technologies/sensors/gyroscope/gyroscope.component';
+import {MAGNETOMETER, MagnetometerComponent} from './technologies/sensors/magnetometer/magnetometer.component';
+import {ORIENTATION_SENSOR, OrientationSensorComponent} from './technologies/sensors/orientation-sensor/orientation-sensor.component';
+import {PROXIMITY_SENSOR, ProximitySensorComponent} from './technologies/sensors/proximity-sensor/proximity-sensor.component';
 
 
 const routes: Routes = [
@@ -23,33 +31,42 @@ const routes: Routes = [
   {
     path: 'technology',
     children: [
+      // SENSORS
       {
-        path: 'web-app-manifest',
-        component: WebAppManifestComponent
+        path: ACCELEROMETER.routerLink,
+        component: AccelerometerComponent
       },
       {
-        path: 'service-worker',
-        component: ServiceWorkerComponent
+        path: AMBIENT_LIGHT_SENSOR.routerLink,
+        component: AmbientLightSensorComponent
       },
       {
-        path: 'vibration-api',
-        component: VibrationComponent
+        path: DEVICEORIENTATION_EVENT.routerLink,
+        component: DeviceorientationEventComponent
       },
       {
-        path: 'geolocation-api',
+        path: GEOLOCATION_API.routerLink,
         component: GeolocationComponent
       },
       {
-        path: 'notification-api',
-        component: NotificationComponent
+        path: GEOLOCATION_SENSOR.routerLink,
+        component: GeolocationSensorComponent
       },
       {
-        path: 'device-orientation-api',
-        component: DeviceOrientationComponent
+        path: GYROSCOPE.routerLink,
+        component: GyroscopeComponent
       },
       {
-        path: 'orientation-sensor-api',
+        path: MAGNETOMETER.routerLink,
+        component: MagnetometerComponent
+      },
+      {
+        path: ORIENTATION_SENSOR.routerLink,
         component: OrientationSensorComponent
+      },
+      {
+        path: PROXIMITY_SENSOR.routerLink,
+        component: ProximitySensorComponent
       },
       // fallback component - needs to be last one
       {

@@ -1,13 +1,13 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Technology} from '../technology';
-import {TechnologyComponent} from '../technology.component';
+import {Technology} from '../../technology';
+import {TechnologyComponent} from '../../technology.component';
 
 @Component({
   selector: 'app-device-orientation',
-  templateUrl: './device-orientation.component.html'
+  templateUrl: './deviceorientation-event.component.html'
 })
-export class DeviceOrientationComponent extends TechnologyComponent implements OnInit, OnDestroy {
-  technology: Technology = DEVICE_ORIENTATION_API;
+export class DeviceorientationEventComponent extends TechnologyComponent implements OnInit, OnDestroy {
+  technology: Technology = DEVICEORIENTATION_EVENT;
 
   errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
@@ -38,19 +38,22 @@ export class DeviceOrientationComponent extends TechnologyComponent implements O
   }
 }
 
-export const DEVICE_ORIENTATION_API: Technology = {
+export const DEVICEORIENTATION_EVENT: Technology = {
   name: 'DeviceOrientation Event API',
-  description: '',
+  description: 'Ermöglicht den Zugriff auf Informationen über die physische Haltung und Bewegung eines Endgerätes.',
   featureDetections: [
     {
       apiObject: 'window.DeviceOrientationEvent',
       detection: 'DeviceOrientationEvent' in window
     },
+    {
+      apiObject: 'window.DeviceOrientationEvent',
+      detection: 'DeviceMotionEvent' in window
+    },
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-event/' },
-    { name: 'CanIUse', link: 'https://caniuse.com/deviceorientation' },
   ],
   icon: 'screen_rotation',
-  routerLink: 'device-orientation-api'
+  routerLink: 'deviceorientation-event'
 };

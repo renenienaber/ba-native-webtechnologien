@@ -1,4 +1,13 @@
 import {Technology} from '../../technologies/technology';
+import {ACCELEROMETER} from '../../technologies/sensors/accelerometer/accelerometer.component';
+import {AMBIENT_LIGHT_SENSOR} from '../../technologies/sensors/ambient-light-sensor/ambient-light-sensor.component';
+import {DEVICEORIENTATION_EVENT} from '../../technologies/sensors/deviceorientation-event/deviceorientation-event.component';
+import {GEOLOCATION_API} from '../../technologies/sensors/geolocation/geolocation.component';
+import {GEOLOCATION_SENSOR} from '../../technologies/sensors/geolocation-sensor/geolocation-sensor.component';
+import {GYROSCOPE} from '../../technologies/sensors/gyroscope/gyroscope.component';
+import {MAGNETOMETER} from '../../technologies/sensors/magnetometer/magnetometer.component';
+import {ORIENTATION_SENSOR} from '../../technologies/sensors/orientation-sensor/orientation-sensor.component';
+import {PROXIMITY_SENSOR} from '../../technologies/sensors/proximity-sensor/proximity-sensor.component';
 
 export interface Category {
   title: string;
@@ -9,7 +18,17 @@ export interface Category {
 export const SENSORS: Category = {
   title: 'Sensoren',
   icon: 'sensors',
-  technologies: [],
+  technologies: [
+    ACCELEROMETER,
+    AMBIENT_LIGHT_SENSOR,
+    DEVICEORIENTATION_EVENT,
+    GEOLOCATION_API,
+    GEOLOCATION_SENSOR,
+    GYROSCOPE,
+    MAGNETOMETER,
+    ORIENTATION_SENSOR,
+    PROXIMITY_SENSOR,
+  ],
 };
 
 export const DEVICE_INFOS: Category = {

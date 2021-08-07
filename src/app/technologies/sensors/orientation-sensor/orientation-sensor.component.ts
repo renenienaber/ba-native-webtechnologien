@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
-import {Technology} from '../technology';
-import {TechnologyComponent} from '../technology.component';
-import {AbsoluteOrientationSensor, RelativeOrientationSensor} from '../../../polyfills/motion-sensors';
+import {Technology} from '../../technology';
+import {TechnologyComponent} from '../../technology.component';
+import {AbsoluteOrientationSensor, RelativeOrientationSensor} from '../../../../polyfills/motion-sensors';
 
 @Component({
   selector: 'app-orientation-sensor',
   templateUrl: './orientation-sensor.component.html'
 })
 export class OrientationSensorComponent extends TechnologyComponent {
-  technology: Technology = ORIENTATION_SENSOR_API;
+  technology: Technology = ORIENTATION_SENSOR;
 
   private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
   private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
@@ -50,9 +50,9 @@ export class OrientationSensorComponent extends TechnologyComponent {
   }
 }
 
-export const ORIENTATION_SENSOR_API: Technology = {
-  name: 'Orientation Sensor API',
-  description: '',
+export const ORIENTATION_SENSOR: Technology = {
+  name: 'Orientation Sensor',
+  description: 'Definiert eine Webtechnologie zur Erfassung der physischen Orientierung des Endgerätes und erweitert die Generic Sensor API.',
   featureDetections: [
     {
       apiObject: 'window.AbsoluteOrientationSensor',
@@ -66,10 +66,7 @@ export const ORIENTATION_SENSOR_API: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-sensor/'},
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
-    { name: 'CanIUse', link: 'https://caniuse.com/orientation-sensor' },
-    { name: 'Mozilla Developer Network (Sensor APIs)', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs' },
-    { name: 'Polyfill', link: 'https://github.com/kenchris/sensor-polyfills' }
   ],
   icon: 'screen_rotation',
-  routerLink: 'orientation-sensor-api'
+  routerLink: 'orientation-sensor'
 };

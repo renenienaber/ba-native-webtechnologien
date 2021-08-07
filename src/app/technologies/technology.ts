@@ -1,10 +1,12 @@
-import {VIBRATION_API} from './vibration/vibration.component';
-import {WEB_APP_MANIFEST} from './web-app-manifest/web-app-manifest.component';
-import {GEOLOCATION_API} from './geolocation/geolocation.component';
-import {NOTIFICATION_API} from './notification/notification.component';
-import {SERVICE_WORKER} from './service-worker/service-worker.component';
-import {DEVICE_ORIENTATION_API} from './device-orientation/device-orientation.component';
-import {ORIENTATION_SENSOR_API} from './orientation-sensor/orientation-sensor.component';
+import {
+  CAM_MIC_CAPTURE,
+  DEVICE_INFOS,
+  FURTHER_HARDWARE_PERIPHERAL, FURTHER_PLATFORM,
+  INPUT_OUTPUT_DEVICES,
+  INPUT_PROCESSING, LOCAL_RESOURCES, PLATFORM_UI,
+  SCREEN,
+  SENSORS
+} from '../dashboard/category/category';
 
 export interface Technology {
   name: string;
@@ -26,11 +28,14 @@ export interface FeatureDetection {
 }
 
 export const TECHNOLOGIES: Technology[] = [
-  WEB_APP_MANIFEST,
-  SERVICE_WORKER,
-  NOTIFICATION_API,
-  VIBRATION_API,
-  GEOLOCATION_API,
-  ORIENTATION_SENSOR_API,
-  DEVICE_ORIENTATION_API
-];
+  ...SENSORS.technologies,
+  ...DEVICE_INFOS.technologies,
+  ...SCREEN.technologies,
+  ...CAM_MIC_CAPTURE.technologies,
+  ...INPUT_OUTPUT_DEVICES.technologies,
+  ...INPUT_PROCESSING.technologies,
+  ...FURTHER_HARDWARE_PERIPHERAL.technologies,
+  ...LOCAL_RESOURCES.technologies,
+  ...PLATFORM_UI.technologies,
+  ...FURTHER_PLATFORM.technologies
+].sort((a, b) => a.name.localeCompare(b.name));
