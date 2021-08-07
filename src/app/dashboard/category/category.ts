@@ -19,6 +19,7 @@ import {MULTI_SCREEN_WINDOW_PLACEMENT} from '../../technologies/screen/multi-scr
 import {PRESENTATION} from '../../technologies/screen/presentation/presentation.component';
 import {SCREEN_ORIENTATION} from '../../technologies/screen/screen-orientation/screen-orientation.component';
 import {SCREEN_WAKE_LOCK} from '../../technologies/screen/screen-wake-lock/screen-wake-lock.component';
+import {HTML_MEDIA_CAPTURE} from '../../technologies/cam_mic_capture/html-media-capture/html-media-capture.component';
 
 export interface Category {
   title: string;
@@ -70,7 +71,9 @@ export const SCREEN: Category = {
 export const CAM_MIC_CAPTURE: Category = {
   title: 'Kamera, Mikrofon und Aufnahme',
   icon: 'perm_camera_mic',
-  technologies: [],
+  technologies: [
+    HTML_MEDIA_CAPTURE,
+  ],
 };
 
 export const INPUT_OUTPUT_DEVICES: Category = {

@@ -34,6 +34,10 @@ import {
 import {PRESENTATION, PresentationComponent} from './technologies/screen/presentation/presentation.component';
 import {SCREEN_ORIENTATION, ScreenOrientationComponent} from './technologies/screen/screen-orientation/screen-orientation.component';
 import {SCREEN_WAKE_LOCK, ScreenWakeLockComponent} from './technologies/screen/screen-wake-lock/screen-wake-lock.component';
+import {
+  HTML_MEDIA_CAPTURE,
+  HtmlMediaCaptureComponent
+} from './technologies/cam_mic_capture/html-media-capture/html-media-capture.component';
 
 
 const routes: Routes = [
@@ -132,6 +136,10 @@ const routes: Routes = [
         component: ScreenWakeLockComponent
       },
       // CAM MIC CAPTURE
+      {
+        path: HTML_MEDIA_CAPTURE.routerLink,
+        component: HtmlMediaCaptureComponent
+      },
       // INPUT OUTPUT DEVICES
       // INPUT PROCESSING
       // FURTHER HARDWARE PERIPHERAL

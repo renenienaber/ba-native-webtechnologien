@@ -50,6 +50,7 @@ import { MultiScreenWindowPlacementComponent } from './technologies/screen/multi
 import { PresentationComponent } from './technologies/screen/presentation/presentation.component';
 import { ScreenOrientationComponent } from './technologies/screen/screen-orientation/screen-orientation.component';
 import { ScreenWakeLockComponent } from './technologies/screen/screen-wake-lock/screen-wake-lock.component';
+import { HtmlMediaCaptureComponent } from './technologies/cam_mic_capture/html-media-capture/html-media-capture.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { ScreenWakeLockComponent } from './technologies/screen/screen-wake-lock/
     ScreenOrientationComponent,
     ScreenWakeLockComponent,
     // CAM MIC CAPTURE
+    HtmlMediaCaptureComponent,
     // INPUT OUTPUT DEVICES
     // INPUT PROCESSING
     // FURTHER HARDWARE PERIPHERAL
