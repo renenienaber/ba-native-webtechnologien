@@ -28,9 +28,9 @@ export class CategoryComponent {
 
   getRightIcon(technology: Technology): string {
     if (technology.featureDetections.length > 0) {
-      return this.getCompatibleFeaturesCount(technology) > 0 ? 'check_circle_outline' : 'error_outline';
+      return this.getCompatibleFeaturesCount(technology) > 0 ? 'check' : 'error_outline';
     }
-    return 'help_outline';
+    return 'report_off';
   }
 
 }
