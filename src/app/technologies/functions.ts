@@ -12,6 +12,7 @@ export function isObjectInServiceWorkerRegistration(object: string): boolean {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(
       serviceWorkerRegistration => {
+        console.log(serviceWorkerRegistration);
         if (object in serviceWorkerRegistration) {
           return true;
         }
