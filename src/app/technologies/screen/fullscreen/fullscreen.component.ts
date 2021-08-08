@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../technology';
 import {TechnologyComponent} from '../../technology.component';
+import {isObjectInHtmlElement} from '../../functions';
 
 @Component({
   selector: 'app-fullscreen',
@@ -14,6 +15,10 @@ export const FULLSCREEN: Technology = {
   name: 'Fullscreen API',
   description: 'Ermöglicht es, Webanwendungen oder Teile dieser im Vollbildmodus darzustellen.',
   featureDetections: [
+    {
+      apiObject: 'Element.requestFullscreen()',
+      detection: isObjectInHtmlElement('div', 'requestFullscreen'),
+    },
     {
       apiObject: 'document.exitFullscreen()',
       detection: 'exitFullscreen' in document,

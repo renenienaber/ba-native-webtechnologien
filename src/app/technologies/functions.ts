@@ -2,3 +2,8 @@ export function isObjectInHtmlElement(htmlElement: string, object: string): bool
   const el = document.createElement(htmlElement);
   return object in el;
 }
+
+export function isObjectInUIEvent(object: string): boolean {
+  const ev = new UIEvent('TestEvent', {});
+  return object in ev;
+}

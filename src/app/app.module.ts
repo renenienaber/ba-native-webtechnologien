@@ -64,6 +64,14 @@ import { RemotePlaybackComponent } from './technologies/input-output-devices/rem
 import { WebMidiComponent } from './technologies/input-output-devices/web-midi/web-midi.component';
 import { WebhidComponent } from './technologies/input-output-devices/webhid/webhid.component';
 import { WebxrDeviceComponent } from './technologies/input-output-devices/webxr-device/webxr-device.component';
+import { InputDeviceCapabilitiesComponent } from './technologies/input-processing/input-device-capabilities/input-device-capabilities.component';
+import { KeyboardLockComponent } from './technologies/input-processing/keyboard-lock/keyboard-lock.component';
+import { KeyboardMapComponent } from './technologies/input-processing/keyboard-map/keyboard-map.component';
+import { PointerEventsComponent } from './technologies/input-processing/pointer-events/pointer-events.component';
+import { TouchEventsComponent } from './technologies/input-processing/touch-events/touch-events.component';
+import { VirtualkeyboardComponent } from './technologies/input-processing/virtualkeyboard/virtualkeyboard.component';
+import { WebSpeechComponent } from './technologies/input-processing/web-speech/web-speech.component';
+import { PointerLockComponent } from './technologies/input-processing/pointer-lock/pointer-lock.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +123,14 @@ import { WebxrDeviceComponent } from './technologies/input-output-devices/webxr-
     WebhidComponent,
     WebxrDeviceComponent,
     // INPUT PROCESSING
+    InputDeviceCapabilitiesComponent,
+    KeyboardLockComponent,
+    KeyboardMapComponent,
+    PointerEventsComponent,
+    PointerLockComponent,
+    TouchEventsComponent,
+    VirtualkeyboardComponent,
+    WebSpeechComponent,
     // FURTHER HARDWARE PERIPHERAL
     // LOCAL RESOURCES
     // PLATFORM UI

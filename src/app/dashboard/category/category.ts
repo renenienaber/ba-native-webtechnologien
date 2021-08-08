@@ -33,6 +33,14 @@ import {REMOTE_PLAYBACK} from '../../technologies/input-output-devices/remote-pl
 import {WEB_MIDI} from '../../technologies/input-output-devices/web-midi/web-midi.component';
 import {WEBHID} from '../../technologies/input-output-devices/webhid/webhid.component';
 import {WEBXR_DEVICE} from '../../technologies/input-output-devices/webxr-device/webxr-device.component';
+import {INPUT_DEVICE_CAPABILITIES} from '../../technologies/input-processing/input-device-capabilities/input-device-capabilities.component';
+import {KEYBOARD_LOCK} from '../../technologies/input-processing/keyboard-lock/keyboard-lock.component';
+import {KEYBOARD_MAP} from '../../technologies/input-processing/keyboard-map/keyboard-map.component';
+import {POINTER_EVENTS} from '../../technologies/input-processing/pointer-events/pointer-events.component';
+import {TOUCH_EVENTS} from '../../technologies/input-processing/touch-events/touch-events.component';
+import {VIRTUALKEYBOARD} from '../../technologies/input-processing/virtualkeyboard/virtualkeyboard.component';
+import {WEB_SPEECH} from '../../technologies/input-processing/web-speech/web-speech.component';
+import {POINTER_LOCK} from '../../technologies/input-processing/pointer-lock/pointer-lock.component';
 
 export interface Category {
   title: string;
@@ -112,7 +120,16 @@ export const INPUT_OUTPUT_DEVICES: Category = {
 export const INPUT_PROCESSING: Category = {
   title: 'Eingabeverarbeitung',
   icon: 'spellcheck',
-  technologies: [],
+  technologies: [
+    INPUT_DEVICE_CAPABILITIES,
+    KEYBOARD_LOCK,
+    KEYBOARD_MAP,
+    POINTER_EVENTS,
+    POINTER_LOCK,
+    TOUCH_EVENTS,
+    VIRTUALKEYBOARD,
+    WEB_SPEECH
+  ],
 };
 
 export const FURTHER_HARDWARE_PERIPHERAL: Category = {

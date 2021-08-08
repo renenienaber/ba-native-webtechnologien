@@ -20,8 +20,8 @@ export const AUDIO_OUTPUT_DEVICES: Technology = {
       detection: isObjectInHtmlElement('audio', 'sinkId'),
     },
     {
-      apiObject: 'MediaDevices.selectAudioOutput',
-      detection: 'MediaDevices' in window && 'selectAudioOutput' in MediaDevices
+      apiObject: 'navigator.mediaDevices.selectAudioOutput()',
+      detection: 'mediaDevices' in navigator && 'selectAudioOutput' in navigator.mediaDevices,
     },
   ],
   references: [

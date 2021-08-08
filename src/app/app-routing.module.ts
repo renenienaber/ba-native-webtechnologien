@@ -66,6 +66,17 @@ import {REMOTE_PLAYBACK, RemotePlaybackComponent} from './technologies/input-out
 import {WEB_MIDI, WebMidiComponent} from './technologies/input-output-devices/web-midi/web-midi.component';
 import {WEBHID, WebhidComponent} from './technologies/input-output-devices/webhid/webhid.component';
 import {WEBXR_DEVICE, WebxrDeviceComponent} from './technologies/input-output-devices/webxr-device/webxr-device.component';
+import {
+  INPUT_DEVICE_CAPABILITIES,
+  InputDeviceCapabilitiesComponent
+} from './technologies/input-processing/input-device-capabilities/input-device-capabilities.component';
+import {KEYBOARD_LOCK, KeyboardLockComponent} from './technologies/input-processing/keyboard-lock/keyboard-lock.component';
+import {KEYBOARD_MAP, KeyboardMapComponent} from './technologies/input-processing/keyboard-map/keyboard-map.component';
+import {POINTER_EVENTS, PointerEventsComponent} from './technologies/input-processing/pointer-events/pointer-events.component';
+import {TOUCH_EVENTS, TouchEventsComponent} from './technologies/input-processing/touch-events/touch-events.component';
+import {VIRTUALKEYBOARD, VirtualkeyboardComponent} from './technologies/input-processing/virtualkeyboard/virtualkeyboard.component';
+import {WEB_SPEECH, WebSpeechComponent} from './technologies/input-processing/web-speech/web-speech.component';
+import {POINTER_LOCK, PointerLockComponent} from './technologies/input-processing/pointer-lock/pointer-lock.component';
 
 
 const routes: Routes = [
@@ -222,6 +233,38 @@ const routes: Routes = [
         component: WebxrDeviceComponent
       },
       // INPUT PROCESSING
+      {
+        path: INPUT_DEVICE_CAPABILITIES.routerLink,
+        component: InputDeviceCapabilitiesComponent
+      },
+      {
+        path: KEYBOARD_LOCK.routerLink,
+        component: KeyboardLockComponent
+      },
+      {
+        path: KEYBOARD_MAP.routerLink,
+        component: KeyboardMapComponent
+      },
+      {
+        path: POINTER_EVENTS.routerLink,
+        component: PointerEventsComponent
+      },
+      {
+        path: POINTER_LOCK.routerLink,
+        component: PointerLockComponent
+      },
+      {
+        path: TOUCH_EVENTS.routerLink,
+        component: TouchEventsComponent
+      },
+      {
+        path: VIRTUALKEYBOARD.routerLink,
+        component: VirtualkeyboardComponent
+      },
+      {
+        path: WEB_SPEECH.routerLink,
+        component: WebSpeechComponent
+      },
       // FURTHER HARDWARE PERIPHERAL
       // LOCAL RESOURCES
       // PLATFORM UI
