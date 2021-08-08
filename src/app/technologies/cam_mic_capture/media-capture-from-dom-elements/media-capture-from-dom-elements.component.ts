@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../technology';
 import {TechnologyComponent} from '../../technology.component';
+import {isObjectInHtmlElement} from '../../functions';
 
 @Component({
   selector: 'app-media-capture-from-dom-elements',
@@ -16,11 +17,11 @@ export const MEDIA_CAPTURE_FROM_DOM_ELEMENTS: Technology = {
   featureDetections: [
     {
       apiObject: 'HTMLMediaElement.captureStream()',
-      detection: isCaptureStreamMethodInHtmlElement('audio'),
+      detection: isObjectInHtmlElement('audio', 'captureStream'),
     },
     {
       apiObject: 'HTMLCanvasElement.captureStream()',
-      detection: isCaptureStreamMethodInHtmlElement('canvas'),
+      detection: isObjectInHtmlElement('canvas', 'captureStream'),
     },
   ],
   references: [
@@ -29,8 +30,3 @@ export const MEDIA_CAPTURE_FROM_DOM_ELEMENTS: Technology = {
   icon: 'perm_camera_mic',
   routerLink: 'media-capture-from-dom-elements'
 };
-
-function isCaptureStreamMethodInHtmlElement(element: string): boolean {
-  const htmlElement = document.createElement(element);
-  return 'captureStream' in htmlElement;
-}

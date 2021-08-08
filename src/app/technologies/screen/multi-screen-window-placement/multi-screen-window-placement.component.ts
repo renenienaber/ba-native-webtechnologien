@@ -20,7 +20,7 @@ export const MULTI_SCREEN_WINDOW_PLACEMENT: Technology = {
     },
     {
       apiObject: 'window.screen.isExtended',
-      detection: 'isExtended' in window.screen
+      detection: 'screen' in window && 'isExtended' in window.screen
     },
   ],
   references: [

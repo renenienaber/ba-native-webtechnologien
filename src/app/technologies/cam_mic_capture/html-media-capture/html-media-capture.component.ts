@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {TechnologyComponent} from '../../technology.component';
 import {Technology} from '../../technology';
+import {isObjectInHtmlElement} from '../../functions';
 
 @Component({
   selector: 'app-html-media-capture',
@@ -16,7 +17,7 @@ export const HTML_MEDIA_CAPTURE: Technology = {
   featureDetections: [
     {
       apiObject: 'HTMLInputElement.capture',
-      detection: isCaptureInHtmlInputElement()
+      detection: isObjectInHtmlElement('input', 'capture')
     },
   ],
   references: [
@@ -25,8 +26,3 @@ export const HTML_MEDIA_CAPTURE: Technology = {
   icon: 'add_a_photo',
   routerLink: 'html-media-capture'
 };
-
-function isCaptureInHtmlInputElement(): boolean {
-  const htmlInputElement = document.createElement('input');
-  return 'capture' in htmlInputElement;
-}

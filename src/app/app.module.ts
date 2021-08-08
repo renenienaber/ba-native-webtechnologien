@@ -58,6 +58,12 @@ import { MediastreamRecordingComponent } from './technologies/cam_mic_capture/me
 import { ScreenCaptureComponent } from './technologies/cam_mic_capture/screen-capture/screen-capture.component';
 import { ShapeDetectionComponent } from './technologies/cam_mic_capture/shape-detection/shape-detection.component';
 import { TextDetectionComponent } from './technologies/cam_mic_capture/text-detection/text-detection.component';
+import { AudioOutputDevicesComponent } from './technologies/input-output-devices/audio-output-devices/audio-output-devices.component';
+import { GamepadComponent } from './technologies/input-output-devices/gamepad/gamepad.component';
+import { RemotePlaybackComponent } from './technologies/input-output-devices/remote-playback/remote-playback.component';
+import { WebMidiComponent } from './technologies/input-output-devices/web-midi/web-midi.component';
+import { WebhidComponent } from './technologies/input-output-devices/webhid/webhid.component';
+import { WebxrDeviceComponent } from './technologies/input-output-devices/webxr-device/webxr-device.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +108,12 @@ import { TextDetectionComponent } from './technologies/cam_mic_capture/text-dete
     ShapeDetectionComponent,
     TextDetectionComponent,
     // INPUT OUTPUT DEVICES
+    AudioOutputDevicesComponent,
+    GamepadComponent,
+    RemotePlaybackComponent,
+    WebMidiComponent,
+    WebhidComponent,
+    WebxrDeviceComponent,
     // INPUT PROCESSING
     // FURTHER HARDWARE PERIPHERAL
     // LOCAL RESOURCES

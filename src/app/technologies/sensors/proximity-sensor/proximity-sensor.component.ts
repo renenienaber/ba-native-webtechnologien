@@ -14,7 +14,7 @@ export class ProximitySensorComponent extends TechnologyComponent {
 
 export const PROXIMITY_SENSOR: Technology = {
   name: 'Proximity Sensor',
-  description: 'Die Webtechnologie ist eine Schnittstelle für den Zugriff auf Informatiuonen eines gegebenenfalls verbauten Näherungssensors und erweitert die Generic Sensor API.',
+  description: 'Die Webtechnologie ist eine Schnittstelle für den Zugriff auf Informationen eines gegebenenfalls verbauten Näherungssensors und erweitert die Generic Sensor API.',
   featureDetections: [
     {
       apiObject: 'window.ProximitySensor',

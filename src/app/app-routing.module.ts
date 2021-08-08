@@ -57,6 +57,15 @@ import {
 import {SCREEN_CAPTURE, ScreenCaptureComponent} from './technologies/cam_mic_capture/screen-capture/screen-capture.component';
 import {SHAPE_DETECTION, ShapeDetectionComponent} from './technologies/cam_mic_capture/shape-detection/shape-detection.component';
 import {TEXT_DETECTION, TextDetectionComponent} from './technologies/cam_mic_capture/text-detection/text-detection.component';
+import {
+  AUDIO_OUTPUT_DEVICES,
+  AudioOutputDevicesComponent
+} from './technologies/input-output-devices/audio-output-devices/audio-output-devices.component';
+import {GAMEPAD, GamepadComponent} from './technologies/input-output-devices/gamepad/gamepad.component';
+import {REMOTE_PLAYBACK, RemotePlaybackComponent} from './technologies/input-output-devices/remote-playback/remote-playback.component';
+import {WEB_MIDI, WebMidiComponent} from './technologies/input-output-devices/web-midi/web-midi.component';
+import {WEBHID, WebhidComponent} from './technologies/input-output-devices/webhid/webhid.component';
+import {WEBXR_DEVICE, WebxrDeviceComponent} from './technologies/input-output-devices/webxr-device/webxr-device.component';
 
 
 const routes: Routes = [
@@ -188,6 +197,30 @@ const routes: Routes = [
         component: TextDetectionComponent
       },
       // INPUT OUTPUT DEVICES
+      {
+        path: AUDIO_OUTPUT_DEVICES.routerLink,
+        component: AudioOutputDevicesComponent
+      },
+      {
+        path: GAMEPAD.routerLink,
+        component: GamepadComponent
+      },
+      {
+        path: REMOTE_PLAYBACK.routerLink,
+        component: RemotePlaybackComponent
+      },
+      {
+        path: WEB_MIDI.routerLink,
+        component: WebMidiComponent
+      },
+      {
+        path: WEBHID.routerLink,
+        component: WebhidComponent
+      },
+      {
+        path: WEBXR_DEVICE.routerLink,
+        component: WebxrDeviceComponent
+      },
       // INPUT PROCESSING
       // FURTHER HARDWARE PERIPHERAL
       // LOCAL RESOURCES

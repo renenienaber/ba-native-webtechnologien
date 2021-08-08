@@ -15,8 +15,8 @@ export const SCREEN_CAPTURE: Technology = {
   description: 'Ermöglicht die Erfasung des Bildschirminhalts oder Teile von diesem.',
   featureDetections: [
     {
-      apiObject: 'navigator.mediaDevices.getDisplayMedia()',
-      detection: 'getDisplayMedia' in navigator.mediaDevices,
+      apiObject: 'MediaDevices.getDisplayMedia()',
+      detection: 'MediaDevices' in window && 'getDisplayMedia' in MediaDevices,
     },
   ],
   references: [

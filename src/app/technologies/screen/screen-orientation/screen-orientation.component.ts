@@ -16,7 +16,7 @@ export const SCREEN_ORIENTATION: Technology = {
   featureDetections: [
     {
       apiObject: 'window.screen.orientation',
-      detection: 'orientation' in window.screen,
+      detection: 'screen' in window && 'orientation' in window.screen,
     },
   ],
   references: [

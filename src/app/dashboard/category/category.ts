@@ -27,6 +27,12 @@ import {MEDIASTREAM_RECORDING} from '../../technologies/cam_mic_capture/mediastr
 import {SCREEN_CAPTURE} from '../../technologies/cam_mic_capture/screen-capture/screen-capture.component';
 import {SHAPE_DETECTION} from '../../technologies/cam_mic_capture/shape-detection/shape-detection.component';
 import {TEXT_DETECTION} from '../../technologies/cam_mic_capture/text-detection/text-detection.component';
+import {AUDIO_OUTPUT_DEVICES} from '../../technologies/input-output-devices/audio-output-devices/audio-output-devices.component';
+import {GAMEPAD} from '../../technologies/input-output-devices/gamepad/gamepad.component';
+import {REMOTE_PLAYBACK} from '../../technologies/input-output-devices/remote-playback/remote-playback.component';
+import {WEB_MIDI} from '../../technologies/input-output-devices/web-midi/web-midi.component';
+import {WEBHID} from '../../technologies/input-output-devices/webhid/webhid.component';
+import {WEBXR_DEVICE} from '../../technologies/input-output-devices/webxr-device/webxr-device.component';
 
 export interface Category {
   title: string;
@@ -93,7 +99,14 @@ export const CAM_MIC_CAPTURE: Category = {
 export const INPUT_OUTPUT_DEVICES: Category = {
   title: 'Zugriff auf Eingabe- & Ausgabegeräte',
   icon: 'cable',
-  technologies: [],
+  technologies: [
+    AUDIO_OUTPUT_DEVICES,
+    GAMEPAD,
+    REMOTE_PLAYBACK,
+    WEB_MIDI,
+    WEBHID,
+    WEBXR_DEVICE
+  ],
 };
 
 export const INPUT_PROCESSING: Category = {
