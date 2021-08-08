@@ -14,7 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { AboutComponent } from './about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { VibrationComponent } from './technologies/vibration/vibration.component';
+import { VibrationComponent } from './technologies/further-hardware-and-peripheral/vibration/vibration.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
@@ -22,9 +22,9 @@ import { DemoFrameComponent } from './demo-frame/demo-frame.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GeolocationComponent } from './technologies/sensors/geolocation/geolocation.component';
-import { NotificationComponent } from './technologies/notification/notification.component';
-import { WebAppManifestComponent } from './technologies/web-app-manifest/web-app-manifest.component';
-import { ServiceWorkerComponent } from './technologies/service-worker/service-worker.component';
+import { NotificationsComponent } from './technologies/platform-ui/notification/notifications.component';
+import { WebAppManifestComponent } from './technologies/platform-ui/web-app-manifest/web-app-manifest.component';
+import { ServiceWorkerComponent } from './technologies/local-resources/service-worker/service-worker.component';
 import { OrientationSensorComponent } from './technologies/sensors/orientation-sensor/orientation-sensor.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -72,6 +72,23 @@ import { TouchEventsComponent } from './technologies/input-processing/touch-even
 import { VirtualkeyboardComponent } from './technologies/input-processing/virtualkeyboard/virtualkeyboard.component';
 import { WebSpeechComponent } from './technologies/input-processing/web-speech/web-speech.component';
 import { PointerLockComponent } from './technologies/input-processing/pointer-lock/pointer-lock.component';
+import { WebBluetoothComponent } from './technologies/further-hardware-and-peripheral/web-bluetooth/web-bluetooth.component';
+import { WebNfcComponent } from './technologies/further-hardware-and-peripheral/web-nfc/web-nfc.component';
+import { WebSerialComponent } from './technologies/further-hardware-and-peripheral/web-serial/web-serial.component';
+import { WebusbComponent } from './technologies/further-hardware-and-peripheral/webusb/webusb.component';
+import { ContactPickerComponent } from './technologies/local-resources/contact-picker/contact-picker.component';
+import { ContentIndexComponent } from './technologies/local-resources/content-index/content-index.component';
+import { FileComponent } from './technologies/local-resources/file/file.component';
+import { FileSystemAccessComponent } from './technologies/local-resources/file-system-access/file-system-access.component';
+import { IndexedDatabaseComponent } from './technologies/local-resources/indexed-database/indexed-database.component';
+import { LocalFontAccessComponent } from './technologies/local-resources/local-font-access/local-font-access.component';
+import { StorageStandardComponent } from './technologies/local-resources/storage-standard/storage-standard.component';
+import { BadgingComponent } from './technologies/platform-ui/badging/badging.component';
+import { MediaSessionStandardComponent } from './technologies/platform-ui/media-session-standard/media-session-standard.component';
+import { PaymentRequestComponent } from './technologies/platform-ui/payment-request/payment-request.component';
+import { PictureInPictureComponent } from './technologies/platform-ui/picture-in-picture/picture-in-picture.component';
+import { WebAuthenticationComponent } from './technologies/platform-ui/web-authentication/web-authentication.component';
+import { WebShareComponent } from './technologies/platform-ui/web-share/web-share.component';
 
 @NgModule({
   declarations: [
@@ -131,15 +148,31 @@ import { PointerLockComponent } from './technologies/input-processing/pointer-lo
     TouchEventsComponent,
     VirtualkeyboardComponent,
     WebSpeechComponent,
-    // FURTHER HARDWARE PERIPHERAL
-    // LOCAL RESOURCES
-    // PLATFORM UI
-    // FURTHER PLATFORM
-    //
-    NotificationComponent,
-    ServiceWorkerComponent,
+    // FURTHER HARDWARE AND PERIPHERAL
     VibrationComponent,
+    WebBluetoothComponent,
+    WebNfcComponent,
+    WebSerialComponent,
+    // LOCAL RESOURCES
+    ContactPickerComponent,
+    ContentIndexComponent,
+    FileComponent,
+    FileSystemAccessComponent,
+    IndexedDatabaseComponent,
+    LocalFontAccessComponent,
+    ServiceWorkerComponent,
+    StorageStandardComponent,
+    // PLATFORM UI
+    BadgingComponent,
+    MediaSessionStandardComponent,
+    NotificationsComponent,
+    PaymentRequestComponent,
+    PictureInPictureComponent,
     WebAppManifestComponent,
+    WebAuthenticationComponent,
+    WebShareComponent,
+    // FURTHER PLATFORM
+    WebusbComponent,
   ],
   imports: [
     BrowserModule,

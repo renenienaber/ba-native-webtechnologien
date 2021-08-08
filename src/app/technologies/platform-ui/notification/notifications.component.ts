@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import {Technology} from '../technology';
-import {TechnologyComponent} from '../technology.component';
+import {Technology} from '../../technology';
+import {TechnologyComponent} from '../../technology.component';
+import {isObjectInServiceWorkerRegistration} from '../../functions';
 
 @Component({
-  selector: 'app-notification',
-  templateUrl: './notification.component.html',
-  styleUrls: ['./notification.component.css']
+  selector: 'app-notifications',
+  templateUrl: './notifications.component.html',
+  styleUrls: ['./notifications.component.css']
 })
-export class NotificationComponent extends TechnologyComponent {
-  technology: Technology = NOTIFICATION_API;
+export class NotificationsComponent extends TechnologyComponent {
+  technology: Technology = NOTIFICATIONS;
 
   private errorNoWindowNotification = 'window.Notification wird nicht unterstützt!';
   private errorNoServiceWorkerRegistration = 'window.ServiceWorkerRegistration wird nicht unterstützt!';
@@ -58,24 +59,18 @@ export class NotificationComponent extends TechnologyComponent {
   }
 }
 
-export const NOTIFICATION_API: Technology = {
-  name: 'Notification API',
-  description: 'Erlaubt die Anzeige von Systembenachrichtigungen außerhalb des Browserkontextes.',
+export const NOTIFICATIONS: Technology = {
+  name: 'Notifications API',
+  description: 'Erlaubt Webseiten, Systembenachrichtigungen für den Endnutzer zu kontrollieren und auch außerhalb des Browserkontextes anzuzeigen, etwa wenn der Benutzer gerade eine andere Anwendung vordergründig geöffnet hat.',
   featureDetections: [
     {
       apiObject: 'window.Notification',
       detection: 'Notification' in window
-    },
-    {
-      apiObject: 'window.ServiceWorkerRegistration',
-      detection: 'ServiceWorkerRegistration' in window
-    },
+    }
   ],
   references: [
-    { name: 'Spezifikation', link: 'https://notifications.spec.whatwg.org/' },
-    { name: 'CanIUse', link: 'https://caniuse.com/notifications' },
-    { name: 'Mozilla Developer Network', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API' },
+    { name: 'Spezifikation', link: 'https://notifications.spec.whatwg.org/' }
   ],
   icon: 'notifications',
-  routerLink: 'notification-api'
+  routerLink: 'notifications'
 };

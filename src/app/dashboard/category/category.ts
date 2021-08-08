@@ -41,6 +41,27 @@ import {TOUCH_EVENTS} from '../../technologies/input-processing/touch-events/tou
 import {VIRTUALKEYBOARD} from '../../technologies/input-processing/virtualkeyboard/virtualkeyboard.component';
 import {WEB_SPEECH} from '../../technologies/input-processing/web-speech/web-speech.component';
 import {POINTER_LOCK} from '../../technologies/input-processing/pointer-lock/pointer-lock.component';
+import {VIBRATION} from '../../technologies/further-hardware-and-peripheral/vibration/vibration.component';
+import {WEB_BLUETOOTH} from '../../technologies/further-hardware-and-peripheral/web-bluetooth/web-bluetooth.component';
+import {WEB_NFC} from '../../technologies/further-hardware-and-peripheral/web-nfc/web-nfc.component';
+import {WEB_SERIAL} from '../../technologies/further-hardware-and-peripheral/web-serial/web-serial.component';
+import {WEBUSB} from '../../technologies/further-hardware-and-peripheral/webusb/webusb.component';
+import {CONTACT_PICKER} from '../../technologies/local-resources/contact-picker/contact-picker.component';
+import {CONTENT_INDEX} from '../../technologies/local-resources/content-index/content-index.component';
+import {FILE} from '../../technologies/local-resources/file/file.component';
+import {FILE_SYSTEM_ACCESS} from '../../technologies/local-resources/file-system-access/file-system-access.component';
+import {INDEXED_DATABASE} from '../../technologies/local-resources/indexed-database/indexed-database.component';
+import {LOCAL_FONT_ACCESS} from '../../technologies/local-resources/local-font-access/local-font-access.component';
+import {SERVICE_WORKER} from '../../technologies/local-resources/service-worker/service-worker.component';
+import {STORAGE_STANDARD} from '../../technologies/local-resources/storage-standard/storage-standard.component';
+import {BADGING} from '../../technologies/platform-ui/badging/badging.component';
+import {MEDIA_SESSION_STANDARD} from '../../technologies/platform-ui/media-session-standard/media-session-standard.component';
+import {NOTIFICATIONS} from '../../technologies/platform-ui/notification/notifications.component';
+import {PAYMENT_REQUEST} from '../../technologies/platform-ui/payment-request/payment-request.component';
+import {PICTURE_IN_PICTURE} from '../../technologies/platform-ui/picture-in-picture/picture-in-picture.component';
+import {WEB_APP_MANIFEST} from '../../technologies/platform-ui/web-app-manifest/web-app-manifest.component';
+import {WEB_AUTHENTICATION} from '../../technologies/platform-ui/web-authentication/web-authentication.component';
+import {WEB_SHARE} from '../../technologies/platform-ui/web-share/web-share.component';
 
 export interface Category {
   title: string;
@@ -132,22 +153,46 @@ export const INPUT_PROCESSING: Category = {
   ],
 };
 
-export const FURTHER_HARDWARE_PERIPHERAL: Category = {
+export const FURTHER_HARDWARE_AND_PERIPHERAL: Category = {
   title: 'Weitere Hardware- und Peripheriefunktionalitäten',
   icon: 'settings_input_component',
-  technologies: [],
+  technologies: [
+    VIBRATION,
+    WEB_BLUETOOTH,
+    WEB_NFC,
+    WEB_SERIAL,
+    WEBUSB
+  ],
 };
 
 export const LOCAL_RESOURCES: Category = {
   title: 'Lokale Ressourcen',
   icon: 'save',
-  technologies: [],
+  technologies: [
+    CONTACT_PICKER,
+    CONTENT_INDEX,
+    FILE,
+    FILE_SYSTEM_ACCESS,
+    INDEXED_DATABASE,
+    LOCAL_FONT_ACCESS,
+    SERVICE_WORKER,
+    STORAGE_STANDARD
+  ],
 };
 
 export const PLATFORM_UI: Category = {
   title: 'Plattformfunktionalitäten mit eigener UI',
   icon: 'dvr',
-  technologies: [],
+  technologies: [
+    BADGING,
+    MEDIA_SESSION_STANDARD,
+    NOTIFICATIONS,
+    PAYMENT_REQUEST,
+    PICTURE_IN_PICTURE,
+    WEB_APP_MANIFEST,
+    WEB_AUTHENTICATION,
+    WEB_SHARE
+  ],
 };
 
 export const FURTHER_PLATFORM: Category = {

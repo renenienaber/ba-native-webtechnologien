@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Technology} from '../technology';
-import {TechnologyComponent} from '../technology.component';
+import {Technology} from '../../technology';
+import {TechnologyComponent} from '../../technology.component';
 
 @Component({
   selector: 'app-service-worker',
@@ -12,7 +12,7 @@ export class ServiceWorkerComponent extends TechnologyComponent {
 
 export const SERVICE_WORKER: Technology = {
   name: 'Service Worker',
-  description: 'Ermöglicht die Verwendung von Offlinefunktionalitäten.',
+  description: 'Ermöglicht Hintergrundprozesse für Webanwendungen, die auch offline durchgeführt werden können.',
   featureDetections: [
     {
       apiObject: 'navigator.serviceWorker',
@@ -20,9 +20,7 @@ export const SERVICE_WORKER: Technology = {
     },
   ],
   references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/service-workers/' },
-    { name: 'CanIUse', link: 'https://caniuse.com/serviceworkers' },
-    { name: 'Mozilla Developer Network', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API' },
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/service-workers-1/' }
   ],
   icon: 'cloud_off',
   routerLink: 'service-worker'
