@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../technology';
 import {TechnologyComponent} from '../../technology.component';
+import {isObjectInServiceWorkerRegistration} from '../../functions';
 
 
 @Component({
@@ -16,8 +17,8 @@ export const PAYMENT_HANDLER: Technology = {
   description: 'Erlaubt es Webanwendungen, Zahlungsanfragen von Benutzern zu bearbeiten, sodass sie eigenständige Zahlungsanwendungen darstellen können.',
   featureDetections: [
     {
-      apiObject: 'window.PaymentManager',
-      detection: 'PaymentManager' in window
+      apiObject: 'ServiceWorkerRegistration.paymentManager',
+      detection: isObjectInServiceWorkerRegistration('paymentManager')
     },
   ],
   references: [
