@@ -20,7 +20,7 @@ export const KEYBOARD_MAP: Technology = {
     },
     {
       apiObject: 'navigator.keyboard.getLayoutMap()',
-      detection: 'keyboard' in navigator && 'getLayoutMap' in navigator.keyboard
+      detection: 'keyboard' in navigator && 'getLayoutMap' in (navigator as any).keyboard
     },
   ],
   references: [
