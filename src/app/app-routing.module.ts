@@ -104,6 +104,15 @@ import {PICTURE_IN_PICTURE, PictureInPictureComponent} from './technologies/plat
 import {WEB_APP_MANIFEST, WebAppManifestComponent} from './technologies/platform-ui/web-app-manifest/web-app-manifest.component';
 import {WEB_AUTHENTICATION, WebAuthenticationComponent} from './technologies/platform-ui/web-authentication/web-authentication.component';
 import {WEB_SHARE, WebShareComponent} from './technologies/platform-ui/web-share/web-share.component';
+import {CLIPBOARD, ClipboardComponent} from './technologies/further-platform/clipboard/clipboard.component';
+import {
+  GET_INSTALLED_RELATED_APPS,
+  GetInstalledRelatedAppsComponent
+} from './technologies/further-platform/get-installed-related-apps/get-installed-related-apps.component';
+import {IDLE_DETECTION, IdleDetectionComponent} from './technologies/further-platform/idle-detection/idle-detection.component';
+import {PAGE_VISIBILITY, PageVisibilityComponent} from './technologies/further-platform/page-visibility/page-visibility.component';
+import {PAYMENT_HANDLER, PaymentHandlerComponent} from './technologies/further-platform/payment-handler/payment-handler.component';
+import {WEBOTP, WebotpComponent} from './technologies/further-platform/webotp/webotp.component';
 
 const routesSensors: Routes = [
   {
@@ -375,6 +384,32 @@ const routesPlatformUI: Routes = [
     component: WebShareComponent
   },
 ];
+const routesFurtherPlatform: Routes = [
+  {
+    path: CLIPBOARD.routerLink,
+    component: ClipboardComponent
+  },
+  {
+    path: GET_INSTALLED_RELATED_APPS.routerLink,
+    component: GetInstalledRelatedAppsComponent
+  },
+  {
+    path: IDLE_DETECTION.routerLink,
+    component: IdleDetectionComponent
+  },
+  {
+    path: PAGE_VISIBILITY.routerLink,
+    component: PageVisibilityComponent
+  },
+  {
+    path: PAYMENT_HANDLER.routerLink,
+    component: PaymentHandlerComponent
+  },
+  {
+    path: WEBOTP.routerLink,
+    component: WebotpComponent
+  },
+];
 // FURTHER PLATFORM
 
 const routes: Routes = [
@@ -398,6 +433,7 @@ const routes: Routes = [
       ...routesFurtherHardwareAndPeripheral,
       ...routesLocalResources,
       ...routesPlatformUI,
+      ...routesFurtherPlatform,
       // fallback component - needs to be last one
       {
         path: '**',

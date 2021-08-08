@@ -89,6 +89,12 @@ import { PaymentRequestComponent } from './technologies/platform-ui/payment-requ
 import { PictureInPictureComponent } from './technologies/platform-ui/picture-in-picture/picture-in-picture.component';
 import { WebAuthenticationComponent } from './technologies/platform-ui/web-authentication/web-authentication.component';
 import { WebShareComponent } from './technologies/platform-ui/web-share/web-share.component';
+import { ClipboardComponent } from './technologies/further-platform/clipboard/clipboard.component';
+import { GetInstalledRelatedAppsComponent } from './technologies/further-platform/get-installed-related-apps/get-installed-related-apps.component';
+import { IdleDetectionComponent } from './technologies/further-platform/idle-detection/idle-detection.component';
+import { PageVisibilityComponent } from './technologies/further-platform/page-visibility/page-visibility.component';
+import { PaymentHandlerComponent } from './technologies/further-platform/payment-handler/payment-handler.component';
+import { WebotpComponent } from './technologies/further-platform/webotp/webotp.component';
 
 @NgModule({
   declarations: [
@@ -153,6 +159,7 @@ import { WebShareComponent } from './technologies/platform-ui/web-share/web-shar
     WebBluetoothComponent,
     WebNfcComponent,
     WebSerialComponent,
+    WebusbComponent,
     // LOCAL RESOURCES
     ContactPickerComponent,
     ContentIndexComponent,
@@ -172,7 +179,12 @@ import { WebShareComponent } from './technologies/platform-ui/web-share/web-shar
     WebAuthenticationComponent,
     WebShareComponent,
     // FURTHER PLATFORM
-    WebusbComponent,
+    ClipboardComponent,
+    GetInstalledRelatedAppsComponent,
+    IdleDetectionComponent,
+    PageVisibilityComponent,
+    PaymentHandlerComponent,
+    WebotpComponent,
   ],
   imports: [
     BrowserModule,

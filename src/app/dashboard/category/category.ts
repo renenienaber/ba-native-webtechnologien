@@ -62,6 +62,12 @@ import {PICTURE_IN_PICTURE} from '../../technologies/platform-ui/picture-in-pict
 import {WEB_APP_MANIFEST} from '../../technologies/platform-ui/web-app-manifest/web-app-manifest.component';
 import {WEB_AUTHENTICATION} from '../../technologies/platform-ui/web-authentication/web-authentication.component';
 import {WEB_SHARE} from '../../technologies/platform-ui/web-share/web-share.component';
+import {CLIPBOARD} from '../../technologies/further-platform/clipboard/clipboard.component';
+import {GET_INSTALLED_RELATED_APPS} from '../../technologies/further-platform/get-installed-related-apps/get-installed-related-apps.component';
+import {IDLE_DETECTION} from '../../technologies/further-platform/idle-detection/idle-detection.component';
+import {PAGE_VISIBILITY} from '../../technologies/further-platform/page-visibility/page-visibility.component';
+import {PAYMENT_HANDLER} from '../../technologies/further-platform/payment-handler/payment-handler.component';
+import {WEBOTP} from '../../technologies/further-platform/webotp/webotp.component';
 
 export interface Category {
   title: string;
@@ -198,5 +204,12 @@ export const PLATFORM_UI: Category = {
 export const FURTHER_PLATFORM: Category = {
   title: 'Weitere Plattformfunktionalitäten',
   icon: 'lightbulb',
-  technologies: [],
+  technologies: [
+    CLIPBOARD,
+    GET_INSTALLED_RELATED_APPS,
+    IDLE_DETECTION,
+    PAGE_VISIBILITY,
+    PAYMENT_HANDLER,
+    WEBOTP
+  ],
 };

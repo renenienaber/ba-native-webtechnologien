@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../technology';
 import {TechnologyComponent} from '../../technology.component';
-import {isObjectInServiceWorkerRegistration} from '../../functions';
 
 @Component({
   selector: 'app-notifications',
