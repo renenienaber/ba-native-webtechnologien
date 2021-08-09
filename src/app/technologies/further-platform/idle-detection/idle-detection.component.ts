@@ -12,7 +12,7 @@ export class IdleDetectionComponent extends TechnologyComponent {
 
 export const IDLE_DETECTION: Technology = {
   name: 'Idle Detection API',
-  description: 'Eine Webtechnologie, mit der ermittelt werden kann, ob ein Benutzer das Endgerät verwendet. Dabei wird die Verwendung zum Einen auf die Anwesenheit des Benutzers und zum Anderen auf den Bildschirm des Endgerätes bezogen.',
+  description: 'Eine API, mit der ermittelt werden kann, ob ein Benutzer das Endgerät aktiv verwendet. Der Aktivitätsstatus wird dabei zum Einen auf die Anwesenheit des Benutzers und zum Anderen auf den Bildschirm des Endgerätes bezogen.',
   featureDetections: [
     {
       apiObject: 'window.IdleDetector',

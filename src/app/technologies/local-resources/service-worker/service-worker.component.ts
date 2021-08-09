@@ -12,7 +12,7 @@ export class ServiceWorkerComponent extends TechnologyComponent {
 
 export const SERVICE_WORKER: Technology = {
   name: 'Service Worker',
-  description: 'Ermöglicht Hintergrundprozesse für Webanwendungen, die auch offline durchgeführt werden können.',
+  description: 'Ermöglicht Hintergrundprozesse für Webanwendungen, die auch offline durchgeführt werden können. Dadurch ist es möglich, Inhalte in einem eigenen Cache zwischenzuspeichern, sodass verschiedene Caching-Strategien angewendet werden können und die Anwendung auch unabhängig von der Internetverbindung gestartet und ausgeführt werden kann.',
   featureDetections: [
     {
       apiObject: 'navigator.serviceWorker',

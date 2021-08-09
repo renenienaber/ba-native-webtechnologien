@@ -32,10 +32,10 @@ export class VibrationComponent extends TechnologyComponent {
 
 export const VIBRATION: Technology = {
   name: 'Vibration API',
-  description: 'Ermöglicht die Steuerung des Vibrationsmotors.',
+  description: 'Ermöglicht den Zugriff auf den Vibrationsmechanismus des Endgeräts.',
   featureDetections: [
     {
-      apiObject: 'navigator.vibrate',
+      apiObject: 'navigator.vibrate()',
       detection: 'vibrate' in navigator
     },
   ],

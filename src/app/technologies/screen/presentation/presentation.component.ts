@@ -12,7 +12,7 @@ export class PresentationComponent extends TechnologyComponent {
 
 export const PRESENTATION: Technology = {
   name: 'Presentation API',
-  description: 'Ermöglicht den Zugriff auf Präsentations-Displays wie Projektoren, angeschlossene Monitore, netzwerkverbundene Fernsehgeräte oder sonstige Darstellungsgeräte in sowohl kabelgebundener als auch drahtloser Form.',
+  description: 'Ermöglicht den Zugriff auf Präsentationsgeräte wie Projektoren, angeschlossene Monitore, netzwerkverbundene Fernsehgeräte oder sonstige Darstellungsgeräte in sowohl kabelgebundener als auch drahtloser Form. Ein Gerät kann dabei entweder Anfragen für Präsentationen selbst steuern oder entgegennehmen.',
   featureDetections: [
     {
       apiObject: 'navigator.presentation',

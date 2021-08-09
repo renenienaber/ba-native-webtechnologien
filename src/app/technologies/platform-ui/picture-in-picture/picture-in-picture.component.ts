@@ -24,7 +24,7 @@ export const PICTURE_IN_PICTURE: Technology = {
       detection: 'exitPictureInPicture' in document
     },
     {
-      apiObject: 'document.pictureInPictureEnabled()',
+      apiObject: 'document.pictureInPictureEnabled',
       detection: 'pictureInPictureEnabled' in document
     }
   ],

@@ -12,7 +12,7 @@ export class NetworkInformationComponent extends TechnologyComponent {
 
 export const NETWORK_INFORMATION: Technology = {
   name: 'Network Information API',
-  description: '.',
+  description: 'Ermöglicht Webanwendungen den Zugriff auf Informationen über die vom Gerät verwendete Netzwerkverbindung.',
   featureDetections: [
     {
       apiObject: 'navigator.connection',

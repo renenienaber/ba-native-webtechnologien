@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../technology';
 import {TechnologyComponent} from '../../technology.component';
+import {isObjectInServiceWorkerRegistration} from '../../functions';
 
 @Component({
   selector: 'app-notifications',
@@ -65,6 +66,10 @@ export const NOTIFICATIONS: Technology = {
     {
       apiObject: 'window.Notification',
       detection: 'Notification' in window
+    },
+    {
+      apiObject: 'ServiceWorkerRegistration.showNotification()',
+      detection: isObjectInServiceWorkerRegistration('showNotification')
     }
   ],
   references: [

@@ -12,7 +12,7 @@ export class FileComponent extends TechnologyComponent {
 
 export const FILE: Technology = {
   name: 'File API',
-  description: 'Spezifiziert die Darstellung von Dateiobjekten in Webanwendungen sowie deren Auswahl und Zugriff.',
+  description: 'Spezifiziert die Umsetzung von Dateiobjekten in Webanwendungen sowie deren Auswahl und Zugriff.',
   featureDetections: [
     {
       apiObject: 'window.FileReader',

@@ -11,7 +11,7 @@ export class WebNfcComponent extends TechnologyComponent {
 }
 export const WEB_NFC: Technology = {
   name: 'Web NFC',
-  description: 'Ermöglicht den Zugriff auf im Geräte verbaute Funktionalitäten über Near Field Communication (NFC), welche die drahtlose Kommunikation zwischen Geräten über kurze Distanzen erlaubt.',
+  description: 'Ermöglicht den Zugriff auf im Gerät verbaute Funktionalitäten über Near Field Communication (NFC), welche die drahtlose Kommunikation zwischen Geräten über kurze Distanzen erlaubt.',
   featureDetections: [
     {
       apiObject: 'window.NDEFReader',

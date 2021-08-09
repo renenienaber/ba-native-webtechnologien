@@ -22,15 +22,7 @@ export const FULLSCREEN: Technology = {
     {
       apiObject: 'document.exitFullscreen()',
       detection: 'exitFullscreen' in document,
-    },
-    {
-      apiObject: 'document.fullscreenElement()',
-      detection: 'fullscreenElement' in document,
-    },
-    {
-      apiObject: 'document.fullscreenEnabled()',
-      detection: 'fullscreenEnabled' in document,
-    },
+    }
   ],
   references: [
     { name: 'Spezifikation', link: 'https://fullscreen.spec.whatwg.org/' },

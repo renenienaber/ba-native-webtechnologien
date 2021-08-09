@@ -12,11 +12,11 @@ export class WebSpeechComponent extends TechnologyComponent {
 
 export const WEB_SPEECH: Technology = {
   name: 'Web Speech API',
-  description: 'Stellt Spracheingabe- und Text-to-Speech-Funktionen bereit, welche von der Spracherkennungsimplementation der Ausfürhungsumgebung unabhängig sind.',
+  description: 'Ermöglicht Spracheingabe- und Text-to-Speech-Funktionen, welche von der Spracherkennungs- und -syntheseimplementation der Ausführungsumgebung unabhängig sind.',
   featureDetections: [
     {
-      apiObject: 'window.speechRecognition',
-      detection: 'speechRecognition' in window,
+      apiObject: 'window.SpeechRecognition',
+      detection: 'SpeechRecognition' in window,
     },
     {
       apiObject: 'window.speechSynthesis',

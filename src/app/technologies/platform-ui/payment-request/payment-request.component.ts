@@ -12,7 +12,7 @@ export class PaymentRequestComponent extends TechnologyComponent {
 
 export const PAYMENT_REQUEST: Technology = {
   name: 'Payment Request API',
-  description: 'Ermöglicht es Webseiten, die physische oder digitale Waren verkuafen, Zahlungsarten zu verwenden, während der Zahlungsfluss zwischen Händler und Benutzer durch den Browser erleichtert wird.',
+  description: 'Ermöglicht es Webseiten, die physische oder digitale Waren verkaufen, Zahlungsmethoden anzubieten und den Zahlungsfluss zwischen Händler und Zahler durch den Browser sicherzustellen.',
   featureDetections: [
     {
       apiObject: 'window.PaymentRequest',

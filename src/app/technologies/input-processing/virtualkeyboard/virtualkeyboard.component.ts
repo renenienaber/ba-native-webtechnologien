@@ -12,7 +12,7 @@ export class VirtualkeyboardComponent extends TechnologyComponent {
 
 export const VIRTUALKEYBOARD: Technology = {
   name: 'VirtualKeyboard API',
-  description: 'Ermöglicht eine bessere Kontrolle über die Sichtbarkeit der virtuellen Tastatur sowie der Anpassung des Layouts von Webseiten.',
+  description: 'Ermöglicht eine bessere Kontrolle über die Sichtbarkeit der virtuellen Tastatur sowie der Anpassung des Layouts von Webseiten nach dessen Änderung.',
   featureDetections: [
     {
       apiObject: 'navigator.virtualKeyboard',

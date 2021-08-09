@@ -13,7 +13,7 @@ export class InputDeviceCapabilitiesComponent extends TechnologyComponent {
 
 export const INPUT_DEVICE_CAPABILITIES: Technology = {
   name: 'Input Device Capabilities',
-  description: 'Webtechnologie, um zusätzliche Informationen über die Fähigkeiten eines Gerätes zu erlangen, welches ein Eingabeereignis auslöst.',
+  description: 'Definiert eine Webtechnologie, um zusätzliche Informationen über die Fähigkeiten eines Gerätes zu erlangen, welches Eingabeereignisse auslöst.',
   featureDetections: [
     {
       apiObject: 'UIEvent.sourceCapabilities()',

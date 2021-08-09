@@ -12,7 +12,7 @@ export class KeyboardMapComponent extends TechnologyComponent {
 
 export const KEYBOARD_MAP: Technology = {
   name: 'Keyboard Map',
-  description: 'Diese API gibt die hinter den physischen Tasten hinterlegten Werte auf Basis des aktuell ausgewählten Tastaturlayouts aus.',
+  description: 'Eine API, um basierend auf das im Betriebssystem eingestellte Tastaturlayout die hinter den \"codes\" (physische Tasten) liegenden \"keys\" (durch Ausführungsumgebung interpretierter Wert) zurückzugeben.',
   featureDetections: [
     {
       apiObject: 'navigator.keyboard',

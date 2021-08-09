@@ -11,11 +11,11 @@ export class WebBluetoothComponent extends TechnologyComponent {
 }
 export const WEB_BLUETOOTH: Technology = {
   name: 'Web Bluetooth',
-  description: 'Eine Webtechnologie für den Zugriff auf Bluetoothfunktionalitäten und ermöglicht somit die Interaktion mit anderen bluetoothfähigen Geräten.',
+  description: 'Definiert eine Webtechnologie für den Zugriff auf Bluetoothfunktionalitäten und ermöglicht somit die Interaktion mit anderen bluetoothfähigen Geräten.',
   featureDetections: [
     {
-      apiObject: 'window.Bluetooth',
-      detection: 'Bluetooth' in window,
+      apiObject: 'navigator.bluetooth',
+      detection: 'bluetooth' in navigator,
     },
   ],
   references: [

@@ -12,7 +12,7 @@ export class MultiScreenWindowPlacementComponent extends TechnologyComponent {
 
 export const MULTI_SCREEN_WINDOW_PLACEMENT: Technology = {
   name: 'Multi-Screen Window Placement',
-  description: 'Definiert APIs, mit denen über angeschlossene Bildschirme abgefragt und Fenster relativ zu diesen positioniert werden können.',
+  description: 'Definiert APIs, mit denen Informationen über angeschlossene Bildschirme abgefragt und Fenster relativ zu diesen positioniert werden können.',
   featureDetections: [
     {
       apiObject: 'window.getScreens()',

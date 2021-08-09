@@ -17,15 +17,7 @@ export const GAMEPAD: Technology = {
     {
       apiObject: 'navigator.getGamepads()',
       detection: 'getGamepads' in navigator,
-    },
-    {
-      apiObject: 'window.ongamepadconnected',
-      detection: 'ongamepadconnected' in window,
-    },
-    {
-      apiObject: 'window.ongamepaddisconnected',
-      detection: 'ongamepaddisconnected' in window,
-    },
+    }
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/gamepad/' },

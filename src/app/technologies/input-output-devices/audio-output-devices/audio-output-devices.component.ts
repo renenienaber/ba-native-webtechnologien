@@ -13,7 +13,7 @@ export class AudioOutputDevicesComponent extends TechnologyComponent {
 
 export const AUDIO_OUTPUT_DEVICES: Technology = {
   name: 'Audio Output Devices API',
-  description: 'Ermöglicht die Auswahl eines expliziten Audioausgabegerätes.',
+  description: 'Ermöglicht die Auswahl eines expliziten Audioausgabegerätes für Medieninhalte.',
   featureDetections: [
     {
       apiObject: 'HTMLMediaElement.sinkId',

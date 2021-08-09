@@ -12,7 +12,7 @@ export class MediastreamImageCaptureComponent extends TechnologyComponent {
 
 export const MEDIASTREAM_IMAGE_CAPTURE: Technology = {
   name: 'MediaStream Image Capture',
-  description: 'Ermöglicht Aufnahmen von Bildern eines Fotogerätes unter der Verwendung von MediaStreamTrack-Objekten.',
+  description: 'Eine API zur Aufnahme von Bildern durch ein fotografiefähiges Gerät unter der Verwendung von MediaStreamTrack-Objekten.',
   featureDetections: [
     {
       apiObject: 'window.ImageCapture',

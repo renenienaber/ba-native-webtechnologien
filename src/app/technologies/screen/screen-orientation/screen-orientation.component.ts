@@ -12,7 +12,7 @@ export class ScreenOrientationComponent extends TechnologyComponent {
 
 export const SCREEN_ORIENTATION: Technology = {
   name: 'Screen Orientation API',
-  description: 'Ermöglicht es, den Typ und Winkel der aktuellen Bildschirmausrichtung eines Gerätes zurückzugeben und letztere zu fixieren.',
+  description: 'Ermöglicht es, den Typ und Winkel der aktuellen Bildschirmausrichtung eines Gerätes zurückzugeben und eine bestimmte Ausrichtung zu fixieren.',
   featureDetections: [
     {
       apiObject: 'window.screen.orientation',

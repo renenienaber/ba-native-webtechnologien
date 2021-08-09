@@ -21,6 +21,10 @@ export const POINTER_LOCK: Technology = {
       apiObject: 'Element.requestPointerLock()',
       detection: isObjectInHtmlElement('div', 'requestPointerLock'),
     },
+    {
+      apiObject: 'document.exitPointerLock()',
+      detection: 'exitPointerLock' in document
+    },
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/pointerlock/' },

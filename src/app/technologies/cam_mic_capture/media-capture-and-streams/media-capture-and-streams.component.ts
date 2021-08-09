@@ -11,20 +11,20 @@ export class MediaCaptureAndStreamsComponent extends TechnologyComponent {
 }
 
 export const MEDIA_CAPTURE_AND_STREAMS: Technology = {
-  name: 'HTML Media Capture and Streams',
+  name: 'Media Capture and Streams',
   description: 'Erlaubt den Zugriff auf lokale Mediengeräte wie beispielsweise Mikrofone oder Kameras.',
   featureDetections: [
     {
-      apiObject: 'navigator.mediaDevices',
-      detection: 'mediaDevices' in navigator,
+      apiObject: 'window.MediaStream',
+      detection: 'MediaStream' in window,
     },
     {
       apiObject: 'window.MediaStreamTrack',
       detection: 'MediaStreamTrack' in window,
     },
     {
-      apiObject: 'window.MediaStream',
-      detection: 'MediaStream' in window,
+      apiObject: 'navigator.mediaDevices',
+      detection: 'mediaDevices' in navigator,
     },
   ],
   references: [
