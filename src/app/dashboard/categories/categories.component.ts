@@ -14,7 +14,7 @@ export class CategoriesComponent {
   showReferences = false;
   @Input()
   set searchTerm(value: string) {
-    if (value !== '') {
+    if (value.length > 1) {
       this.categories = this.search(value);
     } else {
       this.categories = CATEGORIES;
