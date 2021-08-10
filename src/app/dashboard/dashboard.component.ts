@@ -10,6 +10,7 @@ export class DashboardComponent {
   constructor(private featureExportService: FeatureExportService) {}
 
   showCompatibility = false;
+  showReferences = false;
 
   exportTechnologySupport(): void {
     this.featureExportService.exportTechnologySupport();

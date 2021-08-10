@@ -10,6 +10,8 @@ import {Technology} from '../../technologies/technology';
 export class CategoriesComponent {
   @Input()
   showCompatibility = false;
+  @Input()
+  showReferences = false;
 
   categories: Category[] = CATEGORIES;
 
