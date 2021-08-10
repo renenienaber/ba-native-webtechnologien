@@ -96,6 +96,7 @@ import { PaymentHandlerComponent } from './technologies/further-platform/payment
 import { WebotpComponent } from './technologies/further-platform/webotp/webotp.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -206,7 +207,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSnackBarModule,
     MatTabsModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

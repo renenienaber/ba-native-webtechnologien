@@ -7,13 +7,10 @@
       </mat-card-header>
 
       <mat-card-content>
-        <mat-accordion
-          togglePosition="before"
-        >
+        <mat-accordion>
           <mat-expansion-panel *ngFor="let technology of category.technologies">
-            <mat-expansion-panel-header>
+            <mat-expansion-panel-header class="support {{showCompatibility ? getRightColor(technology) : ''}}">
               <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon><a routerLink="/technology/{{technology.routerLink}}">{{technology.name}}</a></mat-panel-title>
-              <mat-icon title="{{technology.featureDetections.length > 0 ? getCompatibleFeaturesCount(technology)+'/'+technology.featureDetections.length : 'Keine Feature Detection möglich'}}">{{getRightIcon(technology)}}</mat-icon>
             </mat-expansion-panel-header>
             <app-display-feature-detections
               *ngIf="technology.featureDetections.length > 0"

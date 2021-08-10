@@ -1,0 +1,20 @@
+mat-panel-title mat-icon {
+  margin-right: 5px;
+}
+
+app-display-feature-detections + .references {
+  margin-top: 20px;
+}
+
+.support.yes {
+  background-color: rgba(144, 238, 144, 0.85)
+}
+
+.support.no {
+  /*background-color: rgba(255, 0, 0, 0.75);*/
+  background-color: rgba(255, 0, 0, 0.65);
+}
+
+.support.partially {
+  background-color: rgba(255, 215, 0, 0.85);
+}

@@ -1,1 +1,4 @@
-<app-categories></app-categories>
+<mat-slide-toggle [(ngModel)]="showCompatibility">Zeige Kompatibilität</mat-slide-toggle>
+<app-categories
+  [showCompatibility]="showCompatibility"
+></app-categories>
