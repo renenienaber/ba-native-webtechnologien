@@ -11,7 +11,6 @@ app-display-feature-detections + .references {
 }
 
 .support.no {
-  /*background-color: rgba(255, 0, 0, 0.75);*/
   background-color: rgba(255, 0, 0, 0.65);
 }
 

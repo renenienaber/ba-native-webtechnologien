@@ -1,4 +1,14 @@
-<mat-slide-toggle [(ngModel)]="showCompatibility">Zeige Kompatibilität</mat-slide-toggle>
+<div class="options">
+  <mat-slide-toggle [(ngModel)]="showCompatibility">Support</mat-slide-toggle>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="exportTechnologySupport()"
+  >
+    Export Support
+  </button>
+</div>
+
 <app-categories
   [showCompatibility]="showCompatibility"
 ></app-categories>
