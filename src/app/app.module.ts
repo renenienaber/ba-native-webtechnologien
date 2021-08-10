@@ -95,6 +95,7 @@ import { PageVisibilityComponent } from './technologies/further-platform/page-vi
 import { PaymentHandlerComponent } from './technologies/further-platform/payment-handler/payment-handler.component';
 import { WebotpComponent } from './technologies/further-platform/webotp/webotp.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     DemoFrameComponent,
     DashboardComponent,
     DisplayFeatureDetectionsComponent,
+    CategoriesComponent,
     // TECHNOLOGIES
     // SENSORS
     AccelerometerComponent,
@@ -184,13 +186,13 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     PageVisibilityComponent,
     PaymentHandlerComponent,
     WebotpComponent,
-    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
