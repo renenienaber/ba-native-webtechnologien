@@ -97,6 +97,7 @@ import { WebotpComponent } from './technologies/further-platform/webotp/webotp.c
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CaniuseEmbedComponent } from './caniuse-embed/caniuse-embed.component';
 
 @NgModule({
   declarations: [
@@ -187,6 +188,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     PageVisibilityComponent,
     PaymentHandlerComponent,
     WebotpComponent,
+    CaniuseEmbedComponent,
   ],
   imports: [
     BrowserModule,
