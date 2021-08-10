@@ -9,7 +9,7 @@
       <mat-card-content>
         <mat-accordion>
           <mat-expansion-panel *ngFor="let technology of category.technologies">
-            <mat-expansion-panel-header class="support {{showCompatibility ? getRightColor(technology) : ''}}">
+            <mat-expansion-panel-header class="support {{showCompatibility ? getClassByDetections(technology) : ''}}">
               <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon><a routerLink="/technology/{{technology.routerLink}}">{{technology.name}}</a></mat-panel-title>
             </mat-expansion-panel-header>
             <app-display-feature-detections
@@ -29,5 +29,4 @@
       </mat-card-content>
     </mat-card>
   </div>
-
 </div>

@@ -7,7 +7,7 @@ app-display-feature-detections + .references {
 }
 
 .support.yes {
-  background-color: rgba(144, 238, 144, 0.85)
+  background-color: rgba(144, 238, 144, 0.85);
 }
 
 .support.no {

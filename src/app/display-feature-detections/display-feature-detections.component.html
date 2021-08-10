@@ -2,6 +2,6 @@
   <span class="mat-body-strong">Browser-Support:</span>
   <div *ngFor="let check of featureDetections" class="mat-elevation-z1 feature-detection {{check.detection ? 'support' : 'no-support'}}">
     <span>{{check.apiObject}}</span>
-    <mat-icon>{{check.detection ? 'check_circle' : 'error'}}</mat-icon>
+    <mat-icon [fxHide.xs]="true">{{check.detection ? 'check_circle' : 'error'}}</mat-icon>
   </div>
 </div>

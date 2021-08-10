@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CATEGORIES, Category} from './category';
 import {Technology} from '../../technologies/technology';
 
@@ -12,21 +12,42 @@ export class CategoriesComponent {
   showCompatibility = false;
   @Input()
   showReferences = false;
+  @Input()
+  set searchTerm(value: string) {
+    if (value !== '') {
+      this.categories = this.search(value);
+    } else {
+      this.categories = CATEGORIES;
+    }
+  }
 
   categories: Category[] = CATEGORIES;
+
+  search(term: string): Category[] {
+    term = term.toLowerCase();
+
+    const categories: Category[] = [];
+    for (const category of CATEGORIES) {
+      const tempCategory: Category = {...category, technologies: []};
+      for (const technology of category.technologies) {
+        if (technology.name.toLowerCase().indexOf(term) !== -1 ||
+          technology.featureDetections.filter(el => el.apiObject.toLowerCase().indexOf(term) !== -1).length > 0
+        ) {
+          tempCategory.technologies.push(technology);
+        }
+      }
+      if (tempCategory.technologies.length > 0) {
+        categories.push(tempCategory);
+      }
+    }
+    return categories;
+  }
 
   getCompatibleFeaturesCount(technology: Technology): number {
     return technology.featureDetections.map(det => det.detection).filter(Boolean).length;
   }
 
-  getRightIcon(technology: Technology): string {
-    if (technology.featureDetections.length > 0) {
-      return this.getCompatibleFeaturesCount(technology) > 0 ? 'check' : 'error_outline';
-    }
-    return 'report_off';
-  }
-
-  getRightColor(technology: Technology): string {
+  getClassByDetections(technology: Technology): string {
     const detections = technology.featureDetections.length;
     if (detections > 0) {
       const supported = this.getCompatibleFeaturesCount(technology);
