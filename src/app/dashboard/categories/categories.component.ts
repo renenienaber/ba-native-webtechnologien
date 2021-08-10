@@ -31,6 +31,7 @@ export class CategoriesComponent {
       const tempCategory: Category = {...category, technologies: []};
       for (const technology of category.technologies) {
         if (technology.name.toLowerCase().indexOf(term) !== -1 ||
+          technology.description.toLowerCase().indexOf(term) !== -1 ||
           technology.featureDetections.filter(el => el.apiObject.toLowerCase().indexOf(term) !== -1).length > 0
         ) {
           tempCategory.technologies.push(technology);
