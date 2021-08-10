@@ -1,6 +1,6 @@
 <div fxLayout="row wrap" fxLayoutGap="16px grid">
   <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" *ngFor="let category of categories">
-    <mat-card fxFlex>
+    <mat-card fxFlex="100%">
       <mat-card-header>
         <mat-card-title>{{category.title}}</mat-card-title>
         <mat-icon *ngIf="category.icon" mat-card-avatar>{{category.icon}}</mat-icon>

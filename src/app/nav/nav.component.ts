@@ -12,7 +12,7 @@ import {TECHNOLOGIES} from '../technologies/technology';
 export class NavComponent {
   TECHNOLOGIES = TECHNOLOGIES;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.XSmall)
+  isXSmall$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.XSmall)
     .pipe(
       map(result => result.matches),
       shareReplay()
