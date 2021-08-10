@@ -1,18 +1,14 @@
-import {Component, Input} from '@angular/core';
+import { Component } from '@angular/core';
+import {CATEGORIES, Category} from './category';
 import {Technology} from '../../technologies/technology';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css']
 })
-export class CategoryComponent {
-  @Input()
-  title!: string;
-  @Input()
-  icon: string;
-  @Input()
-  technologies!: Technology[];
+export class CategoriesComponent {
+  categories: Category[] = CATEGORIES;
 
   getCompatibleFeaturesCount(technology: Technology): number {
     return technology.featureDetections.map(det => det.detection).filter(Boolean).length;
@@ -24,5 +20,4 @@ export class CategoryComponent {
     }
     return 'report_off';
   }
-
 }

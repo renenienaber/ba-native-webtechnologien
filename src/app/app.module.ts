@@ -28,7 +28,6 @@ import { ServiceWorkerComponent } from './technologies/local-resources/service-w
 import { OrientationSensorComponent } from './technologies/sensors/orientation-sensor/orientation-sensor.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CategoryComponent } from './dashboard/category/category.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { DisplayFeatureDetectionsComponent } from './display-feature-detections/display-feature-detections.component';
@@ -95,6 +94,7 @@ import { IdleDetectionComponent } from './technologies/further-platform/idle-det
 import { PageVisibilityComponent } from './technologies/further-platform/page-visibility/page-visibility.component';
 import { PaymentHandlerComponent } from './technologies/further-platform/payment-handler/payment-handler.component';
 import { WebotpComponent } from './technologies/further-platform/webotp/webotp.component';
+import { CategoriesComponent } from './dashboard/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +103,6 @@ import { WebotpComponent } from './technologies/further-platform/webotp/webotp.c
     AboutComponent,
     DemoFrameComponent,
     DashboardComponent,
-    CategoryComponent,
     DisplayFeatureDetectionsComponent,
     // TECHNOLOGIES
     // SENSORS
@@ -185,6 +184,7 @@ import { WebotpComponent } from './technologies/further-platform/webotp/webotp.c
     PageVisibilityComponent,
     PaymentHandlerComponent,
     WebotpComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
