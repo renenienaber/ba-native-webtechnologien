@@ -12,7 +12,8 @@ export class NotificationsComponent extends TechnologyComponent {
   technology: Technology = NOTIFICATIONS;
 
   private errorNoWindowNotification = 'window.Notification wird nicht unterstützt!';
-  private errorNoServiceWorkerRegistration = 'window.ServiceWorkerRegistration wird nicht unterstützt!';
+  private errorNoServiceWorkerRegistrationNotification = 'window.ServiceWorkerRegistration wird nicht unterstützt!';
+  private errorNoServiceWorkerRegistration = 'Es wurde kein Service Worker registriert!';
   private errorNoPermission = 'Die entsprechende Berechtigung wurde nicht erteilt!';
 
   permissionStatus: string;
@@ -46,12 +47,16 @@ export class NotificationsComponent extends TechnologyComponent {
   createNewServiceWorkerNotification(): void {
     if ('Notification' in window) {
       if ('ServiceWorkerRegistration' in window) {
-        navigator.serviceWorker.getRegistration().then((registration) =>
-          registration.showNotification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon})
-            .catch((err) => this.showError(err))
-        );
+        navigator.serviceWorker.getRegistration().then((registration) => {
+            if (registration) {
+              registration.showNotification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon})
+                .catch((err) => this.showError(err));
+            } else {
+              this.showError(this.errorNoServiceWorkerRegistration);
+            }
+        });
       } else {
-        this.showError(this.errorNoServiceWorkerRegistration);
+        this.showError(this.errorNoServiceWorkerRegistrationNotification);
       }
     } else {
       this.showError(this.errorNoWindowNotification);
