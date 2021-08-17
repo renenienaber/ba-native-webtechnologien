@@ -12,7 +12,7 @@ export class MediaCapabilitiesComponent extends TechnologyComponent {
 
 export const MEDIA_CAPABILITIES: Technology = {
   name: 'Media Capabilities',
-  description: 'Die Spezifikation definiert Möglichkeiten zur Eruierung der Fähigkeiten hinsichtlich der Ausgabem, Kodierung und Dekodierung eines Gerätes, sodass eine optimale Auswahl und Umsetzung von Medieninhalten für den Nutzer ermöglicht wird.',
+  description: 'Die Spezifikation definiert Möglichkeiten zur Eruierung der Fähigkeiten hinsichtlich der Ausgabe, Kodierung und Dekodierung eines Gerätes, sodass eine optimale Auswahl und Umsetzung von Medieninhalten für den Nutzer ermöglicht wird.',
   featureDetections: [
     {
       apiObject: 'navigator.mediaCapabilities',

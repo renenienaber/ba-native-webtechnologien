@@ -26,7 +26,7 @@ export const POINTER_EVENTS: Technology = {
       detection: 'maxTouchPoints' in navigator,
     },
     {
-      apiObject: 'Element.setPointerCapture',
+      apiObject: 'Element.setPointerCapture()',
       detection: isObjectInHtmlElement('div', 'setPointerCapture'),
     },
   ],
