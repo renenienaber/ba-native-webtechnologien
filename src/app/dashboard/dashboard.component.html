@@ -18,6 +18,7 @@
   </mat-form-field>
   <div class="options">
     <mat-slide-toggle [(ngModel)]="showCompatibility">Support</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="showDescription">Beschreibung</mat-slide-toggle>
     <mat-slide-toggle [(ngModel)]="showReferences">Referenzen</mat-slide-toggle>
   </div>
 </section>
@@ -26,6 +27,7 @@
 
 <app-categories
   [showCompatibility]="showCompatibility"
+  [showDescription]="showDescription"
   [showReferences]="showReferences"
   [searchTerm]="searchTerm"
 ></app-categories>

@@ -11,6 +11,8 @@ export class CategoriesComponent {
   @Input()
   showCompatibility = false;
   @Input()
+  showDescription = false;
+  @Input()
   showReferences = false;
   @Input()
   set searchTerm(value: string) {

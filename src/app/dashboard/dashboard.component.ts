@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   showCompatibility = false;
+  showDescription = false;
   showReferences = false;
   searchTerm = '';
 }

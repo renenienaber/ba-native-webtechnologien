@@ -12,6 +12,7 @@
             <mat-expansion-panel-header class="support {{showCompatibility ? getClassByDetections(technology) : ''}}">
               <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon><a routerLink="/technology/{{technology.routerLink}}">{{technology.name}}</a></mat-panel-title>
             </mat-expansion-panel-header>
+            <mat-card-subtitle *ngIf="showDescription">{{technology.description}}</mat-card-subtitle>
             <app-display-feature-detections
               *ngIf="technology.featureDetections.length > 0"
               [featureDetections]="technology.featureDetections"
