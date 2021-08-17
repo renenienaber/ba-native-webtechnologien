@@ -1,4 +1,37 @@
 <app-demo-frame
   [technology]="technology"
 >
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-demo-frame>
+
+<ng-template #demo>
+  <ng-container *ngIf="isSupported() else noSupport">
+    <div class="metadata">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Titel</mat-label>
+          <input matInput type="text" [(ngModel)]="title" (ngModelChange)="setMetadata()">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Künstler</mat-label>
+          <input matInput type="text" [(ngModel)]="artist" (ngModelChange)="setMetadata()">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Album</mat-label>
+          <input matInput type="text" [(ngModel)]="album" (ngModelChange)="setMetadata()">
+        </mat-form-field>
+      </div>
+    </div>
+    <audio #audioElement (loadedmetadata)="audioLoaded()" (play)="updatePositionState()" controls>
+      <source src="assets/media/fluidity-100-ig-edit-4558.mp3" type="audio/mp3">
+    </audio>
+  </ng-container>
+</ng-template>
+
+<ng-template #noSupport>
+  <span>{{errorNoMediaSession}}</span>
+</ng-template>
