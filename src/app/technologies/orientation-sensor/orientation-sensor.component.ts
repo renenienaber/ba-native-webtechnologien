@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {Technology} from '../technology';
 import {TechnologyComponent} from '../technology.component';
-import {AbsoluteOrientationSensor, RelativeOrientationSensor} from '../../../polyfills/motion-sensors';
 
 @Component({
   selector: 'app-orientation-sensor',
@@ -12,7 +11,6 @@ export class OrientationSensorComponent extends TechnologyComponent {
 
   private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
   private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
-  private errorUsingPolyfill = 'POLYFILL wird eingesetzt!';
   private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
 
   private sensor: any;
@@ -20,20 +18,24 @@ export class OrientationSensorComponent extends TechnologyComponent {
   header: string;
 
   initAbsolute(): void {
-    if (!('AbsoluteOrientationSensor' in window)) {
-      this.showError(`${this.errorNoAbsoluteOrientationSensor} ${this.errorUsingPolyfill}`);
+    if ('AbsoluteOrientationSensor' in window) {
+      // @ts-ignore
+      this.sensor = new AbsoluteOrientationSensor({frequency: 60});
+      this.header = 'Absolute';
+      this.useSensor();
+    } else {
+      this.showError(this.errorNoAbsoluteOrientationSensor);
     }
-    this.sensor = new AbsoluteOrientationSensor({frequency: 60});
-    this.header = 'Absolute';
-    this.useSensor();
   }
   initRelative(): void {
-    if (!('RelativeOrientationSensor' in window)) {
-      this.showError(`${this.errorNoRelativeOrientationSensor} ${this.errorUsingPolyfill}`);
+    if ('RelativeOrientationSensor' in window) {
+      // @ts-ignore
+      this.sensor = new RelativeOrientationSensor({frequency: 60});
+      this.header = 'Relative';
+      this.useSensor();
+    } else {
+      this.showError(this.errorNoRelativeOrientationSensor);
     }
-    this.sensor = new RelativeOrientationSensor({frequency: 60});
-    this.header = 'Relative';
-    this.useSensor();
   }
 
   private useSensor(): void {
