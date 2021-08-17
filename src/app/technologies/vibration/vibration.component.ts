@@ -10,14 +10,14 @@ export class VibrationComponent extends TechnologyComponent {
   // sets base attributes
   technology = VIBRATION;
 
-  private errorNoVibrate = 'navigator.vibrate wird nicht unterstützt!';
+  private errorNoVibrate = 'navigator.vibrate';
 
   duration = 200;
   vibrate(): void {
     if ('vibrate' in navigator) {
       navigator.vibrate(this.duration);
     } else {
-      this.showError(this.errorNoVibrate);
+      this.showNoSupportError(this.errorNoVibrate);
     }
   }
 
@@ -25,7 +25,7 @@ export class VibrationComponent extends TechnologyComponent {
     if ('vibrate' in navigator) {
       navigator.vibrate([500, 200, 500, 200, 500]);
     } else {
-      this.showError(this.errorNoVibrate);
+      this.showNoSupportError(this.errorNoVibrate);
     }
   }
 }

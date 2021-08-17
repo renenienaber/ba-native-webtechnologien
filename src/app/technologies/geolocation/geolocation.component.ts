@@ -9,7 +9,7 @@ import {Technology} from '../technology';
 export class GeolocationComponent extends TechnologyComponent {
   technology: Technology = GEOLOCATION;
 
-  private errorNoGeolocation = 'navigator.geolocation wird nicht unterstützt!';
+  private errorNoGeolocation = 'navigator.geolocation';
 
   currentPos: Position;
   watchId: number;
@@ -21,7 +21,7 @@ export class GeolocationComponent extends TechnologyComponent {
         err => this.onError(err)
       );
     } else {
-      this.showError(this.errorNoGeolocation);
+      this.showNoSupportError(this.errorNoGeolocation);
     }
   }
 
@@ -32,7 +32,7 @@ export class GeolocationComponent extends TechnologyComponent {
         err => this.onError(err)
       );
     } else {
-      this.showError(this.errorNoGeolocation);
+      this.showNoSupportError(this.errorNoGeolocation);
     }
   }
 

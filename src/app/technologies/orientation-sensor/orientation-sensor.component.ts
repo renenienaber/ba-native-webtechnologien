@@ -9,8 +9,8 @@ import {TechnologyComponent} from '../technology.component';
 export class OrientationSensorComponent extends TechnologyComponent {
   technology: Technology = ORIENTATION_SENSOR;
 
-  private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor wird nicht unterstützt!';
-  private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor wird nicht unterstützt!';
+  private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor';
+  private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor';
   private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
 
   private sensor: any;
@@ -24,7 +24,7 @@ export class OrientationSensorComponent extends TechnologyComponent {
       this.header = 'Absolute';
       this.useSensor();
     } else {
-      this.showError(this.errorNoAbsoluteOrientationSensor);
+      this.showNoSupportError(this.errorNoAbsoluteOrientationSensor);
     }
   }
   initRelative(): void {
@@ -34,7 +34,7 @@ export class OrientationSensorComponent extends TechnologyComponent {
       this.header = 'Relative';
       this.useSensor();
     } else {
-      this.showError(this.errorNoRelativeOrientationSensor);
+      this.showNoSupportError(this.errorNoRelativeOrientationSensor);
     }
   }
 

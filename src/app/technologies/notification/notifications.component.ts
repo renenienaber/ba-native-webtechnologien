@@ -11,10 +11,9 @@ import {isObjectInServiceWorkerRegistration} from '../functions';
 export class NotificationsComponent extends TechnologyComponent {
   technology: Technology = NOTIFICATIONS;
 
-  private errorNoWindowNotification = 'window.Notification wird nicht unterstützt!';
-  private errorNoServiceWorkerRegistrationNotification = 'window.ServiceWorkerRegistration wird nicht unterstützt!';
+  private errorNoWindowNotification = 'window.Notification';
+  private errorNoServiceWorkerRegistrationNotification = 'window.ServiceWorkerRegistration';
   private errorNoServiceWorkerRegistration = 'Es wurde kein Service Worker registriert! Bitte die App installieren und erneut versuchen.';
-  private errorNoPermission = 'Die entsprechende Berechtigung wurde nicht erteilt!';
 
   permissionStatus: string;
   notificationTitle = 'Hallo';
@@ -32,7 +31,7 @@ export class NotificationsComponent extends TechnologyComponent {
     if ('Notification' in window) {
       Notification.requestPermission().then(result => this.permissionStatus = result);
     } else {
-      this.showError(this.errorNoWindowNotification);
+      this.showNoSupportError(this.errorNoWindowNotification);
     }
   }
 
@@ -40,7 +39,7 @@ export class NotificationsComponent extends TechnologyComponent {
     if ('Notification' in window) {
       const notification = new Notification(this.notificationTitle, { body: this.notificationBody, icon: this.notificationIcon});
     } else {
-      this.showError(this.errorNoWindowNotification);
+      this.showNoSupportError(this.errorNoWindowNotification);
     }
   }
 
@@ -56,10 +55,10 @@ export class NotificationsComponent extends TechnologyComponent {
             }
         });
       } else {
-        this.showError(this.errorNoServiceWorkerRegistrationNotification);
+        this.showNoSupportError(this.errorNoServiceWorkerRegistrationNotification);
       }
     } else {
-      this.showError(this.errorNoWindowNotification);
+      this.showNoSupportError(this.errorNoWindowNotification);
     }
   }
 }
