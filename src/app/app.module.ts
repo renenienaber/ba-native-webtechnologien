@@ -98,6 +98,7 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { CaniuseEmbedComponent } from './caniuse-embed/caniuse-embed.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -210,7 +211,8 @@ import { CaniuseEmbedComponent } from './caniuse-embed/caniuse-embed.component';
     MatTabsModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

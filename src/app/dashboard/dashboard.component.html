@@ -17,9 +17,30 @@
     </button>
   </mat-form-field>
   <div class="options">
-    <mat-slide-toggle [(ngModel)]="showCompatibility">Support</mat-slide-toggle>
-    <mat-slide-toggle [(ngModel)]="showDescription">Beschreibung</mat-slide-toggle>
-    <mat-slide-toggle [(ngModel)]="showReferences">Referenzen</mat-slide-toggle>
+    <button mat-button [mat-menu-trigger-for]="menuOptions">
+      <mat-icon>tune</mat-icon>
+      <span fxHide.xs="true" fxHide.sm="true">Anzeigeeinstellungen</span>
+    </button>
+    <mat-menu #menuOptions="matMenu">
+      <button mat-menu-item>
+        <mat-slide-toggle [(ngModel)]="showCompatibility" (click) = "$event.stopPropagation()">
+          <mat-icon>check_circle_outline</mat-icon>
+          <span>Support</span>
+        </mat-slide-toggle>
+      </button>
+      <button mat-menu-item>
+        <mat-slide-toggle [(ngModel)]="showDescription" (click) = "$event.stopPropagation()">
+          <mat-icon>info</mat-icon>
+          <span>Beschreibung</span>
+        </mat-slide-toggle>
+      </button>
+      <button mat-menu-item>
+        <mat-slide-toggle [(ngModel)]="showReferences" (click) = "$event.stopPropagation()">
+          <mat-icon>link</mat-icon>
+          <span>Referenzen</span>
+        </mat-slide-toggle>
+      </button>
+    </mat-menu>
   </div>
 </section>
 
