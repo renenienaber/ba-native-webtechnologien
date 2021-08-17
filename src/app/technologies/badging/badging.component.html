@@ -5,11 +5,11 @@
 </app-demo-frame>
 
 <ng-template #demo>
-  <p>Hinweis: Die Anwendung muss zur Darstellung von App Badges installiert sein!</p>
+  <p>Hinweis: Die Anwendung muss zur Darstellung von Badges ggf. installiert sein!</p>
   <div class="badge">
     <mat-form-field appearance="fill">
       <mat-label>App Badge</mat-label>
-      <input matInput type="number" [(ngModel)]="numberAppBadge">
+      <input matInput type="number" min="0" [(ngModel)]="numberAppBadge">
     </mat-form-field>
     <button mat-raised-button (click)="setAppBadge()">
       setAppBadge()
@@ -21,7 +21,7 @@
   <div class="badge">
     <mat-form-field appearance="fill">
       <mat-label>Client Badge</mat-label>
-      <input matInput type="number" [(ngModel)]="numberClientBadge">
+      <input matInput type="number" min="0" [(ngModel)]="numberClientBadge">
     </mat-form-field>
     <button mat-raised-button (click)="setClientBadge()">
       setClientBadge()
