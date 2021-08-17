@@ -13,7 +13,7 @@ export class NotificationsComponent extends TechnologyComponent {
 
   private errorNoWindowNotification = 'window.Notification wird nicht unterstützt!';
   private errorNoServiceWorkerRegistrationNotification = 'window.ServiceWorkerRegistration wird nicht unterstützt!';
-  private errorNoServiceWorkerRegistration = 'Es wurde kein Service Worker registriert!';
+  private errorNoServiceWorkerRegistration = 'Es wurde kein Service Worker registriert! Bitte die App installieren und erneut versuchen.';
   private errorNoPermission = 'Die entsprechende Berechtigung wurde nicht erteilt!';
 
   permissionStatus: string;

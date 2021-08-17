@@ -15,4 +15,8 @@ export abstract class TechnologyComponent {
   showError(message: string): void {
     this.demoFrameComponent.openErrorSnackBar(message);
   }
+
+  showNoSupportError(object: string): void {
+    this.showError(`${object} wird nicht unterstützt!`);
+  }
 }

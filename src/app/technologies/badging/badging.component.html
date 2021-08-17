@@ -1,4 +1,33 @@
 <app-demo-frame
   [technology]="technology"
 >
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-demo-frame>
+
+<ng-template #demo>
+  <p>Hinweis: Die Anwendung muss zur Darstellung von App Badges installiert sein!</p>
+  <div class="badge">
+    <mat-form-field appearance="fill">
+      <mat-label>App Badge</mat-label>
+      <input matInput type="number" [(ngModel)]="numberAppBadge">
+    </mat-form-field>
+    <button mat-raised-button (click)="setAppBadge()">
+      setAppBadge()
+    </button>
+    <button mat-raised-button (click)="clearAppBadge()">
+      clearAppBadge()
+    </button>
+  </div>
+  <div class="badge">
+    <mat-form-field appearance="fill">
+      <mat-label>Client Badge</mat-label>
+      <input matInput type="number" [(ngModel)]="numberClientBadge">
+    </mat-form-field>
+    <button mat-raised-button (click)="setClientBadge()">
+      setClientBadge()
+    </button>
+    <button mat-raised-button (click)="clearClientBadge()">
+      clearClientBadge()
+    </button>
+  </div>
+</ng-template>
