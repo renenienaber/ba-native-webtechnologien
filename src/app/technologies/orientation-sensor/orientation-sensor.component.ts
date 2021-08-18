@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {ORIENTATION_SENSOR} from '../technologies';
 
 @Component({
   selector: 'app-orientation-sensor',
@@ -51,24 +52,3 @@ export class OrientationSensorComponent extends TechnologyComponent {
     this.sensor.start();
   }
 }
-
-export const ORIENTATION_SENSOR: Technology = {
-  name: 'Orientation Sensor',
-  description: 'Definiert eine Webtechnologie zur Erfassung der physischen Orientierung des Endgerätes und erweitert die Generic Sensor API.',
-  featureDetections: [
-    {
-      apiObject: 'window.AbsoluteOrientationSensor',
-      detection: 'AbsoluteOrientationSensor' in window
-    },
-    {
-      apiObject: 'window.RelativeOrientationSensor',
-      detection: 'RelativeOrientationSensor' in window
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-sensor/'},
-    { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
-  ],
-  icon: 'screen_rotation',
-  routerLink: 'orientation-sensor'
-};

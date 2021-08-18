@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {CATEGORIES, Category} from '../../models/category';
+import {Category} from '../../models/category';
 import {Technology} from '../../models/technology';
+import {CATEGORIES} from './categories';
 
 @Component({
   selector: 'app-categories',

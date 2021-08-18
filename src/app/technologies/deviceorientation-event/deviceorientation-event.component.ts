@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {DEVICEORIENTATION_EVENT} from '../technologies';
 
 @Component({
   selector: 'app-device-orientation',
@@ -37,23 +38,3 @@ export class DeviceorientationEventComponent extends TechnologyComponent impleme
     document.getElementById('absolute').innerHTML = absolute.toString();
   }
 }
-
-export const DEVICEORIENTATION_EVENT: Technology = {
-  name: 'DeviceOrientation Event API',
-  description: 'Ermöglicht den Zugriff auf Informationen über die physische Haltung und Bewegung eines Endgerätes.',
-  featureDetections: [
-    {
-      apiObject: 'window.DeviceOrientationEvent',
-      detection: 'DeviceOrientationEvent' in window
-    },
-    {
-      apiObject: 'window.DeviceMotionEvent',
-      detection: 'DeviceMotionEvent' in window
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-event/' },
-  ],
-  icon: 'screen_rotation',
-  routerLink: 'deviceorientation-event'
-};

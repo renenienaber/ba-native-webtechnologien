@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {WEB_BLUETOOTH} from '../technologies';
 
 @Component({
   selector: 'app-web-bluetooth',
@@ -9,19 +10,3 @@ import {TechnologyComponent} from '../technology.component';
 export class WebBluetoothComponent extends TechnologyComponent {
   technology: Technology = WEB_BLUETOOTH;
 }
-export const WEB_BLUETOOTH: Technology = {
-  name: 'Web Bluetooth',
-  description: 'Definiert eine Webtechnologie für den Zugriff auf Bluetoothfunktionalitäten und ermöglicht somit die Interaktion mit anderen bluetoothfähigen Geräten.',
-  featureDetections: [
-    {
-      apiObject: 'navigator.bluetooth',
-      detection: 'bluetooth' in navigator,
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://webbluetoothcg.github.io/web-bluetooth/' },
-  ],
-  icon: 'bluetooth',
-  routerLink: 'web-bluetooth'
-};
-

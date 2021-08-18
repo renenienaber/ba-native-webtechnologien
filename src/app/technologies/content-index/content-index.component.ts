@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {TechnologyComponent} from '../technology.component';
 import {Technology} from '../../models/technology';
-import {isObjectInServiceWorkerRegistration} from '../functions';
+import {CONTENT_INDEX} from '../technologies';
 
 @Component({
   selector: 'app-content-index',
@@ -10,19 +10,3 @@ import {isObjectInServiceWorkerRegistration} from '../functions';
 export class ContentIndexComponent extends TechnologyComponent {
   technology: Technology = CONTENT_INDEX;
 }
-
-export const CONTENT_INDEX: Technology = {
-  name: 'Content Index',
-  description: 'Ermöglicht Webseiten, offlinefähige Inhalte im Browser zu registrieren, sodass dem Benutzer kenntlich gemacht werden kann, welche konkreten Inhalte offline verfügbar sind.',
-  featureDetections: [
-    {
-      apiObject: 'ServiceWorkerRegistration.index',
-      detection: isObjectInServiceWorkerRegistration('index'),
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://wicg.github.io/content-index/spec/' },
-  ],
-  icon: 'list',
-  routerLink: 'content-index'
-};

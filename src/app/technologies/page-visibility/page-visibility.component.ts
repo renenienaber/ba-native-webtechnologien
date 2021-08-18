@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {PAGE_VISIBILITY} from '../technologies';
 
 @Component({
   selector: 'app-page-visibility',
@@ -9,18 +10,3 @@ import {TechnologyComponent} from '../technology.component';
 export class PageVisibilityComponent extends TechnologyComponent {
   technology: Technology = PAGE_VISIBILITY;
 }
-export const PAGE_VISIBILITY: Technology = {
-  name: 'Page Visibility',
-  description: 'Mithilfe dieser Webtechnologie kann ermittelt werden, ob eine Webseite für den Benutzer sichtbar ist.',
-  featureDetections: [
-    {
-      apiObject: 'document.visibilityState',
-      detection: 'visibilityState' in document,
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/page-visibility/' },
-  ],
-  icon: 'preview',
-  routerLink: 'page-visibility'
-};

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {WEBUSB} from '../technologies';
 
 @Component({
   selector: 'app-webusb',
@@ -10,18 +11,3 @@ export class WebusbComponent extends TechnologyComponent {
   technology: Technology = WEBUSB;
 }
 
-export const WEBUSB: Technology = {
-  name: 'WebUSB API',
-  description: 'Eine Webtechnologie für den Zugriff auf per USB angeschlossene Geräte.',
-  featureDetections: [
-    {
-      apiObject: 'navigator.usb',
-      detection: 'usb' in navigator,
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://wicg.github.io/webusb/' },
-  ],
-  icon: 'usb',
-  routerLink: 'webusb'
-};

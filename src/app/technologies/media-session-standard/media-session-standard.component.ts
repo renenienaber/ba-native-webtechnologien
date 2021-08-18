@@ -1,6 +1,7 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {MEDIA_SESSION_STANDARD} from '../technologies';
 
 @Component({
   selector: 'app-media-session-standard',
@@ -94,19 +95,3 @@ export class MediaSessionStandardComponent extends TechnologyComponent {
     }
   }
 }
-
-export const MEDIA_SESSION_STANDARD: Technology = {
-  name: 'Media Session Standard',
-  description: 'Ermöglicht es, in Bezug auf Medien benutzerdefinierte Metadaten in Betriebsssystem-UI anzuzeigen, bestehende Steuerungselemente anzupassen und auf Medientasten zuzugreifen.',
-  featureDetections: [
-    {
-      apiObject: 'navigator.mediaSession',
-      detection: 'mediaSession' in navigator,
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/mediasession/' },
-  ],
-  icon: 'not_started',
-  routerLink: 'media-session-standard'
-};

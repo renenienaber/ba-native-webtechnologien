@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {VIBRATION} from '../technologies';
+import {Technology} from '../../models/technology';
 
 @Component({
   selector: 'app-vibration',
@@ -8,7 +9,7 @@ import {TechnologyComponent} from '../technology.component';
 })
 export class VibrationComponent extends TechnologyComponent {
   // sets base attributes
-  technology = VIBRATION;
+  technology: Technology = VIBRATION;
 
   private errorNoVibrate = 'navigator.vibrate';
 
@@ -29,19 +30,3 @@ export class VibrationComponent extends TechnologyComponent {
     }
   }
 }
-
-export const VIBRATION: Technology = {
-  name: 'Vibration API',
-  description: 'Ermöglicht den Zugriff auf den Vibrationsmechanismus des Endgeräts.',
-  featureDetections: [
-    {
-      apiObject: 'navigator.vibrate()',
-      detection: 'vibrate' in navigator
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/vibration/' }
-  ],
-  icon: 'vibration',
-  routerLink: 'vibration'
-};

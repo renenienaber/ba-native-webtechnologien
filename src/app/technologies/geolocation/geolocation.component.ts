@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {TechnologyComponent} from '../technology.component';
 import {Technology} from '../../models/technology';
+import {GEOLOCATION} from '../technologies';
 
 @Component({
   selector: 'app-geolocation',
@@ -51,19 +52,3 @@ export class GeolocationComponent extends TechnologyComponent {
     this.showError(positionError.message);
   }
 }
-
-export const GEOLOCATION: Technology = {
-  name: 'Geolocation API',
-  description: 'Ermöglicht den Zugriff auf geografische Standortinformationen des Endgerätes.',
-  featureDetections: [
-    {
-      apiObject: 'navigator.geolocation',
-      detection: 'geolocation' in navigator
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation/' }
-  ],
-  icon: 'location_on',
-  routerLink: 'geolocation'
-};

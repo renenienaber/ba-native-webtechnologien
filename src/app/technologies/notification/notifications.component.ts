@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
-import {isObjectInServiceWorkerRegistration} from '../functions';
+import {NOTIFICATIONS} from '../technologies';
 
 @Component({
   selector: 'app-notifications',
@@ -62,23 +62,3 @@ export class NotificationsComponent extends TechnologyComponent {
     }
   }
 }
-
-export const NOTIFICATIONS: Technology = {
-  name: 'Notifications API',
-  description: 'Erlaubt Webseiten, Systembenachrichtigungen für den Endnutzer zu kontrollieren und auch außerhalb des Browserkontextes anzuzeigen, etwa wenn der Benutzer gerade eine andere Anwendung vordergründig geöffnet hat.',
-  featureDetections: [
-    {
-      apiObject: 'window.Notification',
-      detection: 'Notification' in window
-    },
-    {
-      apiObject: 'ServiceWorkerRegistration.showNotification()',
-      detection: isObjectInServiceWorkerRegistration('showNotification')
-    }
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://notifications.spec.whatwg.org/' }
-  ],
-  icon: 'notifications',
-  routerLink: 'notifications'
-};

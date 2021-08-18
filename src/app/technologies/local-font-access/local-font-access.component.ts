@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {LOCAL_FONT_ACCESS} from '../technologies';
 
 @Component({
   selector: 'app-local-font-access',
@@ -10,18 +11,3 @@ export class LocalFontAccessComponent extends TechnologyComponent {
   technology: Technology = LOCAL_FONT_ACCESS;
 }
 
-export const LOCAL_FONT_ACCESS: Technology = {
-  name: 'Local Font Access API',
-  description: 'Ermöglicht den Zugriff auf in der Ausführungsumgebung vorliegende Systemschriftarten (Fonts).',
-  featureDetections: [
-    {
-      apiObject: 'navigator.fonts',
-      detection: 'fonts' in navigator,
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://wicg.github.io/local-font-access/' },
-  ],
-  icon: 'font_download',
-  routerLink: 'local-font-access'
-};

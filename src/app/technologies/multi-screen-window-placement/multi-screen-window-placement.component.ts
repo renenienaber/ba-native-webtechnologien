@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
+import {MULTI_SCREEN_WINDOW_PLACEMENT} from '../technologies';
 
 @Component({
   selector: 'app-multi-screen-window-placement',
@@ -9,23 +10,3 @@ import {TechnologyComponent} from '../technology.component';
 export class MultiScreenWindowPlacementComponent extends TechnologyComponent {
   technology: Technology = MULTI_SCREEN_WINDOW_PLACEMENT;
 }
-
-export const MULTI_SCREEN_WINDOW_PLACEMENT: Technology = {
-  name: 'Multi-Screen Window Placement',
-  description: 'Definiert APIs, mit denen Informationen über angeschlossene Bildschirme abgefragt und Fenster relativ zu diesen positioniert werden können.',
-  featureDetections: [
-    {
-      apiObject: 'window.getScreens()',
-      detection: 'getScreens' in window
-    },
-    {
-      apiObject: 'window.screen.isExtended',
-      detection: 'screen' in window && 'isExtended' in window.screen
-    },
-  ],
-  references: [
-    { name: 'Spezifikation', link: 'https://webscreens.github.io/window-placement/' },
-  ],
-  icon: 'window',
-  routerLink: 'multi-screen-window-placement'
-};
