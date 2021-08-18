@@ -44,6 +44,6 @@ export class CategoriesComponent {
       const supported = this.getCompatibleFeaturesCount(technology);
       return supported === 0 ? 'no' : supported === detections ? 'yes' : 'partially';
     }
-    return '';
+    return 'untestable';
   }
 }
