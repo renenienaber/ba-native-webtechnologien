@@ -1,7 +1,7 @@
 import * as TECHNOLOGIES from '../../technologies/technologies';
 import {Category} from '../../models/category';
 
-export const SENSORS: Category = {
+const SENSORS: Category = {
   title: 'Sensoren',
   icon: 'sensors',
   technologies: [
@@ -16,7 +16,7 @@ export const SENSORS: Category = {
     TECHNOLOGIES.PROXIMITY_SENSOR,
   ],
 };
-export const DEVICE_INFOS: Category = {
+const DEVICE_INFOS: Category = {
   title: 'Geräteinformationen',
   icon: 'perm_device_information',
   technologies: [
