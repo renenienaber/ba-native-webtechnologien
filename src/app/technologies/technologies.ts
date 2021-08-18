@@ -1,5 +1,19 @@
 import {Technology} from '../models/technology';
-import {isObjectInHtmlElement, isObjectInServiceWorkerRegistration, isObjectInUIEvent} from './detection-functions';
+
+// detection functions
+function isObjectInHtmlElement(htmlElement: string, object: string): boolean {
+  const el = document.createElement(htmlElement);
+  return object in el;
+}
+
+function isObjectInUIEvent(object: string): boolean {
+  const ev = new UIEvent('TestEvent', {});
+  return object in ev;
+}
+
+function isObjectInServiceWorkerRegistration(object: string): boolean {
+  return 'ServiceWorkerRegistration' in window && object in ServiceWorkerRegistration.prototype;
+}
 
 export const ACCELEROMETER: Technology = {
   name: 'Accelerometer',
