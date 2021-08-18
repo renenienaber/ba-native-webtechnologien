@@ -1,19 +1,19 @@
 import {Component, ViewChild} from '@angular/core';
 import {Technology} from '../models/technology';
-import {DemoFrameComponent} from '../demo-frame/demo-frame.component';
+import {TechnologyPageComponent} from './technology-page/technology-page.component';
 
 @Component({
   selector: 'app-technology',
   template: '',
 })
 export abstract class TechnologyComponent {
-  @ViewChild(DemoFrameComponent, { static: false })
-  private demoFrameComponent: DemoFrameComponent;
+  @ViewChild(TechnologyPageComponent, { static: false })
+  private technologyInformationComponent: TechnologyPageComponent;
 
   abstract technology: Technology;
 
   showError(message: string): void {
-    this.demoFrameComponent.openErrorSnackBar(message);
+    this.technologyInformationComponent.openErrorSnackBar(message);
   }
 
   showNoSupportError(object: string): void {

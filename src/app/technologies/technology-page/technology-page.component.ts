@@ -1,14 +1,14 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Technology} from '../models/technology';
+import {Technology} from '../../models/technology';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-demo-frame',
-  templateUrl: './demo-frame.component.html',
-  styleUrls: ['./demo-frame.component.css']
+  selector: 'app-technology-page',
+  templateUrl: './technology-page.component.html',
+  styleUrls: ['./technology-page.component.css']
 })
-export class DemoFrameComponent implements OnInit {
+export class TechnologyPageComponent implements OnInit {
   @ViewChild('content', { read: ElementRef, static: true })
   content: ElementRef;
 

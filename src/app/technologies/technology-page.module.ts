@@ -19,8 +19,8 @@ import {VibrationComponent} from './demos/vibration/vibration.component';
 import {TECHNOLOGIES} from '../shared/functions';
 import {BadgingComponent} from './demos/badging/badging.component';
 import {SharedModule} from '../shared/shared.module';
-import {DemoFrameComponent} from '../demo-frame/demo-frame.component';
 import {NotificationsComponent} from './demos/notification/notifications.component';
+import {TechnologyPageComponent} from './technology-page/technology-page.component';
 
 const DEMO_ROUTES: Routes = [
   {
@@ -67,7 +67,7 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ...TECHNOLOGIES.filter(technology => !DEMO_ROUTES.map(d => d.path).includes(technology.routerLink)).map(res => {
     return {
       path: res.routerLink,
-      component: DemoFrameComponent,
+      component: TechnologyPageComponent,
       data: {technology: res}
     } as Route;
   }),
@@ -80,7 +80,7 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
 
 @NgModule({
   declarations: [
-    DemoFrameComponent,
+    TechnologyPageComponent,
     // demos
     BadgingComponent,
     DeviceorientationEventComponent,
