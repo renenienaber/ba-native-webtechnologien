@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Category} from '../../models/category';
 import {Technology} from '../../models/technology';
 import {CATEGORIES} from './categories';
+import {searchInTechnologies} from '../../shared/functions';
 
 @Component({
   selector: 'app-categories',
@@ -17,29 +18,15 @@ export class CategoriesComponent {
   showReferences = false;
   @Input()
   set searchTerm(value: string) {
-    if (value.length > 1) {
-      this.categories = this.search(value);
-    } else {
-      this.categories = CATEGORIES;
-    }
+    this.categories = value.length > 1 ? this.search(value) : CATEGORIES;
   }
 
   categories: Category[] = CATEGORIES;
 
-  search(term: string): Category[] {
-    term = term.toLowerCase();
-
+  private search(term: string): Category[] {
     const categories: Category[] = [];
     for (const category of CATEGORIES) {
-      const tempCategory: Category = {...category, technologies: []};
-      for (const technology of category.technologies) {
-        if (technology.name.toLowerCase().indexOf(term) !== -1 ||
-          technology.description.toLowerCase().indexOf(term) !== -1 ||
-          technology.featureDetections.filter(el => el.apiObject.toLowerCase().indexOf(term) !== -1).length > 0
-        ) {
-          tempCategory.technologies.push(technology);
-        }
-      }
+      const tempCategory: Category = {...category, technologies: searchInTechnologies(category.technologies, term)};
       if (tempCategory.technologies.length > 0) {
         categories.push(tempCategory);
       }

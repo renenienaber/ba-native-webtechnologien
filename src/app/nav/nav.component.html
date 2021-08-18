@@ -14,6 +14,26 @@
         <mat-icon>help</mat-icon>Informationen
       </a>
       <mat-divider></mat-divider>
+      <a>
+        <mat-form-field class="search-form" appearance="outline">
+          <mat-label>Suche</mat-label>
+          <input
+            matInput
+            type="search"
+            [(ngModel)]="searchTerm"
+            (input)="onSearchTermChange()"
+          >
+          <mat-icon matPrefix>search</mat-icon>
+          <button *ngIf="searchTerm"
+                  matSuffix
+                  mat-icon-button
+                  aria-label="Löschen"
+                  (click)="searchTerm=''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </a>
       <ng-container *ngFor="let technology of TECHNOLOGIES">
         <a mat-list-item routerLink="technology/{{technology.routerLink}}" routerLinkActive="active">
           <mat-icon *ngIf="technology.icon">{{technology.icon}}</mat-icon>
