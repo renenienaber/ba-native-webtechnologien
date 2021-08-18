@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import * as TECHNOLOGIES from '../technologies/technologies';
-import {Technology} from '../models/technology';
+import {TECHNOLOGIES} from '../shared/functions';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +10,7 @@ import {Technology} from '../models/technology';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  TECHNOLOGIES = Object.values(TECHNOLOGIES) as Technology[];
+  TECHNOLOGIES = TECHNOLOGIES;
 
   isXSmall$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.XSmall)
     .pipe(

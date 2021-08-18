@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Technology} from '../models/technology';
-import * as TECHNOLOGIES from '../technologies/technologies'
+import {TECHNOLOGIES} from '../shared/functions';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +47,7 @@ export class FeatureExportService {
 
   exportTechnologySupport(): void {
     const rows = [];
-    for (const technology of Object.values(TECHNOLOGIES) as Technology[]) {
+    for (const technology of TECHNOLOGIES) {
       let row = [];
       let partially = false;
 

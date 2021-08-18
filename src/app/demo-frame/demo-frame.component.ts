@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {Technology} from '../models/technology';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-demo-frame',
@@ -16,10 +17,15 @@ export class DemoFrameComponent implements OnInit {
 
   hasContent = false;
 
-  constructor(private matSnackBar: MatSnackBar) {}
+  constructor(private readonly activatedRoute: ActivatedRoute, private matSnackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.hasContent = !!this.content.nativeElement.innerHTML;
+    this.activatedRoute.data.subscribe(data => {
+      if (data && !this.technology) {
+        this.technology = data.technology;
+      }
+    });
   }
 
   openErrorSnackBar(message: string) {

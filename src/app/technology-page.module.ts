@@ -71,7 +71,7 @@ import {PageVisibilityComponent} from './technologies/page-visibility/page-visib
 import {PaymentHandlerComponent} from './technologies/payment-handler/payment-handler.component';
 import {WebotpComponent} from './technologies/webotp/webotp.component';
 import {DemoFrameComponent} from './demo-frame/demo-frame.component';
-import {SharedModule} from './shared.module';
+import {SharedModule} from './shared/shared.module';
 
 const routesSensors: Routes = [
   {
@@ -370,7 +370,7 @@ const routesFurtherPlatform: Routes = [
   },
 ];
 
-export const DEMO_ROUTES: Routes = [
+export const TECHNOLOGYPAGE_ROUTES: Routes = [
   ...routesSensors,
   ...routesDeviceInfos,
   ...routesScreen,
@@ -381,6 +381,11 @@ export const DEMO_ROUTES: Routes = [
   ...routesLocalResources,
   ...routesPlatformUI,
   ...routesFurtherPlatform,
+  // {
+  //   path: TECHNOLOGIES.VIBRATION.routerLink,
+  //   component: DemoFrameComponent,
+  //   data: {technology: TECHNOLOGIES.VIBRATION}
+  // },
   // fallback component - needs to be last one
   {
     path: '**',
@@ -475,4 +480,4 @@ export const DEMO_ROUTES: Routes = [
     SharedModule,
   ]
 })
-export class DemoModule {}
+export class TechnologyPageModule {}

@@ -1,9 +1,9 @@
 import {RouterModule, Routes} from '@angular/router';
 import {CategoriesComponent} from './dashboard/categories/categories.component';
-import {DEMO_ROUTES, DemoModule} from './demo.module';
+import {TECHNOLOGYPAGE_ROUTES, TechnologyPageModule} from './technology-page.module';
 import {NgModule} from '@angular/core';
 import {CaniuseEmbedComponent} from './caniuse-embed/caniuse-embed.component';
-import {SharedModule} from './shared.module';
+import {SharedModule} from './shared/shared.module';
 import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {NavComponent} from './nav/nav.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'technology',
-    children: DEMO_ROUTES
+    children: TECHNOLOGYPAGE_ROUTES
   },
   // fallback component - needs to be last one
   {
@@ -45,7 +45,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     SharedModule,
-    DemoModule,
+    TechnologyPageModule,
   ],
   exports: [RouterModule],
   providers: [],

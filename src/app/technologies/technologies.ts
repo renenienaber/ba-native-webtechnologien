@@ -1,6 +1,5 @@
 import {Technology} from '../models/technology';
-import {isObjectInHtmlElement, isObjectInServiceWorkerRegistration, isObjectInUIEvent} from './functions';
-import {DEVICE_INFOS, SENSORS} from '../dashboard/categories/categories';
+import {isObjectInHtmlElement, isObjectInServiceWorkerRegistration, isObjectInUIEvent} from './detection-functions';
 
 export const ACCELEROMETER: Technology = {
   name: 'Accelerometer',
