@@ -1,0 +1,55 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <p><strong>Hinweis</strong>: Es wird keine tatsächliche Zahlung durchgeführt</p>
+
+  <div>
+    <h3>Gesamtsumme (details.total):</h3>
+    <mat-form-field>
+      <mat-label>Label</mat-label>
+      <input matInput type="text" [(ngModel)]="details.total.label">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Betrag</mat-label>
+      <input matInput type="number" min="0" step="0.01" [(ngModel)]="details.total.amount.value">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Währung</mat-label>
+      <mat-select [(ngModel)]="details.total.amount.currency">
+        <mat-option value="EUR">EUR</mat-option>
+        <mat-option value="URD">USD</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      (click)="onShowRequest()"
+    >
+      PaymentRequest.show
+    </button>
+  </div>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>Einzelne Artikel (details.displayItems)</mat-expansion-panel-header>
+      <mat-form-field *ngFor="let displayItem of details.displayItems">
+        <mat-form-field>
+          <mat-label>Label</mat-label>
+          <input matInput type="text" [(ngModel)]="displayItem.label">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Betrag</mat-label>
+          <input matInput type="number" min="0" step="0.01" [(ngModel)]="displayItem.amount.value">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Währung</mat-label>
+          <mat-select [(ngModel)]="displayItem.amount.currency">
+            <mat-option value="EUR">EUR</mat-option>
+            <mat-option value="URD">USD</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
+</ng-template>

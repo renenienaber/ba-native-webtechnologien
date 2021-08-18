@@ -2,7 +2,7 @@ import {
   BADGING,
   DEVICEORIENTATION_EVENT,
   GEOLOCATION, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
-  ORIENTATION_SENSOR,
+  ORIENTATION_SENSOR, PAYMENT_REQUEST,
   SERVICE_WORKER,
   VIBRATION,
   WEB_APP_MANIFEST
@@ -22,6 +22,7 @@ import {SharedModule} from '../shared/shared.module';
 import {NotificationsComponent} from './demos/notification/notifications.component';
 import {TechnologyPageComponent} from './technology-page/technology-page.component';
 import {Technology} from '../models/technology';
+import { PaymentRequestComponent } from './demos/payment-request/payment-request.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -47,6 +48,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: ORIENTATION_SENSOR,
     component: OrientationSensorComponent
+  },
+  {
+    technology: PAYMENT_REQUEST,
+    component: PaymentRequestComponent
   },
   {
     technology: SERVICE_WORKER,
@@ -97,7 +102,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     OrientationSensorComponent,
     ServiceWorkerComponent,
     VibrationComponent,
-    WebAppManifestComponent
+    WebAppManifestComponent,
+    PaymentRequestComponent
   ],
   imports: [
     SharedModule,

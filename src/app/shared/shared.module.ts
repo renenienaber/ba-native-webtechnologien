@@ -20,6 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {BrowserModule} from '@angular/platform-browser';
 import {DisplayFeatureDetectionsComponent} from './display-feature-detections/display-feature-detections.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -72,6 +73,7 @@ import {DisplayFeatureDetectionsComponent} from './display-feature-detections/di
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatSelectModule,
     // own
     DisplayFeatureDetectionsComponent,
   ]
