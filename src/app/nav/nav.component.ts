@@ -3,8 +3,6 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {searchInTechnologies, TECHNOLOGIES} from '../shared/functions';
-import {Category} from '../models/category';
-import {CATEGORIES} from '../dashboard/categories/categories';
 import {Technology} from '../models/technology';
 
 @Component({
@@ -27,7 +25,6 @@ export class NavComponent {
 
   onSearchTermChange(): void {
     this.TECHNOLOGIES = this.searchTerm.length > 1 ? this.search(this.searchTerm) : TECHNOLOGIES;
-    console.log(this.TECHNOLOGIES);
   }
 
   search(term: string): Technology[] {
