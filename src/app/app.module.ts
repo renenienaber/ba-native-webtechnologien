@@ -1,6 +1,6 @@
 import {RouterModule, Routes} from '@angular/router';
 import {CategoriesComponent} from './dashboard/categories/categories.component';
-import {TECHNOLOGYPAGE_ROUTES, TechnologyPageModule} from './technology-page.module';
+import {TECHNOLOGYPAGE_ROUTES, TechnologyPageModule} from './technologies/technology-page.module';
 import {NgModule} from '@angular/core';
 import {CaniuseEmbedComponent} from './caniuse-embed/caniuse-embed.component';
 import {SharedModule} from './shared/shared.module';
