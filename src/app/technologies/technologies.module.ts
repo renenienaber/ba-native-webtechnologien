@@ -103,4 +103,4 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     SharedModule,
   ]
 })
-export class TechnologyPageModule {}
+export class TechnologiesModule {}

@@ -1,6 +1,6 @@
 import {RouterModule, Routes} from '@angular/router';
 import {CategoriesComponent} from './dashboard/categories/categories.component';
-import {TECHNOLOGYPAGE_ROUTES, TechnologyPageModule} from './technologies/technology-page.module';
+import {TECHNOLOGYPAGE_ROUTES, TechnologiesModule} from './technologies/technologies.module';
 import {NgModule} from '@angular/core';
 import {CaniuseEmbedComponent} from './caniuse-embed/caniuse-embed.component';
 import {SharedModule} from './shared/shared.module';
@@ -45,7 +45,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     SharedModule,
-    TechnologyPageModule,
+    TechnologiesModule,
   ],
   exports: [RouterModule],
   providers: [],
