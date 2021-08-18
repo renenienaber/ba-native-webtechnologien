@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import {Technology} from '../../../models/technology';
-import {TechnologyComponent} from '../../technology.component';
-import {NOTIFICATIONS} from '../../technologies';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })
-export class NotificationsComponent extends TechnologyComponent {
-  technology: Technology = NOTIFICATIONS;
-
+export class NotificationsComponent extends TechnologyDemoComponent {
   private errorNoWindowNotification = 'window.Notification';
   private errorNoServiceWorkerRegistrationNotification = 'window.ServiceWorkerRegistration';
   private errorNoServiceWorkerRegistration = 'Es wurde kein Service Worker registriert! Bitte die App installieren und erneut versuchen.';

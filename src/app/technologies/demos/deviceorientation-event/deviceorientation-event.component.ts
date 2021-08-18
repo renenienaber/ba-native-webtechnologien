@@ -1,15 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Technology} from '../../../models/technology';
-import {TechnologyComponent} from '../../technology.component';
-import {DEVICEORIENTATION_EVENT} from '../../technologies';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-device-orientation',
   templateUrl: './deviceorientation-event.component.html'
 })
-export class DeviceorientationEventComponent extends TechnologyComponent implements OnInit, OnDestroy {
-  technology: Technology = DEVICEORIENTATION_EVENT;
-
+export class DeviceorientationEventComponent extends TechnologyDemoComponent implements OnInit, OnDestroy {
   errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
   ngOnInit() {

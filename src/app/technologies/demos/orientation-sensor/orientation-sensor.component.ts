@@ -1,15 +1,11 @@
 import {Component} from '@angular/core';
-import {Technology} from '../../../models/technology';
-import {TechnologyComponent} from '../../technology.component';
-import {ORIENTATION_SENSOR} from '../../technologies';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-orientation-sensor',
   templateUrl: './orientation-sensor.component.html'
 })
-export class OrientationSensorComponent extends TechnologyComponent {
-  technology: Technology = ORIENTATION_SENSOR;
-
+export class OrientationSensorComponent extends TechnologyDemoComponent {
   private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor';
   private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor';
   private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';

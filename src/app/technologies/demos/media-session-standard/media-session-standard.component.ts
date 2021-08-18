@@ -1,15 +1,11 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {Technology} from '../../../models/technology';
-import {TechnologyComponent} from '../../technology.component';
-import {MEDIA_SESSION_STANDARD} from '../../technologies';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-media-session-standard',
   templateUrl: './media-session-standard.component.html'
 })
-export class MediaSessionStandardComponent extends TechnologyComponent {
-  technology: Technology = MEDIA_SESSION_STANDARD;
-
+export class MediaSessionStandardComponent extends TechnologyDemoComponent {
   @ViewChild('audioElement', { static: false })
   set audioRef(ref: ElementRef<HTMLAudioElement>) {
     this.audioElement = ref.nativeElement;

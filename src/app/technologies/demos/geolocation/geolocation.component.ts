@@ -1,15 +1,11 @@
 import {Component} from '@angular/core';
-import {TechnologyComponent} from '../../technology.component';
-import {Technology} from '../../../models/technology';
-import {GEOLOCATION} from '../../technologies';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-geolocation',
   templateUrl: './geolocation.component.html'
 })
-export class GeolocationComponent extends TechnologyComponent {
-  technology: Technology = GEOLOCATION;
-
+export class GeolocationComponent extends TechnologyDemoComponent {
   private errorNoGeolocation = 'navigator.geolocation';
 
   currentPos: Position;

@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
-import {Technology} from '../../../models/technology';
-import {TechnologyComponent} from '../../technology.component';
-import {BADGING} from '../../technologies';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-badging',
   templateUrl: './badging.component.html'
 })
-export class BadgingComponent extends TechnologyComponent {
-  technology: Technology = BADGING;
-
+export class BadgingComponent extends TechnologyDemoComponent {
   numberAppBadge = 3;
   numberClientBadge = 5;
 

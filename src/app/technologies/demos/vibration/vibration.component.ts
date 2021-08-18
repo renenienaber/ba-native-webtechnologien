@@ -1,16 +1,11 @@
 import {Component} from '@angular/core';
-import {TechnologyComponent} from '../../technology.component';
-import {VIBRATION} from '../../technologies';
-import {Technology} from '../../../models/technology';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-vibration',
   templateUrl: './vibration.component.html'
 })
-export class VibrationComponent extends TechnologyComponent {
-  // sets base attributes
-  technology: Technology = VIBRATION;
-
+export class VibrationComponent extends TechnologyDemoComponent {
   private errorNoVibrate = 'navigator.vibrate';
 
   duration = 200;

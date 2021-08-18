@@ -21,54 +21,61 @@ import {BadgingComponent} from './demos/badging/badging.component';
 import {SharedModule} from '../shared/shared.module';
 import {NotificationsComponent} from './demos/notification/notifications.component';
 import {TechnologyPageComponent} from './technology-page/technology-page.component';
+import {Technology} from '../models/technology';
 
-const DEMO_ROUTES: Routes = [
+const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
-    path: BADGING.routerLink,
+    technology: BADGING,
     component: BadgingComponent
   },
   {
-    path: DEVICEORIENTATION_EVENT.routerLink,
+    technology: DEVICEORIENTATION_EVENT,
     component: DeviceorientationEventComponent
   },
   {
-    path: GEOLOCATION.routerLink,
+    technology: GEOLOCATION,
     component: GeolocationComponent
   },
   {
-    path: MEDIA_SESSION_STANDARD.routerLink,
+    technology: MEDIA_SESSION_STANDARD,
     component: MediaSessionStandardComponent
   },
   {
-    path: NOTIFICATIONS.routerLink,
+    technology: NOTIFICATIONS,
     component: NotificationsComponent
   },
   {
-    path: ORIENTATION_SENSOR.routerLink,
+    technology: ORIENTATION_SENSOR,
     component: OrientationSensorComponent
   },
   {
-    path: SERVICE_WORKER.routerLink,
+    technology: SERVICE_WORKER,
     component: ServiceWorkerComponent
   },
   {
-    path: VIBRATION.routerLink,
+    technology: VIBRATION,
     component: VibrationComponent
   },
   {
-    path: WEB_APP_MANIFEST.routerLink,
+    technology: WEB_APP_MANIFEST,
     component: WebAppManifestComponent
   },
 ];
 
 export const TECHNOLOGYPAGE_ROUTES: Routes = [
-  ...DEMO_ROUTES,
+  ...DEMO_COMPONENTS.map(d => {
+    return {
+      path: d.technology.routerLink,
+      component: d.component,
+      data: { technology: d.technology }
+    } as Route;
+  }),
   // All Technologies which are not in DEMO_ROUTES
-    ...TECHNOLOGIES.filter(technology => !DEMO_ROUTES.map(d => d.path).includes(technology.routerLink)).map(res => {
+    ...TECHNOLOGIES.filter(technology => !DEMO_COMPONENTS.map(d => d.technology).includes(technology)).map(res => {
     return {
       path: res.routerLink,
       component: TechnologyPageComponent,
-      data: {technology: res}
+      data: { technology: res }
     } as Route;
   }),
   // fallback component - needs to be last one
