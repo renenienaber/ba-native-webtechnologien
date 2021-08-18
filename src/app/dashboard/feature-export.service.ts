@@ -74,6 +74,6 @@ export class FeatureExportService {
         rows.push(row);
       }
     }
-    this.exportToCsv('test.csv', rows);
+    this.exportToCsv('feature-detections.csv', rows);
   }
 }

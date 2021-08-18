@@ -2,7 +2,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CategoriesComponent} from './dashboard/categories/categories.component';
 import {TECHNOLOGYPAGE_ROUTES, TechnologiesModule} from './technologies/technologies.module';
 import {NgModule} from '@angular/core';
-import {CaniuseEmbedComponent} from './caniuse-embed/caniuse-embed.component';
+import {CaniuseEmbedComponent} from './technologies/technology-page/caniuse-embed/caniuse-embed.component';
 import {SharedModule} from './shared/shared.module';
 import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
