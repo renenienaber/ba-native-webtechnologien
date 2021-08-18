@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import {TECHNOLOGIES} from '../technologies/technology';
+import {TECHNOLOGIES} from '../models/technology';
 
 @Component({
   selector: 'app-nav',

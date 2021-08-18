@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Technology} from './technology';
+import {Technology} from '../models/technology';
 import {DemoFrameComponent} from '../demo-frame/demo-frame.component';
 
 @Component({

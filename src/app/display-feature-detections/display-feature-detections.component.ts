@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {FeatureDetection} from '../technologies/technology';
+import {FeatureDetection} from '../models/technology';
 
 @Component({
   selector: 'app-display-feature-detections',

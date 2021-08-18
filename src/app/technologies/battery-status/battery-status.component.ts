@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {TechnologyComponent} from '../technology.component';
-import {Technology} from '../technology';
+import {Technology} from '../../models/technology';
 
 @Component({
   selector: 'app-battery-status',

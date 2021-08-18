@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Technology} from '../technologies/technology';
+import {Technology} from '../models/technology';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({

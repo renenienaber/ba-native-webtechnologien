@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Technology} from '../technology';
+import {Technology} from '../../models/technology';
 import {TechnologyComponent} from '../technology.component';
 
 @Component({

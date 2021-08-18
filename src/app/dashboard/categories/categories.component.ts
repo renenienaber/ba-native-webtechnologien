@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {CATEGORIES, Category} from './category';
-import {Technology} from '../../technologies/technology';
+import {Component, Input} from '@angular/core';
+import {CATEGORIES, Category} from '../../models/category';
+import {Technology} from '../../models/technology';
 
 @Component({
   selector: 'app-categories',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {TECHNOLOGIES} from '../technologies/technology';
+import {TECHNOLOGIES} from '../models/technology';
 
 @Injectable({
   providedIn: 'root'

@@ -6,7 +6,7 @@ import {
   INPUT_PROCESSING, LOCAL_RESOURCES, PLATFORM_UI,
   SCREEN,
   SENSORS
-} from '../dashboard/categories/category';
+} from './category';
 
 export interface Technology {
   name: string;
