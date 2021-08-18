@@ -10,4 +10,20 @@ export class DashboardComponent {
   showDescription = false;
   showReferences = false;
   searchTerm = '';
+
+  constructor() {
+    this.showCompatibility = this.getBooleanLocalStorageValue('settingCompatibility');
+    this.showDescription = this.getBooleanLocalStorageValue('settingDescription');
+    this.showReferences = this.getBooleanLocalStorageValue('settingReferences');
+  }
+
+  onSettingsChanged(): void {
+    localStorage.setItem('settingCompatibility', `${this.showCompatibility}`);
+    localStorage.setItem('settingDescription', `${this.showDescription}`);
+    localStorage.setItem('settingReferences', `${this.showReferences}`);
+  }
+
+  private getBooleanLocalStorageValue(key: string): boolean {
+    return JSON.parse(localStorage.getItem(key)) === true;
+  }
 }

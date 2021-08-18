@@ -23,19 +23,19 @@
     </button>
     <mat-menu #menuOptions="matMenu">
       <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="showCompatibility" (click) = "$event.stopPropagation()">
+        <mat-slide-toggle [(ngModel)]="showCompatibility" (change)="onSettingsChanged()" (click) = "$event.stopPropagation()">
           <mat-icon>check_circle_outline</mat-icon>
           <span>Support</span>
         </mat-slide-toggle>
       </button>
       <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="showDescription" (click) = "$event.stopPropagation()">
+        <mat-slide-toggle [(ngModel)]="showDescription" (change)="onSettingsChanged()" (click) = "$event.stopPropagation()">
           <mat-icon>info</mat-icon>
           <span>Beschreibung</span>
         </mat-slide-toggle>
       </button>
       <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="showReferences" (click) = "$event.stopPropagation()">
+        <mat-slide-toggle [(ngModel)]="showReferences" (change)="onSettingsChanged()" (click) = "$event.stopPropagation()">
           <mat-icon>link</mat-icon>
           <span>Referenzen</span>
         </mat-slide-toggle>
