@@ -5,7 +5,7 @@ import {
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE,
   SERVICE_WORKER,
   VIBRATION,
-  WEB_APP_MANIFEST, WEB_SHARE
+  WEB_APP_MANIFEST, WEB_AUTHENTICATION, WEB_SHARE
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
 import {OrientationSensorComponent} from './demos/orientation-sensor/orientation-sensor.component';
@@ -25,6 +25,7 @@ import {Technology} from '../models/technology';
 import { PaymentRequestComponent } from './demos/payment-request/payment-request.component';
 import { PictureInPictureComponent } from './demos/picture-in-picture/picture-in-picture.component';
 import { WebShareComponent } from './demos/web-share/web-share.component';
+import { WebAuthenticationComponent } from './demos/web-authentication/web-authentication.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -66,6 +67,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: VIBRATION,
     component: VibrationComponent
+  },
+  {
+    technology: WEB_AUTHENTICATION,
+    component: WebAuthenticationComponent
   },
   {
     technology: WEB_APP_MANIFEST,
@@ -118,7 +123,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     WebAppManifestComponent,
     PaymentRequestComponent,
     PictureInPictureComponent,
-    WebShareComponent
+    WebShareComponent,
+    WebAuthenticationComponent
   ],
   imports: [
     SharedModule,
