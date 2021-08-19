@@ -1,5 +1,9 @@
-.data {
+.container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.container > * {
+  margin: 10px;
 }

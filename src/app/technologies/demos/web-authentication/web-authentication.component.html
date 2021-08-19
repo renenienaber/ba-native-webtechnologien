@@ -3,29 +3,29 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div class="data">
+  <div class="container">
+    <button
+      type="button"
+      mat-raised-button
+      (click)="createCredential()"
+    >
+      create PublicKey
+    </button>
     <mat-form-field appearance="fill">
-      <mat-label>user.name</mat-label>
-      <input matInput type="text" [(ngModel)]="createPublicKey.user.name">
+      <mat-label>Public Key</mat-label>
+      <textarea
+        matInput
+        [value]="getCredentialAsString(tempCredential)"
+        disabled
+      ></textarea>
     </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>user.displayName</mat-label>
-      <input matInput type="text" [(ngModel)]="createPublicKey.user.displayName">
-    </mat-form-field>
+    <button
+      type="button"
+      mat-raised-button
+      (click)="getCredential()"
+      [disabled]="!tempCredential"
+    >
+      get PublicKey
+    </button>
   </div>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="createCredential()"
-  >
-    create()
-  </button>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="getCredential()"
-    [disabled]="!tempCredential"
-  >
-    getCredential()
-  </button>
 </ng-template>

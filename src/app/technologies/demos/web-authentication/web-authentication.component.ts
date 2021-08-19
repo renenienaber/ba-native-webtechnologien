@@ -12,7 +12,7 @@ export class WebAuthenticationComponent extends TechnologyDemoComponent {
     challenge: new Uint8Array(16),
     // relying party
     rp: {
-      name: 'Awesome Corp', // sample relying party
+      name: 'Demo Corp', // sample relying party
     },
     user: {
       id: new Uint8Array(16),
@@ -48,12 +48,16 @@ export class WebAuthenticationComponent extends TechnologyDemoComponent {
       allowCredentials: [
         {
           type: 'public-key',
-          id: new Uint8Array(16),
+          id: this.tempCredential.rawId,
         },
       ],
     };
     navigator.credentials.get({ publicKey: requestPublicKey })
       .then(() => this.showError('Daten wurden erfolgreich validiert. Authentifizierung erfolgreich.'))
       .catch(err => this.showError(err));
+  }
+
+  getCredentialAsString(credential: PublicKeyCredential): string {
+    return JSON.stringify(credential);
   }
 }
