@@ -48,11 +48,12 @@ export class WebAuthenticationComponent extends TechnologyDemoComponent {
       allowCredentials: [
         {
           type: 'public-key',
-          id: this.tempCredential?.rawId,
+          id: new Uint8Array(16),
         },
       ],
     };
     navigator.credentials.get({ publicKey: requestPublicKey })
+      .then(() => this.showError('Daten wurden erfolgreich validiert. Authentifizierung erfolgreich.'))
       .catch(err => this.showError(err));
   }
 }

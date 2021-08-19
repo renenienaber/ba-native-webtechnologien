@@ -24,6 +24,7 @@
     type="button"
     mat-raised-button
     (click)="getCredential()"
+    [disabled]="!tempCredential"
   >
     getCredential()
   </button>
