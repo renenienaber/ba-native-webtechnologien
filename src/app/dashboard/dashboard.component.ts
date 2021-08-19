@@ -12,6 +12,7 @@ export class DashboardComponent {
     showReferences: false
   };
   searchTerm = '';
+  demoOnly = false;
 
   constructor() {
     const storedSettings = JSON.parse(localStorage.getItem('dashboardSettings'));

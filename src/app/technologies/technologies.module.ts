@@ -66,6 +66,9 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: WebAppManifestComponent
   },
 ];
+export function isDemo(technology: Technology): boolean {
+  return DEMO_COMPONENTS.map(d => d.technology).includes(technology);
+}
 
 export const TECHNOLOGYPAGE_ROUTES: Routes = [
   ...DEMO_COMPONENTS.map(d => {
