@@ -21,6 +21,7 @@ import {MatListModule} from '@angular/material/list';
 import {BrowserModule} from '@angular/platform-browser';
 import {DisplayFeatureDetectionsComponent} from './display-feature-detections/display-feature-detections.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -74,6 +75,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatListModule,
     MatSelectModule,
+    MatBadgeModule,
     // own
     DisplayFeatureDetectionsComponent,
   ]
