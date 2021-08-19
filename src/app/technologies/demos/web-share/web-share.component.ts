@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-web-share',
-  templateUrl: './web-share.component.html',
-  styleUrls: ['./web-share.component.css']
+  templateUrl: './web-share.component.html'
 })
 export class WebShareComponent extends TechnologyDemoComponent {
   shareData = {
