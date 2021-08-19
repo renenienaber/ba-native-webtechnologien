@@ -3,5 +3,12 @@
 </app-technology-page>
 
 <ng-template #demo>
-
+  <div>
+    <video #videoElement fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" controls>
+      <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
+    </video>
+  </div>
+  <button mat-raised-button (click)="togglePicInPic()">
+    Picture-in-Picture anfragen/beenden
+  </button>
 </ng-template>
