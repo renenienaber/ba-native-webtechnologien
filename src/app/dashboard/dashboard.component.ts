@@ -6,24 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  showCompatibility = false;
-  showDescription = false;
-  showReferences = false;
+  dashboardSettings: DashboardSettings = {
+    showCompatibility: false,
+    showDescription: false,
+    showReferences: false
+  };
   searchTerm = '';
 
   constructor() {
-    this.showCompatibility = this.getBooleanLocalStorageValue('settingCompatibility');
-    this.showDescription = this.getBooleanLocalStorageValue('settingDescription');
-    this.showReferences = this.getBooleanLocalStorageValue('settingReferences');
+    const storedSettings = JSON.parse(localStorage.getItem('dashboardSettings'));
+    if (storedSettings) {
+      this.dashboardSettings = storedSettings;
+    }
   }
 
   onSettingsChanged(): void {
-    localStorage.setItem('settingCompatibility', `${this.showCompatibility}`);
-    localStorage.setItem('settingDescription', `${this.showDescription}`);
-    localStorage.setItem('settingReferences', `${this.showReferences}`);
+    localStorage.setItem('dashboardSettings', JSON.stringify(this.dashboardSettings));
   }
+}
 
-  private getBooleanLocalStorageValue(key: string): boolean {
-    return JSON.parse(localStorage.getItem(key)) === true;
-  }
+interface DashboardSettings {
+  showCompatibility: boolean;
+  showDescription: boolean;
+  showReferences: boolean;
 }
