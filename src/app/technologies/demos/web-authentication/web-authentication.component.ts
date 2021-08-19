@@ -9,7 +9,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 export class WebAuthenticationComponent extends TechnologyDemoComponent {
   createPublicKey: PublicKeyCredentialCreationOptions = {
     // random, cryptographically secure, at least 16 bytes, sent from server
-    challenge: new Uint8Array(16),
+    challenge: new Uint8Array(16).buffer,
     // relying party
     rp: {
       name: 'Demo Corp', // sample relying party
@@ -56,7 +56,7 @@ export class WebAuthenticationComponent extends TechnologyDemoComponent {
     if (this.isSupported()) {
       const requestPublicKey: PublicKeyCredentialRequestOptions = {
         // random, cryptographically secure, at least 16 bytes
-        challenge: new Uint8Array(16),
+        challenge: new Uint8Array(16).buffer,
         allowCredentials: [
           {
             type: 'public-key',
