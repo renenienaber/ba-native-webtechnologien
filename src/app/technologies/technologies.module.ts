@@ -5,7 +5,7 @@ import {
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE,
   SERVICE_WORKER,
   VIBRATION,
-  WEB_APP_MANIFEST
+  WEB_APP_MANIFEST, WEB_SHARE
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
 import {OrientationSensorComponent} from './demos/orientation-sensor/orientation-sensor.component';
@@ -24,6 +24,7 @@ import {TechnologyPageComponent} from './technology-page/technology-page.compone
 import {Technology} from '../models/technology';
 import { PaymentRequestComponent } from './demos/payment-request/payment-request.component';
 import { PictureInPictureComponent } from './demos/picture-in-picture/picture-in-picture.component';
+import { WebShareComponent } from './demos/web-share/web-share.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -70,6 +71,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     technology: WEB_APP_MANIFEST,
     component: WebAppManifestComponent
   },
+  {
+    technology: WEB_SHARE,
+    component: WebShareComponent
+  }
 ];
 export function isDemo(technology: Technology): boolean {
   return DEMO_COMPONENTS.map(d => d.technology).includes(technology);
@@ -112,7 +117,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     VibrationComponent,
     WebAppManifestComponent,
     PaymentRequestComponent,
-    PictureInPictureComponent
+    PictureInPictureComponent,
+    WebShareComponent
   ],
   imports: [
     SharedModule,
