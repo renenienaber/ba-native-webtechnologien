@@ -7,7 +7,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   styleUrls: ['./web-authentication.component.css']
 })
 export class WebAuthenticationComponent extends TechnologyDemoComponent {
-  publicKey: PublicKeyCredentialCreationOptions = {
+  createPublicKey: PublicKeyCredentialCreationOptions = {
     // random, cryptographically secure, at least 16 bytes, sent from server
     challenge: new Uint8Array(16),
     // relying party
@@ -29,15 +29,30 @@ export class WebAuthenticationComponent extends TechnologyDemoComponent {
     ],
   };
 
-  cred: PublicKeyCredential;
+  tempCredential: PublicKeyCredential;
 
   createCredential(): void {
-    navigator.credentials.create({ publicKey: this.publicKey })
+    navigator.credentials.create({ publicKey: this.createPublicKey })
       .then(res => {
         // Send data to relying party's servers
-        this.cred = res as PublicKeyCredential;
+        this.tempCredential = res as PublicKeyCredential;
         this.showError('Public Key wurde erstellt. Es würde auf einem Server hinterlegt werden. Zur Demonstration wird er hier temporär gespeichert');
       })
+      .catch(err => this.showError(err));
+  }
+
+  getCredential(): void {
+    const requestPublicKey: PublicKeyCredentialRequestOptions = {
+      // random, cryptographically secure, at least 16 bytes
+      challenge: new Uint8Array(16),
+      allowCredentials: [
+        {
+          type: 'public-key',
+          id: this.tempCredential?.rawId,
+        },
+      ],
+    };
+    navigator.credentials.get({ publicKey: requestPublicKey })
       .catch(err => this.showError(err));
   }
 }

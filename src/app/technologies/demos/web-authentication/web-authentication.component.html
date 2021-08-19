@@ -6,11 +6,11 @@
   <div class="data">
     <mat-form-field appearance="fill">
       <mat-label>user.name</mat-label>
-      <input matInput type="text" [(ngModel)]="publicKey.user.name">
+      <input matInput type="text" [(ngModel)]="createPublicKey.user.name">
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>user.displayName</mat-label>
-      <input matInput type="text" [(ngModel)]="publicKey.user.displayName">
+      <input matInput type="text" [(ngModel)]="createPublicKey.user.displayName">
     </mat-form-field>
   </div>
   <button
@@ -19,5 +19,12 @@
     (click)="createCredential()"
   >
     create()
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="getCredential()"
+  >
+    getCredential()
   </button>
 </ng-template>
