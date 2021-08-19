@@ -19,14 +19,14 @@
       <mat-label>Währung</mat-label>
       <mat-select [(ngModel)]="details.total.amount.currency">
         <mat-option value="EUR">EUR</mat-option>
-        <mat-option value="URD">USD</mat-option>
+        <mat-option value="USD">USD</mat-option>
       </mat-select>
     </mat-form-field>
     <button
       mat-raised-button
       (click)="onShowRequest()"
     >
-      PaymentRequest.show
+      PaymentRequest.show()
     </button>
   </div>
 
@@ -46,7 +46,7 @@
           <mat-label>Währung</mat-label>
           <mat-select [(ngModel)]="displayItem.amount.currency">
             <mat-option value="EUR">EUR</mat-option>
-            <mat-option value="URD">USD</mat-option>
+            <mat-option value="USD">USD</mat-option>
           </mat-select>
         </mat-form-field>
       </mat-form-field>
