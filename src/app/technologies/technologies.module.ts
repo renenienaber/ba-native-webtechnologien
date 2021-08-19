@@ -2,7 +2,7 @@ import {
   BADGING,
   DEVICEORIENTATION_EVENT,
   GEOLOCATION, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
-  ORIENTATION_SENSOR, PAYMENT_REQUEST,
+  ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE,
   SERVICE_WORKER,
   VIBRATION,
   WEB_APP_MANIFEST
@@ -23,6 +23,7 @@ import {NotificationsComponent} from './demos/notification/notifications.compone
 import {TechnologyPageComponent} from './technology-page/technology-page.component';
 import {Technology} from '../models/technology';
 import { PaymentRequestComponent } from './demos/payment-request/payment-request.component';
+import { PictureInPictureComponent } from './demos/picture-in-picture/picture-in-picture.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -52,6 +53,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: PAYMENT_REQUEST,
     component: PaymentRequestComponent
+  },
+  {
+    technology: PICTURE_IN_PICTURE,
+    component: PictureInPictureComponent
   },
   {
     technology: SERVICE_WORKER,
@@ -106,7 +111,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ServiceWorkerComponent,
     VibrationComponent,
     WebAppManifestComponent,
-    PaymentRequestComponent
+    PaymentRequestComponent,
+    PictureInPictureComponent
   ],
   imports: [
     SharedModule,
