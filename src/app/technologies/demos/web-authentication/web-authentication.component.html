@@ -12,10 +12,10 @@
       create PublicKey
     </button>
     <mat-form-field appearance="fill">
-      <mat-label>Public Key</mat-label>
+      <mat-label>PublicKeyCredential.rawId</mat-label>
       <textarea
         matInput
-        [value]="getCredentialAsString(tempCredential)"
+        [value]="tempCredential ? tempCredential.rawId : undefined"
         disabled
       ></textarea>
     </mat-form-field>

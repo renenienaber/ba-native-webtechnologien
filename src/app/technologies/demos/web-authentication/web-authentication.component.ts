@@ -31,33 +31,42 @@ export class WebAuthenticationComponent extends TechnologyDemoComponent {
 
   tempCredential: PublicKeyCredential;
 
+  private isSupported(): boolean {
+    if ('PublicKeyCredential' in window) {
+      return true;
+    } else {
+      this.showNoSupportError('window.PublicKeyCredential');
+      return false;
+    }
+  }
+
   createCredential(): void {
-    navigator.credentials.create({ publicKey: this.createPublicKey })
-      .then(res => {
-        // Send data to relying party's servers
-        this.tempCredential = res as PublicKeyCredential;
-        this.showError('Public Key wurde erstellt. Es würde auf einem Server hinterlegt werden. Zur Demonstration wird er hier temporär gespeichert');
-      })
-      .catch(err => this.showError(err));
+    if (this.isSupported()) {
+      navigator.credentials.create({ publicKey: this.createPublicKey })
+        .then(res => {
+          // Send data to relying party's servers
+          this.tempCredential = res as PublicKeyCredential;
+          this.showError('Public Key wurde erstellt. Es würde auf einem Server hinterlegt werden. Zur Demonstration wird er hier temporär gespeichert');
+        })
+        .catch(err => this.showError(err));
+    }
   }
 
   getCredential(): void {
-    const requestPublicKey: PublicKeyCredentialRequestOptions = {
-      // random, cryptographically secure, at least 16 bytes
-      challenge: new Uint8Array(16),
-      allowCredentials: [
-        {
-          type: 'public-key',
-          id: this.tempCredential.rawId,
-        },
-      ],
-    };
-    navigator.credentials.get({ publicKey: requestPublicKey })
-      .then(() => this.showError('Daten wurden erfolgreich validiert. Authentifizierung erfolgreich.'))
-      .catch(err => this.showError(err));
-  }
-
-  getCredentialAsString(credential: PublicKeyCredential): string {
-    return JSON.stringify(credential);
+    if (this.isSupported()) {
+      const requestPublicKey: PublicKeyCredentialRequestOptions = {
+        // random, cryptographically secure, at least 16 bytes
+        challenge: new Uint8Array(16),
+        allowCredentials: [
+          {
+            type: 'public-key',
+            id: this.tempCredential.rawId,
+          },
+        ],
+      };
+      navigator.credentials.get({ publicKey: requestPublicKey })
+        .then(() => this.showError('Daten wurden erfolgreich validiert. Authentifizierung erfolgreich.'))
+        .catch(err => this.showError(err));
+    }
   }
 }
