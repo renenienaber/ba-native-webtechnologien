@@ -1,1 +1,27 @@
-<p>web-share works!</p>
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div class="share-data">
+    <mat-form-field appearance="fill">
+      <mat-label>Titel</mat-label>
+      <input matInput type="text" [(ngModel)]="shareData.title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Text</mat-label>
+      <textarea matInput [(ngModel)]="shareData.text"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>URL</mat-label>
+      <input matInput type="url" [(ngModel)]="shareData.url">
+    </mat-form-field>
+  </div>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="share()"
+  >
+    share()
+  </button>
+</ng-template>
