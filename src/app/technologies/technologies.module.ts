@@ -1,6 +1,6 @@
 import {
   BADGING,
-  DEVICEORIENTATION_EVENT,
+  DEVICEORIENTATION_EVENT, FULLSCREEN,
   GEOLOCATION, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE,
   SERVICE_WORKER,
@@ -26,6 +26,7 @@ import { PaymentRequestComponent } from './demos/payment-request/payment-request
 import { PictureInPictureComponent } from './demos/picture-in-picture/picture-in-picture.component';
 import { WebShareComponent } from './demos/web-share/web-share.component';
 import { WebAuthenticationComponent } from './demos/web-authentication/web-authentication.component';
+import { FullscreenComponent } from './demos/fullscreen/fullscreen.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -35,6 +36,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: DEVICEORIENTATION_EVENT,
     component: DeviceorientationEventComponent
+  },
+  {
+    technology: FULLSCREEN,
+    component: FullscreenComponent
   },
   {
     technology: GEOLOCATION,
@@ -124,7 +129,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     PaymentRequestComponent,
     PictureInPictureComponent,
     WebShareComponent,
-    WebAuthenticationComponent
+    WebAuthenticationComponent,
+    FullscreenComponent
   ],
   imports: [
     SharedModule,
