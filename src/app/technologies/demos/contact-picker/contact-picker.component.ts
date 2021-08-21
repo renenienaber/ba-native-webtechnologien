@@ -42,7 +42,7 @@ export class ContactPickerComponent extends TechnologyDemoComponent implements O
       const properties = this.possibleContactProperties.filter(p => p.checked === true).map(p => p.property);
       if (properties.length > 0) {
         // @ts-ignore
-        navigator.contacts.select(properties, this.multiple)
+        navigator.contacts.select(properties, { multiple: this.multiple })
           .then(res => this.result = res)
           .catch(err => this.showError(err));
       } else {
