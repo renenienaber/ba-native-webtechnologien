@@ -2,7 +2,7 @@ import {
   BADGING,
   DEVICEORIENTATION_EVENT, FULLSCREEN,
   GEOLOCATION, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
-  ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION,
+  ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION, SCREEN_WAKE_LOCK,
   SERVICE_WORKER,
   VIBRATION,
   WEB_APP_MANIFEST, WEB_AUTHENTICATION, WEB_SHARE
@@ -29,6 +29,7 @@ import { WebAuthenticationComponent } from './demos/web-authentication/web-authe
 import { FullscreenComponent } from './demos/fullscreen/fullscreen.component';
 import { ScreenOrientationComponent } from './demos/screen-orientation/screen-orientation.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ScreenWakeLockComponent } from './demos/screen-wake-lock/screen-wake-lock.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -70,6 +71,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: SCREEN_ORIENTATION,
     component: ScreenOrientationComponent
+  },
+  {
+    technology: SCREEN_WAKE_LOCK,
+    component: ScreenWakeLockComponent,
   },
   {
     technology: SERVICE_WORKER,
@@ -137,7 +142,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     WebShareComponent,
     WebAuthenticationComponent,
     FullscreenComponent,
-    ScreenOrientationComponent
+    ScreenOrientationComponent,
+    ScreenWakeLockComponent
   ],
   imports: [
     SharedModule,
