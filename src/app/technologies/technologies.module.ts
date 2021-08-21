@@ -1,5 +1,5 @@
 import {
-  BADGING,
+  BADGING, CONTACT_PICKER,
   DEVICEORIENTATION_EVENT, FULLSCREEN,
   GEOLOCATION, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION, SCREEN_WAKE_LOCK,
@@ -30,11 +30,16 @@ import { FullscreenComponent } from './demos/fullscreen/fullscreen.component';
 import { ScreenOrientationComponent } from './demos/screen-orientation/screen-orientation.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ScreenWakeLockComponent } from './demos/screen-wake-lock/screen-wake-lock.component';
+import { ContactPickerComponent } from './demos/contact-picker/contact-picker.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: BADGING,
     component: BadgingComponent
+  },
+  {
+    technology: CONTACT_PICKER,
+    component: ContactPickerComponent
   },
   {
     technology: DEVICEORIENTATION_EVENT,
@@ -143,7 +148,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     WebAuthenticationComponent,
     FullscreenComponent,
     ScreenOrientationComponent,
-    ScreenWakeLockComponent
+    ScreenWakeLockComponent,
+    ContactPickerComponent
   ],
   imports: [
     SharedModule,
