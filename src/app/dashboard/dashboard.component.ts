@@ -19,10 +19,18 @@ export class DashboardComponent {
     if (storedSettings) {
       this.dashboardSettings = storedSettings;
     }
+    const sessionStoredSettings = JSON.parse(sessionStorage.getItem('demoOnly'));
+    if (sessionStoredSettings) {
+      this.demoOnly = sessionStoredSettings;
+    }
   }
 
   onSettingsChanged(): void {
     localStorage.setItem('dashboardSettings', JSON.stringify(this.dashboardSettings));
+  }
+
+  onFilterChanged(): void {
+    sessionStorage.setItem('demoOnly', JSON.stringify(this.demoOnly));
   }
 }
 

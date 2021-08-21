@@ -33,7 +33,7 @@
     </button>
     <mat-menu #menuFilter="matMenu">
       <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="demoOnly" (click) = "$event.stopPropagation()">
+        <mat-slide-toggle [(ngModel)]="demoOnly" (change)="onFilterChanged()" (click) = "$event.stopPropagation()">
           <span>Nur mit Demo</span>
         </mat-slide-toggle>
       </button>
