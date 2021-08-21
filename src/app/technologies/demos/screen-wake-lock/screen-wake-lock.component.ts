@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
@@ -6,8 +6,15 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './screen-wake-lock.component.html',
   styleUrls: ['./screen-wake-lock.component.css']
 })
-export class ScreenWakeLockComponent extends TechnologyDemoComponent {
+export class ScreenWakeLockComponent extends TechnologyDemoComponent implements OnDestroy {
   wakeLockSentinel;
+
+  ngOnDestroy(): void {
+    if (this.wakeLockSentinel) {
+      this.releaseWakeLock();
+      this.showError('WakeLock wurde wieder aufgehoben');
+    }
+  }
 
   requestWakeLock(): void {
     if ('wakeLock' in navigator) {
