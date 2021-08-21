@@ -14,13 +14,13 @@ export class ContentIndexComponent extends TechnologyDemoComponent implements On
   predefinedContentDtos: any[] = [
     {
       id: 'dashboard',
-      url: '/dashboard',
+      url: './dashboard',
       title: 'Übersicht',
       description: 'Eine Übersicht über alle nativen Webtechnologien',
     },
     {
       id: 'about',
-      url: '/about',
+      url: './about',
       title: 'Informationen',
       description: 'Informationen zu dieser Anwendung',
     }
