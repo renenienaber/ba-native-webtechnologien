@@ -7,7 +7,9 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   styleUrls: ['./screen-orientation.component.css']
 })
 export class ScreenOrientationComponent extends TechnologyDemoComponent implements OnInit {
+  isSupported = ('screen' in window) && ('orientation' in window.screen);
   errorNoSupport = 'window.screen.orientation wird nicht unterstützt';
+
   orientationType: OrientationType;
   orientationAngle: number;
 
@@ -24,7 +26,7 @@ export class ScreenOrientationComponent extends TechnologyDemoComponent implemen
 
 
   ngOnInit(): void {
-    if (this.isSupported()) {
+    if (this.isSupported) {
       this.updateOrientationData();
       window.screen.orientation.addEventListener('change', () => {
         this.updateOrientationData();
@@ -37,15 +39,8 @@ export class ScreenOrientationComponent extends TechnologyDemoComponent implemen
     this.orientationAngle = window.screen.orientation.angle;
   }
 
-  isSupported(): boolean {
-    if ('screen' in window && 'orientation' in window.screen) {
-      return true;
-    }
-    return false;
-  }
-
   onOrientationLockChange(orientationLockType: string): void {
-    if (this.isSupported()) {
+    if (this.isSupported) {
       window.screen.orientation.lock(orientationLockType as OrientationLockType)
         .catch(err => this.showError(err));
     } else {
