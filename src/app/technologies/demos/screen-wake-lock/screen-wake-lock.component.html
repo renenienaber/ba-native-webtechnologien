@@ -3,7 +3,16 @@
 </app-technology-page>
 
 <ng-template #demo>
+  <div>
+    <span>WakeLock ist <strong>{{wakeLockSentinel && !wakeLockSentinel.released ? 'aktiv' : 'inaktiv'}}</strong></span>
+  </div>
   <button mat-raised-button (click)="requestWakeLock()">
     request()
+  </button>
+  <button [disabled]="!wakeLockSentinel"
+          mat-raised-button
+          (click)="releaseWakeLock()"
+  >
+    WakeLockSentinel.release()
   </button>
 </ng-template>
