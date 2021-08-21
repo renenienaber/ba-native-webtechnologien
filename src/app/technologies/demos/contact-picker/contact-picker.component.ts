@@ -17,7 +17,7 @@ export class ContactPickerComponent extends TechnologyDemoComponent implements O
     'tel',
   ].map(e => ({ property: e, enabled: false, checked: false }));
   multiple = false;
-  result = '';
+  result;
 
   ngOnInit(): void {
     if (this.isSupported) {
@@ -48,7 +48,6 @@ export class ContactPickerComponent extends TechnologyDemoComponent implements O
       } else {
         this.showError('Bitte mindestens eine Kontakt-Eigenschaft auswählen!');
       }
-
     } else {
       this.showNoSupportError('navigator.contacts');
     }
