@@ -24,6 +24,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -80,6 +81,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatBadgeModule,
     MatButtonToggleModule,
     MatCheckboxModule,
+    MatChipsModule,
     // own
     DisplayFeatureDetectionsComponent,
   ]

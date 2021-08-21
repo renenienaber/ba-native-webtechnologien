@@ -33,6 +33,7 @@ import { ScreenWakeLockComponent } from './demos/screen-wake-lock/screen-wake-lo
 import { ContactPickerComponent } from './demos/contact-picker/contact-picker.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ContentIndexComponent } from './demos/content-index/content-index.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {

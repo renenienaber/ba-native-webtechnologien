@@ -4,7 +4,7 @@
 
 <ng-template #demo>
   <div *ngIf="allContents.length > 0">
-    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+    <mat-form-field appearance="outline" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
       <mat-label>Bestehender Index</mat-label>
       <textarea
         matInput
@@ -12,25 +12,39 @@
         disabled
       ></textarea>
     </mat-form-field>
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let content of allContents"
+        removable
+        (removed)="onRemoveContent(content)"
+      >
+        {{ content.id }}
+      </mat-chip>
+    </mat-chip-list>
   </div>
   <div>
     <mat-form-field>
       <mat-label>Offline verfügbare Seite</mat-label>
       <mat-select (selectionChange)="onSelectionChanged($event.value)" required>
-        <mat-option *ngFor="let dto of predefinedContentDtos" [value]="dto">{{dto.id}}</mat-option>
+        <mat-option *ngFor="let dto of predefinedContentDtos" [value]="dto">{{dto.title}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Titel</mat-label>
-      <input matInput type="text" [(ngModel)]="newContentDto.title">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Beschreibung</mat-label>
-      <input matInput type="text" [(ngModel)]="newContentDto.description">
-    </mat-form-field>
-    <button
-      mat-raised-button
-      (click)="addToIndex()"
-    >add()</button>
+    <div *ngIf="newContentDto" fxLayout="column wrap">
+      <mat-form-field>
+        <mat-label>Titel</mat-label>
+        <input matInput type="text" [(ngModel)]="newContentDto.title">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Beschreibung</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="newContentDto.description"
+        ></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        (click)="addToIndex()"
+      >add()</button>
+    </div>
   </div>
 </ng-template>

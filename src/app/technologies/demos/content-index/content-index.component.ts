@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
+import {TECHNOLOGIES} from '../../../shared/functions';
 
 @Component({
   selector: 'app-content-index',
@@ -11,11 +12,11 @@ export class ContentIndexComponent extends TechnologyDemoComponent implements On
   isSupported = false;
 
   allContents: any[] = [];
-  predefinedContentDtos: any[] = [
+  predefinedContentDtos: ContentIndexElementDto[] = [
     {
       id: 'dashboard',
       url: './dashboard',
-      title: 'Übersicht',
+      title: 'Dashboard',
       description: 'Eine Übersicht über alle nativen Webtechnologien',
     },
     {
@@ -23,10 +24,16 @@ export class ContentIndexComponent extends TechnologyDemoComponent implements On
       url: './about',
       title: 'Informationen',
       description: 'Informationen zu dieser Anwendung',
-    }
+    },
+    ...TECHNOLOGIES.map(t => ({
+      id: t.routerLink,
+      url: `./technology/${t.routerLink}`,
+      title: t.name,
+      description: t.description
+    }))
   ];
 
-  newContentDto = {...this.predefinedContentDtos[0]};
+  newContentDto: ContentIndexElementDto;
 
   ngOnInit(): void {
     if ('serviceWorker' in navigator) {
@@ -47,8 +54,8 @@ export class ContentIndexComponent extends TechnologyDemoComponent implements On
       .catch(err => this.showError(err));
   }
 
-  onSelectionChanged(obj: any): void {
-    this.newContentDto = {...obj};
+  onSelectionChanged(contentIndexElementDto: ContentIndexElementDto): void {
+    this.newContentDto = { ...contentIndexElementDto };
   }
 
   addToIndex(): void {
@@ -74,4 +81,18 @@ export class ContentIndexComponent extends TechnologyDemoComponent implements On
       this.showError('Es wurde kein Service Worker registriert. Bitte die App installieren und noch einmal versuchen.');
     }
   }
+
+  onRemoveContent(content: any): void {
+    // @ts-ignore
+    this.registration.index.delete(content.id)
+      .then(() => this.updateContents())
+      .catch(err => this.showError(err));
+  }
+}
+
+interface ContentIndexElementDto {
+  id: string;
+  url: string;
+  title: string;
+  description: string;
 }
