@@ -12,7 +12,6 @@ export class ScreenWakeLockComponent extends TechnologyDemoComponent implements 
   ngOnDestroy(): void {
     if (this.wakeLockSentinel) {
       this.releaseWakeLock();
-      this.showError('WakeLock wurde wieder aufgehoben');
     }
   }
 
@@ -20,7 +19,10 @@ export class ScreenWakeLockComponent extends TechnologyDemoComponent implements 
     if ('wakeLock' in navigator) {
       // @ts-ignore
       navigator.wakeLock.request()
-        .then(sentinel => this.wakeLockSentinel = sentinel)
+        .then(sentinel => {
+          this.wakeLockSentinel = sentinel;
+          this.wakeLockSentinel.addEventListener('release', () => this.releaseWakeLock());
+        })
         .catch(err => this.showError(err));
     } else {
       this.showNoSupportError('navigator.wakeLock');
@@ -29,7 +31,10 @@ export class ScreenWakeLockComponent extends TechnologyDemoComponent implements 
 
   releaseWakeLock(): void {
     this.wakeLockSentinel.release()
-      .then(this.wakeLockSentinel = undefined)
+      .then(() => {
+        this.wakeLockSentinel = undefined;
+        this.showError('WakeLock wurde wieder aufgehoben');
+      })
       .catch(err => this.showError(err));
   }
 }
