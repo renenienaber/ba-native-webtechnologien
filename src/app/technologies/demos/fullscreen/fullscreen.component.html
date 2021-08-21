@@ -8,7 +8,10 @@
       <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
     </video>
   </div>
-  <button mat-raised-button (click)="activateFullscreen()">
-    requestFullscreen()
+  <button mat-raised-button (click)="activateFullscreen('video')">
+    requestFullscreen() (video)
+  </button>
+  <button mat-raised-button (click)="activateFullscreen('document')">
+    requestFullscreen() (document)
   </button>
 </ng-template>
