@@ -42,13 +42,13 @@ export class ContactPickerComponent extends TechnologyDemoComponent implements O
       const properties = this.possibleContactProperties.filter(p => p.checked === true).map(p => p.property);
       if (properties.length > 0) {
         // @ts-ignore
-        // navigator.contacts.select(properties, this.multiple)
-        //   .then(res => this.result = res)
-        //   .catch(err => this.showError(err));
-        this.showError(properties.toString());
+        navigator.contacts.select(properties, this.multiple)
+          .then(res => this.result = res)
+          .catch(err => this.showError(err));
       } else {
         this.showError('Bitte mindestens eine Kontakt-Eigenschaft auswählen!');
       }
+
     } else {
       this.showNoSupportError('navigator.contacts');
     }
