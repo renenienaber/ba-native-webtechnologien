@@ -28,6 +28,7 @@ import { WebShareComponent } from './demos/web-share/web-share.component';
 import { WebAuthenticationComponent } from './demos/web-authentication/web-authentication.component';
 import { FullscreenComponent } from './demos/fullscreen/fullscreen.component';
 import { ScreenOrientationComponent } from './demos/screen-orientation/screen-orientation.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {

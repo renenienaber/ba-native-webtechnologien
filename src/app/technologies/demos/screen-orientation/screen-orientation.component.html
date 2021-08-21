@@ -3,5 +3,33 @@
 </app-technology-page>
 
 <ng-template #demo>
-  
+  <ng-container *ngIf="isSupported() else noSupport">
+    <div>
+      <table>
+        <tr>
+          <th>Attribut</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td>OrientationType</td>
+          <td>{{orientationType}}</td>
+        </tr>
+        <tr>
+          <td>Angle</td>
+          <td>{{orientationAngle}}</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <mat-button-toggle-group (valueChange)="onValueChange($event)">
+        <ng-container *ngFor="let type of possibleOrientationLockTypes">
+          <mat-button-toggle value="{{type}}">{{type}}</mat-button-toggle>
+        </ng-container>
+
+      </mat-button-toggle-group>
+    </div>
+  </ng-container>
+  <ng-template #noSupport>
+    {{ errorNoSupport }}
+  </ng-template>
 </ng-template>

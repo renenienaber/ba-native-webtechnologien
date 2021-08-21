@@ -22,6 +22,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {DisplayFeatureDetectionsComponent} from './display-feature-detections/display-feature-detections.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -76,6 +77,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatListModule,
     MatSelectModule,
     MatBadgeModule,
+    MatButtonToggleModule,
     // own
     DisplayFeatureDetectionsComponent,
   ]
