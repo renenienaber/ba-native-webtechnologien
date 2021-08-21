@@ -22,14 +22,14 @@
     </div>
     <div fxLayout="column wrap" fxLayoutGap="15px" id="locking">
       <span>Bildschirm-Orientierung fixieren (lock()):</span>
-      <mat-button-toggle-group (valueChange)="onValueChange($event)">
+      <mat-button-toggle-group (change)="onOrientationLockChange($event.value)">
         <ng-container *ngFor="let type of possibleOrientationLockTypes">
           <mat-button-toggle value="{{type}}">{{type}}</mat-button-toggle>
         </ng-container>
       </mat-button-toggle-group>
       <div>
         <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein </span>
-        <a mat-stroked-button href="/technology/fullscreen">Zur Fullscreen API</a>
+        <a mat-stroked-button href="technology/fullscreen">Zur Fullscreen API</a>
       </div>
     </div>
   </ng-container>

@@ -44,7 +44,7 @@ export class ScreenOrientationComponent extends TechnologyDemoComponent implemen
     return false;
   }
 
-  onValueChange(orientationLockType: string): void {
+  onOrientationLockChange(orientationLockType: string): void {
     if (this.isSupported()) {
       window.screen.orientation.lock(orientationLockType as OrientationLockType)
         .catch(err => this.showError(err));
