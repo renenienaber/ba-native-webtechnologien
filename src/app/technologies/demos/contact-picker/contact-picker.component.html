@@ -3,5 +3,27 @@
 </app-technology-page>
 
 <ng-template #demo>
-  
+  <ng-container>
+    <div>
+      <span>Anzufragende Kontakt-Eigenschaften:</span>
+      <ul>
+        <li *ngFor="let property of possibleContactProperties">
+          <mat-checkbox
+            [(ngModel)]="property.checked"
+            [disabled]="!property.enabled"
+          >
+          {{ property.property }}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <mat-slide-toggle [(ngModel)]="multiple">
+        Mehrfachauswahl
+      </mat-slide-toggle>
+    </div>
+    <button mat-raised-button (click)="selectContacts()">
+      select()
+    </button>
+  </ng-container>
 </ng-template>

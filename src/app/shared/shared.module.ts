@@ -23,6 +23,7 @@ import {DisplayFeatureDetectionsComponent} from './display-feature-detections/di
 import {MatSelectModule} from '@angular/material/select';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -78,6 +79,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSelectModule,
     MatBadgeModule,
     MatButtonToggleModule,
+    MatCheckboxModule,
     // own
     DisplayFeatureDetectionsComponent,
   ]

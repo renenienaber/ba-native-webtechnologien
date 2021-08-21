@@ -31,6 +31,7 @@ import { ScreenOrientationComponent } from './demos/screen-orientation/screen-or
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ScreenWakeLockComponent } from './demos/screen-wake-lock/screen-wake-lock.component';
 import { ContactPickerComponent } from './demos/contact-picker/contact-picker.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
