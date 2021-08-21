@@ -9,6 +9,7 @@
       <ul>
         <li *ngFor="let property of possibleContactProperties">
           <mat-checkbox
+            color="primary"
             [(ngModel)]="property.checked"
             [disabled]="!property.enabled"
           >
@@ -18,7 +19,7 @@
       </ul>
     </div>
     <div>
-      <mat-slide-toggle [(ngModel)]="multiple">
+      <mat-slide-toggle color="primary" [(ngModel)]="multiple">
         Mehrfachauswahl
       </mat-slide-toggle>
     </div>
