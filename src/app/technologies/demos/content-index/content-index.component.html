@@ -3,7 +3,7 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div *ngIf="allContents.length > 0">
+  <div *ngIf="allContents.length > 0" fxLayout="column wrap">
     <mat-form-field appearance="outline" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
       <mat-label>Bestehender Index</mat-label>
       <textarea
@@ -19,6 +19,7 @@
         (removed)="onRemoveContent(content)"
       >
         {{ content.id }}
+        <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
     </mat-chip-list>
   </div>
