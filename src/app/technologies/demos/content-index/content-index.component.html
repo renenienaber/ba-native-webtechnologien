@@ -3,4 +3,34 @@
 </app-technology-page>
 
 <ng-template #demo>
+  <div *ngIf="allContents.length > 0">
+    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <mat-label>Bestehender Index</mat-label>
+      <textarea
+        matInput
+        [value]="allContents | json"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Offline verfügbare Seite</mat-label>
+      <mat-select (selectionChange)="onSelectionChanged($event.value)" required>
+        <mat-option *ngFor="let dto of predefinedContentDtos" [value]="dto">{{dto.id}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Titel</mat-label>
+      <input matInput type="text" [(ngModel)]="newContentDto.title">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Beschreibung</mat-label>
+      <input matInput type="text" [(ngModel)]="newContentDto.description">
+    </mat-form-field>
+    <button
+      mat-raised-button
+      (click)="addToIndex()"
+    >add()</button>
+  </div>
 </ng-template>
