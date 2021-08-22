@@ -3,5 +3,26 @@
 </app-technology-page>
 
 <ng-template #demo>
-
+  <div>
+    <button
+      mat-raised-button
+      (click)="onVideoCapture()"
+    >
+      Video
+    </button>
+    <button
+      mat-raised-button
+      (click)="onAudioCapture()"
+    >
+      Audio
+    </button>
+  </div>
+  <div>
+    <video
+      fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+      #videoElement
+      autoplay
+      [hidden]="!videoElement.srcObject"></video>
+    <audio #audioElement autoplay hidden></audio>
+  </div>
 </ng-template>
