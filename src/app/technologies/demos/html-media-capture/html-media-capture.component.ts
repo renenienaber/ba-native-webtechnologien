@@ -6,5 +6,4 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './html-media-capture.component.html',
   styleUrls: ['./html-media-capture.component.css']
 })
-export class HtmlMediaCaptureComponent extends TechnologyDemoComponent {
-}
+export class HtmlMediaCaptureComponent extends TechnologyDemoComponent {}

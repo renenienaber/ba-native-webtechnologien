@@ -3,5 +3,20 @@
 </app-technology-page>
 
 <ng-template #demo>
-
+  <p><strong>Hinweis: </strong>Wenn Technologie nicht unterstützt wird, werden in der Regel normale Auswahlfenster angezeigt.</p>
+  <div>
+    <h4>Dateiauswahl durch Aufnahme:</h4>
+    <p>
+      <label>Foto: </label>
+      <input type="file" accept="image/*" capture>
+    </p>
+    <p>
+      <label>Video: </label>
+      <input type="file" accept="video/*" capture>
+    </p>
+    <p>
+      <label>Audio: </label>
+      <input type="file" accept="audio/*" capture>
+    </p>
+  </div>
 </ng-template>
