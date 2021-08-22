@@ -1,1 +1,26 @@
-<p>text-detection works!</p>
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div>
+    <img
+      #textImgElement
+      src="./assets/media/simon-maage-KTzZVDjUsXw-unsplash.jpg"
+      fxFlex="50%" fxFlex.xs="75%" fxFlex.sm="75%"
+    >
+  </div>
+  <button mat-raised-button (click)="detectText()">
+    detect()
+  </button>
+  <div *ngIf="results">
+    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <mat-label>Ergebnis</mat-label>
+      <textarea
+        matInput
+        [value]="results | json"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </div>
+</ng-template>
