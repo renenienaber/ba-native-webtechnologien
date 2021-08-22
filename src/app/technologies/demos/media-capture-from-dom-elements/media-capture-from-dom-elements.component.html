@@ -4,7 +4,7 @@
 
 <ng-template #demo>
   <h3>Am Beispiel eines HTMLVideoElement</h3>
-  <ng-container [hidden]="!videoElement.srcObject">
+  <div [hidden]="!videoElement.srcObject">
     <div fxLayout="column" fxLayoutGap="10px">
       <span>Quelle:</span>
       <div>
@@ -28,7 +28,7 @@
         ></video>
       </div>
     </div>
-  </ng-container>
+  </div>
   <ng-container *ngIf="!videoElement.srcObject">
     {{ errorNoSupport }}
   </ng-container>
