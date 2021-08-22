@@ -28,7 +28,7 @@ export class ShapeDetectionComponent extends TechnologyDemoComponent {
       const barcodeDetector = new BarcodeDetector();
       // @ts-ignore
       if('detect' in barcodeDetector) {
-        barcodeDetector.detect()
+        barcodeDetector.detect(createImageBitmap(this.barcodeImgElement))
           .then(res => this.barcodeResults = res)
           .catch(err => this.showError(err));
       } else {
@@ -45,7 +45,7 @@ export class ShapeDetectionComponent extends TechnologyDemoComponent {
       const faceDetector = new FaceDetector();
       // @ts-ignore
       if('detect' in faceDetector) {
-        faceDetector.detect()
+        faceDetector.detect(createImageBitmap(this.faceImgElement))
           .then(res => this.faceResults = res)
           .catch(err => this.showError(err));
       } else {
