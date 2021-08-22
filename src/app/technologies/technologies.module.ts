@@ -1,7 +1,7 @@
 import {
   BADGING, CONTACT_PICKER, CONTENT_INDEX,
   DEVICEORIENTATION_EVENT, FILE, FILE_SYSTEM_ACCESS, FULLSCREEN,
-  GEOLOCATION, HTML_MEDIA_CAPTURE, LOCAL_FONT_ACCESS, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
+  GEOLOCATION, HTML_MEDIA_CAPTURE, LOCAL_FONT_ACCESS, MEDIA_CAPTURE_AND_STREAMS, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION, SCREEN_WAKE_LOCK,
   SERVICE_WORKER,
   VIBRATION,
@@ -38,6 +38,7 @@ import { FileSystemAccessComponent } from './demos/file-system-access/file-syste
 import { LocalFontAccessComponent } from './demos/local-font-access/local-font-access.component';
 import { FileComponent } from './demos/file/file.component';
 import { HtmlMediaCaptureComponent } from './demos/html-media-capture/html-media-capture.component';
+import { MediaCaptureAndStreamsComponent } from './demos/media-capture-and-streams/media-capture-and-streams.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -79,6 +80,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: LOCAL_FONT_ACCESS,
     component: LocalFontAccessComponent
+  },
+  {
+    technology: MEDIA_CAPTURE_AND_STREAMS,
+    component: MediaCaptureAndStreamsComponent
   },
   {
     technology: MEDIA_SESSION_STANDARD,
@@ -181,7 +186,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     FileSystemAccessComponent,
     LocalFontAccessComponent,
     FileComponent,
-    HtmlMediaCaptureComponent
+    HtmlMediaCaptureComponent,
+    MediaCaptureAndStreamsComponent
   ],
   imports: [
     SharedModule,
