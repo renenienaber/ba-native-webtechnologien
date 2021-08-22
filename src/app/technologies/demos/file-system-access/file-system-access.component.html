@@ -1,1 +1,22 @@
-<p>file-system-access works!</p>
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div>
+    <button mat-raised-button (click)="onShowOpenFilePicker()">Datei öffnen (showOpenFilePicker())</button>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="space-between">
+    <mat-form-field appearance="fill">
+      <mat-label>Texteditor</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="editor"
+      ></textarea>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button (click)="onShowSaveFilePicker()">Datei speichern (showSaveFilePicker())</button>
+      <button mat-raised-button (click)="onShowDirectoryPicker()">Ordner auswählen & speichern (showDirectoryPicker())</button>
+    </div>
+  </div>
+</ng-template>
