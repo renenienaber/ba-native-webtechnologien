@@ -3,5 +3,33 @@
 </app-technology-page>
 
 <ng-template #demo>
-  
+  <div fxLayout="column" fxLayoutGap="10px">
+    <button
+      mat-raised-button
+      (click)="onGetUserVideo()"
+    >
+      Video (navigator.mediaDevices.getUserMedia())
+    </button>
+    <div>
+      <video
+        fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+        #videoElement
+        autoplay
+        [hidden]="!videoElement.srcObject"
+      ></video>
+    </div>
+    <button
+      mat-raised-button
+      (click)="onGrabFrameClick()"
+      [disabled]="!imageCapture"
+    >
+      ImageCapture.grabFrame()
+    </button>
+    <div>
+      <canvas
+        fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+        #canvasElement
+      ></canvas>
+    </div>
+  </div>
 </ng-template>
