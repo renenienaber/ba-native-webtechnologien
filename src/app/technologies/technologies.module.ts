@@ -1,6 +1,6 @@
 import {
   BADGING, CONTACT_PICKER, CONTENT_INDEX,
-  DEVICEORIENTATION_EVENT, FILE_SYSTEM_ACCESS, FULLSCREEN,
+  DEVICEORIENTATION_EVENT, FILE, FILE_SYSTEM_ACCESS, FULLSCREEN,
   GEOLOCATION, LOCAL_FONT_ACCESS, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION, SCREEN_WAKE_LOCK,
   SERVICE_WORKER,
@@ -36,6 +36,7 @@ import { ContentIndexComponent } from './demos/content-index/content-index.compo
 import {MatChipsModule} from '@angular/material/chips';
 import { FileSystemAccessComponent } from './demos/file-system-access/file-system-access.component';
 import { LocalFontAccessComponent } from './demos/local-font-access/local-font-access.component';
+import { FileComponent } from './demos/file/file.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -53,6 +54,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: DEVICEORIENTATION_EVENT,
     component: DeviceorientationEventComponent
+  },
+  {
+    technology: FILE,
+    component: FileComponent
   },
   {
     technology: FILE_SYSTEM_ACCESS,
@@ -169,7 +174,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ContactPickerComponent,
     ContentIndexComponent,
     FileSystemAccessComponent,
-    LocalFontAccessComponent
+    LocalFontAccessComponent,
+    FileComponent
   ],
   imports: [
     SharedModule,
