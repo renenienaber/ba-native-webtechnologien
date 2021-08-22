@@ -11,7 +11,7 @@ import {
   LOCAL_FONT_ACCESS,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
-  MEDIA_SESSION_STANDARD,
+  MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE,
   NOTIFICATIONS,
   ORIENTATION_SENSOR,
   PAYMENT_REQUEST,
@@ -57,6 +57,7 @@ import { FileComponent } from './demos/file/file.component';
 import { HtmlMediaCaptureComponent } from './demos/html-media-capture/html-media-capture.component';
 import { MediaCaptureAndStreamsComponent } from './demos/media-capture-and-streams/media-capture-and-streams.component';
 import { MediaCaptureFromDomElementsComponent } from './demos/media-capture-from-dom-elements/media-capture-from-dom-elements.component';
+import { MediastreamImageCaptureComponent } from './demos/mediastream-image-capture/mediastream-image-capture.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -110,6 +111,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: MEDIA_SESSION_STANDARD,
     component: MediaSessionStandardComponent
+  },
+  {
+    technology: MEDIASTREAM_IMAGE_CAPTURE,
+    component: MediastreamImageCaptureComponent
   },
   {
     technology: NOTIFICATIONS,
@@ -210,7 +215,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     FileComponent,
     HtmlMediaCaptureComponent,
     MediaCaptureAndStreamsComponent,
-    MediaCaptureFromDomElementsComponent
+    MediaCaptureFromDomElementsComponent,
+    MediastreamImageCaptureComponent
   ],
   imports: [
     SharedModule,
