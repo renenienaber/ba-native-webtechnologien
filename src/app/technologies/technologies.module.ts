@@ -15,7 +15,7 @@ import {
   NOTIFICATIONS,
   ORIENTATION_SENSOR,
   PAYMENT_REQUEST,
-  PICTURE_IN_PICTURE,
+  PICTURE_IN_PICTURE, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
   SERVICE_WORKER,
@@ -59,6 +59,7 @@ import { MediaCaptureAndStreamsComponent } from './demos/media-capture-and-strea
 import { MediaCaptureFromDomElementsComponent } from './demos/media-capture-from-dom-elements/media-capture-from-dom-elements.component';
 import { MediastreamImageCaptureComponent } from './demos/mediastream-image-capture/mediastream-image-capture.component';
 import { MediastreamRecordingComponent } from './demos/mediastream-recording/mediastream-recording.component';
+import { ScreenCaptureComponent } from './demos/screen-capture/screen-capture.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -136,6 +137,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: PICTURE_IN_PICTURE,
     component: PictureInPictureComponent
+  },
+  {
+    technology: SCREEN_CAPTURE,
+    component: ScreenCaptureComponent
   },
   {
     technology: SCREEN_ORIENTATION,
@@ -222,7 +227,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     MediaCaptureAndStreamsComponent,
     MediaCaptureFromDomElementsComponent,
     MediastreamImageCaptureComponent,
-    MediastreamRecordingComponent
+    MediastreamRecordingComponent,
+    ScreenCaptureComponent
   ],
   imports: [
     SharedModule,
