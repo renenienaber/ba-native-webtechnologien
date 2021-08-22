@@ -18,7 +18,7 @@ import {
   PICTURE_IN_PICTURE, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
-  SERVICE_WORKER,
+  SERVICE_WORKER, SHAPE_DETECTION,
   VIBRATION,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION,
@@ -60,6 +60,7 @@ import { MediaCaptureFromDomElementsComponent } from './demos/media-capture-from
 import { MediastreamImageCaptureComponent } from './demos/mediastream-image-capture/mediastream-image-capture.component';
 import { MediastreamRecordingComponent } from './demos/mediastream-recording/mediastream-recording.component';
 import { ScreenCaptureComponent } from './demos/screen-capture/screen-capture.component';
+import { ShapeDetectionComponent } from './demos/shape-detection/shape-detection.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -155,6 +156,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: ServiceWorkerComponent
   },
   {
+    technology: SHAPE_DETECTION,
+    component: ShapeDetectionComponent
+  },
+  {
     technology: VIBRATION,
     component: VibrationComponent
   },
@@ -228,7 +233,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     MediaCaptureFromDomElementsComponent,
     MediastreamImageCaptureComponent,
     MediastreamRecordingComponent,
-    ScreenCaptureComponent
+    ScreenCaptureComponent,
+    ShapeDetectionComponent
   ],
   imports: [
     SharedModule,
