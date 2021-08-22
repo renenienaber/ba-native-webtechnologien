@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629657228103,
+  "timestamp": 1629657576334,
   "index": "/ba-native-webtechnologien/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/ba-native-webtechnologien/favicon.ico",
         "/ba-native-webtechnologien/index.html",
-        "/ba-native-webtechnologien/main-es2015.5c4b99e6fd754f1535ae.js",
-        "/ba-native-webtechnologien/main-es5.5c4b99e6fd754f1535ae.js",
+        "/ba-native-webtechnologien/main-es2015.4bb05cde48b5eca8e705.js",
+        "/ba-native-webtechnologien/main-es5.4bb05cde48b5eca8e705.js",
         "/ba-native-webtechnologien/manifest.webmanifest",
         "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js",
         "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js",
@@ -58,9 +58,9 @@
     "/ba-native-webtechnologien/assets/media/qr-code.svg": "d9778974011b3b5823cc87c480a1caf65cf6a82b",
     "/ba-native-webtechnologien/assets/media/windows-p74ndnYWRY4-unsplash.jpg": "56413133485295511739e633665da04aaf69d825",
     "/ba-native-webtechnologien/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ba-native-webtechnologien/index.html": "1fd19318e69a68c445ec2fdd216d29131753d4b9",
-    "/ba-native-webtechnologien/main-es2015.5c4b99e6fd754f1535ae.js": "1cf1911e74a0f8e697f48d3667fb483ba6f2b14b",
-    "/ba-native-webtechnologien/main-es5.5c4b99e6fd754f1535ae.js": "ebcbdf077b883674f987d2199daafe41fbf257e8",
+    "/ba-native-webtechnologien/index.html": "e4d33372f7a9fe6dfb6bfeaf45b5959c5127a589",
+    "/ba-native-webtechnologien/main-es2015.4bb05cde48b5eca8e705.js": "3df5b5807a10bbfd43315db904a36b62f024f576",
+    "/ba-native-webtechnologien/main-es5.4bb05cde48b5eca8e705.js": "db4c5bce34c17b37d8e2b386fe221e1a1ae7d334",
     "/ba-native-webtechnologien/manifest.webmanifest": "19b56e4d03be837ea3c13a2c141bac384bd38601",
     "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js": "f32c7aaca8b60df7a9dfa6cb8f2b7751b5d0832c",
