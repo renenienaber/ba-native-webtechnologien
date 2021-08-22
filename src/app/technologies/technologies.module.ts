@@ -1,7 +1,7 @@
 import {
   BADGING, CONTACT_PICKER, CONTENT_INDEX,
   DEVICEORIENTATION_EVENT, FILE_SYSTEM_ACCESS, FULLSCREEN,
-  GEOLOCATION, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
+  GEOLOCATION, LOCAL_FONT_ACCESS, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
   ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION, SCREEN_WAKE_LOCK,
   SERVICE_WORKER,
   VIBRATION,
@@ -35,6 +35,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ContentIndexComponent } from './demos/content-index/content-index.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { FileSystemAccessComponent } from './demos/file-system-access/file-system-access.component';
+import { LocalFontAccessComponent } from './demos/local-font-access/local-font-access.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -64,6 +65,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: GEOLOCATION,
     component: GeolocationComponent
+  },
+  {
+    technology: LOCAL_FONT_ACCESS,
+    component: LocalFontAccessComponent
   },
   {
     technology: MEDIA_SESSION_STANDARD,
@@ -163,7 +168,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ScreenWakeLockComponent,
     ContactPickerComponent,
     ContentIndexComponent,
-    FileSystemAccessComponent
+    FileSystemAccessComponent,
+    LocalFontAccessComponent
   ],
   imports: [
     SharedModule,
