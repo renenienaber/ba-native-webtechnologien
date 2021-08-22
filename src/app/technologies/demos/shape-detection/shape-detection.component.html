@@ -3,5 +3,50 @@
 </app-technology-page>
 
 <ng-template #demo>
-
+  <mat-tab-group>
+    <mat-tab fxLayout="column" label="BarcodeDetector">
+      <div>
+        <img
+          #barcodeImgElement
+          src="./assets/media/qr-code.svg"
+          fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="50%"
+        >
+      </div>
+      <button mat-raised-button (click)="detectBarcode()">
+        detect()
+      </button>
+      <div *ngIf="barcodeResults">
+        <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+          <mat-label>Ergebnis</mat-label>
+          <textarea
+            matInput
+            [value]="barcodeResults | json"
+            disabled
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </mat-tab>
+    <mat-tab label="FaceDetector">
+      <div>
+        <img
+          #faceImgElement
+          src="./assets/media/windows-p74ndnYWRY4-unsplash.jpg"
+          fxFlex="50%" fxFlex.xs="75%" fxFlex.sm="75%"
+        >
+      </div>
+      <button mat-raised-button (click)="detectFaces()">
+        detect()
+      </button>
+      <div *ngIf="faceResults">
+        <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+          <mat-label>Ergebnis</mat-label>
+          <textarea
+            matInput
+            [value]="faceResults | json"
+            disabled
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </ng-template>
