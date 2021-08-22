@@ -1,11 +1,28 @@
 import {
-  BADGING, CONTACT_PICKER, CONTENT_INDEX,
-  DEVICEORIENTATION_EVENT, FILE, FILE_SYSTEM_ACCESS, FULLSCREEN,
-  GEOLOCATION, HTML_MEDIA_CAPTURE, LOCAL_FONT_ACCESS, MEDIA_CAPTURE_AND_STREAMS, MEDIA_SESSION_STANDARD, NOTIFICATIONS,
-  ORIENTATION_SENSOR, PAYMENT_REQUEST, PICTURE_IN_PICTURE, SCREEN_ORIENTATION, SCREEN_WAKE_LOCK,
+  BADGING,
+  CONTACT_PICKER,
+  CONTENT_INDEX,
+  DEVICEORIENTATION_EVENT,
+  FILE,
+  FILE_SYSTEM_ACCESS,
+  FULLSCREEN,
+  GEOLOCATION,
+  HTML_MEDIA_CAPTURE,
+  LOCAL_FONT_ACCESS,
+  MEDIA_CAPTURE_AND_STREAMS,
+  MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
+  MEDIA_SESSION_STANDARD,
+  NOTIFICATIONS,
+  ORIENTATION_SENSOR,
+  PAYMENT_REQUEST,
+  PICTURE_IN_PICTURE,
+  SCREEN_ORIENTATION,
+  SCREEN_WAKE_LOCK,
   SERVICE_WORKER,
   VIBRATION,
-  WEB_APP_MANIFEST, WEB_AUTHENTICATION, WEB_SHARE
+  WEB_APP_MANIFEST,
+  WEB_AUTHENTICATION,
+  WEB_SHARE
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
 import {OrientationSensorComponent} from './demos/orientation-sensor/orientation-sensor.component';
@@ -39,6 +56,7 @@ import { LocalFontAccessComponent } from './demos/local-font-access/local-font-a
 import { FileComponent } from './demos/file/file.component';
 import { HtmlMediaCaptureComponent } from './demos/html-media-capture/html-media-capture.component';
 import { MediaCaptureAndStreamsComponent } from './demos/media-capture-and-streams/media-capture-and-streams.component';
+import { MediaCaptureFromDomElementsComponent } from './demos/media-capture-from-dom-elements/media-capture-from-dom-elements.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -84,6 +102,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: MEDIA_CAPTURE_AND_STREAMS,
     component: MediaCaptureAndStreamsComponent
+  },
+  {
+    technology: MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
+    component: MediaCaptureFromDomElementsComponent
   },
   {
     technology: MEDIA_SESSION_STANDARD,
@@ -187,7 +209,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     LocalFontAccessComponent,
     FileComponent,
     HtmlMediaCaptureComponent,
-    MediaCaptureAndStreamsComponent
+    MediaCaptureAndStreamsComponent,
+    MediaCaptureFromDomElementsComponent
   ],
   imports: [
     SharedModule,
