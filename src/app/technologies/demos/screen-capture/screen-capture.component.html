@@ -3,5 +3,16 @@
 </app-technology-page>
 
 <ng-template #demo>
-
+  <button mat-raised-button (click)="getDisplayMedia()">
+    getDisplayMedia()
+  </button>
+  <div>
+    <video
+      #videoElement
+      [hidden]="!videoElement.srcObject"
+      fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+      playsinline
+      autoplay
+    ></video>
+  </div>
 </ng-template>
