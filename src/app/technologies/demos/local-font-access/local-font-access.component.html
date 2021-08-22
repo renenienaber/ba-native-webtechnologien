@@ -2,4 +2,18 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <button mat-raised-button (click)="getFonts()">
+    Fonts anfragen (query())
+  </button>
+  <div *ngIf="result.length > 0">
+    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <mat-label>Ergebnis (enthält nur einen Ausschnitt der Font-Informationen)</mat-label>
+      <textarea
+        matInput
+        [value]="result | json"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </div>
+</ng-template>
