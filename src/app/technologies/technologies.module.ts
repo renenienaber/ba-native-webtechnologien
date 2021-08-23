@@ -7,7 +7,7 @@ import {
   FILE,
   FILE_SYSTEM_ACCESS,
   FULLSCREEN,
-  GEOLOCATION,
+  GEOLOCATION, GYROSCOPE,
   HTML_MEDIA_CAPTURE,
   LOCAL_FONT_ACCESS,
   MEDIA_CAPTURE_AND_STREAMS,
@@ -64,6 +64,7 @@ import { ScreenCaptureComponent } from './demos/screen-capture/screen-capture.co
 import { ShapeDetectionComponent } from './demos/shape-detection/shape-detection.component';
 import { TextDetectionComponent } from './demos/text-detection/text-detection.component';
 import { AccelerometerComponent } from './demos/accelerometer/accelerometer.component';
+import { GyroscopeComponent } from './demos/gyroscope/gyroscope.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -101,6 +102,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: GEOLOCATION,
     component: GeolocationComponent
+  },
+  {
+    technology: GYROSCOPE,
+    component: GyroscopeComponent
   },
   {
     technology: HTML_MEDIA_CAPTURE,
@@ -247,7 +252,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ScreenCaptureComponent,
     ShapeDetectionComponent,
     TextDetectionComponent,
-    AccelerometerComponent
+    AccelerometerComponent,
+    GyroscopeComponent
   ],
   imports: [
     SharedModule,
