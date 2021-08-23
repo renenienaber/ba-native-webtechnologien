@@ -27,9 +27,9 @@ export class DeviceorientationEventComponent extends TechnologyDemoComponent imp
 
   private deviceOrientationEventHandler(deviceOrientationEvent: DeviceOrientationEvent): void {
     this.orientationResults = {
-      alpha: Math.round(deviceOrientationEvent.alpha),
-      beta: Math.round(deviceOrientationEvent.beta),
-      gamma: Math.round(deviceOrientationEvent.gamma),
+      alpha: deviceOrientationEvent.alpha,
+      beta: deviceOrientationEvent.beta,
+      gamma: deviceOrientationEvent.gamma,
       absolute: deviceOrientationEvent.absolute
     };
   }
