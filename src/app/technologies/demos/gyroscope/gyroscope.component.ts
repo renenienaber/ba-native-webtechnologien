@@ -7,16 +7,17 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   styleUrls: ['./gyroscope.component.css']
 })
 export class GyroscopeComponent extends TechnologyDemoComponent {
-  sensor: any;
+  private sensor: any;
+  results: GyroscopeData;
 
   initAndStartSensor(): void {
     if ('Gyroscope' in window) {
       // @ts-ignore
       this.sensor = new Gyroscope({frequency: 60});
-      // this.sensor.addEventListener('reading', () => {
-      //     this.results = {x: this.sensor.x, y: this.sensor.y, z: this.sensor.z};
-      //   }
-      // );
+      this.sensor.addEventListener('reading', () => {
+          this.results = {x: this.sensor.x, y: this.sensor.y, z: this.sensor.z};
+        }
+      );
       this.sensor.addEventListener('error', sensorErrorEvent =>
         this.showError(sensorErrorEvent.error.message)
       );
@@ -25,4 +26,10 @@ export class GyroscopeComponent extends TechnologyDemoComponent {
       this.showNoSupportError('window.Gyroscope');
     }
   }
+}
+
+interface GyroscopeData {
+  x?: number;
+  y?: number;
+  z?: number;
 }
