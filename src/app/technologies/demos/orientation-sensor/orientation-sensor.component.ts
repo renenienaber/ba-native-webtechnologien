@@ -7,57 +7,35 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 })
 export class OrientationSensorComponent extends TechnologyDemoComponent {
   absoluteSensor: any;
-  private relativeSensor: any;
+  relativeSensor: any;
   absoluteMat4 = new Float32Array(16);
-  private relativeMat4 = new Float32Array(16);
+  relativeMat4 = new Float32Array(16);
 
-  absoluteResponse;
-  relativeResponse;
-
-  initAbsolute(): void {
-    if ('AbsoluteOrientationSensor' in window) {
-      // @ts-ignore
-      this.absoluteSensor = new AbsoluteOrientationSensor({frequency: 60});
-      // this.absoluteSensor.addEventListener('reading', () => {
-      //   this.absoluteSensor.populateMatrix(this.absoluteMat4);
-      //   this.absoluteResponse = this.absoluteMat4.map(val => (Math.round(val * 100) / 100)).toString();
-      // });
-      // this.absoluteSensor.addEventListener('error', sensorErrorEvent =>
-      //   this.showError(sensorErrorEvent.error.message)
-      // );
-      this.initSensor('absolute');
-      this.absoluteSensor.start();
-    } else {
-      this.showNoSupportError('window.AbsoluteOrientationSensor');
+  initAndStartSensor(sensorType: 'absolute' | 'relative'): void {
+    if ('absolute') {
+      if (!('AbsoluteOrientationSensor' in window)) {
+        this.showNoSupportError('window.AbsoluteOrientationSensor');
+        return;
+      }
+    } else if ('relative') {
+      if (!('RelativeOrientationSensor' in window)) {
+        this.showNoSupportError('window.RelativeOrientationSensor');
+        return;
+      }
     }
-  }
-  initRelative(): void {
-    if ('RelativeOrientationSensor' in window) {
-      // @ts-ignore
-      this.relativeSensor = new RelativeOrientationSensor({frequency: 60});
-      this.relativeSensor.addEventListener('reading', () => {
-        this.relativeSensor.populateMatrix(this.relativeMat4);
-        this.relativeResponse = this.relativeMat4.map(val => (Math.round(val * 100) / 100)).toString();
-      });
-      this.relativeSensor.addEventListener('error', sensorErrorEvent =>
-        this.showError(sensorErrorEvent.error.message)
-      );
-      this.relativeSensor.start();
-    } else {
-      this.showNoSupportError('window.RelativeOrientationSensor');
-    }
-  }
-
-  initSensor(sensorType: 'absolute' | 'relative'): void {
-    const sensor = sensorType === 'absolute' ? this.absoluteSensor : this.relativeSensor;
+    // @ts-ignore
+    const sensor = sensorType === 'absolute' ? new AbsoluteOrientationSensor({frequency: 60}) : new RelativeOrientationSensor({frequency: 60});
     const mat4 = sensorType === 'absolute' ? this.absoluteMat4 : this.relativeMat4;
-    let response = sensorType === 'absolute' ? this.absoluteResponse : this.relativeResponse;
-    sensor.addEventListener('reading', () => {
-      sensor.populateMatrix(mat4);
-      response = mat4.map(val => (Math.round(val * 100) / 100)).toString();
-    });
+    sensor.addEventListener('reading', () => sensor.populateMatrix(mat4));
     sensor.addEventListener('error', sensorErrorEvent =>
       this.showError(sensorErrorEvent.error.message)
     );
+    if ('absolute') {
+      this.absoluteSensor = sensor;
+      this.absoluteSensor.start();
+    } else {
+      this.relativeSensor = sensor;
+      this.relativeSensor.start();
+    }
   }
 }
