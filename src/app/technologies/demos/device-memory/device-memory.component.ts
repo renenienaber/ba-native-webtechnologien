@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-device-memory',
   templateUrl: './device-memory.component.html',
   styleUrls: ['./device-memory.component.css']
 })
-export class DeviceMemoryComponent implements OnInit {
+export class DeviceMemoryComponent extends TechnologyDemoComponent {
+  deviceMemory;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getDeviceMemory(): void {
+    if ('deviceMemory' in navigator) {
+      // @ts-ignore
+      this.deviceMemory = navigator.deviceMemory;
+    } else {
+      this.showNoSupportError('navigator.deviceMemory');
+    }
   }
-
 }

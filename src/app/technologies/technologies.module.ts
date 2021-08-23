@@ -2,7 +2,7 @@ import {
   ACCELEROMETER,
   BADGING, BATTERY_STATUS,
   CONTACT_PICKER,
-  CONTENT_INDEX,
+  CONTENT_INDEX, DEVICE_MEMORY,
   DEVICEORIENTATION_EVENT,
   FILE,
   FILE_SYSTEM_ACCESS,
@@ -88,6 +88,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: CONTENT_INDEX,
     component: ContentIndexComponent
+  },
+  {
+    technology: DEVICE_MEMORY,
+    component: DeviceMemoryComponent
   },
   {
     technology: DEVICEORIENTATION_EVENT,

@@ -1,1 +1,17 @@
-<p>device-memory works!</p>
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button mat-raised-button (click)="getDeviceMemory()">deviceMemory</button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div>
+      <div>Ungefähre Arbeitsspeicher-Größe</div>
+      <div>{{ deviceMemory }} GiB</div>
+    </div>
+  </div>
+</ng-template>
