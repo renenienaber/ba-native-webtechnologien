@@ -8,11 +8,16 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 })
 export class AccelerometerComponent extends TechnologyDemoComponent {
   sensor: any;
+  results: AccelerometerData;
 
   initAndStartSensor(): void {
     if ('Accelerometer' in window) {
       // @ts-ignore
       this.sensor = new Accelerometer();
+      this.sensor.addEventListener('reading', () => {
+          this.results = {x: this.sensor.x, y: this.sensor.y, z: this.sensor.z};
+        }
+      );
       this.sensor.addEventListener('error', sensorErrorEvent =>
         this.showError(sensorErrorEvent.error.message)
       );
@@ -21,4 +26,10 @@ export class AccelerometerComponent extends TechnologyDemoComponent {
       this.showNoSupportError('window.Accelerometer');
     }
   }
+}
+
+interface AccelerometerData {
+  x?: number;
+  y?: number;
+  z?: number;
 }
