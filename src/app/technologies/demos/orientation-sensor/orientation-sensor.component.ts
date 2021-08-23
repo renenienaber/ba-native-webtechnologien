@@ -6,7 +6,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './orientation-sensor.component.html'
 })
 export class OrientationSensorComponent extends TechnologyDemoComponent {
-  private absoluteSensor: any;
+  absoluteSensor: any;
   private relativeSensor: any;
   absoluteMat4 = new Float32Array(16);
   private relativeMat4 = new Float32Array(16);
