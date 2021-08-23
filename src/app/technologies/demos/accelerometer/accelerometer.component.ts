@@ -7,7 +7,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   styleUrls: ['./accelerometer.component.css']
 })
 export class AccelerometerComponent extends TechnologyDemoComponent {
-  sensor: any;
+  private sensor: any;
   results: AccelerometerData;
 
   initAndStartSensor(): void {
