@@ -48,15 +48,15 @@
             </div>
             <div>
               <div>x-Achse</div>
-              <div>{{deviceMotionEvent?.acceleration?.x}} m/s²</div>
+              <div>{{deviceMotionEvent?.acceleration?.x | number: '1.1-1'}} m/s²</div>
             </div>
             <div>
               <div>y-Achse</div>
-              <div>{{deviceMotionEvent?.acceleration?.y}} m/s²</div>
+              <div>{{deviceMotionEvent?.acceleration?.y | number: '1.1-1'}} m/s²</div>
             </div>
             <div>
               <div>z-Achse</div>
-              <div>{{deviceMotionEvent?.acceleration?.z}} m/s²</div>
+              <div>{{deviceMotionEvent?.acceleration?.z | number: '1.1-1'}} m/s²</div>
             </div>
           </div>
         </section>
@@ -69,15 +69,15 @@
             </div>
             <div>
               <div>x-Achse</div>
-              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.x}} m/s²</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.x | number: '1.1-1'}} m/s²</div>
             </div>
             <div>
               <div>y-Achse</div>
-              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.y}} m/s²</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.y | number: '1.1-1'}} m/s²</div>
             </div>
             <div>
               <div>z-Achse</div>
-              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.z}} m/s²</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.z | number: '1.1-1'}} m/s²</div>
             </div>
           </div>
         </section>
@@ -90,15 +90,15 @@
             </div>
             <div>
               <div>Alpha (Richtung)</div>
-              <div>{{deviceMotionEvent?.rotationRate?.alpha}}°/s</div>
+              <div>{{deviceMotionEvent?.rotationRate?.alpha | number: '1.1-1'}}°/s</div>
             </div>
             <div>
               <div>Beta (Vorne/Hinten)</div>
-              <div>{{deviceMotionEvent?.rotationRate?.beta}}°/s</div>
+              <div>{{deviceMotionEvent?.rotationRate?.beta | number: '1.1-1'}}°/s</div>
             </div>
             <div>
               <div>Gamma (Links/Rechts)</div>
-              <div>{{deviceMotionEvent?.rotationRate?.gamma}}°/s</div>
+              <div>{{deviceMotionEvent?.rotationRate?.gamma | number: '1.1-1'}}°/s</div>
             </div>
           </div>
         </section>
