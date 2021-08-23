@@ -2,4 +2,28 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <button mat-raised-button (click)="getBattery()">getBattery()</button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Information</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div>
+      <div>Ladestand</div>
+      <div>{{batteryManager?.level | percent}}</div>
+    </div>
+    <div>
+      <div>wird aufgeladen</div>
+      <div>{{batteryManager?.charging}}</div>
+    </div>
+    <div>
+      <div>Ladezeit</div>
+      <div>{{batteryManager?.chargingTime * 1000 | date: 'mm:ss' }}</div>
+    </div>
+    <div>
+      <div>Entladezeit</div>
+      <div>{{batteryManager?.dischargingTime * 1000 | date: 'mm:ss' }}</div>
+    </div>
+  </div>
+</ng-template>

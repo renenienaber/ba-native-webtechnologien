@@ -7,4 +7,16 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   styleUrls: ['./battery-status.component.css']
 })
 export class BatteryStatusComponent extends TechnologyDemoComponent {
+  batteryManager: any;
+
+  getBattery(): void {
+    if ('getBattery' in navigator) {
+      // @ts-ignore
+      navigator.getBattery()
+        .then(res => this.batteryManager = res)
+        .catch(err => this.showError(err));
+    } else {
+      this.showNoSupportError('navigator.getBattery()');
+    }
+  }
 }
