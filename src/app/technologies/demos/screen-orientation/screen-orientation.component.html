@@ -4,21 +4,19 @@
 
 <ng-template #demo>
   <ng-container *ngIf="isSupported else noSupport">
-    <div>
-      <table>
-        <tr>
-          <th>Attribut</th>
-          <th>Wert</th>
-        </tr>
-        <tr>
-          <td>OrientationType</td>
-          <td>{{orientationType}}</td>
-        </tr>
-        <tr>
-          <td>Angle</td>
-          <td>{{orientationAngle}}</td>
-        </tr>
-      </table>
+    <div class="flex-table">
+      <div>
+        <div class="mat-header-cell">Attribut</div>
+        <div class="mat-header-cell">Wert</div>
+      </div>
+      <div>
+        <div>OrientationType</div>
+        <div>{{orientationType}}</div>
+      </div>
+      <div>
+        <div>Angle</div>
+        <div>{{orientationAngle}}</div>
+      </div>
     </div>
     <div fxLayout="column wrap" fxLayoutGap="15px" id="locking">
       <span>Bildschirm-Orientierung fixieren (lock()):</span>

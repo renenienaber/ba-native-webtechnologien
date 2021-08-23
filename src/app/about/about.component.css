@@ -1,4 +1,4 @@
-td:first-child {
+.flex-table > div :first-child {
   font-weight: bold;
 }
 
