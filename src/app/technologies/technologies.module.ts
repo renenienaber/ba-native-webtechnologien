@@ -9,7 +9,7 @@ import {
   FULLSCREEN,
   GEOLOCATION, GYROSCOPE,
   HTML_MEDIA_CAPTURE,
-  LOCAL_FONT_ACCESS,
+  LOCAL_FONT_ACCESS, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
   MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING, NETWORK_INFORMATION,
@@ -68,6 +68,7 @@ import { GyroscopeComponent } from './demos/gyroscope/gyroscope.component';
 import { BatteryStatusComponent } from './demos/battery-status/battery-status.component';
 import { DeviceMemoryComponent } from './demos/device-memory/device-memory.component';
 import { NetworkInformationComponent } from './demos/network-information/network-information.component';
+import { MediaCapabilitiesComponent } from './demos/media-capabilities/media-capabilities.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -125,6 +126,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: LOCAL_FONT_ACCESS,
     component: LocalFontAccessComponent
+  },
+  {
+    technology: MEDIA_CAPABILITIES,
+    component: MediaCapabilitiesComponent,
   },
   {
     technology: MEDIA_CAPTURE_AND_STREAMS,
@@ -271,7 +276,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     GyroscopeComponent,
     BatteryStatusComponent,
     DeviceMemoryComponent,
-    NetworkInformationComponent
+    NetworkInformationComponent,
+    MediaCapabilitiesComponent
   ],
   imports: [
     SharedModule,
