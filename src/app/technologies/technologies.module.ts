@@ -1,6 +1,6 @@
 import {
   ACCELEROMETER,
-  BADGING,
+  BADGING, BATTERY_STATUS,
   CONTACT_PICKER,
   CONTENT_INDEX,
   DEVICEORIENTATION_EVENT,
@@ -65,6 +65,7 @@ import { ShapeDetectionComponent } from './demos/shape-detection/shape-detection
 import { TextDetectionComponent } from './demos/text-detection/text-detection.component';
 import { AccelerometerComponent } from './demos/accelerometer/accelerometer.component';
 import { GyroscopeComponent } from './demos/gyroscope/gyroscope.component';
+import { BatteryStatusComponent } from './demos/battery-status/battery-status.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -74,6 +75,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: BADGING,
     component: BadgingComponent
+  },
+  {
+    technology: BATTERY_STATUS,
+    component: BatteryStatusComponent
   },
   {
     technology: CONTACT_PICKER,
@@ -253,7 +258,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ShapeDetectionComponent,
     TextDetectionComponent,
     AccelerometerComponent,
-    GyroscopeComponent
+    GyroscopeComponent,
+    BatteryStatusComponent
   ],
   imports: [
     SharedModule,
