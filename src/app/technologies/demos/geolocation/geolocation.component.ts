@@ -3,11 +3,10 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-geolocation',
-  templateUrl: './geolocation.component.html'
+  templateUrl: './geolocation.component.html',
+  styleUrls: ['./geolocation.component.css']
 })
 export class GeolocationComponent extends TechnologyDemoComponent {
-  private errorNoGeolocation = 'navigator.geolocation';
-
   currentPos: Position;
   watchId: number;
 
@@ -18,7 +17,7 @@ export class GeolocationComponent extends TechnologyDemoComponent {
         err => this.onError(err)
       );
     } else {
-      this.showNoSupportError(this.errorNoGeolocation);
+      this.showNoSupportError('navigator.geolocation');
     }
   }
 
@@ -29,7 +28,7 @@ export class GeolocationComponent extends TechnologyDemoComponent {
         err => this.onError(err)
       );
     } else {
-      this.showNoSupportError(this.errorNoGeolocation);
+      this.showNoSupportError('navigator.geolocation');
     }
   }
 

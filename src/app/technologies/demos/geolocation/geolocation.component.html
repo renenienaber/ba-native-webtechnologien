@@ -8,7 +8,7 @@
     mat-raised-button
     (click)="getCurrentPosition()"
   >
-    getCurrentPosition
+    getCurrentPosition()
   </button>
   <button
     type="button"
@@ -16,7 +16,7 @@
     (click)="watchPosition()"
     [disabled]="!!watchId"
   >
-    watchPosition
+    watchPosition()
   </button>
   <button
     type="button"
@@ -24,40 +24,40 @@
     (click)="clearWatch()"
     [disabled]="!watchId"
   >
-    clearWatch
+    clearWatch()
   </button>
   <div *ngIf="currentPos">
     <p>{{currentPos.timestamp | date: 'medium'}}</p>
     <div *ngIf="currentPos.coords">
       <a href="https://www.google.com/maps/@?api=1&map_action=map&center={{currentPos.coords.latitude}},{{currentPos.coords.longitude}}" target="_blank">
-        Längengrad: {{currentPos.coords.longitude}}, Breitengrad: {{currentPos.coords.latitude}}
+        Längengrad: {{currentPos.coords.longitude  | number }}, Breitengrad: {{currentPos.coords.latitude | number}}
       </a>
-      <table>
-        <tr>
-          <th>Attribut</th>
-          <th>Wert</th>
-        </tr>
-        <tr>
-          <td>Höhenlage</td>
-          <td>{{currentPos.coords.altitude | number: '1.0-3'}}</td>
-        </tr>
-        <tr>
-          <td>Genauigkeit Breiten- & Längengrad (in m)</td>
-          <td>{{currentPos.coords.accuracy | number: '1.0-3'}}</td>
-        </tr>
-        <tr>
-          <td>Genauigkeit Höhenlage (in m)</td>
-          <td>{{currentPos.coords.altitudeAccuracy | number: '1.0-3'}}</td>
-        </tr>
-        <tr>
-          <td>Richtung</td>
-          <td>{{currentPos.coords.heading | number: '1.0-3'}}</td>
-        </tr>
-        <tr>
-          <td>Geschwindigkeit (in m/s)</td>
-          <td>{{currentPos.coords.speed | number: '1.0-3'}}</td>
-        </tr>
-      </table>
+      <div class="mat-table">
+        <div>
+          <div class="mat-header-cell">Attribut</div>
+          <div class="mat-header-cell">Wert</div>
+        </div>
+        <div>
+          <div>Höhenlage</div>
+          <div>{{currentPos.coords.altitude | number: '1.0-3'}} m</div>
+        </div>
+        <div>
+          <div>Genauigkeit Breiten- & Längengrad</div>
+          <div>{{currentPos.coords.accuracy | number: '1.0-3'}} m</div>
+        </div>
+        <div>
+          <div>Genauigkeit Höhenlage</div>
+          <div>{{currentPos.coords.altitudeAccuracy | number: '1.0-3'}} m</div>
+        </div>
+        <div>
+          <div>Richtung</div>
+          <div>{{currentPos.coords.heading | number: '1.0-3'}}°</div>
+        </div>
+        <div>
+          <div>Geschwindigkeit</div>
+          <div>{{currentPos.coords.speed | number: '1.0-3'}} m/s</div>
+        </div>
+      </div>
     </div>
   </div>
 </ng-template>
