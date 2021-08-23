@@ -2,4 +2,16 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <button mat-raised-button (click)="initAndStartSensor()">start()</button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div *ngFor="let c of ['x', 'y', 'z']">
+      <div>{{c}}-Achse</div>
+      <div>{{ (sensor ? sensor[c] : undefined) | number: '1.1-1' }} rad/s</div>
+    </div>
+  </div>
+</ng-template>
