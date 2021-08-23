@@ -7,7 +7,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 })
 export class DeviceorientationEventComponent extends TechnologyDemoComponent {
   orientationListenerAdded = false;
-  orientationResults: DeviceOrientationEvent;
+  orientationResults: OrientationData;
 
   errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
 
@@ -27,8 +27,13 @@ export class DeviceorientationEventComponent extends TechnologyDemoComponent {
   //   document.getElementById('absolute').innerHTML = absolute.toString();
   // }
 
-  private deviceOrientationEventHandler(event: any): void {
-    this.orientationResults = event;
+  private deviceOrientationEventHandler(event: DeviceOrientationEvent): void {
+    this.orientationResults = {
+      alpha: Math.round(event.alpha),
+      beta: Math.round(event.beta),
+      gamma: Math.round(event.gamma),
+      absolute: event.absolute
+    };
   }
 
   startOrientationDemo(): void {
@@ -38,4 +43,11 @@ export class DeviceorientationEventComponent extends TechnologyDemoComponent {
       this.showNoSupportError('window.DeviceOrientationEvent');
     }
   }
+}
+
+interface OrientationData {
+  alpha?: number;
+  beta?: number;
+  gamma?: number;
+  absolute: boolean;
 }
