@@ -13,7 +13,7 @@ export class AccelerometerComponent extends TechnologyDemoComponent {
   initAndStartSensor(): void {
     if ('Accelerometer' in window) {
       // @ts-ignore
-      this.sensor = new Accelerometer();
+      this.sensor = new Accelerometer({frequency: 60});
       this.sensor.addEventListener('reading', () => {
           this.results = {x: this.sensor.x, y: this.sensor.y, z: this.sensor.z};
         }

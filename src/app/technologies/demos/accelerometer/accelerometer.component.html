@@ -12,7 +12,7 @@
       </div>
       <div *ngFor="let c of ['x', 'y', 'z']">
         <div>{{c}}-Achse</div>
-        <div>{{ results ? results[c] : undefined | number: '1.1-1' }} m/s²</div>
+        <div>{{ (results ? results[c] : undefined) | number: '1.1-1' }} m/s²</div>
       </div>
     </div>
   </div>
