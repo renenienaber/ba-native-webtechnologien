@@ -2,4 +2,54 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <h3>Am Beispiel vorgefertigter Konfigurationen</h3>
+  <mat-tab-group>
+    <mat-tab label="decodingInfo()">
+      <div>
+        <mat-form-field appearance="fill" fxFlex="100%">
+          <mat-label>Eingabe-Konfiguration</mat-label>
+          <textarea
+            matInput
+            [value]="mediaDecodingConfig | json"
+            disabled
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button (click)="getDecodingInfo()">decodingInfo()</button>
+      <div class="flex-table">
+        <div>
+          <div class="mat-header-cell">Attribut</div>
+          <div class="mat-header-cell">Wert</div>
+        </div>
+        <div *ngFor="let a of ['supported', 'smooth', 'powerEfficient']">
+          <div>{{a}}</div>
+          <div>{{ decodingInfoResult ? decodingInfoResult[a] : undefined }}</div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="encodingInfo()">
+      <div>
+        <mat-form-field appearance="fill" fxFlex="100%">
+          <mat-label>Eingabe-Konfiguration</mat-label>
+          <textarea
+            matInput
+            [value]="mediaEncodingConfig | json"
+            disabled
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button (click)="getEncodingInfo()">encodingInfo()</button>
+      <div class="flex-table">
+        <div>
+          <div class="mat-header-cell">Attribut</div>
+          <div class="mat-header-cell">Wert</div>
+        </div>
+        <div *ngFor="let a of ['supported', 'smooth', 'powerEfficient']">
+          <div>{{a}}</div>
+          <div>{{ encodingInfoResult ? encodingInfoResult[a] : undefined }}</div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>
