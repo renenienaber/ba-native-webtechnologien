@@ -46,17 +46,9 @@
               <div class="mat-header-cell">Attribut</div>
               <div class="mat-header-cell">Wert</div>
             </div>
-            <div>
-              <div>x-Achse</div>
-              <div>{{deviceMotionEvent?.acceleration?.x | number: '1.1-1'}} m/s²</div>
-            </div>
-            <div>
-              <div>y-Achse</div>
-              <div>{{deviceMotionEvent?.acceleration?.y | number: '1.1-1'}} m/s²</div>
-            </div>
-            <div>
-              <div>z-Achse</div>
-              <div>{{deviceMotionEvent?.acceleration?.z | number: '1.1-1'}} m/s²</div>
+            <div *ngFor="let c of ['x', 'y', 'z']">
+              <div>{{c}}-Achse</div>
+              <div>{{deviceMotionEvent?.acceleration ? deviceMotionEvent.acceleration[c] : undefined | number: '1.1-1'}} m/s²</div>
             </div>
           </div>
         </section>
@@ -67,17 +59,9 @@
               <div class="mat-header-cell">Attribut</div>
               <div class="mat-header-cell">Wert</div>
             </div>
-            <div>
-              <div>x-Achse</div>
-              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.x | number: '1.1-1'}} m/s²</div>
-            </div>
-            <div>
-              <div>y-Achse</div>
-              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.y | number: '1.1-1'}} m/s²</div>
-            </div>
-            <div>
-              <div>z-Achse</div>
-              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.z | number: '1.1-1'}} m/s²</div>
+            <div *ngFor="let c of ['x', 'y', 'z']">
+              <div>{{c}}-Achse</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity ? deviceMotionEvent.accelerationIncludingGravity[c] : undefined | number: '1.1-1'}} m/s²</div>
             </div>
           </div>
         </section>
