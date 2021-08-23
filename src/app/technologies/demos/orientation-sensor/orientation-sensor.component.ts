@@ -6,45 +6,55 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './orientation-sensor.component.html'
 })
 export class OrientationSensorComponent extends TechnologyDemoComponent {
-  private errorNoAbsoluteOrientationSensor = 'window.AbsoluteOrientationSensor';
-  private errorNoRelativeOrientationSensor = 'window.RelativeOrientationSensor';
-  private errorNoSensorAvailable = 'Es ist kein Sensor verfügbar.';
+  private absoluteSensor: any;
+  private relativeSensor: any;
+  private absoluteMat4 = new Float32Array(16);
+  private relativeMat4 = new Float32Array(16);
 
-  private sensor: any;
-  private mat4 = new Float32Array(16);
-  header: string;
+  absoluteResponse;
+  relativeResponse;
 
   initAbsolute(): void {
     if ('AbsoluteOrientationSensor' in window) {
       // @ts-ignore
-      this.sensor = new AbsoluteOrientationSensor({frequency: 60});
-      this.header = 'Absolute';
-      this.useSensor();
+      this.absoluteSensor = new AbsoluteOrientationSensor({frequency: 60});
+      // this.absoluteSensor.addEventListener('reading', () => {
+      //   this.absoluteSensor.populateMatrix(this.absoluteMat4);
+      //   this.absoluteResponse = this.absoluteMat4.map(val => (Math.round(val * 100) / 100)).toString();
+      // });
+      // this.absoluteSensor.addEventListener('error', sensorErrorEvent =>
+      //   this.showError(sensorErrorEvent.error.message)
+      // );
+      this.initSensor(this.absoluteSensor, this.absoluteMat4, this.absoluteResponse);
+      this.absoluteSensor.start();
     } else {
-      this.showNoSupportError(this.errorNoAbsoluteOrientationSensor);
+      this.showNoSupportError('window.AbsoluteOrientationSensor');
     }
   }
   initRelative(): void {
     if ('RelativeOrientationSensor' in window) {
       // @ts-ignore
-      this.sensor = new RelativeOrientationSensor({frequency: 60});
-      this.header = 'Relative';
-      this.useSensor();
+      this.relativeSensor = new RelativeOrientationSensor({frequency: 60});
+      this.relativeSensor.addEventListener('reading', () => {
+        this.relativeSensor.populateMatrix(this.relativeMat4);
+        this.relativeResponse = this.relativeMat4.map(val => (Math.round(val * 100) / 100)).toString();
+      });
+      this.relativeSensor.addEventListener('error', sensorErrorEvent =>
+        this.showError(sensorErrorEvent.error.message)
+      );
+      this.relativeSensor.start();
     } else {
-      this.showNoSupportError(this.errorNoRelativeOrientationSensor);
+      this.showNoSupportError('window.RelativeOrientationSensor');
     }
   }
 
-  private useSensor(): void {
-    this.sensor.onreading = () => {
-      this.sensor.populateMatrix(this.mat4);
-      document.getElementById('response').innerHTML =
-        this.mat4.map(val => (Math.round(val * 100) / 100)).toString();
-    };
-    this.sensor.onerror = (sensorErrorEvent) => {
-      document.getElementById('response').innerHTML =
-        sensorErrorEvent.error.name === 'NotReadableError' ? this.errorNoSensorAvailable : sensorErrorEvent.error.message;
-    };
-    this.sensor.start();
+  initSensor(sensor: any, mat4: any, response: any): void {
+    sensor.addEventListener('reading', () => {
+      sensor.populateMatrix(mat4);
+      response = mat4.map(val => (Math.round(val * 100) / 100)).toString();
+    });
+    sensor.addEventListener('error', sensorErrorEvent =>
+      this.showError(sensorErrorEvent.error.message)
+    );
   }
 }

@@ -3,8 +3,14 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button mat-raised-button (click)="initAbsolute()">Absolute</button>
-  <button mat-raised-button (click)="initRelative()">Relative</button>
-  <div><span class="mat-subheading-2">{{header}}</span></div>
-  <div id="response"></div>
+  <mat-tab-group>
+    <mat-tab label="AbsoluteOrientationSensor">
+      <button mat-raised-button (click)="initAbsolute()">start()</button>
+      <div>{{absoluteResponse}}</div>
+    </mat-tab>
+    <mat-tab label="RelativeOrientationSensor">
+      <button mat-raised-button (click)="initRelative()">start()</button>
+      <div>{{relativeResponse}}</div>
+    </mat-tab>
+  </mat-tab-group>
 </ng-template>
