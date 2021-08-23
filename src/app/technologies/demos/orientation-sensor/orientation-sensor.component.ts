@@ -8,7 +8,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 export class OrientationSensorComponent extends TechnologyDemoComponent {
   private absoluteSensor: any;
   private relativeSensor: any;
-  private absoluteMat4 = new Float32Array(16);
+  absoluteMat4 = new Float32Array(16);
   private relativeMat4 = new Float32Array(16);
 
   absoluteResponse;
@@ -25,7 +25,7 @@ export class OrientationSensorComponent extends TechnologyDemoComponent {
       // this.absoluteSensor.addEventListener('error', sensorErrorEvent =>
       //   this.showError(sensorErrorEvent.error.message)
       // );
-      this.initSensor(this.absoluteSensor, this.absoluteMat4, this.absoluteResponse);
+      this.initSensor('absolute');
       this.absoluteSensor.start();
     } else {
       this.showNoSupportError('window.AbsoluteOrientationSensor');
@@ -48,7 +48,10 @@ export class OrientationSensorComponent extends TechnologyDemoComponent {
     }
   }
 
-  initSensor(sensor: any, mat4: any, response: any): void {
+  initSensor(sensorType: 'absolute' | 'relative'): void {
+    const sensor = sensorType === 'absolute' ? this.absoluteSensor : this.relativeSensor;
+    const mat4 = sensorType === 'absolute' ? this.absoluteMat4 : this.relativeMat4;
+    let response = sensorType === 'absolute' ? this.absoluteResponse : this.relativeResponse;
     sensor.addEventListener('reading', () => {
       sensor.populateMatrix(mat4);
       response = mat4.map(val => (Math.round(val * 100) / 100)).toString();

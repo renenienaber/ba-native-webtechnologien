@@ -6,7 +6,11 @@
   <mat-tab-group>
     <mat-tab label="AbsoluteOrientationSensor">
       <button mat-raised-button (click)="initAbsolute()">start()</button>
-      <div>{{absoluteResponse}}</div>
+      <div *ngIf="absoluteSensor">
+        <div *ngFor="let el of absoluteMat4">
+          {{ el | number }}
+        </div>
+      </div>
     </mat-tab>
     <mat-tab label="RelativeOrientationSensor">
       <button mat-raised-button (click)="initRelative()">start()</button>
