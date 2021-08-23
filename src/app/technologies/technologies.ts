@@ -203,7 +203,7 @@ export const DEVICE_POSTURE: Technology = {
   routerLink: 'device-posture'
 };
 export const DEVICEORIENTATION_EVENT: Technology = {
-  name: 'DeviceOrientation Event API',
+  name: 'DeviceOrientation Event',
   description: 'Ermöglicht den Zugriff auf Informationen über die physische Haltung und Bewegung eines Endgerätes.',
   featureDetections: [
     {

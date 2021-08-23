@@ -3,34 +3,38 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <ng-container *ngIf="isSupported() else noSupport">
-    <div>
-      <table>
-        <tr>
-          <th>Attribut</th>
-          <th>Wert</th>
-        </tr>
-        <tr>
-          <td>Alpha (Richtung)</td>
-          <td id="alpha">?</td>
-        </tr>
-        <tr>
-          <td>Beta (Vorne/Hinten)</td>
-          <td id="beta">?</td>
-        </tr>
-        <tr>
-          <td>Gamma (Links/Rechts)</td>
-          <td id="gamma">?</td>
-        </tr>
-        <tr>
-          <td>Absolut</td>
-          <td id="absolute">?</td>
-        </tr>
-      </table>
-    </div>
-  </ng-container>
-</ng-template>
+  <mat-tab-group>
+    <mat-tab label="DeviceOrientationEvent">
+      <button mat-raised-button (click)="startOrientationDemo()">
+        start Demo
+      </button>
+      <div>
+        <table>
+          <tr>
+            <th>Attribut</th>
+            <th>Wert</th>
+          </tr>
+          <tr>
+            <td>Alpha (Richtung)</td>
+            <td *ngIf="orientationResults?.alpha" id="alpha">{{orientationResults.alpha}}</td>
+          </tr>
+          <tr>
+            <td>Beta (Vorne/Hinten)</td>
+            <td *ngIf="orientationResults?.beta" id="beta">{{orientationResults.beta}}</td>
+          </tr>
+          <tr>
+            <td>Gamma (Links/Rechts)</td>
+            <td *ngIf="orientationResults?.gamma" id="gamma">{{orientationResults.gamma}}</td>
+          </tr>
+          <tr>
+            <td>Absolut</td>
+            <td *ngIf="orientationResults?.absolute" id="absolute">{{orientationResults.absolute}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab label="DeviceMotionEvent">
 
-<ng-template #noSupport>
-  <span>{{errorNoDeviceOrientationEvent}}</span>
+    </mat-tab>
+  </mat-tab-group>
 </ng-template>
