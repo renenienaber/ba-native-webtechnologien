@@ -28,6 +28,6 @@ export class TechnologyPageComponent implements OnInit {
   }
 
   openErrorSnackBar(message: string) {
-    this.matSnackBar.open(message, 'Verstanden');
+    this.matSnackBar.open(message, 'OK');
   }
 }
