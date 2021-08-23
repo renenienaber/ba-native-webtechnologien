@@ -7,4 +7,18 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   styleUrls: ['./accelerometer.component.css']
 })
 export class AccelerometerComponent extends TechnologyDemoComponent {
+  sensor: any;
+
+  initAndStartSensor(): void {
+    if ('Accelerometer' in window) {
+      // @ts-ignore
+      this.sensor = new Accelerometer();
+      this.sensor.addEventListener('error', sensorErrorEvent =>
+        this.showError(sensorErrorEvent.error.message)
+      );
+      this.sensor.start();
+    } else {
+      this.showNoSupportError('window.Accelerometer');
+    }
+  }
 }
