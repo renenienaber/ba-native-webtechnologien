@@ -12,7 +12,7 @@ import {
   LOCAL_FONT_ACCESS,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
-  MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING,
+  MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING, NETWORK_INFORMATION,
   NOTIFICATIONS,
   ORIENTATION_SENSOR,
   PAYMENT_REQUEST,
@@ -67,6 +67,7 @@ import { AccelerometerComponent } from './demos/accelerometer/accelerometer.comp
 import { GyroscopeComponent } from './demos/gyroscope/gyroscope.component';
 import { BatteryStatusComponent } from './demos/battery-status/battery-status.component';
 import { DeviceMemoryComponent } from './demos/device-memory/device-memory.component';
+import { NetworkInformationComponent } from './demos/network-information/network-information.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -140,6 +141,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: MEDIASTREAM_IMAGE_CAPTURE,
     component: MediastreamImageCaptureComponent
+  },
+  {
+    technology: NETWORK_INFORMATION,
+    component: NetworkInformationComponent
   },
   {
     technology: MEDIASTREAM_RECORDING,
@@ -265,7 +270,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     AccelerometerComponent,
     GyroscopeComponent,
     BatteryStatusComponent,
-    DeviceMemoryComponent
+    DeviceMemoryComponent,
+    NetworkInformationComponent
   ],
   imports: [
     SharedModule,

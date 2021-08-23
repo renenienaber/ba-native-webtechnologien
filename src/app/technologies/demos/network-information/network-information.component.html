@@ -1,0 +1,33 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button mat-raised-button (click)="getNetworkInformation()">get Network Information</button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div>
+      <div>type (Verbindungs-Typ)</div>
+      <div>{{ networkInformation?.type }}</div>
+    </div>
+    <div>
+      <div>effectiveType (Effektiver Verbindungs-Typ)</div>
+      <div>{{ networkInformation?.effectiveType }}</div>
+    </div>
+    <div>
+      <div>downlink (Effektive Bandbreite)</div>
+      <div>{{ networkInformation?.downlink }} Mb/s</div>
+    </div>
+    <div>
+      <div>downlinkMax (Maximal-Bandbreite)</div>
+      <div>{{ networkInformation?.downlinkMax }} Mb/s</div>
+    </div>
+    <div>
+      <div>rtt (Paketumlaufzeit)</div>
+      <div>{{ networkInformation?.rtt }} ms</div>
+    </div>
+  </div>
+</ng-template>
