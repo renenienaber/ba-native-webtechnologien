@@ -66,6 +66,7 @@ import { TextDetectionComponent } from './demos/text-detection/text-detection.co
 import { AccelerometerComponent } from './demos/accelerometer/accelerometer.component';
 import { GyroscopeComponent } from './demos/gyroscope/gyroscope.component';
 import { BatteryStatusComponent } from './demos/battery-status/battery-status.component';
+import { DeviceMemoryComponent } from './demos/device-memory/device-memory.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -259,7 +260,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     TextDetectionComponent,
     AccelerometerComponent,
     GyroscopeComponent,
-    BatteryStatusComponent
+    BatteryStatusComponent,
+    DeviceMemoryComponent
   ],
   imports: [
     SharedModule,
