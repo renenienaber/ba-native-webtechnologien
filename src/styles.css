@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+textarea {
+  min-height: 150px;
+}
+
+.flex-table {
+  display: block;
+}
+.flex-table > div {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+}
+.flex-table > div > div {
+  flex: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+}

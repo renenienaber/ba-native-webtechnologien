@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-geolocation',
-  templateUrl: './geolocation.component.html',
-  styleUrls: ['./geolocation.component.css']
+  templateUrl: './geolocation.component.html'
 })
 export class GeolocationComponent extends TechnologyDemoComponent {
   currentPos: Position;
