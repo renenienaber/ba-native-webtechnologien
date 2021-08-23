@@ -5,36 +5,104 @@
 <ng-template #demo>
   <mat-tab-group>
     <mat-tab label="DeviceOrientationEvent">
-      <button mat-raised-button (click)="startOrientationDemo()">
-        start Demo
+      <button mat-raised-button (click)="startOrientationListening()">
+        starte EventListener
       </button>
-      <div>
-        <table>
-          <tr>
-            <th>Attribut</th>
-            <th>Wert</th>
-          </tr>
-          <tr>
-            <td>Alpha (Richtung)</td>
-            <td *ngIf="orientationResults?.alpha" id="alpha">{{orientationResults.alpha}}</td>
-          </tr>
-          <tr>
-            <td>Beta (Vorne/Hinten)</td>
-            <td *ngIf="orientationResults?.beta" id="beta">{{orientationResults.beta}}</td>
-          </tr>
-          <tr>
-            <td>Gamma (Links/Rechts)</td>
-            <td *ngIf="orientationResults?.gamma" id="gamma">{{orientationResults.gamma}}</td>
-          </tr>
-          <tr>
-            <td>Absolut</td>
-            <td *ngIf="orientationResults?.absolute" id="absolute">{{orientationResults.absolute}}</td>
-          </tr>
-        </table>
-      </div>
+      <section>
+        <div class="mat-table">
+          <div>
+            <div class="mat-header-cell">Attribut</div>
+            <div class="mat-header-cell">Wert</div>
+          </div>
+          <div>
+            <div>Alpha (Richtung)</div>
+            <div>{{orientationResults?.alpha}}°</div>
+          </div>
+          <div>
+            <div>Beta (Vorne/Hinten)</div>
+            <div>{{orientationResults?.beta}}°</div>
+          </div>
+          <div>
+            <div>Gamma (Links/Rechts)</div>
+            <div>{{orientationResults?.gamma}}°</div>
+          </div>
+          <div>
+            <div>Absolut</div>
+            <div>{{orientationResults?.absolute}}</div>
+          </div>
+        </div>
+      </section>
     </mat-tab>
-    <mat-tab label="DeviceMotionEvent">
-
+    <mat-tab fxLayout="column" label="DeviceMotionEvent">
+      <button mat-raised-button (click)="startMotionListening()">
+        starte EventListener
+      </button>
+      <section>Intervall: {{ deviceMotionEvent?.interval }} ms</section>
+      <div>
+        <section>
+          <strong>Beschleunigung (acceleration)</strong>
+          <div class="mat-table">
+            <div>
+              <div class="mat-header-cell">Attribut</div>
+              <div class="mat-header-cell">Wert</div>
+            </div>
+            <div>
+              <div>x-Achse</div>
+              <div>{{deviceMotionEvent?.acceleration?.x}} m/s²</div>
+            </div>
+            <div>
+              <div>y-Achse</div>
+              <div>{{deviceMotionEvent?.acceleration?.y}} m/s²</div>
+            </div>
+            <div>
+              <div>z-Achse</div>
+              <div>{{deviceMotionEvent?.acceleration?.z}} m/s²</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <strong>Beschleunigung inkl. Gravitation (accelerationIncludingGravity)</strong>
+          <div class="mat-table">
+            <div>
+              <div class="mat-header-cell">Attribut</div>
+              <div class="mat-header-cell">Wert</div>
+            </div>
+            <div>
+              <div>x-Achse</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.x}} m/s²</div>
+            </div>
+            <div>
+              <div>y-Achse</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.y}} m/s²</div>
+            </div>
+            <div>
+              <div>z-Achse</div>
+              <div>{{deviceMotionEvent?.accelerationIncludingGravity?.z}} m/s²</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <strong>Rotationsrate (rotationRate)</strong>
+          <div class="mat-table">
+            <div>
+              <div class="mat-header-cell">Attribut</div>
+              <div class="mat-header-cell">Wert</div>
+            </div>
+            <div>
+              <div>Alpha (Richtung)</div>
+              <div>{{deviceMotionEvent?.rotationRate?.alpha}}°/s</div>
+            </div>
+            <div>
+              <div>Beta (Vorne/Hinten)</div>
+              <div>{{deviceMotionEvent?.rotationRate?.beta}}°/s</div>
+            </div>
+            <div>
+              <div>Gamma (Links/Rechts)</div>
+              <div>{{deviceMotionEvent?.rotationRate?.gamma}}°/s</div>
+            </div>
+          </div>
+        </section>
+      </div>
     </mat-tab>
   </mat-tab-group>
 </ng-template>

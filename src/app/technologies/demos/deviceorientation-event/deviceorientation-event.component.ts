@@ -1,46 +1,62 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
+import {fromEvent, Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-device-orientation',
-  templateUrl: './deviceorientation-event.component.html'
+  templateUrl: './deviceorientation-event.component.html',
+  styleUrls: ['./deviceorientation-event.component.css']
 })
-export class DeviceorientationEventComponent extends TechnologyDemoComponent {
-  orientationListenerAdded = false;
+export class DeviceorientationEventComponent extends TechnologyDemoComponent implements OnDestroy {
+  deviceOrientation$: Observable<Event>;
+  deviceOrientationSubscription: Subscription;
+  deviceMotion$: Observable<Event>;
+  deviceMotionSubscription: Subscription;
+
   orientationResults: OrientationData;
+  deviceMotionEvent: DeviceMotionEvent;
 
-  errorNoDeviceOrientationEvent = 'window.DeviceOrientationEvent wird nicht unterstützt!';
+  ngOnDestroy() {
+    if (this.deviceOrientationSubscription) {
+      this.deviceOrientationSubscription.unsubscribe();
+    }
+    if (this.deviceMotionSubscription) {
+      this.deviceMotionSubscription.unsubscribe();
+    }
+  }
 
-  // ngOnDestroy() {
-  //   window.removeEventListener('deviceorientation', this.deviceOrientationEventHandler, false);
-  // }
-
-  // deviceOrientationEventHandler(eventData: any): void {
-  //   const alpha = Math.round(eventData.alpha);
-  //   const beta = Math.round(eventData.beta);
-  //   const gamma = Math.round(eventData.gamma);
-  //   const absolute = eventData.absolute;
-  //
-  //   document.getElementById('alpha').innerHTML = alpha.toString();
-  //   document.getElementById('beta').innerHTML = beta.toString();
-  //   document.getElementById('gamma').innerHTML = gamma.toString();
-  //   document.getElementById('absolute').innerHTML = absolute.toString();
-  // }
-
-  private deviceOrientationEventHandler(event: DeviceOrientationEvent): void {
+  private deviceOrientationEventHandler(deviceOrientationEvent: DeviceOrientationEvent): void {
     this.orientationResults = {
-      alpha: Math.round(event.alpha),
-      beta: Math.round(event.beta),
-      gamma: Math.round(event.gamma),
-      absolute: event.absolute
+      alpha: Math.round(deviceOrientationEvent.alpha),
+      beta: Math.round(deviceOrientationEvent.beta),
+      gamma: Math.round(deviceOrientationEvent.gamma),
+      absolute: deviceOrientationEvent.absolute
     };
   }
 
-  startOrientationDemo(): void {
+  private deviceMotionEventHandler(deviceMotionEvent: DeviceMotionEvent): void {
+    this.deviceMotionEvent = deviceMotionEvent;
+  }
+
+  startOrientationListening(): void {
     if ('DeviceOrientationEvent' in window) {
-      window.addEventListener('deviceorientation', this.deviceOrientationEventHandler);
+      this.deviceOrientation$ = fromEvent(window, 'deviceorientation');
+      this.deviceOrientationSubscription = this.deviceOrientation$.subscribe(ev =>
+        this.deviceOrientationEventHandler(ev as DeviceOrientationEvent)
+      );
     } else {
       this.showNoSupportError('window.DeviceOrientationEvent');
+    }
+  }
+
+  startMotionListening(): void {
+    if ('DeviceMotionEvent' in window) {
+      this.deviceMotion$ = fromEvent(window, 'devicemotion');
+      this.deviceMotionSubscription = this.deviceMotion$.subscribe(ev =>
+        this.deviceMotionEventHandler(ev as DeviceMotionEvent)
+      );
+    } else {
+      this.showNoSupportError('window.DeviceMotionEvent');
     }
   }
 }
