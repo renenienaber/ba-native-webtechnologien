@@ -1,4 +1,5 @@
 import {
+  ACCELEROMETER,
   BADGING,
   CONTACT_PICKER,
   CONTENT_INDEX,
@@ -62,8 +63,13 @@ import { MediastreamRecordingComponent } from './demos/mediastream-recording/med
 import { ScreenCaptureComponent } from './demos/screen-capture/screen-capture.component';
 import { ShapeDetectionComponent } from './demos/shape-detection/shape-detection.component';
 import { TextDetectionComponent } from './demos/text-detection/text-detection.component';
+import { AccelerometerComponent } from './demos/accelerometer/accelerometer.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
+  {
+    technology: ACCELEROMETER,
+    component: AccelerometerComponent
+  },
   {
     technology: BADGING,
     component: BadgingComponent
@@ -240,7 +246,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     MediastreamRecordingComponent,
     ScreenCaptureComponent,
     ShapeDetectionComponent,
-    TextDetectionComponent
+    TextDetectionComponent,
+    AccelerometerComponent
   ],
   imports: [
     SharedModule,
