@@ -49,19 +49,19 @@
       </div>
       <div>
         <div>Höhenlage</div>
-        <div>{{currentPos?.coords?.altitude | number }} m</div>
+        <div>{{currentPos?.coords?.altitude | number: '1.0-1' }} m</div>
       </div>
       <div>
         <div>Genauigkeit Breiten- & Längengrad</div>
-        <div>{{currentPos?.coords?.accuracy | number }} m</div>
+        <div>{{currentPos?.coords?.accuracy | number: '1.0-1' }} m</div>
       </div>
       <div>
         <div>Genauigkeit Höhenlage</div>
-        <div>{{currentPos?.coords?.altitudeAccuracy | number }} m</div>
+        <div>{{currentPos?.coords?.altitudeAccuracy | number: '1.0-1' }} m</div>
       </div>
       <div>
         <div>Richtung</div>
-        <div>{{currentPos?.coords?.heading | number }}°</div>
+        <div>{{currentPos?.coords?.heading | number: '1.0-0' }}°</div>
       </div>
       <div>
         <div>Geschwindigkeit</div>
