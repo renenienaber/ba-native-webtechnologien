@@ -71,6 +71,7 @@ import { NetworkInformationComponent } from './demos/network-information/network
 import { MediaCapabilitiesComponent } from './demos/media-capabilities/media-capabilities.component';
 import { KeyboardLockComponent } from './demos/keyboard-lock/keyboard-lock.component';
 import { PointerLockComponent } from './demos/pointer-lock/pointer-lock.component';
+import { ClipboardComponent } from './demos/clipboard/clipboard.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -289,7 +290,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     NetworkInformationComponent,
     MediaCapabilitiesComponent,
     KeyboardLockComponent,
-    PointerLockComponent
+    PointerLockComponent,
+    ClipboardComponent
   ],
   imports: [
     SharedModule,
