@@ -1,6 +1,6 @@
 import {
   ACCELEROMETER,
-  BADGING, BATTERY_STATUS,
+  BADGING, BATTERY_STATUS, CLIPBOARD,
   CONTACT_PICKER,
   CONTENT_INDEX, DEVICE_MEMORY,
   DEVICEORIENTATION_EVENT,
@@ -85,6 +85,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: BATTERY_STATUS,
     component: BatteryStatusComponent
+  },
+  {
+    technology: CLIPBOARD,
+    component: ClipboardComponent
   },
   {
     technology: CONTACT_PICKER,
