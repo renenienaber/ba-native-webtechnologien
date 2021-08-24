@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629820452979,
+  "timestamp": 1629834911197,
   "index": "/ba-native-webtechnologien/index.html",
   "assetGroups": [
     {
@@ -10,15 +10,15 @@
       "urls": [
         "/ba-native-webtechnologien/favicon.ico",
         "/ba-native-webtechnologien/index.html",
-        "/ba-native-webtechnologien/main-es2015.8fd3eb103118973d3cbf.js",
-        "/ba-native-webtechnologien/main-es5.8fd3eb103118973d3cbf.js",
+        "/ba-native-webtechnologien/main-es2015.0eac679eab054d80f9cb.js",
+        "/ba-native-webtechnologien/main-es5.0eac679eab054d80f9cb.js",
         "/ba-native-webtechnologien/manifest.webmanifest",
         "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js",
         "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js",
         "/ba-native-webtechnologien/runtime-es2015.0dae8cbc97194c7caed4.js",
         "/ba-native-webtechnologien/runtime-es5.0dae8cbc97194c7caed4.js",
         "/ba-native-webtechnologien/scripts.fe6c8f7b5647e142def1.js",
-        "/ba-native-webtechnologien/styles.0a5fa6de0002c7cffdab.css"
+        "/ba-native-webtechnologien/styles.3de1755882190d840737.css"
       ],
       "patterns": []
     },
@@ -60,16 +60,16 @@
     "/ba-native-webtechnologien/assets/media/simon-maage-KTzZVDjUsXw-unsplash.jpg": "73a93d282bbdf13a2dd50ebd625b76cf7baf1f40",
     "/ba-native-webtechnologien/assets/media/windows-p74ndnYWRY4-unsplash.jpg": "56413133485295511739e633665da04aaf69d825",
     "/ba-native-webtechnologien/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ba-native-webtechnologien/index.html": "0c487727a188839d3265d00dd9e22eeeca30b6cd",
-    "/ba-native-webtechnologien/main-es2015.8fd3eb103118973d3cbf.js": "0babb2b0fa9a37bd14f2574f7711e24a715d9e96",
-    "/ba-native-webtechnologien/main-es5.8fd3eb103118973d3cbf.js": "2b678d21551832a60ace4e415566135e8ae132a8",
+    "/ba-native-webtechnologien/index.html": "6136dfe037b1013acfd422a75ccc74c7641b8df4",
+    "/ba-native-webtechnologien/main-es2015.0eac679eab054d80f9cb.js": "d87189fff873f30d17f1cd183a36f219f7d09c79",
+    "/ba-native-webtechnologien/main-es5.0eac679eab054d80f9cb.js": "5edf9b20e280befe74a3356d28d94d28a55e4ca4",
     "/ba-native-webtechnologien/manifest.webmanifest": "19b56e4d03be837ea3c13a2c141bac384bd38601",
     "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js": "f32c7aaca8b60df7a9dfa6cb8f2b7751b5d0832c",
     "/ba-native-webtechnologien/runtime-es2015.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/ba-native-webtechnologien/runtime-es5.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/ba-native-webtechnologien/scripts.fe6c8f7b5647e142def1.js": "26a2a76af27bf9b5b214574a59acaa092b8316a1",
-    "/ba-native-webtechnologien/styles.0a5fa6de0002c7cffdab.css": "f3e6296de5e4f431a0b3cb5c6c4965af6c8462b5"
+    "/ba-native-webtechnologien/styles.3de1755882190d840737.css": "95bc0dbf8d6672f54ace3312bc9c7120194b6574"
   },
   "navigationUrls": [
     {
