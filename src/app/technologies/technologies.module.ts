@@ -16,7 +16,7 @@ import {
   NOTIFICATIONS,
   ORIENTATION_SENSOR,
   PAYMENT_REQUEST,
-  PICTURE_IN_PICTURE, SCREEN_CAPTURE,
+  PICTURE_IN_PICTURE, POINTER_LOCK, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
   SERVICE_WORKER, SHAPE_DETECTION, TEXT_DETECTION,
@@ -70,6 +70,7 @@ import { DeviceMemoryComponent } from './demos/device-memory/device-memory.compo
 import { NetworkInformationComponent } from './demos/network-information/network-information.component';
 import { MediaCapabilitiesComponent } from './demos/media-capabilities/media-capabilities.component';
 import { KeyboardLockComponent } from './demos/keyboard-lock/keyboard-lock.component';
+import { PointerLockComponent } from './demos/pointer-lock/pointer-lock.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -175,6 +176,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: PICTURE_IN_PICTURE,
     component: PictureInPictureComponent
+  },
+  {
+    technology: POINTER_LOCK,
+    component: PointerLockComponent
   },
   {
     technology: SCREEN_CAPTURE,
@@ -283,7 +288,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     DeviceMemoryComponent,
     NetworkInformationComponent,
     MediaCapabilitiesComponent,
-    KeyboardLockComponent
+    KeyboardLockComponent,
+    PointerLockComponent
   ],
   imports: [
     SharedModule,
