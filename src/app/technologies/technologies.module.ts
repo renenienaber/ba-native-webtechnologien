@@ -8,7 +8,7 @@ import {
   FILE_SYSTEM_ACCESS,
   FULLSCREEN,
   GEOLOCATION, GYROSCOPE,
-  HTML_MEDIA_CAPTURE,
+  HTML_MEDIA_CAPTURE, KEYBOARD_LOCK,
   LOCAL_FONT_ACCESS, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
@@ -69,6 +69,7 @@ import { BatteryStatusComponent } from './demos/battery-status/battery-status.co
 import { DeviceMemoryComponent } from './demos/device-memory/device-memory.component';
 import { NetworkInformationComponent } from './demos/network-information/network-information.component';
 import { MediaCapabilitiesComponent } from './demos/media-capabilities/media-capabilities.component';
+import { KeyboardLockComponent } from './demos/keyboard-lock/keyboard-lock.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -122,6 +123,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: HTML_MEDIA_CAPTURE,
     component: HtmlMediaCaptureComponent
+  },
+  {
+    technology: KEYBOARD_LOCK,
+    component: KeyboardLockComponent
   },
   {
     technology: LOCAL_FONT_ACCESS,
@@ -277,7 +282,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     BatteryStatusComponent,
     DeviceMemoryComponent,
     NetworkInformationComponent,
-    MediaCapabilitiesComponent
+    MediaCapabilitiesComponent,
+    KeyboardLockComponent
   ],
   imports: [
     SharedModule,
