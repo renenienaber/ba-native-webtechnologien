@@ -19,15 +19,16 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
   album = 'Album-Name';
   artwork = [{ src: './assets/icons/icon-128x128.png', sizes: '128x128', type: 'image/png' }];
 
+  private defaultSkipTime = 5;
+
   isSupported(): boolean {
     return 'mediaSession' in navigator;
   }
 
   audioLoaded(): void {
-    this.setMetadata();
-    this.setSessionListeners();
     this.setAudioListeners();
-    this.updatePositionState();
+    this.setSessionListeners();
+    this.setMetadata();
   }
 
   setMetadata(): void {
@@ -44,20 +45,22 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
     const actionHandlers = [
       ['play', () => this.onPlay()],
       ['pause', () => this.onPause()],
-      ['seekto', ev => this.onSeekTo(ev)]
+      ['seekbackward', (ev) => this.onSeekBackward(ev)],
+      ['seekforward', (ev) => this.onSeekForward(ev)],
+      ['seekto', (ev) => this.onSeekTo(ev)]
     ];
 
-    const noSupportHandlers = [];
+    const noSupportActions = [];
     for (const [action, handler] of actionHandlers) {
       try {
         // @ts-ignore
         navigator.mediaSession.setActionHandler(action, handler);
       } catch (error) {
-        noSupportHandlers.push(action);
+        noSupportActions.push(action);
       }
     }
-    if (noSupportHandlers.length > 0) {
-      this.showError(`Keine Unterstützung für die Media-Session-Aktionen ${noSupportHandlers.join(', ')}.`);
+    if (noSupportActions.length > 0) {
+      this.showError(`Keine Unterstützung für die Media-Session-Aktionen ${noSupportActions.join(', ')}.`);
     }
   }
 
@@ -70,17 +73,30 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
     this.audioElement.pause();
   }
 
+  private onSeekBackward(event: any): void {
+    const skipTime = event.seekOffset || this.defaultSkipTime;
+    this.audioElement.currentTime = Math.max(this.audioElement.currentTime - skipTime, 0);
+    this.updatePositionState();
+  }
+
+  private onSeekForward(event: any): void {
+    const skipTime = event.seekOffset || this.defaultSkipTime;
+    this.audioElement.currentTime = Math.min(this.audioElement.currentTime + skipTime, this.audioElement.duration);
+    this.updatePositionState();
+  }
+
   private onSeekTo(event: any): void {
     if (event.fastSeek && ('fastSeek' in this.audioElement)) {
       // @ts-ignore
       this.audioElement.fastSeek(event.seekTime);
-    } else {
-      this.audioElement.currentTime = event.seekTime;
+      return;
     }
+    this.audioElement.currentTime = event.seekTime;
   }
 
   private setAudioListeners(): void {
     this.audioElement.addEventListener('play', () => {
+      this.updatePositionState();
       // @ts-ignore
       navigator.mediaSession.playbackState = 'playing';
     });
@@ -90,7 +106,7 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
     });
   }
 
-  updatePositionState() {
+  private updatePositionState() {
     // @ts-ignore
     if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession) {
       // @ts-ignore
