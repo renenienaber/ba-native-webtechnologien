@@ -1,4 +1,4 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
 import {fromEvent, Observable, Subscription} from 'rxjs';
 
