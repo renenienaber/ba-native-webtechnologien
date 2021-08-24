@@ -98,6 +98,7 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
 
   private setAudioListeners(): void {
     this.audioElement.addEventListener('play', () => {
+      this.updatePositionState();
       // @ts-ignore
       navigator.mediaSession.playbackState = 'playing';
     });
