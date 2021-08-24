@@ -29,6 +29,7 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
     this.setAudioListeners();
     this.setSessionListeners();
     this.setMetadata();
+    this.updatePositionState();
   }
 
   setMetadata(): void {
@@ -43,11 +44,11 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
 
   private setSessionListeners(): void {
     const actionHandlers = [
-      ['play', () => this.onPlay()],
-      ['pause', () => this.onPause()],
-      ['seekbackward', (ev) => this.onSeekBackward(ev)],
-      ['seekforward', (ev) => this.onSeekForward(ev)],
-      ['seekto', (ev) => this.onSeekTo(ev)]
+      ['play', () => this.onSessionPlay()],
+      ['pause', () => this.onSessionPause()],
+      ['seekbackward', (ev) => this.onSessionSeekBackward(ev)],
+      ['seekforward', (ev) => this.onSessionSeekForward(ev)],
+      ['seekto', (ev) => this.onSessionSeekTo(ev)]
     ];
 
     const noSupportActions = [];
@@ -64,39 +65,39 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
     }
   }
 
-  private onPlay(): void {
+  private onSessionPlay(): void {
     this.audioElement.play()
       .catch(err => this.showError(err));
   }
 
-  private onPause(): void {
+  private onSessionPause(): void {
     this.audioElement.pause();
   }
 
-  private onSeekBackward(event: any): void {
+  private onSessionSeekBackward(event: any): void {
     const skipTime = event.seekOffset || this.defaultSkipTime;
     this.audioElement.currentTime = Math.max(this.audioElement.currentTime - skipTime, 0);
     this.updatePositionState();
   }
 
-  private onSeekForward(event: any): void {
+  private onSessionSeekForward(event: any): void {
     const skipTime = event.seekOffset || this.defaultSkipTime;
     this.audioElement.currentTime = Math.min(this.audioElement.currentTime + skipTime, this.audioElement.duration);
     this.updatePositionState();
   }
 
-  private onSeekTo(event: any): void {
+  private onSessionSeekTo(event: any): void {
     if (event.fastSeek && ('fastSeek' in this.audioElement)) {
       // @ts-ignore
       this.audioElement.fastSeek(event.seekTime);
       return;
     }
     this.audioElement.currentTime = event.seekTime;
+    this.updatePositionState();
   }
 
   private setAudioListeners(): void {
     this.audioElement.addEventListener('play', () => {
-      this.updatePositionState();
       // @ts-ignore
       navigator.mediaSession.playbackState = 'playing';
     });
