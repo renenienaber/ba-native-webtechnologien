@@ -71,8 +71,12 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
   }
 
   private onSeekTo(event: any): void {
-    this.audioElement.currentTime = event.seekTime;
-    this.updatePositionState();
+    if (event.fastSeek && ('fastSeek' in this.audioElement)) {
+      // @ts-ignore
+      this.audioElement.fastSeek(event.seekTime);
+    } else {
+      this.audioElement.currentTime = event.seekTime;
+    }
   }
 
   private setAudioListeners(): void {
