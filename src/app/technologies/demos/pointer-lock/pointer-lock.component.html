@@ -2,4 +2,12 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <div>
+    <canvas
+      #canvasElement
+      fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+    ></canvas>
+  </div>
+  <button mat-raised-button (click)="requestPointerLock()">requestPointerLock()</button>
+</ng-template>
