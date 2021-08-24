@@ -14,7 +14,7 @@ import {
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
   MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING, NETWORK_INFORMATION,
   NOTIFICATIONS,
-  ORIENTATION_SENSOR,
+  ORIENTATION_SENSOR, PAGE_VISIBILITY,
   PAYMENT_REQUEST,
   PICTURE_IN_PICTURE, POINTER_LOCK, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
@@ -72,6 +72,7 @@ import { MediaCapabilitiesComponent } from './demos/media-capabilities/media-cap
 import { KeyboardLockComponent } from './demos/keyboard-lock/keyboard-lock.component';
 import { PointerLockComponent } from './demos/pointer-lock/pointer-lock.component';
 import { ClipboardComponent } from './demos/clipboard/clipboard.component';
+import { PageVisibilityComponent } from './demos/page-visibility/page-visibility.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -173,6 +174,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: ORIENTATION_SENSOR,
     component: OrientationSensorComponent
+  },
+  {
+    technology: PAGE_VISIBILITY,
+    component: PageVisibilityComponent
   },
   {
     technology: PAYMENT_REQUEST,
@@ -295,7 +300,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     MediaCapabilitiesComponent,
     KeyboardLockComponent,
     PointerLockComponent,
-    ClipboardComponent
+    ClipboardComponent,
+    PageVisibilityComponent
   ],
   imports: [
     SharedModule,
