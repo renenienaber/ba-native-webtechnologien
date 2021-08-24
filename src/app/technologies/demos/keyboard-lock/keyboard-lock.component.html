@@ -3,5 +3,33 @@
 </app-technology-page>
 
 <ng-template #demo>
-  
+  <div fxLayout="column" fxLayoutGap="15px">
+    <div>
+      <span>Keyboard Lock ist <strong>{{locked ? 'aktiv' : 'inaktiv'}}</strong></span>
+      <div>
+        <button
+          mat-raised-button
+          [disabled]="locked"
+          (click)="lockKeyboard()"
+        >
+          lock()
+        </button>
+        <button
+          mat-raised-button
+          [disabled]="!locked"
+          (click)="unlockKeyboard()"
+        >
+          unlock()
+        </button>
+      </div>
+    </div>
+    <div>
+      <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein (Fullscreen API), damit Keyboard Lock tatsächlich greift!:</span>
+      <div>
+        <button mat-raised-button (click)="activateFullscreen()">
+          requestFullscreen()
+        </button>
+      </div>
+    </div>
+  </div>
 </ng-template>
