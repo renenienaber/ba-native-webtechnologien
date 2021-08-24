@@ -1,1 +1,10 @@
-<p>page-visibility works!</p>
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <h5>Wenn Sichtbarkeit sich ändert, wird die Wiedergabe gestartet (hidden === false) oder pausiert (hidden === true).</h5>
+  <audio #audioElement controls>
+    <source src="./assets/media/file_example_MP3_1MG.mp3" type="audio/mp3">
+  </audio>
+</ng-template>
