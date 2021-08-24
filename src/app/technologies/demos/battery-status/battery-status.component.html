@@ -3,7 +3,13 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button mat-raised-button (click)="getBattery()">getBattery()</button>
+  <button
+    mat-raised-button
+    matTooltip="Erfasse Informationen"
+    (click)="getBattery()"
+  >
+    getBattery()
+  </button>
   <div class="flex-table">
     <div>
       <div class="mat-header-cell">Information</div>

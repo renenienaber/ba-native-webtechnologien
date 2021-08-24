@@ -4,9 +4,15 @@
 
 <ng-template #demo>
   <div>
-    <button mat-raised-button (click)="onShowOpenFilePicker()">Datei öffnen (showOpenFilePicker())</button>
+    <button
+      mat-raised-button
+      matTooltip="Datei öffnen"
+      (click)="onShowOpenFilePicker()"
+    >
+      showOpenFilePicker()
+    </button>
   </div>
-  <div fxLayout="column" fxLayoutAlign="space-between">
+  <div fxLayout="column">
     <mat-form-field appearance="fill">
       <mat-label>Texteditor</mat-label>
       <textarea
@@ -15,8 +21,20 @@
       ></textarea>
     </mat-form-field>
     <div>
-      <button mat-raised-button (click)="onShowSaveFilePicker()">Datei speichern (showSaveFilePicker())</button>
-      <button mat-raised-button (click)="onShowDirectoryPicker()">Ordner auswählen & speichern (showDirectoryPicker())</button>
+      <button
+        mat-raised-button
+        matTooltip="Datei speichern"
+        (click)="onShowSaveFilePicker()"
+      >
+        showSaveFilePicker()
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="Ordner auswählen & speichern"
+        (click)="onShowDirectoryPicker()"
+      >
+        showDirectoryPicker()
+      </button>
     </div>
   </div>
 </ng-template>

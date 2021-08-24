@@ -3,29 +3,51 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <p>Hinweis: Die Anwendung muss zur Darstellung von Badges ggf. installiert sein!</p>
-  <div class="badge">
-    <mat-form-field appearance="fill">
-      <mat-label>App Badge</mat-label>
-      <input matInput type="number" min="0" [(ngModel)]="numberAppBadge">
-    </mat-form-field>
-    <button mat-raised-button (click)="setAppBadge()">
-      setAppBadge()
-    </button>
-    <button mat-raised-button (click)="clearAppBadge()">
-      clearAppBadge()
-    </button>
-  </div>
-  <div class="badge">
-    <mat-form-field appearance="fill">
-      <mat-label>Client Badge</mat-label>
-      <input matInput type="number" min="0" [(ngModel)]="numberClientBadge">
-    </mat-form-field>
-    <button mat-raised-button (click)="setClientBadge()">
-      setClientBadge()
-    </button>
-    <button mat-raised-button (click)="clearClientBadge()">
-      clearClientBadge()
-    </button>
-  </div>
+  <mat-tab-group>
+    <mat-tab label="App Badges">
+      <p><strong>Hinweis: </strong>Die Anwendung muss zur Darstellung von App Badges ggf. installiert sein!</p>
+      <mat-form-field appearance="fill">
+        <mat-label>App Badge</mat-label>
+        <input matInput type="number" min="0" [(ngModel)]="numberAppBadge">
+      </mat-form-field>
+      <div>
+        <button
+          mat-raised-button
+          matTooltip="Setze App Badge"
+          (click)="setAppBadge()"
+        >
+          setAppBadge()
+        </button>
+        <button
+          mat-raised-button
+          (click)="clearAppBadge()"
+          matTooltip="Entferne App Badge"
+        >
+          clearAppBadge()
+        </button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Client Badges">
+      <mat-form-field appearance="fill">
+        <mat-label>Client Badge</mat-label>
+        <input matInput type="number" min="0" [(ngModel)]="numberClientBadge">
+      </mat-form-field>
+      <div>
+        <button
+          mat-raised-button
+          matTooltip="Setze Client Badge"
+          (click)="setClientBadge()"
+        >
+          setClientBadge()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Entferne Client Badge"
+          (click)="clearClientBadge()"
+        >
+          clearClientBadge()
+        </button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </ng-template>

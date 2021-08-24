@@ -3,7 +3,13 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button mat-raised-button (click)="initAndStartSensor()">start()</button>
+  <button
+    mat-raised-button
+    matTooltip="Starte Sensor"
+    (click)="initAndStartSensor()"
+  >
+    start()
+  </button>
   <div class="flex-table">
     <div>
       <div class="mat-header-cell">Attribut</div>

@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-accelerometer',
-  templateUrl: './accelerometer.component.html',
-  styleUrls: ['./accelerometer.component.css']
+  templateUrl: './accelerometer.component.html'
 })
 export class AccelerometerComponent extends TechnologyDemoComponent {
   private sensor: any;

@@ -8,18 +8,19 @@
         [(ngModel)]="searchTerm"
       >
       <mat-icon matPrefix>search</mat-icon>
-      <button *ngIf="searchTerm"
-              matSuffix
-              mat-icon-button
-              aria-label="Löschen"
-              (click)="searchTerm=''"
+      <button
+        *ngIf="searchTerm"
+        matSuffix
+        mat-icon-button
+        aria-label="Löschen"
+        (click)="searchTerm=''"
       >
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
   </div>
   <div class="search-filter">
-    <button mat-button [mat-menu-trigger-for]="menuFilter">
+    <button matTooltip="Suche filtern" mat-button [mat-menu-trigger-for]="menuFilter">
       <mat-icon
         matBadge="!"
         matBadgeSize="small"
@@ -40,7 +41,7 @@
     </mat-menu>
   </div>
   <div class="options">
-    <button mat-button [mat-menu-trigger-for]="menuOptions">
+    <button mat-button matTooltip="Anzeigeeinstellungen anpassen" [mat-menu-trigger-for]="menuOptions">
       <mat-icon>tune</mat-icon>
       <span fxHide.xs="true" fxHide.sm="true">Anzeigeeinstellungen</span>
     </button>
