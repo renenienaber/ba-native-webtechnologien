@@ -43,7 +43,8 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
   private setSessionListeners(): void {
     const actionHandlers = [
       ['play', () => this.onPlay()],
-      ['pause', () => this.onPause()]
+      ['pause', () => this.onPause()],
+      ['seekto', ev => this.onSeekTo(ev)]
     ];
 
     const noSupportHandlers = [];
@@ -61,11 +62,22 @@ export class MediaSessionStandardComponent extends TechnologyDemoComponent {
   }
 
   private onPlay(): void {
-    const play = this.audioElement.play();
+    this.audioElement.play()
+      .catch(err => this.showError(err));
   }
 
   private onPause(): void {
     this.audioElement.pause();
+  }
+
+  private onSeekTo(event: any): void {
+    if (event.fastSeek && ('fastSeek' in this.audioElement)) {
+      // @ts-ignore
+      this.audioElement.fastSeek(event.seekTime);
+    } else {
+      this.audioElement.currentTime = event.seekTime;
+      this.updatePositionState();
+    }
   }
 
   private setAudioListeners(): void {
