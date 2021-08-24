@@ -26,8 +26,12 @@
         </ng-container>
       </mat-button-toggle-group>
       <div>
-        <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein </span>
-        <a mat-stroked-button href="technology/fullscreen">Zur Fullscreen API</a>
+        <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein (Fullscreen API)</span>
+        <div>
+          <button mat-raised-button (click)="activateFullscreen()">
+            requestFullscreen()
+          </button>
+        </div>
       </div>
     </div>
   </ng-container>

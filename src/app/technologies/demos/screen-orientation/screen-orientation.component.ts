@@ -47,4 +47,17 @@ export class ScreenOrientationComponent extends TechnologyDemoComponent implemen
       this.showNoSupportError('window.screen.orientation');
     }
   }
+
+  activateFullscreen(): void {
+    if ('requestFullscreen' in document.documentElement) {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen()
+          .catch(err => this.showError(err));
+      } else {
+        this.showError('Vollbildmodus ist bereits aktiviert.');
+      }
+    } else {
+      this.showNoSupportError('Element.requestFullscreen()');
+    }
+  }
 }
