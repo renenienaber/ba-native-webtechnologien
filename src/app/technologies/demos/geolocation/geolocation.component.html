@@ -9,25 +9,25 @@
         <span>enableHighAccuracy</span>
       </mat-slide-toggle>
     </div>
-    <div>
+    <div fxLayoutGap="3px">
       <button
-        type="button"
         mat-raised-button
+        matTooltip="Erfasse Informationen einmalig"
         (click)="getCurrentPosition()"
       >
         getCurrentPosition()
       </button>
       <button
-        type="button"
         mat-raised-button
+        matTooltip="Aktualisiere Informationen in regelmäßigen Abständen"
         (click)="watchPosition()"
         [disabled]="!!watchId"
       >
         watchPosition()
       </button>
       <button
-        type="button"
         mat-raised-button
+        matTooltip="Stoppt die Erfassung der Informationen in regelmäßigen Abständen"
         (click)="clearWatch()"
         [disabled]="!watchId"
       >

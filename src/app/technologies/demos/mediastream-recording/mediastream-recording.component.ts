@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-mediastream-recording',
-  templateUrl: './mediastream-recording.component.html',
-  styleUrls: ['./mediastream-recording.component.css']
+  templateUrl: './mediastream-recording.component.html'
 })
 export class MediastreamRecordingComponent extends TechnologyDemoComponent {
   @ViewChild('videoElement', { static: false })
@@ -22,7 +21,7 @@ export class MediastreamRecordingComponent extends TechnologyDemoComponent {
   isRecording = false;
   recordedBlobs: any[] = [];
 
-  getVideo(): void {
+  getUserVideo(): void {
     if ('mediaDevices' in navigator) {
       navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then(stream => {

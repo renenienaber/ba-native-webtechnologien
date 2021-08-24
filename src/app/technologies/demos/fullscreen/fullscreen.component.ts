@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-fullscreen',
-  templateUrl: './fullscreen.component.html',
-  styleUrls: ['./fullscreen.component.css']
+  templateUrl: './fullscreen.component.html'
 })
 export class FullscreenComponent extends TechnologyDemoComponent {
   @ViewChild('videoElement', { static: false })

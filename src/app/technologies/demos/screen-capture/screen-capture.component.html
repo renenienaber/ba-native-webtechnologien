@@ -3,7 +3,11 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button mat-raised-button (click)="getDisplayMedia()">
+  <button
+    mat-raised-button
+    matTooltip="Erfasst den Bildschirm und gibt den erhaltenen MediaStream wieder"
+    (click)="getDisplayMedia()"
+  >
     getDisplayMedia()
   </button>
   <div>

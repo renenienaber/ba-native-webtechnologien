@@ -3,12 +3,16 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button mat-raised-button (click)="getFonts()">
-    Fonts anfragen (query())
+  <button
+    mat-raised-button
+    matTooltip="Fonts anfragen"
+    (click)="getFonts()"
+  >
+    query()
   </button>
-  <div *ngIf="result.length > 0">
-    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
-      <mat-label>Ergebnis (enthält nur einen Ausschnitt der Font-Informationen)</mat-label>
+  <div *ngIf="result.length > 0" fxLayout="column">
+    <mat-form-field appearance="fill">
+      <mat-label>Ergebnis (enthält nur einen Ausschnitt der resultierenden Font-Informationen)</mat-label>
       <textarea
         matInput
         [value]="result | json"

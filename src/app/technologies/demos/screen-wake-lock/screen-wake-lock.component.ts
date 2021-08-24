@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-screen-wake-lock',
-  templateUrl: './screen-wake-lock.component.html',
-  styleUrls: ['./screen-wake-lock.component.css']
+  templateUrl: './screen-wake-lock.component.html'
 })
 export class ScreenWakeLockComponent extends TechnologyDemoComponent implements OnDestroy {
   wakeLockSentinel;

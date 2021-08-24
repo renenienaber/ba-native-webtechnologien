@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-clipboard',
-  templateUrl: './clipboard.component.html',
-  styleUrls: ['./clipboard.component.css']
+  templateUrl: './clipboard.component.html'
 })
 export class ClipboardComponent extends TechnologyDemoComponent {
   clipboardText = '';
@@ -18,7 +17,7 @@ export class ClipboardComponent extends TechnologyDemoComponent {
   }
 
   readText(): void {
-    if(this.isSupported() && 'readText' in navigator.clipboard) {
+    if (this.isSupported() && 'readText' in navigator.clipboard) {
       navigator.clipboard.readText()
         .then(res => {
           this.clipboardText = res;
@@ -31,7 +30,7 @@ export class ClipboardComponent extends TechnologyDemoComponent {
   }
 
   writeText(): void {
-    if(this.isSupported() && 'writeText' in navigator.clipboard) {
+    if (this.isSupported() && 'writeText' in navigator.clipboard) {
       navigator.clipboard.writeText(this.clipboardText)
         .then(() => this.showError('Text wurde in die Zwischenablage gelegt.'))
         .catch(err => this.showError(err));

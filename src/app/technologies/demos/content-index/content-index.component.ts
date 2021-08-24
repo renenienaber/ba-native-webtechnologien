@@ -5,7 +5,6 @@ import {TECHNOLOGIES} from '../../../shared/functions';
 @Component({
   selector: 'app-content-index',
   templateUrl: './content-index.component.html',
-  styleUrls: ['./content-index.component.css']
 })
 export class ContentIndexComponent extends TechnologyDemoComponent implements OnInit {
   registration: ServiceWorkerRegistration;

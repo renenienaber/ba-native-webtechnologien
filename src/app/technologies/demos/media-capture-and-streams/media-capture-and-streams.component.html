@@ -3,15 +3,18 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div>
+  <div fxLayoutGap="3px">
+    <span>getUserMedia():</span>
     <button
       mat-raised-button
+      matTooltip="Erfasst Kamera und gibt erhaltenen MediaStream wieder"
       (click)="onVideoCapture()"
     >
       Video
     </button>
     <button
       mat-raised-button
+      matTooltip="Erfasst Mikrofon und gibt erhaltenen MediaStream wieder"
       (click)="onAudioCapture()"
     >
       Audio
@@ -22,7 +25,7 @@
       fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
       #videoElement
       autoplay
-      [hidden]="!videoElement.srcObject"></video>
+    ></video>
     <audio #audioElement autoplay hidden></audio>
   </div>
 </ng-template>

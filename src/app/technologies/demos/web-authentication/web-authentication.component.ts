@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-web-authentication',
-  templateUrl: './web-authentication.component.html',
-  styleUrls: ['./web-authentication.component.css']
+  templateUrl: './web-authentication.component.html'
 })
 export class WebAuthenticationComponent extends TechnologyDemoComponent {
   createPublicKey: PublicKeyCredentialCreationOptions = {

@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-network-information',
-  templateUrl: './network-information.component.html',
-  styleUrls: ['./network-information.component.css']
+  templateUrl: './network-information.component.html'
 })
 export class NetworkInformationComponent extends TechnologyDemoComponent {
   networkInformation;

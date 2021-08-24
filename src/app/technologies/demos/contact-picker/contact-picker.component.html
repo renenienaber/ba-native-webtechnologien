@@ -3,30 +3,34 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div>
-    <span>Anzufragende Kontakt-Eigenschaften:</span>
-    <ul>
-      <li *ngFor="let property of possibleContactProperties">
-        <mat-checkbox
-          color="primary"
-          [(ngModel)]="property.checked"
-          [disabled]="!property.enabled"
-        >
-          {{ property.property }}
-        </mat-checkbox>
-      </li>
-    </ul>
-  </div>
-  <div>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <div>
+      <span>Anzufragende Kontakt-Eigenschaften:</span>
+      <ul>
+        <li *ngFor="let property of possibleContactProperties">
+          <mat-checkbox
+            color="primary"
+            [(ngModel)]="property.checked"
+            [disabled]="!property.enabled"
+          >
+            {{ property.property }}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </div>
     <mat-slide-toggle color="primary" [(ngModel)]="multiple">
       Mehrfachauswahl
     </mat-slide-toggle>
-  </div>
-  <button mat-raised-button (click)="selectContacts()">
-    select()
-  </button>
-  <div *ngIf="result">
-    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+    <div>
+      <button
+        mat-raised-button
+        matTooltip="Öffne Auswahlfenster für eingestellte Parameter"
+        (click)="selectContacts()"
+      >
+        select()
+      </button>
+    </div>
+    <mat-form-field *ngIf="result" appearance="fill">
       <mat-label>Ergebnis</mat-label>
       <textarea
         matInput

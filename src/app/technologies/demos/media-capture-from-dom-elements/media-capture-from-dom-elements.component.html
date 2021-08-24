@@ -3,9 +3,9 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <h3>Am Beispiel eines HTMLVideoElement</h3>
-  <div [hidden]="!videoElement.srcObject">
-    <div fxLayout="column" fxLayoutGap="10px">
+  <h4>Am Beispiel eines HTMLVideoElement</h4>
+  <div fxLayout="column" fxLayoutGap="20px">
+    <section fxLayout="column">
       <span>Quelle:</span>
       <div>
         <video
@@ -18,7 +18,9 @@
           <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
         </video>
       </div>
-      <span>Ausgabe:</span>
+    </section>
+    <section fxLayout="column">
+      <span>Ausgabe: {{ videoElement.srcObject ? '' : errorNoSupport}}</span>
       <div>
         <video
           fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
@@ -27,9 +29,6 @@
           autoplay
         ></video>
       </div>
-    </div>
+    </section>
   </div>
-  <ng-container *ngIf="!videoElement.srcObject">
-    {{ errorNoSupport }}
-  </ng-container>
 </ng-template>

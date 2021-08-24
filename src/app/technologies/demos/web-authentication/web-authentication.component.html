@@ -3,21 +3,23 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div class="container">
+  <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="start start">
     <button
       type="button"
+      matTooltip="Legt eine Authentifikationsmethode fest und erstellt einen öffentlichen Schlüssel dafür"
       mat-raised-button
       (click)="createCredential()"
     >
-      create PublicKey
+      create()
     </button>
     <button
       type="button"
+      matTooltip="Fragt den öffentlichen Schlüssel unter Nutzung der Authentifikationsmethode an"
       mat-raised-button
       (click)="getCredential()"
       [disabled]="!tempCredential"
     >
-      get PublicKey
+      get()
     </button>
   </div>
 </ng-template>

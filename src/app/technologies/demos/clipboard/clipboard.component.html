@@ -4,17 +4,30 @@
 
 <ng-template #demo>
   <h4>Am Beispiel von Textinhalten</h4>
-  <div>
-    <button mat-raised-button (click)="readText()">readText()</button>
-    <button mat-raised-button (click)="writeText()">writeText()</button>
-    <div>
-      <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
-        <mat-label>Zwischenablage-Text</mat-label>
-        <textarea
-          matInput
-          [(ngModel)]="clipboardText"
-        ></textarea>
-      </mat-form-field>
+  <div fxLayout="column">
+    <div fxLayoutGap="3px">
+      <button
+        mat-raised-button
+        matTooltip="Lese Text aus Zwischenablage"
+        (click)="readText()"
+      >
+        readText()
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="Schreibe Text in Zwischenablage"
+        (click)="writeText()"
+      >
+        writeText()
+      </button>
     </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Zwischenablage-Text</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="clipboardText"
+      ></textarea>
+    </mat-form-field>
   </div>
 </ng-template>

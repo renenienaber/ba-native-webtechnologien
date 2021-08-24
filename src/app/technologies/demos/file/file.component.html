@@ -4,14 +4,12 @@
 
 <ng-template #demo>
   <h4>Am Beispiel von .txt-Dateien</h4>
-  <div>
+  <div fxLayout="column">
     <input type="file" accept=".txt" (change)="onFileInputChanged($event.target)">
-  </div>
-  <div *ngIf="fileList && result === undefined">
-    Datei wird nicht unterstützt! Bitte eine .txt-Datei auswählen.
-  </div>
-  <div *ngIf="result !== undefined">
-    <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+    <div *ngIf="fileList && result === undefined">
+      Datei wird nicht unterstützt! Bitte eine .txt-Datei auswählen.
+    </div>
+    <mat-form-field *ngIf="result !== undefined" appearance="fill">
       <mat-label>Dateiinhalt</mat-label>
       <textarea
         matInput

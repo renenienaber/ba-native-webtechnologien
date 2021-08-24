@@ -23,3 +23,7 @@ textarea {
   overflow: hidden;
   word-wrap: break-word;
 }
+
+video, canvas {
+  border: 1px solid black;
+}

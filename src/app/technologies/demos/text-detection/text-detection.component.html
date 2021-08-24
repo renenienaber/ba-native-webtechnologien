@@ -10,7 +10,11 @@
       fxFlex="50%" fxFlex.xs="75%" fxFlex.sm="75%"
     >
   </div>
-  <button mat-raised-button (click)="detectText()">
+  <button
+    mat-raised-button
+    matTooltip="Versucht, einen Text in dem vorliegenden Bild zu finden"
+    (click)="detectText()"
+  >
     detect()
   </button>
   <div *ngIf="results">

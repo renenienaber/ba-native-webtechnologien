@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-payment-request',
-  templateUrl: './payment-request.component.html',
-  styleUrls: ['./payment-request.component.css']
+  templateUrl: './payment-request.component.html'
 })
 export class PaymentRequestComponent extends TechnologyDemoComponent {
   details: PaymentDetailsInit = {

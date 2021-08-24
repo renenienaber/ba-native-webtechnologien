@@ -4,26 +4,20 @@
 
 <ng-template #demo>
   <ng-container *ngIf="isSupported() else noSupport">
-    <h4>Am Beispiel eines HTMLAudioElement (Synchronisation zwischen MediaSession und Medienwiedergabe)</h4>
-    <div>
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Titel</mat-label>
-          <input matInput type="text" [(ngModel)]="title" (ngModelChange)="setMetadata()">
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Künstler</mat-label>
-          <input matInput type="text" [(ngModel)]="artist" (ngModelChange)="setMetadata()">
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Album</mat-label>
-          <input matInput type="text" [(ngModel)]="album" (ngModelChange)="setMetadata()">
-        </mat-form-field>
-      </div>
+    <h4>Am Beispiel eines HTMLAudioElement</h4>
+    <div fxLayoutGap="3px">
+      <mat-form-field appearance="fill">
+        <mat-label>Titel</mat-label>
+        <input matInput type="text" [(ngModel)]="title" (ngModelChange)="setMetadata()">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Künstler</mat-label>
+        <input matInput type="text" [(ngModel)]="artist" (ngModelChange)="setMetadata()">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Album</mat-label>
+        <input matInput type="text" [(ngModel)]="album" (ngModelChange)="setMetadata()">
+      </mat-form-field>
     </div>
     <audio #audioElement (loadedmetadata)="audioLoaded()" controls>
       <source src="./assets/media/file_example_MP3_1MG.mp3" type="audio/mp3">

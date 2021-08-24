@@ -3,40 +3,60 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div fxLayout="column" fxLayoutGap="10px">
-    <span>Quelle:</span>
-    <button mat-raised-button (click)="getVideo()">
-      getUserMedia()
-    </button>
-    <div>
-      <video
-        fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
-        #videoElement
-        [hidden]="!videoElement.srcObject"
-        playsinline
-        autoplay
-        [muted]="'muted'"
+  <h4>Am Beispiel eines HTMLVideoElement</h4>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section>
+      <button
+        mat-raised-button
+        matTooltip="Greift zunächst auf die Kamera zu, um einen MediaStream entgegenzunehmen (navigator.mediaDevices.getUserMedia())"
+        (click)="getUserVideo()"
       >
-      </video>
-    </div>
-    <div *ngIf="videoElement.srcObject">
-      <button mat-raised-button *ngIf="!isRecording" [disabled]="!mediaRecorder" (click)="startRecording()">
-        Starte Aufnahme
+        getUserMedia()
       </button>
-      <button mat-raised-button *ngIf="isRecording" [disabled]="!mediaRecorder" (click)="stopRecording()">
-        Stoppe Aufnahme
-      </button>
-    </div>
-    <span>Ausgabe:</span>
-    <div>
-      <video
-        fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
-        #recordedVideoElement
-        playsinline
-        autoplay
-        loop
-        controls
-      ></video>
-    </div>
+    </section>
+    <section fxLayout="column">
+      <span>Eingabe (MediaStream):</span>
+      <div>
+        <video
+          fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+          #videoElement
+          playsinline
+          autoplay
+          [muted]="'muted'"
+        >
+        </video>
+      </div>
+      <div fxLayoutGap="3px">
+        <button
+          mat-raised-button
+          matTooltip="Startet Aufnahme des eingehenden MediaStreams"
+          [disabled]="!mediaRecorder || isRecording"
+          (click)="startRecording()"
+        >
+          start()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Stoppt die Aufnahme des eingehenden MediaStreams und zeigt sie anschließend an"
+          [disabled]="!mediaRecorder || !isRecording"
+          (click)="stopRecording()"
+        >
+          stop()
+        </button>
+      </div>
+    </section>
+    <section fxLayout="column">
+      <span>Aufgenommenes Video:</span>
+      <div>
+        <video
+          fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+          #recordedVideoElement
+          playsinline
+          autoplay
+          loop
+          controls
+        ></video>
+      </div>
+    </section>
   </div>
 </ng-template>

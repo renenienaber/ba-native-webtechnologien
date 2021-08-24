@@ -5,26 +5,25 @@
 <ng-template #demo>
   <div>
     <mat-form-field>
-      <mat-label>Vibrationsdauer</mat-label>
+      <mat-label>Vibrationsdauer (in ms)</mat-label>
       <input matInput type="number" min="0" [(ngModel)]="duration">
     </mat-form-field>
     <button
-      type="button"
-      mat-mini-fab
-      color="primary"
+      mat-raised-button
+      matTooltip="Führt die Vibration mit der eingegebenen Dauer durch"
       (click)="vibrate()"
     >
-      <mat-icon>vibration</mat-icon>
+      vibrate()
     </button>
   </div>
 
   <div>
     <button
-      type="button"
       mat-raised-button
+      matTooltip="Führt die Vibration in einem vordefinierten Muster durch"
       (click)="vibratePattern()"
     >
-      Vibriere 3 mal
+      vibrate(PATTERN)
     </button>
   </div>
 </ng-template>

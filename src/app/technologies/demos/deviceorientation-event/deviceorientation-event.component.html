@@ -5,8 +5,12 @@
 <ng-template #demo>
   <mat-tab-group>
     <mat-tab label="DeviceOrientationEvent">
-      <button mat-raised-button (click)="startOrientationListening()">
-        starte EventListener
+      <button
+        mat-raised-button
+        matTooltip="Starte Event-Listener und erfasse Informationen"
+        (click)="startOrientationListening()"
+      >
+        DeviceOrientationEvent
       </button>
       <section>
         <div class="flex-table">
@@ -33,12 +37,16 @@
         </div>
       </section>
     </mat-tab>
-    <mat-tab fxLayout="column" label="DeviceMotionEvent">
-      <button mat-raised-button (click)="startMotionListening()">
-        starte EventListener
+    <mat-tab label="DeviceMotionEvent" fxLayout="column">
+      <button
+        mat-raised-button
+        matTooltip="Starte Event-Listener und erfasse Informationen"
+        (click)="startMotionListening()"
+      >
+        DeviceMotionEvent
       </button>
-      <section>Intervall: {{ deviceMotionEvent?.interval }} ms</section>
-      <div>
+      <div>Intervall: {{ deviceMotionEvent?.interval }} ms</div>
+      <div fxLayout="column" fxLayoutGap="20px">
         <section>
           <strong>Beschleunigung (acceleration)</strong>
           <div class="flex-table">

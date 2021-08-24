@@ -3,15 +3,28 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div>
-    <video #videoElement fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" controls>
-      <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
-    </video>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <div>
+      <video #videoElement fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" controls>
+        <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div fxLayoutGap="3px">
+      <span>requestFullscreen():</span>
+      <button
+        mat-raised-button
+        matTooltip="Starte Vollbildmodus für das Video (HTMLVideoElement, erbt von Element)"
+        (click)="activateFullscreen('video')"
+      >
+        Element
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="Starte Vollbildmodus für die gesamte Anwendung"
+        (click)="activateFullscreen('document')"
+      >
+        document
+      </button>
+    </div>
   </div>
-  <button mat-raised-button (click)="activateFullscreen('video')">
-    requestFullscreen() (video)
-  </button>
-  <button mat-raised-button (click)="activateFullscreen('document')">
-    requestFullscreen() (document)
-  </button>
 </ng-template>

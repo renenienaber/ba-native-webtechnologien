@@ -4,8 +4,7 @@ import {fromEvent, Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-device-orientation',
-  templateUrl: './deviceorientation-event.component.html',
-  styleUrls: ['./deviceorientation-event.component.css']
+  templateUrl: './deviceorientation-event.component.html'
 })
 export class DeviceorientationEventComponent extends TechnologyDemoComponent implements OnDestroy {
   deviceOrientation$: Observable<Event>;

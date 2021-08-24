@@ -1,10 +1,9 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-media-capture-from-dom-elements',
-  templateUrl: './media-capture-from-dom-elements.component.html',
-  styleUrls: ['./media-capture-from-dom-elements.component.css']
+  templateUrl: './media-capture-from-dom-elements.component.html'
 })
 export class MediaCaptureFromDomElementsComponent extends TechnologyDemoComponent {
   @ViewChild('sourceVideoElement', { static: false })
@@ -16,7 +15,6 @@ export class MediaCaptureFromDomElementsComponent extends TechnologyDemoComponen
     this.videoElement = ref.nativeElement;
   }
 
-  isSupported = false;
   errorNoSupport = 'HTMLVideoElement.captureStream() wird nicht unterstützt!';
 
   sourceVideoElement: HTMLVideoElement;

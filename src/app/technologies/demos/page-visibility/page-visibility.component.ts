@@ -1,11 +1,10 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
 import {fromEvent, Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-page-visibility',
-  templateUrl: './page-visibility.component.html',
-  styleUrls: ['./page-visibility.component.css']
+  templateUrl: './page-visibility.component.html'
 })
 export class PageVisibilityComponent extends TechnologyDemoComponent implements AfterViewInit, OnDestroy {
   @ViewChild('audioElement', { static: false })

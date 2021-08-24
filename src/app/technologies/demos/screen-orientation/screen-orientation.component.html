@@ -4,35 +4,46 @@
 
 <ng-template #demo>
   <ng-container *ngIf="isSupported else noSupport">
-    <div class="flex-table">
-      <div>
-        <div class="mat-header-cell">Attribut</div>
-        <div class="mat-header-cell">Wert</div>
-      </div>
-      <div>
-        <div>OrientationType</div>
-        <div>{{orientationType}}</div>
-      </div>
-      <div>
-        <div>Angle</div>
-        <div>{{orientationAngle}}</div>
-      </div>
-    </div>
-    <div fxLayout="column wrap" fxLayoutGap="15px" id="locking">
-      <span>Bildschirm-Orientierung fixieren (lock()):</span>
-      <mat-button-toggle-group (change)="onOrientationLockChange($event.value)">
-        <ng-container *ngFor="let type of possibleOrientationLockTypes">
-          <mat-button-toggle value="{{type}}">{{type}}</mat-button-toggle>
-        </ng-container>
-      </mat-button-toggle-group>
-      <div>
-        <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein (Fullscreen API)</span>
-        <div>
-          <button mat-raised-button (click)="activateFullscreen()">
-            requestFullscreen()
-          </button>
+    <div fxLayout="column" fxLayoutGap="20px">
+      <section>
+        <div class="flex-table">
+          <div>
+            <div class="mat-header-cell">Attribut</div>
+            <div class="mat-header-cell">Wert</div>
+          </div>
+          <div>
+            <div>OrientationType</div>
+            <div>{{orientationType}}</div>
+          </div>
+          <div>
+            <div>Angle</div>
+            <div>{{orientationAngle}}</div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section fxLayout="column" fxLayoutGap="10px">
+        <div fxLayout="column">
+          <span>Bildschirm-Orientierung fixieren (lock()):</span>
+          <mat-button-toggle-group (change)="onOrientationLockChange($event.value)">
+            <ng-container *ngFor="let type of possibleOrientationLockTypes">
+              <mat-button-toggle value="{{type}}">{{type}}</mat-button-toggle>
+            </ng-container>
+          </mat-button-toggle-group>
+        </div>
+
+        <div>
+          <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein (Fullscreen API)</span>
+          <div>
+            <button
+              mat-raised-button
+              matTooltip="Starte Vollbildmodus für die gesamte Anwendung (Fullscreen API)"
+              (click)="activateFullscreen()">
+              requestFullscreen()
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   </ng-container>
   <ng-template #noSupport>

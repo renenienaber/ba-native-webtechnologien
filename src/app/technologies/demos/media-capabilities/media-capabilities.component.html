@@ -3,11 +3,11 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <h3>Am Beispiel vorgefertigter Konfigurationen</h3>
+  <h4>Am Beispiel vorgefertigter Konfigurationen</h4>
   <mat-tab-group>
     <mat-tab label="decodingInfo()">
-      <div>
-        <mat-form-field appearance="fill" fxFlex="100%">
+      <div fxLayout="column">
+        <mat-form-field appearance="fill">
           <mat-label>Eingabe-Konfiguration</mat-label>
           <textarea
             matInput
@@ -15,22 +15,30 @@
             disabled
           ></textarea>
         </mat-form-field>
-      </div>
-      <button mat-raised-button (click)="getDecodingInfo()">decodingInfo()</button>
-      <div class="flex-table">
-        <div>
-          <div class="mat-header-cell">Attribut</div>
-          <div class="mat-header-cell">Wert</div>
+        <div style="margin: 3px">
+          <button
+            mat-raised-button
+            matTooltip="Erfasse Dekodierungs-Fähigkeiten des Gerätes für dargestellte Konfiguration"
+            (click)="getDecodingInfo()"
+          >
+            decodingInfo()
+          </button>
         </div>
-        <div *ngFor="let a of ['supported', 'smooth', 'powerEfficient']">
-          <div>{{a}}</div>
-          <div>{{ decodingInfoResult ? decodingInfoResult[a] : undefined }}</div>
+        <div class="flex-table">
+          <div>
+            <div class="mat-header-cell">Attribut</div>
+            <div class="mat-header-cell">Wert</div>
+          </div>
+          <div *ngFor="let a of ['supported', 'smooth', 'powerEfficient']">
+            <div>{{a}}</div>
+            <div>{{ decodingInfoResult ? decodingInfoResult[a] : undefined }}</div>
+          </div>
         </div>
       </div>
     </mat-tab>
     <mat-tab label="encodingInfo()">
-      <div>
-        <mat-form-field appearance="fill" fxFlex="100%">
+      <div fxLayout="column">
+        <mat-form-field appearance="fill">
           <mat-label>Eingabe-Konfiguration</mat-label>
           <textarea
             matInput
@@ -38,16 +46,24 @@
             disabled
           ></textarea>
         </mat-form-field>
-      </div>
-      <button mat-raised-button (click)="getEncodingInfo()">encodingInfo()</button>
-      <div class="flex-table">
-        <div>
-          <div class="mat-header-cell">Attribut</div>
-          <div class="mat-header-cell">Wert</div>
+        <div style="margin: 3px">
+          <button
+            mat-raised-button
+            matTooltip="Erfasse Kodierungs-Fähigkeiten des Gerätes für dargestellte Konfiguration"
+            (click)="getEncodingInfo()"
+          >
+            encodingInfo()
+          </button>
         </div>
-        <div *ngFor="let a of ['supported', 'smooth', 'powerEfficient']">
-          <div>{{a}}</div>
-          <div>{{ encodingInfoResult ? encodingInfoResult[a] : undefined }}</div>
+        <div class="flex-table">
+          <div>
+            <div class="mat-header-cell">Attribut</div>
+            <div class="mat-header-cell">Wert</div>
+          </div>
+          <div *ngFor="let a of ['supported', 'smooth', 'powerEfficient']">
+            <div>{{a}}</div>
+            <div>{{ encodingInfoResult ? encodingInfoResult[a] : undefined }}</div>
+          </div>
         </div>
       </div>
     </mat-tab>

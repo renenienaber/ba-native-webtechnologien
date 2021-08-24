@@ -8,7 +8,11 @@
       <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
     </video>
   </div>
-  <button mat-raised-button (click)="togglePicInPic()">
-    Picture-in-Picture anfragen/beenden
+  <button
+    mat-raised-button
+    matTooltip="Schaltet den Bild-im-Bild-Modus ein (requestPictureInPicture()) bzw. aus (exitPictureInPicture())"
+    (click)="togglePicInPic()"
+  >
+    Picture-in-Picture
   </button>
 </ng-template>

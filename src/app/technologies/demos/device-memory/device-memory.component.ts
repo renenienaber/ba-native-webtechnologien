@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-device-memory',
-  templateUrl: './device-memory.component.html',
-  styleUrls: ['./device-memory.component.css']
+  templateUrl: './device-memory.component.html'
 })
 export class DeviceMemoryComponent extends TechnologyDemoComponent {
   deviceMemory;

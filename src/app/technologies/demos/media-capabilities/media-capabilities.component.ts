@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-media-capabilities',
-  templateUrl: './media-capabilities.component.html',
-  styleUrls: ['./media-capabilities.component.css']
+  templateUrl: './media-capabilities.component.html'
 })
 export class MediaCapabilitiesComponent extends TechnologyDemoComponent {
   private mediaConfig = {

@@ -3,36 +3,44 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div class="permission">
-    <span>Erlaubnis Status: {{ permissionStatus }}</span>
-    <button mat-raised-button (click)="requestPermission()">
-      Erlaubnis anfordern
-    </button>
-  </div>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section fxLayoutGap="10px">
+      <span>Erlaubnis-Status: {{ permissionStatus }}</span>
+      <button
+        mat-raised-button
+        matTooltip="Fordert Erlaubnis für die Ausgabe von Benachrichtigungen an"
+        (click)="requestPermission()">
+        requestPermission()
+      </button>
+    </section>
 
-  <div class="notificationValues">
-    <mat-form-field appearance="fill">
-      <mat-label>Titel</mat-label>
-      <input matInput type="text" [(ngModel)]="notificationTitle">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Nachricht</mat-label>
-      <textarea matInput [(ngModel)]="notificationBody"></textarea>
-    </mat-form-field>
-  </div>
+    <section fxLayout="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Titel</mat-label>
+        <input matInput type="text" [(ngModel)]="notificationTitle">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nachricht</mat-label>
+        <textarea matInput [(ngModel)]="notificationBody"></textarea>
+      </mat-form-field>
+    </section>
 
-  <div>
-    <button
-      mat-raised-button
-      (click)="createNewNotification()"
-    >
-      window.Notification
-    </button>
-    <button
-      mat-raised-button
-      (click)="createNewServiceWorkerNotification()"
-    >
-      ServiceWorkerRegistration.showNotification()
-    </button>
+    <section fxLayoutGap="3px">
+      <span>Zeige Benachrichtung:</span>
+      <button
+        mat-raised-button
+        matTooltip="Zeigt die Benachrichtigung per window.Notification an"
+        (click)="createNewNotification()"
+      >
+        Notification
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="Zeigt die Benachrichtigung per ServiceWorkerRegistration.showNotification() an"
+        (click)="createNewServiceWorkerNotification()"
+      >
+        ServiceWorkerRegistration
+      </button>
+    </section>
   </div>
 </ng-template>

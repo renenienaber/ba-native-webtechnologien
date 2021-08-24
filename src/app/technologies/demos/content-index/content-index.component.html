@@ -3,8 +3,8 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div *ngIf="allContents.length > 0" fxLayout="column wrap">
-    <mat-form-field appearance="outline" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+  <div *ngIf="allContents.length > 0" fxLayout="column">
+    <mat-form-field appearance="outline">
       <mat-label>Bestehender Index</mat-label>
       <textarea
         matInput
@@ -23,14 +23,14 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-  <div>
+  <div fxLayout="column">
     <mat-form-field>
       <mat-label>Offline verfügbare Seite</mat-label>
       <mat-select (selectionChange)="onSelectionChanged($event.value)" required>
         <mat-option *ngFor="let dto of predefinedContentDtos" [value]="dto">{{dto.title}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <div *ngIf="newContentDto" fxLayout="column wrap">
+    <div *ngIf="newContentDto" fxLayout="column">
       <mat-form-field>
         <mat-label>Titel</mat-label>
         <input matInput type="text" [(ngModel)]="newContentDto.title">
@@ -42,10 +42,15 @@
           [(ngModel)]="newContentDto.description"
         ></textarea>
       </mat-form-field>
-      <button
-        mat-raised-button
-        (click)="addToIndex()"
-      >add()</button>
+      <div>
+        <button
+          matTooltip="Füge einen neuen Eintrag mit den eingegebenen Daten zum Content Index hinzu"
+          mat-raised-button
+          (click)="addToIndex()"
+        >
+          add()
+        </button>
+      </div>
     </div>
   </div>
 </ng-template>

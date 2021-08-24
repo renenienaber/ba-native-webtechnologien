@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-text-detection',
-  templateUrl: './text-detection.component.html',
-  styleUrls: ['./text-detection.component.css']
+  templateUrl: './text-detection.component.html'
 })
 export class TextDetectionComponent extends TechnologyDemoComponent {
   @ViewChild('textImgElement', { static: false })

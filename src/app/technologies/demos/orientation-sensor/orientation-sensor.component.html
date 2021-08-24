@@ -5,7 +5,14 @@
 <ng-template #demo>
   <mat-tab-group>
     <mat-tab label="AbsoluteOrientationSensor">
-      <button mat-raised-button (click)="initAndStartSensor('absolute')">start()</button>
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          (click)="initAndStartSensor('absolute')"
+        >
+          start()
+        </button>
+      </div>
       <div *ngIf="absoluteSensor">
         <div *ngFor="let el of absoluteMat4">
           {{ el | number }}
@@ -13,7 +20,14 @@
       </div>
     </mat-tab>
     <mat-tab label="RelativeOrientationSensor">
-      <button mat-raised-button (click)="initAndStartSensor('relative')">start()</button>
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          (click)="initAndStartSensor('relative')"
+        >
+          start()
+        </button>
+      </div>
       <div *ngIf="relativeSensor">
         <div *ngFor="let el of relativeMat4">
           {{ el | number }}

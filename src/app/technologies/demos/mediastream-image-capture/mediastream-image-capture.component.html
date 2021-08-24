@@ -3,33 +3,44 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div fxLayout="column" fxLayoutGap="10px">
-    <button
-      mat-raised-button
-      (click)="onGetUserVideo()"
-    >
-      Video (navigator.mediaDevices.getUserMedia())
-    </button>
-    <div>
-      <video
-        fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
-        #videoElement
-        autoplay
-        [hidden]="!videoElement.srcObject"
-      ></video>
-    </div>
-    <button
-      mat-raised-button
-      (click)="onGrabFrameClick()"
-      [disabled]="!imageCapture"
-    >
-      ImageCapture.grabFrame()
-    </button>
-    <div>
-      <canvas
-        fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
-        #canvasElement
-      ></canvas>
-    </div>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section>
+      <button
+        mat-raised-button
+        matTooltip="Greift zunächst auf die Kamera zu, um einen MediaStream entgegenzunehmen (navigator.mediaDevices.getUserMedia())"
+        (click)="onGetUserVideo()"
+      >
+        getUserMedia()
+      </button>
+    </section>
+    <section fxLayout="column">
+      <span>Eingabe (MediaStream):</span>
+      <div>
+        <video
+          fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+          #videoElement
+          autoplay
+        ></video>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          matTooltip="Hält den aktuellen Frame des eingehenden MediaStreams fest und zeigt diesen anschließend an"
+          (click)="onGrabFrameClick()"
+          [disabled]="!imageCapture"
+        >
+          grabFrame()
+        </button>
+      </div>
+    </section>
+    <section fxLayout="column">
+      <span>Ausgabe (Frame):</span>
+      <div>
+        <canvas
+          fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+          #canvasElement
+        ></canvas>
+      </div>
+    </section>
   </div>
 </ng-template>

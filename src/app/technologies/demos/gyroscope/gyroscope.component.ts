@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-gyroscope',
-  templateUrl: './gyroscope.component.html',
-  styleUrls: ['./gyroscope.component.css']
+  templateUrl: './gyroscope.component.html'
 })
 export class GyroscopeComponent extends TechnologyDemoComponent {
   private sensor: any;

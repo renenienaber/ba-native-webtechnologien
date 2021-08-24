@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-mediastream-image-capture',
-  templateUrl: './mediastream-image-capture.component.html',
-  styleUrls: ['./mediastream-image-capture.component.css']
+  templateUrl: './mediastream-image-capture.component.html'
 })
 export class MediastreamImageCaptureComponent extends TechnologyDemoComponent {
   @ViewChild('videoElement', { static: false })

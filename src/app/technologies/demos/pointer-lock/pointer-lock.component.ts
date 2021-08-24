@@ -4,8 +4,7 @@ import {fromEvent, Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-pointer-lock',
-  templateUrl: './pointer-lock.component.html',
-  styleUrls: ['./pointer-lock.component.css']
+  templateUrl: './pointer-lock.component.html'
 })
 export class PointerLockComponent extends TechnologyDemoComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvasElement', { static: false })

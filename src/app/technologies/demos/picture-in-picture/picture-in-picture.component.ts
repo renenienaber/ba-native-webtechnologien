@@ -4,8 +4,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-picture-in-picture',
-  templateUrl: './picture-in-picture.component.html',
-  styleUrls: ['./picture-in-picture.component.css']
+  templateUrl: './picture-in-picture.component.html'
 })
 
 export class PictureInPictureComponent extends TechnologyDemoComponent {

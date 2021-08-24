@@ -3,7 +3,13 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button mat-raised-button (click)="getNetworkInformation()">get Network Information</button>
+  <button
+    mat-raised-button
+    matTooltip="Erfasse Informationen"
+    (click)="getNetworkInformation()"
+  >
+    connection
+  </button>
   <div class="flex-table">
     <div>
       <div class="mat-header-cell">Attribut</div>

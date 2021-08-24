@@ -12,9 +12,14 @@
           fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="50%"
         >
       </div>
-      <button mat-raised-button (click)="detectBarcode()">
-        detect()
-      </button>
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Versucht, Barcodes in dem vorliegenden Bild zu finden"
+          (click)="detectBarcode()">
+          detect()
+        </button>
+      </div>
       <div *ngIf="barcodeResults">
         <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
           <mat-label>Ergebnis</mat-label>
@@ -34,9 +39,14 @@
           fxFlex="50%" fxFlex.xs="75%" fxFlex.sm="75%"
         >
       </div>
-      <button mat-raised-button (click)="detectFaces()">
-        detect()
-      </button>
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Versucht, Gesichter in dem vorliegenden Bild zu finden"
+          (click)="detectFaces()">
+          detect()
+        </button>
+      </div>
       <div *ngIf="faceResults">
         <mat-form-field appearance="fill" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
           <mat-label>Ergebnis</mat-label>

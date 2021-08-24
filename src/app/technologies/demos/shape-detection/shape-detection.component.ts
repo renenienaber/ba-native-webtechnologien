@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-shape-detection',
-  templateUrl: './shape-detection.component.html',
-  styleUrls: ['./shape-detection.component.css']
+  templateUrl: './shape-detection.component.html'
 })
 export class ShapeDetectionComponent extends TechnologyDemoComponent {
   @ViewChild('barcodeImgElement', { static: false })

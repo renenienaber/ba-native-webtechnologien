@@ -3,7 +3,7 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <div fxLayout="column wrap">
+  <div fxLayout="column">
     <mat-form-field appearance="fill">
       <mat-label>Titel</mat-label>
       <input matInput type="text" [(ngModel)]="shareData.title">
@@ -18,8 +18,8 @@
     </mat-form-field>
   </div>
   <button
-    type="button"
     mat-raised-button
+    matTooltip="Teile die eingegebenen Inhalte"
     (click)="share()"
   >
     share()

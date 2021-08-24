@@ -4,7 +4,6 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent extends TechnologyDemoComponent {
   private errorNoWindowNotification = 'window.Notification';

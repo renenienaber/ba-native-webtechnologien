@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-file-system-access',
-  templateUrl: './file-system-access.component.html',
-  styleUrls: ['./file-system-access.component.css']
+  templateUrl: './file-system-access.component.html'
 })
 export class FileSystemAccessComponent extends TechnologyDemoComponent {
   editor = 'Dies ist ein Textinhalt.';

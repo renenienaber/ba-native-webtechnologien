@@ -3,7 +3,6 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-html-media-capture',
-  templateUrl: './html-media-capture.component.html',
-  styleUrls: ['./html-media-capture.component.css']
+  templateUrl: './html-media-capture.component.html'
 })
 export class HtmlMediaCaptureComponent extends TechnologyDemoComponent {}

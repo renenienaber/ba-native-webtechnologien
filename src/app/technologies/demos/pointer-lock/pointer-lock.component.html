@@ -9,5 +9,11 @@
       fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
     ></canvas>
   </div>
-  <button mat-raised-button (click)="requestPointerLock()">requestPointerLock()</button>
+  <button
+    mat-raised-button
+    matTooltip="Aktiviert den Pointer Lock für das Canvas (HTMLCanvasElement, erbt von Element)"
+    (click)="requestPointerLock()"
+  >
+    requestPointerLock()
+  </button>
 </ng-template>

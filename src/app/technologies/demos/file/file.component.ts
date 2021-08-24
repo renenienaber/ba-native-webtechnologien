@@ -3,8 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-file',
-  templateUrl: './file.component.html',
-  styleUrls: ['./file.component.css']
+  templateUrl: './file.component.html'
 })
 export class FileComponent extends TechnologyDemoComponent {
   fileList;

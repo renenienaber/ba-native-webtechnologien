@@ -9,6 +9,7 @@
       <div>
         <button
           mat-raised-button
+          matTooltip="Aktiviere Keyboard Lock"
           [disabled]="locked"
           (click)="lockKeyboard()"
         >
@@ -16,6 +17,7 @@
         </button>
         <button
           mat-raised-button
+          matTooltip="Deaktiviere Keyboard Lock"
           [disabled]="!locked"
           (click)="unlockKeyboard()"
         >
@@ -24,9 +26,13 @@
       </div>
     </div>
     <div>
-      <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein (Fullscreen API), damit Keyboard Lock tatsächlich greift!:</span>
+      <span><strong>Hinweis: </strong>Vollbildmodus muss ggf. aktiviert sein, damit Keyboard Lock tatsächlich greift</span>
       <div>
-        <button mat-raised-button (click)="activateFullscreen()">
+        <button
+          mat-raised-button
+          matTooltip="Starte Vollbildmodus für die gesamte Anwendung (Fullscreen API)"
+          (click)="activateFullscreen()"
+        >
           requestFullscreen()
         </button>
       </div>
