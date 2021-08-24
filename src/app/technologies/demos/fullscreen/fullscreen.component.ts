@@ -14,17 +14,14 @@ export class FullscreenComponent extends TechnologyDemoComponent {
   videoElement: HTMLVideoElement;
 
   activateFullscreen(element: 'video' | 'document'): void {
-    if ('requestFullscreen' in this.videoElement) {
+    const fullscreenElement = element === 'video' ? this.videoElement : document.documentElement;
+
+    if ('requestFullscreen' in fullscreenElement) {
       if (!document.fullscreenElement) {
-        if (element === 'video') {
-          this.videoElement.requestFullscreen()
-            .catch(err => this.showError(err));
-        } else {
-          document.documentElement.requestFullscreen()
-            .catch(err => this.showError(err));
-        }
+        fullscreenElement.requestFullscreen()
+          .catch(err => this.showError(err));
       } else {
-        this.showError('Vollbildmodus ist bereits für ein Element aktiviert.');
+        this.showError('Vollbildmodus ist bereits aktiviert.');
       }
     } else {
       this.showNoSupportError('Element.requestFullscreen');
