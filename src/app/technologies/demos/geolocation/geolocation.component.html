@@ -3,60 +3,69 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="getCurrentPosition()"
-  >
-    getCurrentPosition()
-  </button>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="watchPosition()"
-    [disabled]="!!watchId"
-  >
-    watchPosition()
-  </button>
-  <button
-    type="button"
-    mat-raised-button
-    (click)="clearWatch()"
-    [disabled]="!watchId"
-  >
-    clearWatch()
-  </button>
-  <div *ngIf="currentPos">
-    <p>{{currentPos.timestamp | date: 'medium'}}</p>
-    <div *ngIf="currentPos.coords">
-      <a href="https://www.google.com/maps/@?api=1&map_action=map&center={{currentPos.coords.latitude}},{{currentPos.coords.longitude}}" target="_blank">
-        Längengrad: {{currentPos.coords.longitude  | number }}, Breitengrad: {{currentPos.coords.latitude | number}}
-      </a>
-      <div class="flex-table">
-        <div>
-          <div class="mat-header-cell">Attribut</div>
-          <div class="mat-header-cell">Wert</div>
-        </div>
-        <div>
-          <div>Höhenlage</div>
-          <div>{{currentPos.coords.altitude | number: '1.0-3'}} m</div>
-        </div>
-        <div>
-          <div>Genauigkeit Breiten- & Längengrad</div>
-          <div>{{currentPos.coords.accuracy | number: '1.0-3'}} m</div>
-        </div>
-        <div>
-          <div>Genauigkeit Höhenlage</div>
-          <div>{{currentPos.coords.altitudeAccuracy | number: '1.0-3'}} m</div>
-        </div>
-        <div>
-          <div>Richtung</div>
-          <div>{{currentPos.coords.heading | number: '1.0-3'}}°</div>
-        </div>
-        <div>
-          <div>Geschwindigkeit</div>
-          <div>{{currentPos.coords.speed | number: '1.0-3'}} m/s</div>
-        </div>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <div>
+      <mat-slide-toggle [(ngModel)]="options.enableHighAccuracy">
+        <span>enableHighAccuracy</span>
+      </mat-slide-toggle>
+    </div>
+    <div>
+      <button
+        type="button"
+        mat-raised-button
+        (click)="getCurrentPosition()"
+      >
+        getCurrentPosition()
+      </button>
+      <button
+        type="button"
+        mat-raised-button
+        (click)="watchPosition()"
+        [disabled]="!!watchId"
+      >
+        watchPosition()
+      </button>
+      <button
+        type="button"
+        mat-raised-button
+        (click)="clearWatch()"
+        [disabled]="!watchId"
+      >
+        clearWatch()
+      </button>
+    </div>
+    <div>{{currentPos?.timestamp | date: 'medium'}}</div>
+    <a
+      href="https://www.google.com/maps/@?api=1&map_action=map&center={{currentPos?.coords?.latitude}},{{currentPos?.coords?.longitude}}"
+      target="_blank"
+    >
+      <div>Längengrad: {{ currentPos?.coords?.longitude}}</div>
+      <div>Breitengrad: {{ currentPos?.coords?.latitude}}</div>
+    </a>
+    <div class="flex-table">
+      <div>
+        <div class="mat-header-cell">Attribut</div>
+        <div class="mat-header-cell">Wert</div>
+      </div>
+      <div>
+        <div>Höhenlage</div>
+        <div>{{currentPos?.coords?.altitude | number: '1.0-3'}} m</div>
+      </div>
+      <div>
+        <div>Genauigkeit Breiten- & Längengrad</div>
+        <div>{{currentPos?.coords?.accuracy | number: '1.0-3'}} m</div>
+      </div>
+      <div>
+        <div>Genauigkeit Höhenlage</div>
+        <div>{{currentPos?.coords?.altitudeAccuracy | number: '1.0-3'}} m</div>
+      </div>
+      <div>
+        <div>Richtung</div>
+        <div>{{currentPos?.coords?.heading | number: '1.0-3'}}°</div>
+      </div>
+      <div>
+        <div>Geschwindigkeit</div>
+        <div>{{currentPos?.coords?.speed | number: '1.0-3'}} m/s</div>
       </div>
     </div>
   </div>
