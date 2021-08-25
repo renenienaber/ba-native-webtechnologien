@@ -9,11 +9,7 @@
       <mat-card-content>
         <mat-accordion>
           <mat-expansion-panel *ngFor="let technology of category.technologies">
-            <mat-expansion-panel-header
-              class="support {{showCompatibility ? getClassByDetections(technology) : ''}}"
-              matTooltip="{{ technology.description }}"
-              matTooltipShowDelay="1000"
-            >
+            <mat-expansion-panel-header class="support {{showCompatibility ? getClassByDetections(technology) : ''}}">
               <mat-panel-title><mat-icon>{{technology.icon}}</mat-icon><a routerLink="/technology/{{technology.routerLink}}">{{technology.name}}</a></mat-panel-title>
             </mat-expansion-panel-header>
             <mat-card-subtitle *ngIf="showDescription">{{technology.description}}</mat-card-subtitle>
