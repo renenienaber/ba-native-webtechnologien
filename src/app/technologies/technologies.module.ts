@@ -1,5 +1,5 @@
 import {
-  ACCELEROMETER,
+  ACCELEROMETER, AMBIENT_LIGHT_SENSOR,
   BADGING, BATTERY_STATUS, CLIPBOARD,
   CONTACT_PICKER,
   CONTENT_INDEX, DEVICE_MEMORY,
@@ -70,11 +70,16 @@ import { KeyboardLockComponent } from './demos/keyboard-lock/keyboard-lock.compo
 import { PointerLockComponent } from './demos/pointer-lock/pointer-lock.component';
 import { ClipboardComponent } from './demos/clipboard/clipboard.component';
 import { PageVisibilityComponent } from './demos/page-visibility/page-visibility.component';
+import { AmbientLightSensorComponent } from './demos/ambient-light-sensor/ambient-light-sensor.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: ACCELEROMETER,
     component: AccelerometerComponent
+  },
+  {
+    technology: AMBIENT_LIGHT_SENSOR,
+    component: AmbientLightSensorComponent
   },
   {
     technology: BADGING,
@@ -298,7 +303,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     KeyboardLockComponent,
     PointerLockComponent,
     ClipboardComponent,
-    PageVisibilityComponent
+    PageVisibilityComponent,
+    AmbientLightSensorComponent
   ],
   imports: [
     SharedModule,
