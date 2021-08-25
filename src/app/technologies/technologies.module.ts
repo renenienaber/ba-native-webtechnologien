@@ -2,7 +2,7 @@ import {
   ACCELEROMETER, AMBIENT_LIGHT_SENSOR,
   BADGING, BATTERY_STATUS, CLIPBOARD,
   CONTACT_PICKER,
-  CONTENT_INDEX, DEVICE_MEMORY,
+  CONTENT_INDEX, DEVICE_MEMORY, DEVICE_POSTURE,
   DEVICEORIENTATION_EVENT,
   FILE,
   FILE_SYSTEM_ACCESS,
@@ -74,6 +74,7 @@ import { AmbientLightSensorComponent } from './demos/ambient-light-sensor/ambien
 import { MagnetometerComponent } from './demos/magnetometer/magnetometer.component';
 import { ProximitySensorComponent } from './demos/proximity-sensor/proximity-sensor.component';
 import { GeolocationSensorComponent } from './demos/geolocation-sensor/geolocation-sensor.component';
+import { DevicePostureComponent } from './demos/device-posture/device-posture.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -107,6 +108,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: DEVICE_MEMORY,
     component: DeviceMemoryComponent
+  },
+  {
+    technology: DEVICE_POSTURE,
+    component: DevicePostureComponent
   },
   {
     technology: DEVICEORIENTATION_EVENT,
@@ -322,7 +327,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     AmbientLightSensorComponent,
     MagnetometerComponent,
     ProximitySensorComponent,
-    GeolocationSensorComponent
+    GeolocationSensorComponent,
+    DevicePostureComponent
   ],
   imports: [
     SharedModule,
