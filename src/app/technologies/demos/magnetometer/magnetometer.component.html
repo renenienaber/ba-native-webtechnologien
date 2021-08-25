@@ -1,0 +1,50 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <mat-tab-group>
+    <mat-tab label="Magnetometer">
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Starte Sensor"
+          (click)="initAndStartSensor()"
+        >
+          start()
+        </button>
+      </div>
+      <div class="flex-table">
+        <div>
+          <div class="mat-header-cell">Attribut</div>
+          <div class="mat-header-cell">Wert</div>
+        </div>
+        <div *ngFor="let c of ['x', 'y', 'z']">
+          <div>{{c}}</div>
+          <div>{{ (results ? results[c] : undefined) | number: '1.1-1' }} μT</div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="UncalibratedMagnetometer">
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Starte Sensor"
+          (click)="initAndStartUncalibratedSensor()"
+        >
+          start()
+        </button>
+      </div>
+      <div class="flex-table">
+        <div>
+          <div class="mat-header-cell">Attribut</div>
+          <div class="mat-header-cell">Wert</div>
+        </div>
+        <div *ngFor="let c of ['x', 'y', 'z', 'xBias', 'yBias', 'zBias']">
+          <div>{{c}}</div>
+          <div>{{ (results ? results[c] : undefined) | number: '1.1-1' }} μT</div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>

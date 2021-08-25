@@ -9,7 +9,7 @@ import {
   FULLSCREEN,
   GEOLOCATION, GYROSCOPE,
   HTML_MEDIA_CAPTURE, KEYBOARD_LOCK,
-  LOCAL_FONT_ACCESS, MEDIA_CAPABILITIES,
+  LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
   MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING, NETWORK_INFORMATION,
@@ -71,6 +71,7 @@ import { PointerLockComponent } from './demos/pointer-lock/pointer-lock.componen
 import { ClipboardComponent } from './demos/clipboard/clipboard.component';
 import { PageVisibilityComponent } from './demos/page-visibility/page-visibility.component';
 import { AmbientLightSensorComponent } from './demos/ambient-light-sensor/ambient-light-sensor.component';
+import { MagnetometerComponent } from './demos/magnetometer/magnetometer.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -140,6 +141,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: LOCAL_FONT_ACCESS,
     component: LocalFontAccessComponent
+  },
+  {
+    technology: MAGNETOMETER,
+    component: MagnetometerComponent
   },
   {
     technology: MEDIA_CAPABILITIES,
@@ -304,7 +309,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     PointerLockComponent,
     ClipboardComponent,
     PageVisibilityComponent,
-    AmbientLightSensorComponent
+    AmbientLightSensorComponent,
+    MagnetometerComponent
   ],
   imports: [
     SharedModule,
