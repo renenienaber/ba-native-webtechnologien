@@ -16,7 +16,7 @@ import {
   NOTIFICATIONS,
   ORIENTATION_SENSOR, PAGE_VISIBILITY,
   PAYMENT_REQUEST,
-  PICTURE_IN_PICTURE, POINTER_LOCK, SCREEN_CAPTURE,
+  PICTURE_IN_PICTURE, POINTER_LOCK, PROXIMITY_SENSOR, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
   SERVICE_WORKER, SHAPE_DETECTION, TEXT_DETECTION,
@@ -72,6 +72,7 @@ import { ClipboardComponent } from './demos/clipboard/clipboard.component';
 import { PageVisibilityComponent } from './demos/page-visibility/page-visibility.component';
 import { AmbientLightSensorComponent } from './demos/ambient-light-sensor/ambient-light-sensor.component';
 import { MagnetometerComponent } from './demos/magnetometer/magnetometer.component';
+import { ProximitySensorComponent } from './demos/proximity-sensor/proximity-sensor.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -199,6 +200,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: PointerLockComponent
   },
   {
+    technology: PROXIMITY_SENSOR,
+    component: ProximitySensorComponent
+  },
+  {
     technology: SCREEN_CAPTURE,
     component: ScreenCaptureComponent
   },
@@ -310,7 +315,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ClipboardComponent,
     PageVisibilityComponent,
     AmbientLightSensorComponent,
-    MagnetometerComponent
+    MagnetometerComponent,
+    ProximitySensorComponent
   ],
   imports: [
     SharedModule,
