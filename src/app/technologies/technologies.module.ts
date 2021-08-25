@@ -12,7 +12,7 @@ import {
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
-  MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING, NETWORK_INFORMATION,
+  MEDIA_SESSION_STANDARD, MEDIASTREAM_IMAGE_CAPTURE, MEDIASTREAM_RECORDING, MULTI_SCREEN_WINDOW_PLACEMENT, NETWORK_INFORMATION,
   NOTIFICATIONS,
   ORIENTATION_SENSOR, PAGE_VISIBILITY,
   PAYMENT_REQUEST,
@@ -75,6 +75,7 @@ import { MagnetometerComponent } from './demos/magnetometer/magnetometer.compone
 import { ProximitySensorComponent } from './demos/proximity-sensor/proximity-sensor.component';
 import { GeolocationSensorComponent } from './demos/geolocation-sensor/geolocation-sensor.component';
 import { DevicePostureComponent } from './demos/device-posture/device-posture.component';
+import { MultiScreenWindowPlacementComponent } from './demos/multi-screen-window-placement/multi-screen-window-placement.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -178,12 +179,16 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: MediastreamImageCaptureComponent
   },
   {
-    technology: NETWORK_INFORMATION,
-    component: NetworkInformationComponent
-  },
-  {
     technology: MEDIASTREAM_RECORDING,
     component: MediastreamRecordingComponent
+  },
+  {
+    technology: MULTI_SCREEN_WINDOW_PLACEMENT,
+    component: MultiScreenWindowPlacementComponent
+  },
+  {
+    technology: NETWORK_INFORMATION,
+    component: NetworkInformationComponent
   },
   {
     technology: NOTIFICATIONS,
@@ -328,7 +333,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     MagnetometerComponent,
     ProximitySensorComponent,
     GeolocationSensorComponent,
-    DevicePostureComponent
+    DevicePostureComponent,
+    MultiScreenWindowPlacementComponent
   ],
   imports: [
     SharedModule,
