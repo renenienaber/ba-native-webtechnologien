@@ -2,4 +2,22 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Starte Sensor"
+    (click)="initAndStartSensor()"
+  >
+    start()
+  </button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div>
+      <div>Helligkeit</div>
+      <div>{{ result }} Lux</div>
+    </div>
+  </div>
+</ng-template>
