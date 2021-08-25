@@ -2,4 +2,22 @@
   <ng-container *ngTemplateOutlet="demo"></ng-container>
 </app-technology-page>
 
-<ng-template #demo></ng-template>
+<ng-template #demo>
+  <h4>Nutzung von setSinkId() am Beispiel eines HTMLAudioElement (erbt von HTMLMediaElement)</h4>
+  <div fxLayout="column">
+    <mat-form-field>
+      <mat-label>Audio-Ausgabegeräte (navigator.mediaDevices.enumerateDevices())</mat-label>
+      <mat-select (selectionChange)="onSelectionChanged($event.value)">
+        <mat-option
+          *ngFor="let device of audioDevices"
+          [value]="device"
+        >
+          {{device.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <audio #audioElement controls loop>
+      <source src="./assets/media/file_example_MP3_1MG.mp3" type="audio/mp3">
+    </audio>
+  </div>
+</ng-template>
