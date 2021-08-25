@@ -3,9 +3,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-ambient-light-sensor',
-  templateUrl: './ambient-light-sensor.component.html',
-  styles: [
-  ]
+  templateUrl: './ambient-light-sensor.component.html'
 })
 export class AmbientLightSensorComponent extends TechnologyDemoComponent {
   private sensor: any;
