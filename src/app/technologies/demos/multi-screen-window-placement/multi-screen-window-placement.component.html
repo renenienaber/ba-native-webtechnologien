@@ -3,5 +3,23 @@
 </app-technology-page>
 
 <ng-template #demo>
-  
+  <section fxLayout="column">
+    <div>
+      <button
+        mat-raised-button
+        matTooltip="Erfasse Informationen"
+        (click)="getScreens()"
+      >
+        getScreens()
+      </button>
+    </div>
+    <mat-form-field *ngIf="screensInfo" appearance="fill">
+      <mat-label>Ergebnis (lediglich Ausschnitt des tatsächlichen Rückgabeobjektes)</mat-label>
+      <textarea
+        matInput
+        [value]="screensInfo | json"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </section>
 </ng-template>
