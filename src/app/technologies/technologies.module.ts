@@ -1,5 +1,5 @@
 import {
-  ACCELEROMETER, AMBIENT_LIGHT_SENSOR,
+  ACCELEROMETER, AMBIENT_LIGHT_SENSOR, AUDIO_OUTPUT_DEVICES,
   BADGING, BATTERY_STATUS, CLIPBOARD,
   CONTACT_PICKER,
   CONTENT_INDEX, DEVICE_MEMORY, DEVICE_POSTURE,
@@ -76,6 +76,7 @@ import { ProximitySensorComponent } from './demos/proximity-sensor/proximity-sen
 import { GeolocationSensorComponent } from './demos/geolocation-sensor/geolocation-sensor.component';
 import { DevicePostureComponent } from './demos/device-posture/device-posture.component';
 import { MultiScreenWindowPlacementComponent } from './demos/multi-screen-window-placement/multi-screen-window-placement.component';
+import { AudioOutputDevicesComponent } from './demos/audio-output-devices/audio-output-devices.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -85,6 +86,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: AMBIENT_LIGHT_SENSOR,
     component: AmbientLightSensorComponent
+  },
+  {
+    technology: AUDIO_OUTPUT_DEVICES,
+    component: AudioOutputDevicesComponent
   },
   {
     technology: BADGING,
@@ -334,7 +339,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ProximitySensorComponent,
     GeolocationSensorComponent,
     DevicePostureComponent,
-    MultiScreenWindowPlacementComponent
+    MultiScreenWindowPlacementComponent,
+    AudioOutputDevicesComponent
   ],
   imports: [
     SharedModule,
