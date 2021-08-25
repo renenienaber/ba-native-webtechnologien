@@ -1,0 +1,46 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Starte Sensor"
+    (click)="initAndStartSensor()"
+  >
+    start()
+  </button>
+  <a
+    href="https://www.google.com/maps/@?api=1&map_action=map&center={{results?.latitude}},{{results?.longitude}}"
+    target="_blank"
+  >
+    <div>Breitengrad: {{ results?.latitude}}</div>
+    <div>Längengrad: {{ results?.longitude}}</div>
+  </a>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div>
+      <div>Höhenlage</div>
+      <div>{{results?.altitude | number: '1.0-1' }} m</div>
+    </div>
+    <div>
+      <div>Genauigkeit Breiten- & Längengrad</div>
+      <div>{{results?.accuracy | number: '1.0-1' }} m</div>
+    </div>
+    <div>
+      <div>Genauigkeit Höhenlage</div>
+      <div>{{results?.altitudeAccuracy | number: '1.0-1' }} m</div>
+    </div>
+    <div>
+      <div>Richtung</div>
+      <div>{{results?.heading | number: '1.0-0' }}°</div>
+    </div>
+    <div>
+      <div>Geschwindigkeit</div>
+      <div>{{results?.speed | number }} m/s</div>
+    </div>
+  </div>
+</ng-template>

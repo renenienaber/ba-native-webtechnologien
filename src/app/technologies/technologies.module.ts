@@ -7,7 +7,7 @@ import {
   FILE,
   FILE_SYSTEM_ACCESS,
   FULLSCREEN,
-  GEOLOCATION, GYROSCOPE,
+  GEOLOCATION, GEOLOCATION_SENSOR, GYROSCOPE,
   HTML_MEDIA_CAPTURE, KEYBOARD_LOCK,
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
@@ -73,6 +73,7 @@ import { PageVisibilityComponent } from './demos/page-visibility/page-visibility
 import { AmbientLightSensorComponent } from './demos/ambient-light-sensor/ambient-light-sensor.component';
 import { MagnetometerComponent } from './demos/magnetometer/magnetometer.component';
 import { ProximitySensorComponent } from './demos/proximity-sensor/proximity-sensor.component';
+import { GeolocationSensorComponent } from './demos/geolocation-sensor/geolocation-sensor.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -126,6 +127,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: GEOLOCATION,
     component: GeolocationComponent
+  },
+  {
+    technology: GEOLOCATION_SENSOR,
+    component: GeolocationSensorComponent
   },
   {
     technology: GYROSCOPE,
@@ -316,7 +321,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     PageVisibilityComponent,
     AmbientLightSensorComponent,
     MagnetometerComponent,
-    ProximitySensorComponent
+    ProximitySensorComponent,
+    GeolocationSensorComponent
   ],
   imports: [
     SharedModule,
