@@ -1,0 +1,23 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Erfasse Informationen für den Klick mit diesem Knopf"
+    (click)="getCapabilities($event)"
+  >
+    devicePosture
+  </button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div *ngFor="let c of ['firesTouchEvents', 'pointerMovementScrolls']">
+      <div>{{c}}</div>
+      <div>{{ capabilities ? capabilities[c] : undefined }}</div>
+    </div>
+  </div>
+</ng-template>

@@ -8,7 +8,7 @@ import {
   FILE_SYSTEM_ACCESS,
   FULLSCREEN,
   GEOLOCATION, GEOLOCATION_SENSOR, GYROSCOPE,
-  HTML_MEDIA_CAPTURE, KEYBOARD_LOCK,
+  HTML_MEDIA_CAPTURE, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK,
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
@@ -77,6 +77,7 @@ import { GeolocationSensorComponent } from './demos/geolocation-sensor/geolocati
 import { DevicePostureComponent } from './demos/device-posture/device-posture.component';
 import { MultiScreenWindowPlacementComponent } from './demos/multi-screen-window-placement/multi-screen-window-placement.component';
 import { AudioOutputDevicesComponent } from './demos/audio-output-devices/audio-output-devices.component';
+import { InputDeviceCapabilitiesComponent } from './demos/input-device-capabilities/input-device-capabilities.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -150,6 +151,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: HTML_MEDIA_CAPTURE,
     component: HtmlMediaCaptureComponent
+  },
+  {
+    technology: INPUT_DEVICE_CAPABILITIES,
+    component: InputDeviceCapabilitiesComponent
   },
   {
     technology: KEYBOARD_LOCK,
@@ -340,7 +345,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     GeolocationSensorComponent,
     DevicePostureComponent,
     MultiScreenWindowPlacementComponent,
-    AudioOutputDevicesComponent
+    AudioOutputDevicesComponent,
+    InputDeviceCapabilitiesComponent
   ],
   imports: [
     SharedModule,
