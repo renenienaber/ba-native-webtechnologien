@@ -1,0 +1,26 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <h4>Am Beispiel eines HTMLVideoElement (erbt von HTMLMediaElement)</h4>
+  <div>
+    <button
+      mat-raised-button
+      matTooltip="Zeige Auswahlfläche für Remote-Übertragung des Videos"
+      (click)="promptRemotePlayback()"
+    >
+      prompt()
+    </button>
+  </div>
+  <div>
+    <video
+      fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%"
+      #videoElement
+      playsinline
+      controls
+    >
+      <source src="./assets/media/file_example_MP4_640_3MG.mp4" type="video/mp4">
+    </video>
+  </div>
+</ng-template>
