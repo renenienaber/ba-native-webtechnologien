@@ -12,6 +12,7 @@
         <ng-container *ngFor="let ref of technology.references">
           <a mat-stroked-button color="primary" href="{{ref.link}}" target="_blank">{{ref.name}}</a>
         </ng-container>
+        <a *ngIf="technology.caniuseRef" mat-stroked-button color="primary" href="https://caniuse.com/{{technology.caniuseRef}}" target="_blank">Can I use</a>
       </mat-card-actions>
     </div>
 

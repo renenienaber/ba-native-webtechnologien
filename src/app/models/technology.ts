@@ -2,6 +2,7 @@ export interface Technology {
   name: string;
   description: string;
   references: Reference[];
+  caniuseRef?: string;
   featureDetections: FeatureDetection[];
   icon: string;
   routerLink: string;
