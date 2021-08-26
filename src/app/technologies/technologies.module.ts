@@ -19,7 +19,7 @@ import {
   PICTURE_IN_PICTURE, POINTER_EVENTS, POINTER_LOCK, PROXIMITY_SENSOR, REMOTE_PLAYBACK, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
-  SERVICE_WORKER, SHAPE_DETECTION, TEXT_DETECTION,
+  SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION,
   VIBRATION,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION,
@@ -81,6 +81,7 @@ import { InputDeviceCapabilitiesComponent } from './demos/input-device-capabilit
 import { KeyboardMapComponent } from './demos/keyboard-map/keyboard-map.component';
 import { PointerEventsComponent } from './demos/pointer-events/pointer-events.component';
 import { RemotePlaybackComponent } from './demos/remote-playback/remote-playback.component';
+import { StorageStandardComponent } from './demos/storage-standard/storage-standard.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -264,6 +265,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: ShapeDetectionComponent
   },
   {
+    technology: STORAGE_STANDARD,
+    component: StorageStandardComponent
+  },
+  {
     technology: TEXT_DETECTION,
     component: TextDetectionComponent
   },
@@ -365,6 +370,7 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     KeyboardMapComponent,
     PointerEventsComponent,
     RemotePlaybackComponent,
+    StorageStandardComponent
   ],
   imports: [
     SharedModule,

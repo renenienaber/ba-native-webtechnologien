@@ -1,0 +1,35 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Starte Sensor"
+    (click)="getStorageManagerData()"
+  >
+    storage
+  </button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div>
+      <div>persisted</div>
+      <div>{{ storageData?.persisted }}</div>
+    </div>
+    <div>
+      <div>persist</div>
+      <div>{{ storageData?.persist }}</div>
+    </div>
+    <div>
+      <div>estimate.usage</div>
+      <div>{{ storageData?.estimate?.usage }}</div>
+    </div>
+    <div>
+      <div>estimate.quota</div>
+      <div>{{ storageData?.estimate?.quota }}</div>
+    </div>
+  </div>
+</ng-template>
