@@ -27,7 +27,9 @@ export const ACCELEROMETER: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/accelerometer/' },
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
+    { name: 'web.dev', link: 'https://web.dev/generic-sensor/'},
   ],
+  caniuseRef: 'accelerometer',
   icon: 'speed',
   routerLink: 'accelerometer'
 };
@@ -43,7 +45,9 @@ export const AMBIENT_LIGHT_SENSOR: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/ambient-light/' },
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
+    { name: 'web.dev', link: 'https://web.dev/generic-sensor/'},
   ],
+  caniuseRef: 'ambient-light',
   icon: 'wb_sunny',
   routerLink: 'ambient-light-sensor'
 };
@@ -62,7 +66,9 @@ export const AUDIO_OUTPUT_DEVICES: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/audio-output/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2015/10/media-devices' },
   ],
+  caniuseRef: 'mdn-api_htmlmediaelement_setsinkid',
   icon: 'speaker',
   routerLink: 'audio-output-devices'
 };
@@ -89,6 +95,7 @@ export const BADGING: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://w3c.github.io/badging/' },
+    { name: 'web.dev', link: 'https://web.dev/badging-api/' },
   ],
   icon: 'mark_email_unread',
   routerLink: 'badging'
@@ -105,6 +112,7 @@ export const BATTERY_STATUS: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/battery-status/' },
   ],
+  caniuseRef: 'battery-status',
   icon: 'battery_full',
   routerLink: 'battery-status'
 };
@@ -123,7 +131,9 @@ export const CLIPBOARD: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/clipboard-apis/' },
+    { name: 'web.dev', link: 'https://web.dev/async-clipboard/' },
   ],
+  caniuseRef: 'clipboard',
   icon: 'content_paste',
   routerLink: 'clipboard'
 };
@@ -138,6 +148,8 @@ export const COMPUTE_PRESSURE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://oyiptong.github.io/compute-pressure/' },
+    { name: 'Demo', link: 'https://googlechrome.github.io/samples/compute-pressure/index.html' },
+    { name: 'web.dev', link: 'https://web.dev/compute-pressure/' },
   ],
   icon: 'running_with_errors',
   routerLink: 'compute-pressure'
@@ -153,7 +165,9 @@ export const CONTACT_PICKER: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/contact-api/spec/' },
+    { name: 'web.dev', link: 'https://web.dev/contact-picker/' },
   ],
+  caniuseRef: 'mdn-api_navigator_contacts',
   icon: 'contact_page',
   routerLink: 'contact-picker'
 };
@@ -168,7 +182,9 @@ export const CONTENT_INDEX: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/content-index/spec/' },
+    { name: 'web.dev', link: 'https://web.dev/content-indexing-api/' },
   ],
+  caniuseRef: 'mdn-api_serviceworkerregistration_index',
   icon: 'list',
   routerLink: 'content-index'
 };
@@ -183,7 +199,9 @@ export const DEVICE_MEMORY: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/device-memory-1/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2017/12/device-memory' },
   ],
+  caniuseRef: 'mdn-api_navigator_devicememory',
   icon: 'memory',
   routerLink: 'device-memory'
 };
@@ -217,7 +235,9 @@ export const DEVICEORIENTATION_EVENT: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-event/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/fundamentals/native-hardware/device-orientation' },
   ],
+  caniuseRef: 'deviceorientation',
   icon: 'screen_rotation',
   routerLink: 'deviceorientation-event'
 };
@@ -233,6 +253,7 @@ export const FILE: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/FileAPI/' },
   ],
+  caniuseRef: 'fileapi',
   icon: 'file_present',
   routerLink: 'file'
 };
@@ -255,6 +276,7 @@ export const FILE_SYSTEM_ACCESS: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/file-system-access/' },
+    { name: 'web.dev', link: 'https://web.dev/file-system-access/' },
   ],
   icon: 'snippet_folder',
   routerLink: 'file-system-access'
@@ -275,6 +297,7 @@ export const FULLSCREEN: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://fullscreen.spec.whatwg.org/' },
   ],
+  caniuseRef: 'fullscreen',
   icon: 'settings_overscan',
   routerLink: 'fullscreen'
 };
@@ -289,7 +312,10 @@ export const GAMEPAD: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/gamepad/' },
+    { name: 'Demo', link: 'https://gamepad-tester.com/' },
+    { name: 'web.dev', link: 'https://web.dev/gamepad/' },
   ],
+  caniuseRef: 'gamepad',
   icon: 'sports_esports',
   routerLink: 'gamepad'
 };
@@ -303,8 +329,10 @@ export const GEOLOCATION: Technology = {
     },
   ],
   references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation/' }
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/geolocation/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/fundamentals/native-hardware/user-location' }
   ],
+  caniuseRef: 'geolocation',
   icon: 'location_on',
   routerLink: 'geolocation'
 };
@@ -335,7 +363,10 @@ export const GET_INSTALLED_RELATED_APPS: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/get-installed-related-apps/spec/' },
+    { name: 'Demo', link: 'https://get-installed-apps.glitch.me/' },
+    { name: 'web.dev', link: 'https://web.dev/get-installed-related-apps/' },
   ],
+  caniuseRef: 'mdn-api_navigator_getinstalledrelatedapps',
   icon: 'apps_outage',
   routerLink: 'get-installed-related-apps'
 };
@@ -351,7 +382,9 @@ export const GYROSCOPE: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/gyroscope/' },
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
+    { name: 'web.dev', link: 'https://web.dev/generic-sensor/'},
   ],
+  caniuseRef: 'gyroscope',
   icon: 'speed',
   routerLink: 'gyroscope'
 };
@@ -366,7 +399,9 @@ export const HTML_MEDIA_CAPTURE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/html-media-capture/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/fundamentals/media/capturing-images' },
   ],
+  caniuseRef: 'html-media-capture',
   icon: 'add_a_photo',
   routerLink: 'html-media-capture'
 };
@@ -381,6 +416,8 @@ export const IDLE_DETECTION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/idle-detection/' },
+    { name: 'Demo', link: 'https://idle-detection.glitch.me/' },
+    { name: 'web.dev', link: 'https://web.dev/idle-detection/' },
   ],
   icon: 'nightlight_round',
   routerLink: 'idle-detection'
@@ -396,7 +433,10 @@ export const INDEXED_DATABASE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/IndexedDB-2/' },
+    { name: 'Demo', link: 'https://mdn.github.io/learning-area/javascript/apis/client-side-storage/indexeddb/notes/' },
+    { name: 'web.dev', link: 'https://web.dev/storage-for-the-web/' },
   ],
+  caniuseRef: 'indexeddb',
   icon: 'inventory',
   routerLink: 'indexed-database'
 };
@@ -405,13 +445,15 @@ export const INPUT_DEVICE_CAPABILITIES: Technology = {
   description: 'Definiert eine Webtechnologie, um zusätzliche Informationen über die Fähigkeiten eines Gerätes zu erlangen, welches Eingabeereignisse auslöst.',
   featureDetections: [
     {
-      apiObject: 'UIEvent.sourceCapabilities()',
+      apiObject: 'UIEvent.sourceCapabilities',
       detection: isObjectInUIEvent('sourceCapabilities')
     },
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/input-device-capabilities/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2015/10/inputdevicecapabilities' },
   ],
+  caniuseRef: 'mdn-api_inputdevicecapabilities',
   icon: 'perm_device_information',
   routerLink: 'input-device-capabilities'
 };
@@ -434,7 +476,11 @@ export const KEYBOARD_LOCK: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/keyboard-lock/' },
+    { name: 'Spezifikation (UI Events KeyboardEvent key Values)', link: 'https://www.w3.org/TR/uievents-key/' },
+    { name: 'Spezifikation (UI Events KeyboardEvent code Values)', link: 'https://www.w3.org/TR/uievents-code/' },
+    { name: 'web.dev', link: 'https://web.dev/keyboard-lock/' },
   ],
+  caniuseRef: 'mdn-api_keyboard_lock',
   icon: 'keyboard_hide',
   routerLink: 'keyboard-lock'
 };
@@ -453,7 +499,10 @@ export const KEYBOARD_MAP: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/keyboard-map/' },
+    { name: 'Spezifikation (UI Events KeyboardEvent key Values)', link: 'https://www.w3.org/TR/uievents-key/' },
+    { name: 'Spezifikation (UI Events KeyboardEvent code Values)', link: 'https://www.w3.org/TR/uievents-code/' },
   ],
+  caniuseRef: 'mdn-api_keyboard_getlayoutmap',
   icon: 'keyboard',
   routerLink: 'keyboard-map'
 };
@@ -468,6 +517,7 @@ export const LOCAL_FONT_ACCESS: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/local-font-access/' },
+    { name: 'web.dev', link: 'https://web.dev/local-fonts/' },
   ],
   icon: 'font_download',
   routerLink: 'local-font-access'
@@ -488,7 +538,9 @@ export const MAGNETOMETER: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/magnetometer/' },
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
+    { name: 'web.dev', link: 'https://web.dev/generic-sensor/'},
   ],
+  caniuseRef: 'magnetometer',
   icon: 'travel_explore',
   routerLink: 'magnetometer'
 };
@@ -503,7 +555,9 @@ export const MEDIA_CAPABILITIES: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/media-capabilities/' },
+    { name: 'web.dev', link: 'https://web.dev/youtube-media-capabilities/' },
   ],
+  caniuseRef: 'mdn-api_mediacapabilities',
   icon: 'perm_media',
   routerLink: 'media-capabilities'
 };
@@ -527,11 +581,13 @@ export const MEDIA_CAPTURE_AND_STREAMS: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/mediacapture-streams/' },
   ],
+  caniuseRef: 'mdn-api_mediacapabilities',
   icon: 'perm_camera_mic',
   routerLink: 'media-capture-and-streams'
 };
 export const MEDIA_CAPTURE_FROM_DOM_ELEMENTS: Technology = {
   name: 'Media Capture from DOM Elements',
+  // tslint:disable-next-line:max-line-length
   description: 'In dieser Spezifikation wird definiert, wie Medieninhalte aus DOM-Elementen als MediaStream-Objekt abgerufen werden können.',
   featureDetections: [
     {
@@ -545,7 +601,9 @@ export const MEDIA_CAPTURE_FROM_DOM_ELEMENTS: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/mediacapture-fromelement/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2016/10/capture-stream' },
   ],
+  caniuseRef: 'mediacapture-fromelement',
   icon: 'perm_camera_mic',
   routerLink: 'media-capture-from-dom-elements'
 };
@@ -560,7 +618,9 @@ export const MEDIA_SESSION_STANDARD: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/mediasession/' },
+    { name: 'web.dev', link: 'https://web.dev/media-session/' },
   ],
+  caniuseRef: 'mdn-api_navigator_mediasession',
   icon: 'not_started',
   routerLink: 'media-session-standard'
 };
@@ -575,7 +635,9 @@ export const MEDIASTREAM_IMAGE_CAPTURE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/image-capture/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2016/12/imagecapture' },
   ],
+  caniuseRef: 'mdn-api_imagecapture',
   icon: 'image',
   routerLink: 'mediastream-image-capture'
 };
@@ -590,7 +652,9 @@ export const MEDIASTREAM_RECORDING: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/mediastream-recording/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2016/01/mediarecorder' },
   ],
+  caniuseRef: 'mediarecorder',
   icon: 'radio_button_checked',
   routerLink: 'mediastream-recording'
 };
@@ -609,6 +673,8 @@ export const MULTI_SCREEN_WINDOW_PLACEMENT: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://webscreens.github.io/window-placement/' },
+    { name: 'Demo', link: 'https://window-placement.glitch.me/' },
+    { name: 'web.dev', link: 'https://web.dev/multi-screen-window-placement/' },
   ],
   icon: 'window',
   routerLink: 'multi-screen-window-placement'
@@ -624,7 +690,9 @@ export const NETWORK_INFORMATION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/netinfo/' },
+    { name: 'web.dev', link: 'https://web.dev/adaptive-serving-based-on-network-quality/' },
   ],
+  caniuseRef: 'netinfo',
   icon: 'network_check',
   routerLink: 'network-information'
 };
@@ -644,6 +712,7 @@ export const NOTIFICATIONS: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://notifications.spec.whatwg.org/' }
   ],
+  caniuseRef: 'notifications',
   icon: 'notifications',
   routerLink: 'notifications'
 };
@@ -663,7 +732,9 @@ export const ORIENTATION_SENSOR: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/orientation-sensor/'},
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
+    { name: 'web.dev', link: 'https://web.dev/generic-sensor/'},
   ],
+  caniuseRef: 'orientation-sensor',
   icon: 'screen_rotation',
   routerLink: 'orientation-sensor'
 };
@@ -679,6 +750,7 @@ export const PAGE_VISIBILITY: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/page-visibility/' },
   ],
+  caniuseRef: 'pagevisibility',
   icon: 'preview',
   routerLink: 'page-visibility'
 };
@@ -693,7 +765,10 @@ export const PAYMENT_HANDLER: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/payment-handler/' },
+    { name: 'Demo', link: 'https://rsolomakhin.github.io/pr/bob/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2018/06/payment-handler-api' },
   ],
+  caniuseRef: 'mdn-api_paymentmanager',
   icon: 'account_balance_wallet',
   routerLink: 'payment-handler'
 };
@@ -708,7 +783,9 @@ export const PAYMENT_REQUEST: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/payment-request/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api' },
   ],
+  caniuseRef: 'payment-request',
   icon: 'payment',
   routerLink: 'payment-request'
 };
@@ -731,7 +808,9 @@ export const PICTURE_IN_PICTURE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/picture-in-picture/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture' },
   ],
+  caniuseRef: 'picture-in-picture',
   icon: 'picture_in_picture_alt',
   routerLink: 'picture-in-picture'
 };
@@ -755,6 +834,7 @@ export const POINTER_EVENTS: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/pointerevents2/' },
   ],
+  caniuseRef: 'pointer',
   icon: 'mouse',
   routerLink: 'pointer-events'
 };
@@ -774,6 +854,7 @@ export const POINTER_LOCK: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/pointerlock/' },
   ],
+  caniuseRef: 'pointerlock',
   icon: 'center_focus_weak',
   routerLink: 'pointer-lock'
 };
@@ -788,7 +869,10 @@ export const PRESENTATION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/presentation-api/' },
+    { name: 'Demo', link: 'https://googlechrome.github.io/samples/presentation-api/' },
+    { name: 'web.dev', link: 'https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays' },
   ],
+  caniuseRef: 'mdn-api_navigator_presentation',
   icon: 'cast',
   routerLink: 'presentation'
 };
@@ -804,7 +888,9 @@ export const PROXIMITY_SENSOR: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/proximity/' },
     { name: 'Spezifikation (Generic Sensor API)', link: 'https://www.w3.org/TR/generic-sensor/'},
+    { name: 'web.dev', link: 'https://web.dev/generic-sensor/'},
   ],
+  caniuseRef: 'proximity',
   icon: 'nearby_error',
   routerLink: 'proximity-sensor'
 };
@@ -820,6 +906,7 @@ export const REMOTE_PLAYBACK: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/remote-playback/' },
   ],
+  caniuseRef: 'mdn-api_remoteplayback',
   icon: 'cast',
   routerLink: 'remote-playback'
 };
@@ -835,6 +922,7 @@ export const SCREEN_CAPTURE: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/screen-capture/' },
   ],
+  caniuseRef: 'mdn-api_mediadevices_getdisplaymedia',
   icon: 'screen_share',
   routerLink: 'screen-capture'
 };
@@ -850,6 +938,7 @@ export const SCREEN_ORIENTATION: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/screen-orientation/' },
   ],
+  caniuseRef: 'screen-orientation',
   icon: 'screen_lock_rotation',
   routerLink: 'screen-orientation'
 };
@@ -864,7 +953,9 @@ export const SCREEN_WAKE_LOCK: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/screen-wake-lock/' },
+    { name: 'web.dev', link: 'https://web.dev/wake-lock/' },
   ],
+  caniuseRef: 'wake-lock',
   icon: 'screen_lock_landscape',
   routerLink: 'screen-wake-lock'
 };
@@ -878,8 +969,10 @@ export const SERVICE_WORKER: Technology = {
     },
   ],
   references: [
-    { name: 'Spezifikation', link: 'https://www.w3.org/TR/service-workers-1/' }
+    { name: 'Spezifikation', link: 'https://www.w3.org/TR/service-workers-1/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/fundamentals/primers/service-workers' }
   ],
+  caniuseRef: 'serviceworkers',
   icon: 'cloud_off',
   routerLink: 'service-worker'
 };
@@ -898,6 +991,7 @@ export const SHAPE_DETECTION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/shape-detection-api/' },
+    { name: 'web.dev', link: 'https://web.dev/shape-detection/' },
   ],
   icon: 'qr_code_scanner',
   routerLink: 'shape-detection'
@@ -914,6 +1008,7 @@ export const STORAGE_STANDARD: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://storage.spec.whatwg.org/' },
   ],
+  caniuseRef: 'mdn-api_navigator_storage',
   icon: 'storage',
   routerLink: 'storage-standard'
 };
@@ -928,6 +1023,7 @@ export const TEXT_DETECTION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/shape-detection-api/text.html' },
+    { name: 'web.dev', link: 'https://web.dev/shape-detection/' },
   ],
   icon: 'document_scanner',
   routerLink: 'text-detection'
@@ -943,7 +1039,9 @@ export const TOUCH_EVENTS: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/touch-events/' },
+    { name: 'Demos', link: 'https://patrickhlauke.github.io/touch/' },
   ],
+  caniuseRef: 'touch',
   icon: 'touch_app',
   routerLink: 'touch-events'
 };
@@ -959,6 +1057,7 @@ export const VIBRATION: Technology = {
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/vibration/' }
   ],
+  caniuseRef: 'vibration',
   icon: 'vibration',
   routerLink: 'vibration'
 };
@@ -983,7 +1082,9 @@ export const WEB_APP_MANIFEST: Technology = {
   featureDetections: [],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/appmanifest/' },
+    { name: 'web.dev', link: 'https://web.dev/add-manifest/' },
   ],
+  caniuseRef: 'web-app-manifest',
   icon: 'get_app',
   routerLink: 'web-app-manifest'
 };
@@ -998,7 +1099,9 @@ export const WEB_AUTHENTICATION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/webauthn-2/' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2018/05/webauthn' },
   ],
+  caniuseRef: 'https://caniuse.com/webauthn',
   icon: 'fingerprint',
   routerLink: 'web-authentication'
 };
@@ -1013,7 +1116,10 @@ export const WEB_BLUETOOTH: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://webbluetoothcg.github.io/web-bluetooth/' },
+    { name: 'Demos', link: 'https://googlechrome.github.io/samples/web-bluetooth/' },
+    { name: 'web.dev', link: 'https://web.dev/bluetooth/' },
   ],
+  caniuseRef: 'web-bluetooth',
   icon: 'bluetooth',
   routerLink: 'web-bluetooth'
 };
@@ -1028,7 +1134,9 @@ export const WEB_MIDI: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/webmidi/' },
+    { name: 'Demos', link: 'https://webaudio.github.io/demo-list/' },
   ],
+  caniuseRef: 'midi',
   icon: 'piano',
   routerLink: 'web-midi'
 };
@@ -1043,7 +1151,10 @@ export const WEB_NFC: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://w3c.github.io/web-nfc/' },
+    { name: 'Demo', link: 'https://googlechrome.github.io/samples/web-nfc/' },
+    { name: 'web.dev', link: 'https://web.dev/nfc/' },
   ],
+  caniuseRef: 'webnfc',
   icon: 'nfc',
   routerLink: 'web-nfc'
 };
@@ -1058,7 +1169,10 @@ export const WEB_SERIAL: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/serial/' },
+    { name: 'Demo', link: 'https://googlechromelabs.github.io/serial-terminal/' },
+    { name: 'web.dev', link: 'https://web.dev/serial/' },
   ],
+  caniuseRef: 'web-serial',
   icon: 'settings_input_hdmi',
   routerLink: 'web-serial'
 };
@@ -1073,7 +1187,9 @@ export const WEB_SHARE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/web-share/' },
+    { name: 'web.dev', link: 'https://web.dev/web-share/' },
   ],
+  caniuseRef: 'web-share',
   icon: 'share',
   routerLink: 'web-share'
 };
@@ -1092,6 +1208,7 @@ export const WEB_SPEECH: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/speech-api/' },
+    { name: 'Demo', link: 'https://www.google.com/intl/en/chrome/demos/speech.html' },
   ],
   icon: 'record_voice_over',
   routerLink: 'web-speech'
@@ -1107,7 +1224,10 @@ export const WEBHID: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/webhid/index.html' },
+    { name: 'Demos', link: 'https://web.dev/hid-examples/' },
+    { name: 'web.dev', link: 'https://web.dev/hid/' },
   ],
+  caniuseRef: 'webhid',
   icon: 'input',
   routerLink: 'webhid'
 };
@@ -1122,6 +1242,8 @@ export const WEBOTP: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/web-otp/' },
+    { name: 'Demo', link: 'https://web-otp.glitch.me/' },
+    { name: 'web.dev', link: 'https://web.dev/web-otp/' },
   ],
   icon: 'vpn_key',
   routerLink: 'webotp'
@@ -1137,7 +1259,10 @@ export const WEBUSB: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/webusb/' },
+    { name: 'Demo', link: 'https://finikorg.github.io/webusb-sample/' },
+    { name: 'web.dev', link: 'https://web.dev/usb/' },
   ],
+  caniuseRef: 'webusb',
   icon: 'usb',
   routerLink: 'webusb'
 };
@@ -1152,7 +1277,9 @@ export const WEBXR_DEVICE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/webxr/' },
+    { name: 'Demos', link: 'https://immersiveweb.dev/' },
   ],
+  caniuseRef: 'webxr',
   icon: 'view_in_ar',
   routerLink: 'webxr-device'
 };
