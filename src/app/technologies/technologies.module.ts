@@ -16,7 +16,7 @@ import {
   NOTIFICATIONS,
   ORIENTATION_SENSOR, PAGE_VISIBILITY,
   PAYMENT_REQUEST,
-  PICTURE_IN_PICTURE, POINTER_LOCK, PROXIMITY_SENSOR, SCREEN_CAPTURE,
+  PICTURE_IN_PICTURE, POINTER_EVENTS, POINTER_LOCK, PROXIMITY_SENSOR, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
   SERVICE_WORKER, SHAPE_DETECTION, TEXT_DETECTION,
@@ -79,6 +79,7 @@ import { MultiScreenWindowPlacementComponent } from './demos/multi-screen-window
 import { AudioOutputDevicesComponent } from './demos/audio-output-devices/audio-output-devices.component';
 import { InputDeviceCapabilitiesComponent } from './demos/input-device-capabilities/input-device-capabilities.component';
 import { KeyboardMapComponent } from './demos/keyboard-map/keyboard-map.component';
+import { PointerEventsComponent } from './demos/pointer-events/pointer-events.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -226,6 +227,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: PictureInPictureComponent
   },
   {
+    technology: POINTER_EVENTS,
+    component: PointerEventsComponent,
+  },
+  {
     technology: POINTER_LOCK,
     component: PointerLockComponent
   },
@@ -352,7 +357,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     MultiScreenWindowPlacementComponent,
     AudioOutputDevicesComponent,
     InputDeviceCapabilitiesComponent,
-    KeyboardMapComponent
+    KeyboardMapComponent,
+    PointerEventsComponent
   ],
   imports: [
     SharedModule,

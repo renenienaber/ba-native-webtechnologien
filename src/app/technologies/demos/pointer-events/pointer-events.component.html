@@ -1,0 +1,28 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Erfasse Informationen für den Klick (pointerdown) auf diesem Knopf"
+    (pointerdown)="getPointerEventInfos($event)"
+  >
+    PointerEvent
+  </button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div *ngFor="let c of ['width', 'height', 'pressure', 'tangentialPressure', 'tiltX', 'tiltY', 'twist']">
+      <div>{{c}}</div>
+      <div>{{ (pointerEvent ? pointerEvent[c] : undefined) | number }}</div>
+    </div>
+    <div *ngFor="let c of ['pointerType', 'isPrimary']">
+      <div>{{c}}</div>
+      <div>{{ pointerEvent ? pointerEvent[c] : undefined }}</div>
+    </div>
+  </div>
+  <h5>(Lediglich Ausschnitt des tatsächlichen Rückgabeobjektes)</h5>
+</ng-template>
