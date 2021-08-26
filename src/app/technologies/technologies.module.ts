@@ -20,7 +20,7 @@ import {
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
   SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION,
-  VIBRATION,
+  VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION,
   WEB_SHARE
@@ -82,6 +82,7 @@ import { KeyboardMapComponent } from './demos/keyboard-map/keyboard-map.componen
 import { PointerEventsComponent } from './demos/pointer-events/pointer-events.component';
 import { RemotePlaybackComponent } from './demos/remote-playback/remote-playback.component';
 import { StorageStandardComponent } from './demos/storage-standard/storage-standard.component';
+import { VirtualkeyboardComponent } from './demos/virtualkeyboard/virtualkeyboard.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -277,12 +278,16 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: VibrationComponent
   },
   {
-    technology: WEB_AUTHENTICATION,
-    component: WebAuthenticationComponent
+    technology: VIRTUALKEYBOARD,
+    component: VirtualkeyboardComponent
   },
   {
     technology: WEB_APP_MANIFEST,
     component: WebAppManifestComponent
+  },
+  {
+    technology: WEB_AUTHENTICATION,
+    component: WebAuthenticationComponent
   },
   {
     technology: WEB_SHARE,
@@ -370,7 +375,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     KeyboardMapComponent,
     PointerEventsComponent,
     RemotePlaybackComponent,
-    StorageStandardComponent
+    StorageStandardComponent,
+    VirtualkeyboardComponent
   ],
   imports: [
     SharedModule,

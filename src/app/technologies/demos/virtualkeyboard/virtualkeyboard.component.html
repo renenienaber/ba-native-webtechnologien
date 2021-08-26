@@ -1,0 +1,22 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div fxLayoutGap="3px">
+    <button
+      mat-raised-button
+      matTooltip="Zeige virtuelle Tastatur"
+      (click)="show()"
+    >
+      show()
+    </button>
+    <button
+      mat-raised-button
+      matTooltip="Verstecke virtuelle Tastatur"
+      (click)="hide()"
+    >
+      hide()
+    </button>
+  </div>
+</ng-template>
