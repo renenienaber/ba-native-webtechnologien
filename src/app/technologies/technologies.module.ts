@@ -8,7 +8,7 @@ import {
   FILE_SYSTEM_ACCESS,
   FULLSCREEN,
   GEOLOCATION, GEOLOCATION_SENSOR, GYROSCOPE,
-  HTML_MEDIA_CAPTURE, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK,
+  HTML_MEDIA_CAPTURE, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK, KEYBOARD_MAP,
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
@@ -78,6 +78,7 @@ import { DevicePostureComponent } from './demos/device-posture/device-posture.co
 import { MultiScreenWindowPlacementComponent } from './demos/multi-screen-window-placement/multi-screen-window-placement.component';
 import { AudioOutputDevicesComponent } from './demos/audio-output-devices/audio-output-devices.component';
 import { InputDeviceCapabilitiesComponent } from './demos/input-device-capabilities/input-device-capabilities.component';
+import { KeyboardMapComponent } from './demos/keyboard-map/keyboard-map.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -159,6 +160,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: KEYBOARD_LOCK,
     component: KeyboardLockComponent
+  },
+  {
+    technology: KEYBOARD_MAP,
+    component: KeyboardMapComponent
   },
   {
     technology: LOCAL_FONT_ACCESS,
@@ -346,7 +351,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     DevicePostureComponent,
     MultiScreenWindowPlacementComponent,
     AudioOutputDevicesComponent,
-    InputDeviceCapabilitiesComponent
+    InputDeviceCapabilitiesComponent,
+    KeyboardMapComponent
   ],
   imports: [
     SharedModule,

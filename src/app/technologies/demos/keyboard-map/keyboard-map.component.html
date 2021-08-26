@@ -1,0 +1,23 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Erfasse Informationen"
+    (click)="getKeyboardMap()"
+  >
+    getLayoutMap()
+  </button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Physische Taste</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div *ngFor="let key of keyboardMapKeys">
+      <div>{{key}}</div>
+      <div>{{keyboardMap.get(key)}}</div>
+    </div>
+  </div>
+</ng-template>
