@@ -1,6 +1,6 @@
-<section class="top-row">
-  <div class="search">
-    <mat-form-field appearance="outline">
+<section fxLayout="row">
+  <div class="search" fxFlex="60%">
+    <mat-form-field fxFill appearance="outline">
       <mat-label>Suche</mat-label>
       <input
         matInput
@@ -19,52 +19,57 @@
       </button>
     </mat-form-field>
   </div>
-  <div class="search-filter">
-    <button matTooltip="Suche filtern" mat-button [mat-menu-trigger-for]="menuFilter">
-      <mat-icon
-        matBadge="!"
-        matBadgeSize="small"
-        matBadgePosition="below"
-        matBadgeColor="accent"
-        [matBadgeHidden]="!demoOnly"
-      >
-        filter_alt
-      </mat-icon>
-      <span fxHide.xs="true" fxHide.sm="true">Filter</span>
-    </button>
-    <mat-menu #menuFilter="matMenu">
-      <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="demoOnly" (change)="onFilterChanged()" (click) = "$event.stopPropagation()">
-          <span>Nur mit Demo</span>
-        </mat-slide-toggle>
+  <div fxFlex fxLayoutAlign="end none">
+    <div class="search-filter">
+      <button matTooltip="Technologien filtern" mat-button [mat-menu-trigger-for]="menuFilter">
+        <mat-icon
+          matBadge="!"
+          matBadgeSize="small"
+          matBadgePosition="below"
+          matBadgeColor="accent"
+          [matBadgeHidden]="!demoOnly"
+        >
+          filter_alt
+        </mat-icon>
+        <span fxHide.xs="true" fxHide.sm="true"> Filter</span>
       </button>
-    </mat-menu>
-  </div>
-  <div class="options">
-    <button mat-button matTooltip="Anzeigeeinstellungen anpassen" [mat-menu-trigger-for]="menuOptions">
-      <mat-icon>tune</mat-icon>
-      <span fxHide.xs="true" fxHide.sm="true">Anzeigeeinstellungen</span>
-    </button>
-    <mat-menu #menuOptions="matMenu">
-      <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="dashboardSettings.showCompatibility" (change)="onSettingsChanged()" (click) = "$event.stopPropagation()">
-          <mat-icon>check_circle_outline</mat-icon>
-          <span>Support</span>
-        </mat-slide-toggle>
+      <mat-menu #menuFilter="matMenu">
+        <button mat-menu-item>
+          <mat-slide-toggle [(ngModel)]="demoOnly" (change)="onFilterChanged()" (click)="$event.stopPropagation()">
+            <span>Nur mit Demo</span>
+          </mat-slide-toggle>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="options">
+      <button mat-button matTooltip="Einstellungen" [mat-menu-trigger-for]="menuOptions">
+        <mat-icon>tune</mat-icon>
+        <span fxHide.xs="true" fxHide.sm="true"> Einstellungen</span>
       </button>
-      <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="dashboardSettings.showDescription" (change)="onSettingsChanged()" (click) = "$event.stopPropagation()">
-          <mat-icon>info</mat-icon>
-          <span>Beschreibung</span>
-        </mat-slide-toggle>
-      </button>
-      <button mat-menu-item>
-        <mat-slide-toggle [(ngModel)]="dashboardSettings.showReferences" (change)="onSettingsChanged()" (click) = "$event.stopPropagation()">
-          <mat-icon>link</mat-icon>
-          <span>Referenzen</span>
-        </mat-slide-toggle>
-      </button>
-    </mat-menu>
+      <mat-menu #menuOptions="matMenu">
+        <button mat-menu-item>
+          <mat-slide-toggle [(ngModel)]="dashboardSettings.showCompatibility" (change)="onSettingsChanged()"
+                            (click)="$event.stopPropagation()">
+            <mat-icon>check_circle_outline</mat-icon>
+            <span>Support</span>
+          </mat-slide-toggle>
+        </button>
+        <button mat-menu-item>
+          <mat-slide-toggle [(ngModel)]="dashboardSettings.showDescription" (change)="onSettingsChanged()"
+                            (click)="$event.stopPropagation()">
+            <mat-icon>info</mat-icon>
+            <span>Beschreibung</span>
+          </mat-slide-toggle>
+        </button>
+        <button mat-menu-item>
+          <mat-slide-toggle [(ngModel)]="dashboardSettings.showReferences" (change)="onSettingsChanged()"
+                            (click)="$event.stopPropagation()">
+            <mat-icon>link</mat-icon>
+            <span>Referenzen</span>
+          </mat-slide-toggle>
+        </button>
+      </mat-menu>
+    </div>
   </div>
 </section>
 
