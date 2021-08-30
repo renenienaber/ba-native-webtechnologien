@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FeatureExportService} from './feature-export.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent {
   searchTerm = '';
   demoOnly = false;
 
-  constructor() {
+  constructor(private readonly featureExportService: FeatureExportService) {
     const storedSettings = JSON.parse(localStorage.getItem('dashboardSettings'));
     if (storedSettings) {
       this.dashboardSettings = storedSettings;
@@ -31,6 +32,10 @@ export class DashboardComponent {
 
   onFilterChanged(): void {
     sessionStorage.setItem('demoOnly', JSON.stringify(this.demoOnly));
+  }
+
+  exportTechnologySupport(): void {
+    this.featureExportService.exportTechnologySupport();
   }
 }
 

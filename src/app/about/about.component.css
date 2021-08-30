@@ -1,8 +1,3 @@
 .infos > div :first-child {
   font-weight: bold;
 }
-
-.export-button {
-  float: right;
-  margin: 20px;
-}
