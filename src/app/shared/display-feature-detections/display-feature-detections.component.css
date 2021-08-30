@@ -13,3 +13,7 @@
 .feature-detection.no-support {
   background-color: rgba(255, 0, 0, 0.75);
 }
+
+.api-object {
+  word-wrap: break-word;
+}
