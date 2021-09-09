@@ -16,7 +16,7 @@
       <div class="mat-header-cell">Wert</div>
     </div>
     <div *ngFor="let a of ['cpuUtilization', 'cpuSpeed']">
-      <div>{{a}} (Thresholds: {{options[a + 'Thresholds'] ? options[a + 'Thresholds'].toString() : undefined}})</div>
+      <div>{{a}} (Thresholds: {{options[a + 'Thresholds'] ? options[a + 'Thresholds'] : undefined | json }})</div>
       <div>{{ (results ? results[a] : undefined) | percent }}</div>
     </div>
   </div>
