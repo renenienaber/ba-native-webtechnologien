@@ -43,7 +43,7 @@ export class PaymentRequestComponent extends TechnologyDemoComponent {
       request.canMakePayment().then(canMake => {
         if (canMake) {
           request.show().then(
-            res => console.log(res),
+            () => undefined,
             err => this.showError(err)
           );
         } else {

@@ -13,7 +13,6 @@ export class MultiScreenWindowPlacementComponent extends TechnologyDemoComponent
       // @ts-ignore
       window.getScreens()
         .then(res => {
-          console.log(res);
           this.screensInfo = {
             currentScreen: getDtoInformation(res.currentScreen),
             screens: [...res.screens.map(e => getDtoInformation(e))]
