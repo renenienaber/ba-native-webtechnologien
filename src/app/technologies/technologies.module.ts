@@ -6,7 +6,7 @@ import {
   DEVICEORIENTATION_EVENT,
   FILE,
   FILE_SYSTEM_ACCESS,
-  FULLSCREEN,
+  FULLSCREEN, GAMEPAD,
   GEOLOCATION, GEOLOCATION_SENSOR, GYROSCOPE,
   HTML_MEDIA_CAPTURE, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK, KEYBOARD_MAP,
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
@@ -84,6 +84,7 @@ import { RemotePlaybackComponent } from './demos/remote-playback/remote-playback
 import { StorageStandardComponent } from './demos/storage-standard/storage-standard.component';
 import { VirtualkeyboardComponent } from './demos/virtualkeyboard/virtualkeyboard.component';
 import { ComputePressureComponent } from './demos/compute-pressure/compute-pressure.component';
+import { GamepadComponent } from './demos/gamepad/gamepad.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -145,6 +146,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: FULLSCREEN,
     component: FullscreenComponent
+  },
+  {
+    technology: GAMEPAD,
+    component: GamepadComponent,
   },
   {
     technology: GEOLOCATION,
@@ -382,7 +387,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     RemotePlaybackComponent,
     StorageStandardComponent,
     VirtualkeyboardComponent,
-    ComputePressureComponent
+    ComputePressureComponent,
+    GamepadComponent
   ],
   imports: [
     SharedModule,

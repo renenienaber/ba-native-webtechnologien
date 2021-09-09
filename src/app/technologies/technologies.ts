@@ -311,7 +311,6 @@ export const GAMEPAD: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/gamepad/' },
-    { name: 'Demo', link: 'https://gamepad-tester.com/' },
     { name: 'web.dev', link: 'https://web.dev/gamepad/' },
   ],
   caniuseRef: 'gamepad',
