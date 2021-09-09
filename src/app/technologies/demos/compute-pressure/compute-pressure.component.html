@@ -1,0 +1,23 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Starte Observierung"
+    (click)="initAndObserve()"
+  >
+    observe()
+  </button>
+  <div class="flex-table">
+    <div>
+      <div class="mat-header-cell">Attribut</div>
+      <div class="mat-header-cell">Wert</div>
+    </div>
+    <div *ngFor="let a of ['cpuUtilization', 'cpuSpeed']">
+      <div>{{a}} (Thresholds: {{options[a + 'Thresholds'] ? options[a + 'Thresholds'].toString() : undefined}})</div>
+      <div>{{ (results ? results[a] : undefined) | percent }}</div>
+    </div>
+  </div>
+</ng-template>

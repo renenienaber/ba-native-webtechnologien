@@ -148,7 +148,6 @@ export const COMPUTE_PRESSURE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://oyiptong.github.io/compute-pressure/' },
-    { name: 'Demo', link: 'https://googlechrome.github.io/samples/compute-pressure/index.html' },
     { name: 'web.dev', link: 'https://web.dev/compute-pressure/' },
   ],
   icon: 'running_with_errors',

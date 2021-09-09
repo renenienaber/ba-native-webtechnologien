@@ -1,6 +1,6 @@
 import {
   ACCELEROMETER, AMBIENT_LIGHT_SENSOR, AUDIO_OUTPUT_DEVICES,
-  BADGING, BATTERY_STATUS, CLIPBOARD,
+  BADGING, BATTERY_STATUS, CLIPBOARD, COMPUTE_PRESSURE,
   CONTACT_PICKER,
   CONTENT_INDEX, DEVICE_MEMORY, DEVICE_POSTURE,
   DEVICEORIENTATION_EVENT,
@@ -83,6 +83,7 @@ import { PointerEventsComponent } from './demos/pointer-events/pointer-events.co
 import { RemotePlaybackComponent } from './demos/remote-playback/remote-playback.component';
 import { StorageStandardComponent } from './demos/storage-standard/storage-standard.component';
 import { VirtualkeyboardComponent } from './demos/virtualkeyboard/virtualkeyboard.component';
+import { ComputePressureComponent } from './demos/compute-pressure/compute-pressure.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -108,6 +109,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: CLIPBOARD,
     component: ClipboardComponent
+  },
+  {
+    technology: COMPUTE_PRESSURE,
+    component: ComputePressureComponent
   },
   {
     technology: CONTACT_PICKER,
@@ -376,7 +381,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     PointerEventsComponent,
     RemotePlaybackComponent,
     StorageStandardComponent,
-    VirtualkeyboardComponent
+    VirtualkeyboardComponent,
+    ComputePressureComponent
   ],
   imports: [
     SharedModule,
