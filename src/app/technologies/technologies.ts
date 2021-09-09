@@ -414,7 +414,6 @@ export const IDLE_DETECTION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/idle-detection/' },
-    { name: 'Demo', link: 'https://idle-detection.glitch.me/' },
     { name: 'web.dev', link: 'https://web.dev/idle-detection/' },
   ],
   icon: 'nightlight_round',

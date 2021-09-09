@@ -8,7 +8,7 @@ import {
   FILE_SYSTEM_ACCESS,
   FULLSCREEN, GAMEPAD,
   GEOLOCATION, GEOLOCATION_SENSOR, GYROSCOPE,
-  HTML_MEDIA_CAPTURE, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK, KEYBOARD_MAP,
+  HTML_MEDIA_CAPTURE, IDLE_DETECTION, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK, KEYBOARD_MAP,
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
@@ -85,6 +85,7 @@ import { StorageStandardComponent } from './demos/storage-standard/storage-stand
 import { VirtualkeyboardComponent } from './demos/virtualkeyboard/virtualkeyboard.component';
 import { ComputePressureComponent } from './demos/compute-pressure/compute-pressure.component';
 import { GamepadComponent } from './demos/gamepad/gamepad.component';
+import {IdleDetectionComponent} from './demos/idle-detection/idle-detection.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -166,6 +167,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: HTML_MEDIA_CAPTURE,
     component: HtmlMediaCaptureComponent
+  },
+  {
+    technology: IDLE_DETECTION,
+    component: IdleDetectionComponent
   },
   {
     technology: INPUT_DEVICE_CAPABILITIES,
@@ -388,7 +393,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     StorageStandardComponent,
     VirtualkeyboardComponent,
     ComputePressureComponent,
-    GamepadComponent
+    GamepadComponent,
+    IdleDetectionComponent
   ],
   imports: [
     SharedModule,

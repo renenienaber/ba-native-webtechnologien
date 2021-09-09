@@ -1,0 +1,56 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section fxLayoutGap="10px">
+      <button
+        mat-raised-button
+        matTooltip="Fordert Erlaubnis für die Idle Detection an"
+        (click)="requestPermission()">
+        requestPermission()
+      </button>
+    </section>
+
+    <section>
+      <mat-form-field>
+        <mat-label>Threshold (in ms)</mat-label>
+        <input matInput type="number" min="60000" [(ngModel)]="threshold">
+      </mat-form-field>
+      <button
+        mat-raised-button
+        matTooltip="Starte Idle Detection"
+        (click)="initAndStartDetector()"
+        [disabled]="detectorActive"
+      >
+        start()
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="Stoppe Idle Detection"
+        (click)="stopDetector()"
+        [disabled]="!detectorActive"
+      >
+        abort()
+      </button>
+    </section>
+
+    <section>
+      <span>Idle Detection ist <strong>{{ detectorActive ? 'aktiv' : 'inaktiv' }}</strong></span>
+      <div class="flex-table">
+        <div>
+          <div class="mat-header-cell">Zeitstempel</div>
+          <div class="mat-header-cell">userState</div>
+          <div class="mat-header-cell">screenState</div>
+        </div>
+        <div *ngFor="let log of logs">
+          <div>{{ log.timestamp | date: 'medium' }}</div>
+          <div>{{ log.detectorData.userState }}</div>
+          <div>{{ log.detectorData.screenState }}</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</ng-template>
