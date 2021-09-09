@@ -670,7 +670,6 @@ export const MULTI_SCREEN_WINDOW_PLACEMENT: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://webscreens.github.io/window-placement/' },
-    { name: 'Demo', link: 'https://window-placement.glitch.me/' },
     { name: 'web.dev', link: 'https://web.dev/multi-screen-window-placement/' },
   ],
   icon: 'window',
