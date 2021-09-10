@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1630329524684,
+  "timestamp": 1631293457371,
   "index": "/ba-native-webtechnologien/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/ba-native-webtechnologien/favicon.ico",
         "/ba-native-webtechnologien/index.html",
-        "/ba-native-webtechnologien/main-es2015.d4ff3f607bf89ca6ffa7.js",
-        "/ba-native-webtechnologien/main-es5.d4ff3f607bf89ca6ffa7.js",
+        "/ba-native-webtechnologien/main-es2015.ad52a55dcf164294b2a2.js",
+        "/ba-native-webtechnologien/main-es5.ad52a55dcf164294b2a2.js",
         "/ba-native-webtechnologien/manifest.webmanifest",
         "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js",
         "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js",
@@ -63,9 +63,9 @@
     "/ba-native-webtechnologien/assets/media/simon-maage-KTzZVDjUsXw-unsplash.jpg": "73a93d282bbdf13a2dd50ebd625b76cf7baf1f40",
     "/ba-native-webtechnologien/assets/media/windows-p74ndnYWRY4-unsplash.jpg": "56413133485295511739e633665da04aaf69d825",
     "/ba-native-webtechnologien/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ba-native-webtechnologien/index.html": "ffc35dc262f616bdb5d9f8376b5afabc4dcef876",
-    "/ba-native-webtechnologien/main-es2015.d4ff3f607bf89ca6ffa7.js": "8c31785c33b2b32b0543712929d8efca05ad9b22",
-    "/ba-native-webtechnologien/main-es5.d4ff3f607bf89ca6ffa7.js": "77ef8e7644b50bbdfd58f85dd3a4f1bbbada18e6",
+    "/ba-native-webtechnologien/index.html": "ffb80dabdc18da728aa6a422ee8bc4c0f412a17a",
+    "/ba-native-webtechnologien/main-es2015.ad52a55dcf164294b2a2.js": "fbc3f4fc509f8a07774794498af4112bae1a98b3",
+    "/ba-native-webtechnologien/main-es5.ad52a55dcf164294b2a2.js": "1c38ab6c2c7e08a6adcb3dc65ee130b53fec6028",
     "/ba-native-webtechnologien/manifest.webmanifest": "59e9663a6c75cfa9da7c185e6c9174deab280ead",
     "/ba-native-webtechnologien/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/ba-native-webtechnologien/polyfills-es5.177e85a9724683782539.js": "f32c7aaca8b60df7a9dfa6cb8f2b7751b5d0832c",
