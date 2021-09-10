@@ -3,14 +3,31 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <h4>
-    Schicke an dieses Endgerät (während diese Seite geöffnet ist) eine SMS, welche mit der folgenden Zeile endet:
-  </h4>
-  <div>
-    <pre><code>@{{hosturl}} #{{CODE}}</code></pre>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section fxLayoutGap="15px">
+      <button
+        mat-raised-button
+        matTooltip="Starte Empfang für OTP-SMS"
+        (click)="startOTPRetrieval()"
+        [disabled]="isActive"
+      >
+        get()
+      </button>
+      <strong>{{isActive ? 'Warte auf OTP per SMS...' : 'Empfang für OTP-SMS wurde nicht gestartet.'}}</strong>
+    </section>
+
+    <section>
+      <form #formElement (submit)="onFormSubmit()">
+        <input #inputElement autocomplete="one-time-code" required>
+        <input type="submit">
+      </form>
+    </section>
+
+    <section>
+      <span>
+        Schicke (während diese Seite geöffnet ist) eine SMS an dieses Endgerät, welche mit der folgenden Zeile endet:
+      </span>
+      <pre><code>@{{hosturl}} #{{CODE}}</code></pre>
+    </section>
   </div>
-  <form #formElement>
-    <input #inputElement autocomplete="one-time-code" required>
-    <input type="submit">
-  </form>
 </ng-template>
