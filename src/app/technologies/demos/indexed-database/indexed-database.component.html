@@ -1,0 +1,57 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section>
+      <button
+        mat-raised-button
+        matTooltip="Öffnet die IndexedDB und zeigt die gespeicherten Inhalte an"
+        (click)="open()"
+      >
+        open()
+      </button>
+    </section>
+
+    <section>
+      <div class="flex-table">
+        <div>
+          <div class="mat-header-cell">Eintrag</div>
+        </div>
+        <div *ngFor="let entry of results">
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+            <div>
+              <button
+                style="margin: 5px"
+                mat-raised-button
+                matTooltip="Entfernt den Eintrag aus der IndexedDB"
+                (click)="removeEntry(entry.id)"
+              >
+                delete()
+              </button>
+            </div>
+            <span>{{ entry.entry }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section *ngIf="database">
+      <mat-form-field>
+        <mat-label>Neuer Eintrag</mat-label>
+        <input matInput type="text" [(ngModel)]="newEntry" required>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        matTooltip="Speichert den Eintrag in die IndexedDB"
+        (click)="addEntry()"
+        [disabled]="!newEntry"
+      >
+        add()
+      </button>
+    </section>
+
+  </div>
+</ng-template>

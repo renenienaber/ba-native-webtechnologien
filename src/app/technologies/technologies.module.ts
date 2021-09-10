@@ -8,7 +8,7 @@ import {
   FILE_SYSTEM_ACCESS,
   FULLSCREEN, GAMEPAD,
   GEOLOCATION, GEOLOCATION_SENSOR, GYROSCOPE,
-  HTML_MEDIA_CAPTURE, IDLE_DETECTION, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK, KEYBOARD_MAP,
+  HTML_MEDIA_CAPTURE, IDLE_DETECTION, INDEXED_DATABASE, INPUT_DEVICE_CAPABILITIES, KEYBOARD_LOCK, KEYBOARD_MAP,
   LOCAL_FONT_ACCESS, MAGNETOMETER, MEDIA_CAPABILITIES,
   MEDIA_CAPTURE_AND_STREAMS,
   MEDIA_CAPTURE_FROM_DOM_ELEMENTS,
@@ -86,6 +86,7 @@ import { VirtualkeyboardComponent } from './demos/virtualkeyboard/virtualkeyboar
 import { ComputePressureComponent } from './demos/compute-pressure/compute-pressure.component';
 import { GamepadComponent } from './demos/gamepad/gamepad.component';
 import {IdleDetectionComponent} from './demos/idle-detection/idle-detection.component';
+import { IndexedDatabaseComponent } from './demos/indexed-database/indexed-database.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -171,6 +172,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: IDLE_DETECTION,
     component: IdleDetectionComponent
+  },
+  {
+    technology: INDEXED_DATABASE,
+    component: IndexedDatabaseComponent
   },
   {
     technology: INPUT_DEVICE_CAPABILITIES,
@@ -394,7 +399,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     VirtualkeyboardComponent,
     ComputePressureComponent,
     GamepadComponent,
-    IdleDetectionComponent
+    IdleDetectionComponent,
+    IndexedDatabaseComponent
   ],
   imports: [
     SharedModule,

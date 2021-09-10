@@ -430,7 +430,6 @@ export const INDEXED_DATABASE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/IndexedDB-2/' },
-    { name: 'Demo', link: 'https://mdn.github.io/learning-area/javascript/apis/client-side-storage/indexeddb/notes/' },
     { name: 'web.dev', link: 'https://web.dev/storage-for-the-web/' },
   ],
   caniuseRef: 'indexeddb',
