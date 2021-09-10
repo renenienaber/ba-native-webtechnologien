@@ -1236,7 +1236,6 @@ export const WEBOTP: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/web-otp/' },
-    { name: 'Demo', link: 'https://web-otp.glitch.me/' },
     { name: 'web.dev', link: 'https://web.dev/web-otp/' },
   ],
   icon: 'vpn_key',

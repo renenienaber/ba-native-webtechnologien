@@ -1,0 +1,16 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <h4>
+    Falls unterstützt: Schicke (während diese Seite geöffnet ist) eine SMS, welche mit der folgenden Zeile endet, an dieses Endgerät
+  </h4>
+  <div>
+    <pre><code>@{{hosturl}} #{{CODE}}</code></pre>
+  </div>
+  <form #formElement>
+    <input #inputElement autocomplete="one-time-code" required>
+    <input type="submit">
+  </form>
+</ng-template>
