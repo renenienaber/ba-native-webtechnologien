@@ -1,0 +1,92 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <mat-tab-group>
+    <mat-tab label="SpeechRecognition" fxLayoutGap="15px">
+      <section fxLayout="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Ergebnis</mat-label>
+          <textarea
+            matInput
+            [value]="interimResult ? (recognitionResult + interimResult) : recognitionResult"
+            disabled
+          ></textarea>
+        </mat-form-field>
+      </section>
+
+      <section fxLayoutGap="15px">
+        <mat-form-field>
+          <mat-label>Sprache</mat-label>
+          <mat-select [(ngModel)]="recognitionLang">
+            <mat-option value="de-DE">Deutsch (de-DE)</mat-option>
+            <mat-option value="en-US">Englisch (en-US)</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          matTooltip="Starte Spracherkennung"
+          (click)="initAndStartRecognition()"
+          [disabled]="recognitionActive"
+        >
+          start()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Stoppe Spracherkennung"
+          (click)="stopRecognition()"
+          [disabled]="!recognitionActive"
+        >
+          stop()
+        </button>
+      </section>
+    </mat-tab>
+
+    <mat-tab label="speechSynthesis" fxLayoutGap="15px">
+      <section fxLayout="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Ausgabetext</mat-label>
+          <textarea
+            matInput
+            [(ngModel)]="outputText"
+          ></textarea>
+        </mat-form-field>
+      </section>
+
+      <section style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Lade verfügbare Stimmen"
+          (click)="loadVoices()"
+        >
+          getVoices()
+        </button>
+      </section>
+
+      <section *ngIf="voices.length > 0" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50%" fxFlex.xs="100%">
+          <mat-label>Ausgabestimme</mat-label>
+          <mat-select [(ngModel)]="selectedVoice">
+            <mat-option
+              *ngFor="let voice of voices"
+              [value]="voice"
+            >
+              {{voice.default ? 'DEFAULT: ' : ''}}{{ voice.name }} ({{voice.lang}})
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div style="margin: 3px">
+          <button
+            mat-raised-button
+            matTooltip="Starte Sprachausgabe des Textes"
+            (click)="synthSpeak()"
+            [disabled]="!outputText"
+          >
+            speak()
+          </button>
+        </div>
+      </section>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>

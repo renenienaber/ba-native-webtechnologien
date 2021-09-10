@@ -1203,7 +1203,6 @@ export const WEB_SPEECH: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/speech-api/' },
-    { name: 'Demo', link: 'https://www.google.com/intl/en/chrome/demos/speech.html' },
   ],
   icon: 'record_voice_over',
   routerLink: 'web-speech'

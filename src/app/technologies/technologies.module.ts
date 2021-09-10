@@ -23,7 +23,7 @@ import {
   VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION,
-  WEB_SHARE
+  WEB_SHARE, WEB_SPEECH
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
 import {OrientationSensorComponent} from './demos/orientation-sensor/orientation-sensor.component';
@@ -87,6 +87,7 @@ import { ComputePressureComponent } from './demos/compute-pressure/compute-press
 import { GamepadComponent } from './demos/gamepad/gamepad.component';
 import {IdleDetectionComponent} from './demos/idle-detection/idle-detection.component';
 import { IndexedDatabaseComponent } from './demos/indexed-database/indexed-database.component';
+import { WebSpeechComponent } from './demos/web-speech/web-speech.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -312,7 +313,11 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
     technology: WEB_SHARE,
     component: WebShareComponent
-  }
+  },
+  {
+    technology: WEB_SPEECH,
+    component: WebSpeechComponent
+  },
 ];
 export function isDemo(technology: Technology): boolean {
   return DEMO_COMPONENTS.map(d => d.technology).includes(technology);
@@ -400,7 +405,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     ComputePressureComponent,
     GamepadComponent,
     IdleDetectionComponent,
-    IndexedDatabaseComponent
+    IndexedDatabaseComponent,
+    WebSpeechComponent
   ],
   imports: [
     SharedModule,
