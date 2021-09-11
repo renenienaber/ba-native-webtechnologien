@@ -6,7 +6,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './webhid.component.html'
 })
 export class WebhidComponent extends TechnologyDemoComponent {
-  result: any[];
+  result = [];
 
   getHIDDevices(): void {
     if ('hid' in navigator) {
@@ -14,7 +14,11 @@ export class WebhidComponent extends TechnologyDemoComponent {
       if ('getDevices' in navigator.hid) {
         // @ts-ignore
         navigator.hid.getDevices()
-          .then(res => this.result = res)
+          .then(res => this.result = res.map(e => ({
+            vendorId: e.vendorId,
+            productId: e.productId,
+            productName: e.productName
+          })))
           .catch(err => this.showError(err));
       } else {
         this.showNoSupportError('navigator.hid.getDevices()');
