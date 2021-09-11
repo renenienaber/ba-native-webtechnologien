@@ -5,28 +5,44 @@
 <ng-template #demo>
   <mat-tab-group>
     <mat-tab label="scan()" fxLayout="column">
-      <div style="margin: 3px">
+      <div fxLayoutGap="3px" style="margin: 3px">
         <button
           mat-raised-button
-          matTooltip="Starte Empfang für OTP-SMS"
+          matTooltip="Starte Auslesen von NFC-Tags"
           (click)="initAndScan()"
           [disabled]="scanActive"
         >
           scan()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Stoppe Auslesen von NFC-Tags"
+          (click)="stopScan()"
+          [disabled]="!scanActive"
+        >
+          AbortController.abort()
         </button>
       </div>
       <span>NFC-Scan <strong>{{scanActive ? 'aktiv' : 'inaktiv'}}</strong>.</span>
     </mat-tab>
 
     <mat-tab label="write()" fxLayout="column">
-      <div style="margin: 3px">
+      <div fxLayoutGap="3px" style="margin: 3px">
         <button
           mat-raised-button
-          matTooltip="Starte Empfang für OTP-SMS"
+          matTooltip="Starte Beschreiben von NFC-Tags"
           (click)="initAndWrite()"
           [disabled]="writeActive"
         >
           write()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Stoppe Beschreiben von NFC-Tags"
+          (click)="stopWrite()"
+          [disabled]="!writeActive"
+        >
+          AbortController.abort()
         </button>
       </div>
       <span>Beschreiben von NFC-Tags <strong>{{writeActive ? 'aktiv' : 'inaktiv'}}</strong>.</span>
