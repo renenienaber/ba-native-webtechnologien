@@ -22,7 +22,7 @@ import {
   SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION, TOUCH_EVENTS,
   VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
-  WEB_AUTHENTICATION, WEB_BLUETOOTH, WEB_NFC,
+  WEB_AUTHENTICATION, WEB_BLUETOOTH, WEB_NFC, WEB_SERIAL,
   WEB_SHARE, WEB_SPEECH, WEBHID, WEBOTP
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
@@ -93,6 +93,7 @@ import { TouchEventsComponent } from './demos/touch-events/touch-events.componen
 import { WebNfcComponent } from './demos/web-nfc/web-nfc.component';
 import { WebBluetoothComponent } from './demos/web-bluetooth/web-bluetooth.component';
 import { WebhidComponent } from './demos/webhid/webhid.component';
+import {WebSerialComponent} from './demos/web-serial/web-serial.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -328,6 +329,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: WebNfcComponent
   },
   {
+    technology: WEB_SERIAL,
+    component: WebSerialComponent
+  },
+  {
     technology: WEB_SHARE,
     component: WebShareComponent
   },
@@ -436,7 +441,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     TouchEventsComponent,
     WebNfcComponent,
     WebBluetoothComponent,
-    WebhidComponent
+    WebhidComponent,
+    WebSerialComponent
   ],
   imports: [
     SharedModule,

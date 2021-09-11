@@ -1161,7 +1161,6 @@ export const WEB_SERIAL: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/serial/' },
-    { name: 'Demo', link: 'https://googlechromelabs.github.io/serial-terminal/' },
     { name: 'web.dev', link: 'https://web.dev/serial/' },
   ],
   caniuseRef: 'web-serial',
