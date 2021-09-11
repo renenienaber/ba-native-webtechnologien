@@ -12,7 +12,7 @@ export class WebSpeechComponent extends TechnologyDemoComponent implements OnIni
   interimResult = '';
   recognitionActive = false;
 
-  outputText = '';
+  outputText = 'Dies ist ein Test.';
   voices: SpeechSynthesisVoice[] = [];
   selectedVoice: SpeechSynthesisVoice;
 
