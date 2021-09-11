@@ -1110,7 +1110,6 @@ export const WEB_BLUETOOTH: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://webbluetoothcg.github.io/web-bluetooth/' },
-    { name: 'Demos', link: 'https://googlechrome.github.io/samples/web-bluetooth/' },
     { name: 'web.dev', link: 'https://web.dev/bluetooth/' },
   ],
   caniuseRef: 'web-bluetooth',

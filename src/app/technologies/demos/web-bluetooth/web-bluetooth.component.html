@@ -1,0 +1,13 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="Fragt ein Bluetooth-Gerät an"
+    (click)="requestDevice()"
+  >
+    requestDevice()
+  </button>
+</ng-template>
