@@ -8,8 +8,7 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
 export class IdleDetectionComponent extends TechnologyDemoComponent implements OnDestroy {
   private detector: any;
 
-  private abortController: AbortController = new AbortController();
-  private abortSignal: AbortSignal = this.abortController.signal;
+  private abortController: AbortController;
 
   threshold = 60000;
   detectorActive = false;
@@ -17,6 +16,12 @@ export class IdleDetectionComponent extends TechnologyDemoComponent implements O
 
   ngOnDestroy(): void {
     this.stopDetector();
+  }
+
+  stopDetector(): void {
+    if (this.abortController) {
+      this.abortController.abort();
+    }
   }
 
   private isSupported(): boolean {
@@ -45,6 +50,7 @@ export class IdleDetectionComponent extends TechnologyDemoComponent implements O
     if (this.isSupported()) {
       // @ts-ignore
       this.detector = new IdleDetector();
+      this.initAbortController();
 
       this.detector.addEventListener('change', () => {
         this.addLog({
@@ -53,25 +59,18 @@ export class IdleDetectionComponent extends TechnologyDemoComponent implements O
         });
       });
 
-      this.reset();
       this.detector.start({
         threshold: this.threshold,
-        signal: this.abortSignal,
+        signal: this.abortController.signal,
       })
         .then(() => this.detectorActive = true)
         .catch(err => this.showError(err));
     }
   }
 
-  stopDetector(): void {
-    this.abortController.abort();
-    this.detectorActive = false;
-  }
-
-  private reset(): void {
+  private initAbortController(): void {
     this.abortController = new AbortController();
-    this.abortSignal = this.abortController.signal;
-    this.logs = [];
+    this.abortController.signal.addEventListener('abort', () => this.detectorActive = false);
   }
 
   private addLog(detectorData: DetectorData): void {

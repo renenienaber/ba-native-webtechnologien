@@ -13,31 +13,37 @@
       </button>
     </section>
 
-    <section>
-      <mat-form-field>
-        <mat-label>Threshold (in ms)</mat-label>
-        <input matInput type="number" min="60000" [(ngModel)]="threshold">
-      </mat-form-field>
-      <button
-        mat-raised-button
-        matTooltip="Starte Idle Detection"
-        (click)="initAndStartDetector()"
-        [disabled]="detectorActive"
-      >
-        start()
-      </button>
-      <button
-        mat-raised-button
-        matTooltip="Stoppe Idle Detection"
-        (click)="stopDetector()"
-        [disabled]="!detectorActive"
-      >
-        abort()
-      </button>
+    <section fxLayout="row">
+      <div>
+        <mat-form-field>
+          <mat-label>Threshold (in ms)</mat-label>
+          <input matInput type="number" min="60000" [(ngModel)]="threshold">
+        </mat-form-field>
+      </div>
+      <div fxLayoutGap="3px">
+        <button
+          mat-raised-button
+          matTooltip="Starte Idle Detection"
+          (click)="initAndStartDetector()"
+          [disabled]="detectorActive"
+        >
+          start()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Stoppe Idle Detection"
+          (click)="stopDetector()"
+          [disabled]="!detectorActive"
+        >
+          AbortController.abort()
+        </button>
+      </div>
     </section>
 
+    <span>Idle Detection ist <strong>{{ detectorActive ? 'aktiv' : 'inaktiv' }}</strong></span>
+
     <section>
-      <span>Idle Detection ist <strong>{{ detectorActive ? 'aktiv' : 'inaktiv' }}</strong></span>
+      <h5>Sobald sich der Idle-Zustand ändert, wird dieser Tabelle ein Element hinzugefügt</h5>
       <div class="flex-table">
         <div>
           <div class="mat-header-cell">Zeitstempel</div>
