@@ -6,11 +6,19 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './gamepad.component.html'
 })
 export class GamepadComponent extends TechnologyDemoComponent {
-  result: Gamepad[];
+  result = [];
 
   getGamepads(): void {
     if ('getGamepads' in navigator) {
-      this.result = navigator.getGamepads();
+      for (const e of navigator.getGamepads()) {
+        if (e) {
+          this.result.push({
+            id: e.id,
+            index: e.index,
+            connected: e.connected
+          });
+        }
+      }
     } else {
       this.showNoSupportError('navigator.getGamepads()');
     }
