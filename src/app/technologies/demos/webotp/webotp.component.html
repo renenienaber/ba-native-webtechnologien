@@ -4,15 +4,25 @@
 
 <ng-template #demo>
   <div fxLayout="column" fxLayoutGap="15px">
-    <section fxLayoutGap="15px">
-      <button
-        mat-raised-button
-        matTooltip="Starte Empfang für OTP-SMS"
-        (click)="startOTPRetrieval()"
-        [disabled]="isActive"
-      >
-        get()
-      </button>
+    <section fxLayout="column" fxLayoutGap="15px">
+      <div fxLayoutGap="3px">
+        <button
+          mat-raised-button
+          matTooltip="Starte Empfang für OTP-SMS"
+          (click)="startOTPRetrieval()"
+          [disabled]="isActive"
+        >
+          get()
+        </button>
+        <button
+          mat-raised-button
+          matTooltip="Stoppe Empfang für OTP-SMS"
+          (click)="stopOTPRetrieval()"
+          [disabled]="!isActive"
+        >
+          AbortController.abort()
+        </button>
+      </div>
       <strong>{{isActive ? 'Warte auf OTP per SMS...' : 'Empfang für OTP-SMS wurde nicht gestartet.'}}</strong>
     </section>
 

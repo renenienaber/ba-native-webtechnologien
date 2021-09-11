@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnDestroy, ViewChild} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
 import {DOCUMENT} from '@angular/common';
 
@@ -6,7 +6,7 @@ import {DOCUMENT} from '@angular/common';
   selector: 'app-webotp',
   templateUrl: './webotp.component.html'
 })
-export class WebotpComponent extends TechnologyDemoComponent {
+export class WebotpComponent extends TechnologyDemoComponent implements OnDestroy {
   @ViewChild('formElement', { static: false })
   set formRef(ref: ElementRef<HTMLFormElement>) {
     this.formElement = ref.nativeElement;
@@ -30,9 +30,13 @@ export class WebotpComponent extends TechnologyDemoComponent {
     this.hosturl = document.location.hostname;
   }
 
+  ngOnDestroy(): void {
+    this.stopOTPRetrieval();
+  }
+
   startOTPRetrieval(): void {
     if ('OTPCredential' in window) {
-      this.abortController = new AbortController();
+      this.initAbortController();
 
       const requestOptions: CredentialRequestOptions = {
         // @ts-ignore
@@ -51,8 +55,9 @@ export class WebotpComponent extends TechnologyDemoComponent {
           this.formElement.submit();
         })
         .catch(err => {
-          this.isActive = false;
-          this.showError(err);
+          if (err.name !== 'AbortError') {
+            this.showError(err);
+          }
         });
 
       this.isActive = true;
@@ -61,9 +66,19 @@ export class WebotpComponent extends TechnologyDemoComponent {
     }
   }
 
-  onFormSubmit(): void {
+  private initAbortController(): void {
+    this.abortController = new AbortController();
+    this.abortController.signal.addEventListener('abort', () => this.isActive = false);
+  }
+
+  stopOTPRetrieval(): void {
     if (this.abortController) {
       this.abortController.abort();
     }
+  }
+
+  onFormSubmit(): void {
+    this.showError(this.inputElement.value === this.CODE ? 'Passwort akzeptiert.' : 'Falsches Passwort!');
+    this.inputElement.value = '';
   }
 }
