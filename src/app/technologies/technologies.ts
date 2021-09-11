@@ -1127,7 +1127,6 @@ export const WEB_MIDI: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/webmidi/' },
-    { name: 'Demos', link: 'https://webaudio.github.io/demo-list/' },
   ],
   caniuseRef: 'midi',
   icon: 'piano',
