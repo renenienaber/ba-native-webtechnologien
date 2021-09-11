@@ -1247,7 +1247,6 @@ export const WEBUSB: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/webusb/' },
-    { name: 'Demo', link: 'https://finikorg.github.io/webusb-sample/' },
     { name: 'web.dev', link: 'https://web.dev/usb/' },
   ],
   caniuseRef: 'webusb',

@@ -23,7 +23,7 @@ import {
   VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION, WEB_BLUETOOTH, WEB_NFC, WEB_SERIAL,
-  WEB_SHARE, WEB_SPEECH, WEBHID, WEBOTP
+  WEB_SHARE, WEB_SPEECH, WEBHID, WEBOTP, WEBUSB
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
 import {OrientationSensorComponent} from './demos/orientation-sensor/orientation-sensor.component';
@@ -94,6 +94,7 @@ import { WebNfcComponent } from './demos/web-nfc/web-nfc.component';
 import { WebBluetoothComponent } from './demos/web-bluetooth/web-bluetooth.component';
 import { WebhidComponent } from './demos/webhid/webhid.component';
 import {WebSerialComponent} from './demos/web-serial/web-serial.component';
+import { WebusbComponent } from './demos/webusb/webusb.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -348,6 +349,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     technology: WEBOTP,
     component: WebotpComponent
   },
+  {
+    technology: WEBUSB,
+    component: WebusbComponent
+  },
 ];
 export function isDemo(technology: Technology): boolean {
   return DEMO_COMPONENTS.map(d => d.technology).includes(technology);
@@ -442,7 +447,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     WebNfcComponent,
     WebBluetoothComponent,
     WebhidComponent,
-    WebSerialComponent
+    WebSerialComponent,
+    WebusbComponent
   ],
   imports: [
     SharedModule,
