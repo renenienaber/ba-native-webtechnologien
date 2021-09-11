@@ -6,14 +6,48 @@ import {TechnologyDemoComponent} from '../../technology-demo.component';
   templateUrl: './web-bluetooth.component.html'
 })
 export class WebBluetoothComponent extends TechnologyDemoComponent {
-  requestDevice(): void {
+  result;
+
+  private isSupported(): boolean {
     if ('bluetooth' in navigator) {
-      // @ts-ignore
-      navigator.bluetooth.requestDevice({ acceptAllDevices: true })
-        .then(device => this.showError('Gerät ausgewählt: ' + device.name))
-        .catch(err => this.showError(err));
+      return true;
     } else {
       this.showNoSupportError('navigator.bluetooth');
+      return false;
+    }
+  }
+
+  getBluetoothDevices(): void {
+    if (this.isSupported()) {
+      // @ts-ignore
+      if ('getDevices' in navigator.bluetooth) {
+        // @ts-ignore
+        navigator.bluetooth.getDevices()
+          .then(res => this.result = res.map(e => ({
+            id: e.id,
+            name: e.name,
+          })))
+          .catch(err => this.showError(err));
+      } else {
+        this.showNoSupportError('navigator.bluetooth.getDevices()');
+      }
+    }
+  }
+
+  requestBluetoothDevice(): void {
+    if (this.isSupported()) {
+      // @ts-ignore
+      if ('requestDevice' in navigator.bluetooth) {
+        // @ts-ignore
+        navigator.bluetooth.requestDevice({ acceptAllDevices: true })
+          .then(res => this.result = {
+            id: res.id,
+            name: res.name,
+          })
+          .catch(err => this.showError(err));
+      } else {
+        this.showNoSupportError('navigator.bluetooth.requestDevice()');
+      }
     }
   }
 }

@@ -3,11 +3,30 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button
-    mat-raised-button
-    matTooltip="Fragt ein Bluetooth-Gerät an"
-    (click)="requestDevice()"
-  >
-    requestDevice()
-  </button>
+  <div fxLayoutGap="3px">
+    <button
+      mat-raised-button
+      matTooltip="Gibt Informationen zu allen gekoppelten Bluetooth-Geräten zurück"
+      (click)="getBluetoothDevices()"
+    >
+      getDevices()
+    </button>
+    <button
+      mat-raised-button
+      matTooltip="Fragt die Kopplung eines Bluetooth-Gerätes an und gibt dessen Informationen zurück"
+      (click)="requestBluetoothDevice()"
+    >
+      requestDevice()
+    </button>
+  </div>
+  <div fxLayout="column">
+    <mat-form-field appearance="fill">
+      <mat-label>Ergebnis (lediglich Ausschnitt des tatsächlichen Rückgabeobjektes)</mat-label>
+      <textarea
+        matInput
+        [value]="result | json"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </div>
 </ng-template>

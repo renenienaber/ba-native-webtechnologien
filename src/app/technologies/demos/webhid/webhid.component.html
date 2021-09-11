@@ -3,13 +3,22 @@
 </app-technology-page>
 
 <ng-template #demo>
-  <button
-    mat-raised-button
-    matTooltip="HIDs anfragen"
-    (click)="getHIDDevices()"
-  >
-    getDevices()
-  </button>
+  <div fxLayoutGap="3px">
+    <button
+      mat-raised-button
+      matTooltip="Gibt Informationen zu allen gekoppelten HIDs zurück"
+      (click)="getHIDDevices()"
+    >
+      getDevices()
+    </button>
+    <button
+      mat-raised-button
+      matTooltip="Fragt die Kopplung eines HIDs an und gibt dessen Informationen zurück"
+      (click)="requestHIDDevice()"
+    >
+      requestDevice()
+    </button>
+  </div>
   <div fxLayout="column">
     <mat-form-field appearance="fill">
       <mat-label>Ergebnis (lediglich Ausschnitt des tatsächlichen Rückgabeobjektes)</mat-label>
