@@ -1263,7 +1263,7 @@ export const WEBXR_DEVICE: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/webxr/' },
-    { name: 'Demos', link: 'https://immersiveweb.dev/' },
+    { name: 'Demos', link: 'https://immersive-web.github.io/webxr-samples/' },
   ],
   caniuseRef: 'webxr',
   icon: 'view_in_ar',
