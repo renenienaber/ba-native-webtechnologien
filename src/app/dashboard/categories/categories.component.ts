@@ -3,7 +3,6 @@ import {Category} from '../../models/category';
 import {Technology} from '../../models/technology';
 import {CATEGORIES} from './categories';
 import {searchInTechnologies} from '../../shared/functions';
-import {isDemo} from '../../technologies/technologies.module';
 
 @Component({
   selector: 'app-categories',
@@ -20,13 +19,9 @@ export class CategoriesComponent {
   @Input()
   set searchTerm(value: string) {
     this.categories = value.length > 1 ? this.search(value) : CATEGORIES;
-    this.filteredCategories = this.getDemosInCategories(this.categories);
   }
-  @Input()
-  demoOnly = false;
 
   categories: Category[] = CATEGORIES;
-  filteredCategories: Category[] = this.getDemosInCategories(CATEGORIES);
 
   private search(term: string): Category[] {
     const categories: Category[] = [];
@@ -37,12 +32,6 @@ export class CategoriesComponent {
       }
     }
     return categories;
-  }
-
-  getDemosInCategories(categories: Category[]): Category[] {
-    return categories
-      .map(c => ({...c, technologies: c.technologies.filter(t => isDemo(t))}))
-      .filter(c => c.technologies.length > 0);
   }
 
   getCompatibleFeaturesCount(technology: Technology): number {

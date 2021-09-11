@@ -20,27 +20,6 @@
     </mat-form-field>
   </div>
   <div fxFlex fxLayoutAlign="end none">
-    <div class="search-filter">
-      <button matTooltip="Technologien filtern" mat-button [mat-menu-trigger-for]="menuFilter">
-        <mat-icon
-          matBadge="!"
-          matBadgeSize="small"
-          matBadgePosition="below"
-          matBadgeColor="accent"
-          [matBadgeHidden]="!demoOnly"
-        >
-          filter_alt
-        </mat-icon>
-        <span fxHide.xs="true" fxHide.sm="true"> Filter</span>
-      </button>
-      <mat-menu #menuFilter="matMenu">
-        <button mat-menu-item>
-          <mat-slide-toggle [(ngModel)]="demoOnly" (change)="onFilterChanged()" (click)="$event.stopPropagation()">
-            <span>Nur mit Demo</span>
-          </mat-slide-toggle>
-        </button>
-      </mat-menu>
-    </div>
     <div class="options">
       <button mat-button matTooltip="Einstellungen" [mat-menu-trigger-for]="menuOptions">
         <mat-icon>tune</mat-icon>
@@ -68,11 +47,17 @@
             <span>Referenzen</span>
           </mat-slide-toggle>
         </button>
-        <button mat-menu-item (click)="exportTechnologySupport()">
-          <mat-icon>file_download</mat-icon>
-          <span>Exportiere Support</span>
-        </button>
       </mat-menu>
+    </div>
+    <div class="export">
+      <button
+        mat-button
+        matTooltip="Exportiere Kompatibilitäten als CSV"
+        (click)="exportTechnologySupport()"
+      >
+        <mat-icon>file_download</mat-icon>
+        <span fxHide.xs="true" fxHide.sm="true"> Exportiere Support</span>
+      </button>
     </div>
   </div>
 </section>
@@ -84,5 +69,4 @@
   [showDescription]="dashboardSettings.showDescription"
   [showReferences]="dashboardSettings.showReferences"
   [searchTerm]="searchTerm"
-  [demoOnly]="demoOnly"
 ></app-categories>
