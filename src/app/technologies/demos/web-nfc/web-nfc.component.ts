@@ -82,8 +82,10 @@ export class WebNfcComponent extends TechnologyDemoComponent implements OnDestro
           this.showError('Nachricht wurde auf NFC-Tag geschrieben.');
         })
         .catch(err => {
-          this.writeActive = false;
-          this.showError(err);
+          if (err.name !== 'AbortError') {
+            this.writeActive = false;
+            this.showError(err);
+          }
         });
     }
   }

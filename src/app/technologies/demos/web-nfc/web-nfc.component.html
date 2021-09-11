@@ -30,7 +30,7 @@
       <div fxLayoutGap="3px" style="margin: 3px">
         <button
           mat-raised-button
-          matTooltip="Starte Beschreiben von NFC-Tags"
+          matTooltip="Starte das Beschreiben von NFC-Tags"
           (click)="initAndWrite()"
           [disabled]="writeActive"
         >
@@ -38,7 +38,7 @@
         </button>
         <button
           mat-raised-button
-          matTooltip="Stoppe Beschreiben von NFC-Tags"
+          matTooltip="Stoppe das Beschreiben von NFC-Tags"
           (click)="stopWrite()"
           [disabled]="!writeActive"
         >
