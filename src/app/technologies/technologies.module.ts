@@ -22,7 +22,7 @@ import {
   SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION, TOUCH_EVENTS,
   VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
-  WEB_AUTHENTICATION,
+  WEB_AUTHENTICATION, WEB_NFC,
   WEB_SHARE, WEB_SPEECH, WEBOTP
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
@@ -90,6 +90,7 @@ import { IndexedDatabaseComponent } from './demos/indexed-database/indexed-datab
 import { WebSpeechComponent } from './demos/web-speech/web-speech.component';
 import { WebotpComponent } from './demos/webotp/webotp.component';
 import { TouchEventsComponent } from './demos/touch-events/touch-events.component';
+import { WebNfcComponent } from './demos/web-nfc/web-nfc.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -317,6 +318,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: WebAuthenticationComponent
   },
   {
+    technology: WEB_NFC,
+    component: WebNfcComponent
+  },
+  {
     technology: WEB_SHARE,
     component: WebShareComponent
   },
@@ -418,7 +423,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     IndexedDatabaseComponent,
     WebSpeechComponent,
     WebotpComponent,
-    TouchEventsComponent
+    TouchEventsComponent,
+    WebNfcComponent
   ],
   imports: [
     SharedModule,

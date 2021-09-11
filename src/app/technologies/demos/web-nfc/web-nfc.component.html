@@ -1,0 +1,35 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <mat-tab-group>
+    <mat-tab label="scan()" fxLayout="column">
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Starte Empfang für OTP-SMS"
+          (click)="initAndScan()"
+          [disabled]="scanActive"
+        >
+          scan()
+        </button>
+      </div>
+      <span>NFC-Scan <strong>{{scanActive ? 'aktiv' : 'inaktiv'}}</strong>.</span>
+    </mat-tab>
+
+    <mat-tab label="write()" fxLayout="column">
+      <div style="margin: 3px">
+        <button
+          mat-raised-button
+          matTooltip="Starte Empfang für OTP-SMS"
+          (click)="initAndWrite()"
+          [disabled]="writeActive"
+        >
+          write()
+        </button>
+      </div>
+      <span>Beschreiben von NFC-Tags <strong>{{writeActive ? 'aktiv' : 'inaktiv'}}</strong>.</span>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>

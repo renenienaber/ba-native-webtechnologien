@@ -1145,7 +1145,6 @@ export const WEB_NFC: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://w3c.github.io/web-nfc/' },
-    { name: 'Demo', link: 'https://googlechrome.github.io/samples/web-nfc/' },
     { name: 'web.dev', link: 'https://web.dev/nfc/' },
   ],
   caniuseRef: 'webnfc',
