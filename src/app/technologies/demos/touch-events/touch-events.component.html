@@ -1,0 +1,27 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <section fxLayout="column" fxLayoutGap="15px">
+    <h5>Über dem Knopf ausgelöste Touch-Events werden unten dargestellt</h5>
+    <button
+      #buttonElement
+      mat-raised-button
+      (touchstart)="onTouchEvent('touchstart')"
+      (touchend)="onTouchEvent('touchend')"
+      (touchmove)="onTouchEvent('touchmove')"
+      (touchcancel)="onTouchEvent('touchcancel')"
+    >
+      TouchEvent
+    </button>
+    <mat-form-field appearance="fill">
+      <mat-label>Ausgelöste Touch-Events</mat-label>
+      <textarea
+        matInput
+        [value]="results"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </section>
+</ng-template>

@@ -19,7 +19,7 @@ import {
   PICTURE_IN_PICTURE, POINTER_EVENTS, POINTER_LOCK, PROXIMITY_SENSOR, REMOTE_PLAYBACK, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
-  SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION,
+  SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION, TOUCH_EVENTS,
   VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION,
@@ -89,6 +89,7 @@ import {IdleDetectionComponent} from './demos/idle-detection/idle-detection.comp
 import { IndexedDatabaseComponent } from './demos/indexed-database/indexed-database.component';
 import { WebSpeechComponent } from './demos/web-speech/web-speech.component';
 import { WebotpComponent } from './demos/webotp/webotp.component';
+import { TouchEventsComponent } from './demos/touch-events/touch-events.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -296,6 +297,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: TextDetectionComponent
   },
   {
+    technology: TOUCH_EVENTS,
+    component: TouchEventsComponent
+  },
+  {
     technology: VIBRATION,
     component: VibrationComponent
   },
@@ -412,7 +417,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     IdleDetectionComponent,
     IndexedDatabaseComponent,
     WebSpeechComponent,
-    WebotpComponent
+    WebotpComponent,
+    TouchEventsComponent
   ],
   imports: [
     SharedModule,

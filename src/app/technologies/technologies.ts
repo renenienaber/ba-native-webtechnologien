@@ -1034,7 +1034,6 @@ export const TOUCH_EVENTS: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/touch-events/' },
-    { name: 'Demos', link: 'https://patrickhlauke.github.io/touch/' },
   ],
   caniuseRef: 'touch',
   icon: 'touch_app',
