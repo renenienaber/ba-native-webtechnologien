@@ -23,7 +23,7 @@ import {
   VIBRATION, VIRTUALKEYBOARD,
   WEB_APP_MANIFEST,
   WEB_AUTHENTICATION, WEB_BLUETOOTH, WEB_NFC,
-  WEB_SHARE, WEB_SPEECH, WEBOTP
+  WEB_SHARE, WEB_SPEECH, WEBHID, WEBOTP
 } from './technologies';
 import {MediaSessionStandardComponent} from './demos/media-session-standard/media-session-standard.component';
 import {OrientationSensorComponent} from './demos/orientation-sensor/orientation-sensor.component';
@@ -92,6 +92,7 @@ import { WebotpComponent } from './demos/webotp/webotp.component';
 import { TouchEventsComponent } from './demos/touch-events/touch-events.component';
 import { WebNfcComponent } from './demos/web-nfc/web-nfc.component';
 import { WebBluetoothComponent } from './demos/web-bluetooth/web-bluetooth.component';
+import { WebhidComponent } from './demos/webhid/webhid.component';
 
 const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
   {
@@ -335,6 +336,10 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: WebSpeechComponent
   },
   {
+    technology: WEBHID,
+    component: WebhidComponent
+  },
+  {
     technology: WEBOTP,
     component: WebotpComponent
   },
@@ -430,7 +435,8 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     WebotpComponent,
     TouchEventsComponent,
     WebNfcComponent,
-    WebBluetoothComponent
+    WebBluetoothComponent,
+    WebhidComponent
   ],
   imports: [
     SharedModule,

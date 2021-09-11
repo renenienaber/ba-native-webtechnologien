@@ -1215,7 +1215,6 @@ export const WEBHID: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://wicg.github.io/webhid/index.html' },
-    { name: 'Demos', link: 'https://web.dev/hid-examples/' },
     { name: 'web.dev', link: 'https://web.dev/hid/' },
   ],
   caniuseRef: 'webhid',

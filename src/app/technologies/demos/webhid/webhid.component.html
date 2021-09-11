@@ -1,0 +1,23 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <button
+    mat-raised-button
+    matTooltip="HIDs anfragen"
+    (click)="getHIDDevices()"
+  >
+    getDevices()
+  </button>
+  <div *ngIf="result" fxLayout="column">
+    <mat-form-field appearance="fill">
+      <mat-label>Ergebnis</mat-label>
+      <textarea
+        matInput
+        [value]="result | json"
+        disabled
+      ></textarea>
+    </mat-form-field>
+  </div>
+</ng-template>
