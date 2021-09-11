@@ -1,25 +1,40 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {TechnologyDemoComponent} from '../../technology-demo.component';
 
 @Component({
   selector: 'app-web-nfc',
   templateUrl: './web-nfc.component.html'
 })
-export class WebNfcComponent extends TechnologyDemoComponent implements OnInit, OnDestroy {
+export class WebNfcComponent extends TechnologyDemoComponent implements OnDestroy {
   scanActive = false;
   writeActive = false;
 
-  scanAbortController = new AbortController();
+  scanAbortController;
   writeAbortController = new AbortController();
-
-  ngOnInit(): void {
-    this.scanAbortController.signal.addEventListener('abort', () => this.scanActive = false);
-    this.writeAbortController.signal.addEventListener('abort', () => this.writeActive = false);
-  }
 
   ngOnDestroy(): void {
     this.stopScan();
     this.stopWrite();
+  }
+
+  private initScanAbortController(): void {
+    this.scanAbortController = new AbortController();
+    this.scanAbortController.signal.addEventListener('abort', () => this.scanActive = false);
+  }
+  private initWriteAbortController(): void {
+    this.writeAbortController = new AbortController();
+    this.writeAbortController.signal.addEventListener('abort', () => this.writeActive = false);
+  }
+
+  stopScan(): void {
+    if (this.scanAbortController) {
+      this.scanAbortController.abort();
+    }
+  }
+  stopWrite(): void {
+    if (this.writeAbortController) {
+      this.writeAbortController.abort();
+    }
   }
 
   private isSupported(): boolean {
@@ -35,6 +50,7 @@ export class WebNfcComponent extends TechnologyDemoComponent implements OnInit, 
     if (this.isSupported()) {
       // @ts-ignore
       const ndef = new NDEFReader();
+      this.initScanAbortController();
 
       ndef.scan({ signal: this.scanAbortController.signal })
         .then(() => {
@@ -57,6 +73,7 @@ export class WebNfcComponent extends TechnologyDemoComponent implements OnInit, 
     if (this.isSupported()) {
       // @ts-ignore
       const ndef = new NDEFReader();
+      this.initWriteAbortController();
 
       this.writeActive = true;
       ndef.write('Hallo Welt!', { signal: this.writeAbortController.signal })
@@ -68,17 +85,6 @@ export class WebNfcComponent extends TechnologyDemoComponent implements OnInit, 
           this.writeActive = false;
           this.showError(err);
         });
-    }
-  }
-
-  stopScan(): void {
-    if (this.scanAbortController) {
-      this.scanAbortController.abort();
-    }
-  }
-  stopWrite(): void {
-    if (this.writeAbortController) {
-      this.writeAbortController.abort();
     }
   }
 }
