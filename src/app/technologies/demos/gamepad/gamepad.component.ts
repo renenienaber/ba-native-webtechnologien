@@ -9,6 +9,7 @@ export class GamepadComponent extends TechnologyDemoComponent {
   result = [];
 
   getGamepads(): void {
+    this.result = [];
     if ('getGamepads' in navigator) {
       for (const e of navigator.getGamepads()) {
         if (e) {

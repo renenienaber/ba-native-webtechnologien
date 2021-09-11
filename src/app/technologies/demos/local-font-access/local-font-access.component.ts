@@ -9,6 +9,7 @@ export class LocalFontAccessComponent extends TechnologyDemoComponent {
   result = [];
 
   getFonts(): void {
+    this.result = [];
     if ('fonts' in navigator) {
       // @ts-ignore
       navigator.fonts.query()
