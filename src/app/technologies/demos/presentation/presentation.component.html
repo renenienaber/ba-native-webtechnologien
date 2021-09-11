@@ -15,7 +15,7 @@
       </button>
       <button
         mat-raised-button
-        matTooltip="Terminiert die Präsentationsverbindung"
+        matTooltip="Terminiert die Präsentations-Verbindung"
         (click)="terminateConnection()"
         [disabled]="!connection"
       >
@@ -30,7 +30,7 @@
       </mat-form-field>
       <button
         mat-raised-button
-        matTooltip=""
+        matTooltip="Sende Nachricht an Präsentations-Receiver"
         (click)="sendMessage()"
         [disabled]="!connection || !message"
       >
