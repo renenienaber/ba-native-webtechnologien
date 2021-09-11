@@ -16,7 +16,7 @@ import {
   NOTIFICATIONS,
   ORIENTATION_SENSOR, PAGE_VISIBILITY,
   PAYMENT_REQUEST,
-  PICTURE_IN_PICTURE, POINTER_EVENTS, POINTER_LOCK, PROXIMITY_SENSOR, REMOTE_PLAYBACK, SCREEN_CAPTURE,
+  PICTURE_IN_PICTURE, POINTER_EVENTS, POINTER_LOCK, PRESENTATION, PROXIMITY_SENSOR, REMOTE_PLAYBACK, SCREEN_CAPTURE,
   SCREEN_ORIENTATION,
   SCREEN_WAKE_LOCK,
   SERVICE_WORKER, SHAPE_DETECTION, STORAGE_STANDARD, TEXT_DETECTION, TOUCH_EVENTS,
@@ -96,8 +96,10 @@ import { WebhidComponent } from './demos/webhid/webhid.component';
 import {WebSerialComponent} from './demos/web-serial/web-serial.component';
 import { WebusbComponent } from './demos/webusb/webusb.component';
 import {WebMidiComponent} from './demos/web-midi/web-midi.component';
+import {PresentationComponent} from './demos/presentation/presentation.component';
+import { PresentationReceiverComponent } from './demos/presentation/presentation-receiver/presentation-receiver.component';
 
-const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
+const DEMO_COMPONENTS: {technology: Technology, component: any, children?: any}[] = [
   {
     technology: ACCELEROMETER,
     component: AccelerometerComponent
@@ -263,6 +265,14 @@ const DEMO_COMPONENTS: {technology: Technology, component: any}[] = [
     component: PointerEventsComponent,
   },
   {
+    technology: PRESENTATION,
+    component: PresentationComponent,
+  },
+  {
+    technology: {...PRESENTATION, routerLink: `${PRESENTATION.routerLink}/receiver`},
+    component: PresentationReceiverComponent,
+  },
+  {
     technology: POINTER_LOCK,
     component: PointerLockComponent
   },
@@ -368,6 +378,7 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     return {
       path: d.technology.routerLink,
       component: d.component,
+      children: d.children,
       data: { technology: d.technology }
     } as Route;
   }),
@@ -454,7 +465,9 @@ export const TECHNOLOGYPAGE_ROUTES: Routes = [
     WebhidComponent,
     WebSerialComponent,
     WebusbComponent,
-    WebMidiComponent
+    WebMidiComponent,
+    PresentationComponent,
+    PresentationReceiverComponent
   ],
   imports: [
     SharedModule,

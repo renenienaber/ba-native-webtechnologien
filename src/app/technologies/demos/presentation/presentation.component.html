@@ -1,0 +1,42 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <section fxLayoutGap="3px">
+      <button
+        mat-raised-button
+        matTooltip="Fragt eine Präsentation an."
+        (click)="initAndStartRequest()"
+        [disabled]="connection"
+      >
+        start()
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="Terminiert die Präsentationsverbindung"
+        (click)="terminateConnection()"
+        [disabled]="!connection"
+      >
+        terminate()
+      </button>
+    </section>
+
+    <section fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3px">
+      <mat-form-field fxFlex>
+        <mat-label>Nachricht</mat-label>
+        <input matInput type="text" [(ngModel)]="message">
+      </mat-form-field>
+      <button
+        mat-raised-button
+        matTooltip=""
+        (click)="sendMessage()"
+        [disabled]="!connection || !message"
+      >
+        send()
+      </button>
+    </section>
+
+  </div>
+</ng-template>

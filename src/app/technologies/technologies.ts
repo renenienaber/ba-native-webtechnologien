@@ -864,8 +864,7 @@ export const PRESENTATION: Technology = {
   ],
   references: [
     { name: 'Spezifikation', link: 'https://www.w3.org/TR/presentation-api/' },
-    { name: 'Demo', link: 'https://googlechrome.github.io/samples/presentation-api/' },
-    { name: 'web.dev', link: 'https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays' },
+    { name: 'Google Developers', link: 'https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays' },
   ],
   caniuseRef: 'mdn-api_navigator_presentation',
   icon: 'cast',

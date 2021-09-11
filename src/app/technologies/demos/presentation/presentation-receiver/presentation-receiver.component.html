@@ -1,0 +1,20 @@
+<app-technology-page>
+  <ng-container *ngTemplateOutlet="demo"></ng-container>
+</app-technology-page>
+
+<ng-template #demo>
+  <h3><strong>Receiver</strong></h3>
+
+  <section>
+    <div class="flex-table">
+      <div>
+        <div class="mat-header-cell">Zeitstempel</div>
+        <div class="mat-header-cell">Nachricht</div>
+      </div>
+      <div *ngFor="let message of messages">
+        <div>{{ message.timestamp | date: 'medium' }}</div>
+        <div>{{ message.msg }}</div>
+      </div>
+    </div>
+  </section>
+</ng-template>
