@@ -62,7 +62,7 @@
       "short_name": "Dashboard",
       "description": "Eine Übersicht der nativen Webtechnologien",
       "url": "./dashboard",
-      "icons": [{ "src": "assets/icons/outline_grid_view_black_48dp.png", "sizes": "96x96" }]
+      "icons": [{ "src": "assets/icons/outline_space_dashboard_black_48dp.png", "sizes": "96x96" }]
     },
     {
       "name": "Informationen über die App",
