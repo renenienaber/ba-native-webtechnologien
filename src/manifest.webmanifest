@@ -61,14 +61,14 @@
       "name": "Technologie-Dashboard",
       "short_name": "Dashboard",
       "description": "Eine Übersicht der nativen Webtechnologien",
-      "url": "/dashboard",
+      "url": "./dashboard",
       "icons": [{ "src": "assets/icons/outline_grid_view_black_48dp.png", "sizes": "96x96" }]
     },
     {
       "name": "Informationen über die App",
       "short_name": "Infos",
       "description": "Informationen über den Hintergrund dieser Anwendung",
-      "url": "/about",
+      "url": "./about",
       "icons": [{ "src": "assets/icons/outline_help_outline_black_48dp.png", "sizes": "96x96" }]
     }
   ]
